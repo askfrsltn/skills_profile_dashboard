@@ -34,7 +34,7 @@ This web-site is built for Full Stack Development **Students** and  **Developers
 #### 1.3 Strategy Plain
 #### 1.4 Scope Plain
 #### 1.5 Structure Plain
-#### 1.6 Skeleton PLain
+#### 1.6 Skeleton Plain
 #### 1.7 Surface Plain
 ___
 

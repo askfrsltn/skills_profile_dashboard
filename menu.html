@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+    <script defer src="https://kit.fontawesome.com/8bab7cf7fa.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>   
+    <script type="text/js" href="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+    crossorigin="anonymous"></script>
+    
+    
+
+    <title>Full Stack Developer Skills Profile Dashboard</title>
+</head>
+
+<body>
+<article>
+    <header class="top">
+    </header>
+    <main class="landing-page">
+        <div id="home-title">
+            <div class="wrapper-menu">             
+                <div class="title-item">
+                </div>
+            </div>
+            <div class="wrapper-menu">             
+                <div class="title-item">
+                    <div class="smaller-title">
+                        <p>FULL STACK DEVELOPER</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-menu">
+                <div class="title-item">
+                    <div class="large-title">
+                        <p>Skills</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-menu">
+                <div class="title-item">
+                    <div class="large-title">
+                        <p>Profile</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-menu">
+                <div class="title-item">
+                    <div class="smaller-title">
+                        <p>DASHBOARD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-menu">             
+                <div class="title-item">
+                    <div class="smaller-title">
+                        <p id="menu-button"><span> {start} </span><i class="far fa-dot-circle"></i>
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        <div id="card-menu">
+            <div class="wrapper-menu">
+                <div class="menu-item">
+                    <div class="menu-step-title">
+                        <p class="menu-step-p">01.</p>
+                        <p class="menu-step-p">Understand</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-menu">
+                <div class="menu-item">
+                    <div class="menu-step-title">
+                        <p class="menu-step-p">02.</p>
+                        <p class="menu-step-p">Score</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-menu">
+                <div class="menu-item">
+                    <div class="menu-step-title">
+                        <p class="menu-step-p">03.</p>
+                        <p class="menu-step-p">Preview</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-menu">
+                <div class="menu-item">
+                    <div class="menu-step-title">
+                        <p class="menu-step-p">04.</p>
+                        <p class="menu-step-p">Personalise</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-menu">
+                <div class="menu-item">
+                    <div class="menu-step-title">
+                        <p class="menu-step-p">05.</p>
+                        <p class="menu-step-p">Print</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>       
+    <footer>
+        <div class="copyright">
+            <a>
+                <p class="copyright"><i class="far fa-copyright"></i></p>      
+            </a>
+        </div>
+    </footer>
+</article>
+    <script>
+       
+        $(function(){
+            $("#menu-button").click(function(){
+                $("#home-title").slideToggle(400);
+                $("#card-menu").slideToggle(400);
+            }); 
+        });
+    </script>
+</body>
+</html>
