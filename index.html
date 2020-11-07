@@ -11,21 +11,25 @@
     <script defer src="https://kit.fontawesome.com/8bab7cf7fa.js" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>   
-    <script type="text/js" href="assets/js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" 
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
     crossorigin="anonymous"></script>
+    <script type="text/js" href="assets/js/script.js"></script>
     
     
 
-    <title>Full Stack Developer Skills Profile Dashboard</title>
+    <title>Full Stack Developer Skills Profile Dashboard. Home</title>
 </head>
 
 <body>
 <article>
     <header class="top">
     </header>
-    <main class="landing-page">
-        <div id="home-title">
+    <main>
+        <!-- TITLE PAGE -->
+        <div id="js-home-title">
             <div class="wrapper-menu">             
                 <div class="title-item">
                 </div>
@@ -59,18 +63,19 @@
                 </div>
             </div>
         </div>
-        <div class="wrapper-menu">             
-                <div class="title-item">
-                    <div class="smaller-title">
-                        <p id="menu-button"><span> {start} </span><i class="far fa-dot-circle"></i>
-                        </p>
-                    </div>
-                    
+        <!-- BUTTON -->
+        <div class="wrapper-menu start-button">             
+            <div class="title-item">
+                <div class="smaller-title">
+                    <p id="menu-button"><span> [start] </span><i class="far fa-dot-circle icon"></i>
+                    </p>
                 </div>
             </div>
-        <div id="card-menu">
+        </div>
+        <!-- MENU PAGE -->
+        <div id="js-card-menu">
             <div class="wrapper-menu">
-                <div class="menu-item">
+                <div id="js-card-understand" class="menu-item">
                     <div class="menu-step-title">
                         <p class="menu-step-p">01.</p>
                         <p class="menu-step-p">Understand</p>
@@ -78,12 +83,14 @@
                 </div>
             </div>
             <div class="wrapper-menu">
-                <div class="menu-item">
-                    <div class="menu-step-title">
-                        <p class="menu-step-p">02.</p>
-                        <p class="menu-step-p">Score</p>
+                    <div id="js-card-score" class="menu-item">
+                        <div class="menu-step-title">
+                            <a href="score.html">
+                                <p class="menu-step-p">02.</p>
+                                <p class="menu-step-p">Score</p>
+                            </a>
+                        </div>
                     </div>
-                </div>
             </div>
             <div class="wrapper-menu">
                 <div class="menu-item">
@@ -110,22 +117,53 @@
                 </div>
             </div>
         </div>
+        <!-- UNDERSAND SECTION -->
+        <div id="js-understand-page" class="understand-page">
+            <div>
+                <div class="smaller-title">
+                    <p id="back-button"><span>[back]</span><i class="far fa-dot-circle icon"></i>
+                    </p>
+                </div>
+            </div> 
+        </div>
+        
+        <!-- OTHER SECTIONs -->
+    
     </main>       
     <footer>
         <div class="copyright">
             <a>
-                <p class="copyright"><i class="far fa-copyright"></i></p>      
+                <p><i class="far fa-copyright"></i></p>      
             </a>
         </div>
     </footer>
 </article>
     <script>
        
-        $(function(){
-            $("#menu-button").click(function(){
-                $("#home-title").slideToggle(400);
-                $("#card-menu").slideToggle(400);
-            }); 
+       $(document).ready(function(){
+            $(function(){
+                $("#menu-button").click(function(){
+                    $("#js-home-title").slideToggle(400); // Find element with the id 'js-home-titlee' and apply an additional class of 'is-open'
+                    $("#js-card-menu").slideToggle(400);
+                }); 
+            });
+
+            function openPage() {
+                $('#js-understand-page').slideDown(500); // Find element with the id 'js-understand-page' and hide it
+	        }
+	        function closePage() {
+                $('#js-understand-page').slideUp(500); // Find element with the id 'js-understand-page' and open it
+            }
+            $('#js-card-understand').click(function(){ 
+                // When the element with the id 'js-card-understand' is clicked
+			    openPage(); // Run the openPage function
+            });
+            $('#back-button').click(function(){ // When the element with the id 'back-button' is clicked
+			closePage(); // Run the closeMenu function
+		    });
+            
+            
+
         });
     </script>
 </body>
