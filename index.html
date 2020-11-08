@@ -121,7 +121,41 @@
         <div id="js-understand-page" class="understand-page">
             <div>
                 <div class="smaller-title">
-                    <p id="back-button"><span>[back]</span><i class="far fa-dot-circle icon"></i>
+                    <p id="back-button"><span>[to menu]</span></i>
+                    </p>
+                </div>
+                <section calss="understand-page-example">
+                    <div>
+                        <div class="page-title">
+                            <h1>Dashboard Example</h1>
+                        </div>
+                    </div>
+                    <div class="dashboard-pages">    
+                        <div>
+                            <img class="dashboard-dummy" src="assets/img/dashboard-dummy1.png" alt="dashboard-dummy1">
+                        </div>
+                        <div>
+                            <img class="dashboard-dummy" src="assets/img/dashboard-dummy2.png" alt="dashboard-dummy2">
+                        </div>
+                    </div>
+                </section>
+                <section class="understand-page-logic">
+                    <div>
+                        <div class="page-title">
+                            <h1>Scoring Process and Logic</h1>
+                        </div>
+                    </div>
+                    <div class="dashboard-pages">    
+                        <div class="dashboard-dummy">
+
+                        </div>
+                        <div class="dashboard-dummy">
+                            
+                        </div>
+                    </div>
+                </section>
+                <div class="smaller-title">
+                    <p id="back-button"><span>{start scoring}</span></i>
                     </p>
                 </div>
             </div> 
@@ -141,27 +175,33 @@
     <script>
        
        $(document).ready(function(){
+            // the code is built based on example from https://codepen.io/brianhaferkamp/pen/GRgEeVG?editors=0100
             $(function(){
                 $("#menu-button").click(function(){
                     $("#js-home-title").slideToggle(400); // Find element with the id 'js-home-titlee' and apply an additional class of 'is-open'
                     $("#js-card-menu").slideToggle(400);
                 }); 
             });
-
+            
+            // the code for openning the full page menu is built based on example from https://codepen.io/rveruna/pen/qmvZJw?editors=0010
             function openPage() {
                 $('#js-understand-page').slideDown(500); // Find element with the id 'js-understand-page' and hide it
 	        }
-	        function closePage() {
+            
+            function closePage() {
                 $('#js-understand-page').slideUp(500); // Find element with the id 'js-understand-page' and open it
             }
+            
             $('#js-card-understand').click(function(){ 
                 // When the element with the id 'js-card-understand' is clicked
 			    openPage(); // Run the openPage function
             });
+            
             $('#back-button').click(function(){ // When the element with the id 'back-button' is clicked
 			closePage(); // Run the closeMenu function
 		    });
             
+            // the code is built based on example
             
 
         });
