@@ -21,6 +21,10 @@ header, main, footer {
     flex-shrink: 0;
 }
 
+p{
+    margin: 0;
+}
+
 /*-- GENERAL --*/
 
 body{
@@ -111,7 +115,7 @@ header{
 
 
 .menu-item {
-    flex-basis: 80%;
+    flex-basis: 70%;
     height: 12vh;
     border: 1px solid #ccc;
     border-radius:10px;
@@ -199,11 +203,6 @@ header{
 
 /*-- SCORE_PAGE --*/
 
-
-#js-score-page{
-    display:none;
-}
-
 .score-page{
     display: flex;
     position: fixed;
@@ -211,7 +210,6 @@ header{
     left:0;
     height:100vh;
     width:100vw;
-    overflow: scroll;
 }
 
 .score-page-content{
@@ -229,22 +227,22 @@ header{
     border:1px solid #ccc;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: center;
-
+    align-items: center;
+    overflow: auto;
 }
 
 .project-card{
-    margin: 5px;
-    height: 15vh;
+    margin: 15px;
     width: 40vh;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
-.project-card-content{
+.project-card-face{
+    height: 15vh;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -261,9 +259,101 @@ header{
 .project-cardicon-unscored{
     color: lightgrey;
 }
+
+
 .project-cardicon-scored{
     color: green;
+    align-content: center;
 }
+
+.project-card-score{
+    position: relative;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255,255,255,0.95)
+}
+
+.project-card-score-wrapper{
+    text-align: center;
+    align-items: center;
+    padding: 3px;
+}
+
+.score-card-content{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.scoring-circles-wrapper{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    padding: 5px;
+    width: 30vh;
+}
+
+.score-circle{
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 7vh;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+   font-size: 2vh;
+   margin-left: 5px;
+}
+
+.gold{
+    
+}
+
+.silver{
+    
+}
+
+.bronze{
+    
+}
+
+
+.score-circle.gold:hover{
+    background-color: rgba(255,215,0 ,1 );
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.score-circle.silver:hover{
+    background-color: rgba(192,192,192 ,1 );
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.score-circle.bronze:hover{
+    background-color: rgba(205, 127, 50, 1);
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.card-score-definition{
+    font-size: 2vh;
+    margin: 0;
+}
+
+
+
+#js-project-card-score{
+ display:none;
+}
+
+
+
+
 /*-- CSS for hidden project card 
 .js-project-card{
     display: none; 
@@ -300,6 +390,7 @@ header{
 .gold{}
 --*/
 /*-- color of Octicon can be changed only if svg property is addressed with fill: currenntColor --*/
+
 svg {
   fill: currentColor;
 }

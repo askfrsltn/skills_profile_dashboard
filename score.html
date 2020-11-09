@@ -36,78 +36,150 @@
             </div>
         </div>
         <div class="score-page-content">
+            
             <!-- Scoring Project Section - Project Chart -->
             <section class="score-project-section">
                 <div>Big Title</div>
                 <div>Chart</div>
                 <div>Progress</div>
             </section> 
+            
             <!-- Scoring Project Section - Scoring Cards -->  
             <section class="score-project-section">
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <div class= "project-cardicon-unscored"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34"><path fill-rule="evenodd" d="M2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0zM12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm6.25 11.75a.75.75 0 000-1.5H5.75a.75.75 0 000 1.5h12.5z"></path></svg>
+                <div id="ucfed-project-card" class="project-card">
+
+                    <div class="project-card-face">
+                        <div class= "project-cardicon-unscored"> 
+                            <div class="score-circle"> <p>-%</p></div>
                         </div>                            
                         <h5 class="project-card-title">
                             User Centric Front-end Project
                         </h5>
                     </div>
-                    <!-- Scoring Card - Hidden Section 
-                    <div class="js-project-card">
-                        <div class="open-card-content" >
-                            <svg class= "project-cardicon-scored" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34"><path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z"></path></svg>
-                            <div>
+
+                    <div id="js-project-card-score" class="project-card-score">
+                        <div class="score-card-content" >
+                            <div class="project-card-score-wrapper">
                                 <div><p>Project Score</p></div>
-                                    <div class="scoring-circles-wrapper">
-                                <div class="score bronze"> 60%
+                                <div class="scoring-circles-wrapper">
+                                    <div class="score-circle bronze"> 60%
+                                    </div>
+                                    <div class="score-circle silver"> 80%
+                                    </div>
+                                    <div class="score-circle gold">100%
+                                    </div>
                                 </div>
-                                <div class="score silver"> 80%
+                                <div>
+                                    <div><p class="card-score-definition">60% - pass</p></div>
+                                    <div><p class="card-score-definition">80% - with merit</p></div>
+                                    <div><p class="card-score-definition">100% - with distinction</p></div>
                                 </div>
-                                <div class="score gold">100%
-                                </div>
-                            </div>
                             
                             </div>
                         </div>
                     </div>
-                    -->
-                </div>
 
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <div class= "project-cardicon-unscored"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34"><path fill-rule="evenodd" d="M2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0zM12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm6.25 11.75a.75.75 0 000-1.5H5.75a.75.75 0 000 1.5h12.5z"></path></svg>
+                </div>
+                    
+
+                <div id="ifed-project-card" class="project-card">
+                    <div class="project-card-face">
+                        <div class= "project-cardicon-unscored"> 
+                            <div class="score-circle"> <p>-%</p></div>
                         </div>                            
                         <h5 class="project-card-title">
                             Interactive Front-end Project
                         </h5>
                     </div>
-                    <div class="js-project-card">
+
+                    <div id="js-project-card-score" class="project-card-score">
+                        <div class="score-card-content" >
+                            <div class="project-card-score-wrapper">
+                                <div><p>Project Score</p></div>
+                                <div class="scoring-circles-wrapper">
+                                    <div class="score-circle bronze"> 60%
+                                    </div>
+                                    <div class="score-circle silver"> 80%
+                                    </div>
+                                    <div class="score-circle gold">100%
+                                    </div>
+                                </div>
+                                <div>
+                                    <div><p class="card-score-definition">60% - pass</p></div>
+                                    <div><p class="card-score-definition">80% - with merit</p></div>
+                                    <div><p class="card-score-definition">100% - with distinction</p></div>
+                                </div>
                             
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <div class= "project-cardicon-unscored"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34"><path fill-rule="evenodd" d="M2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0zM12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm6.25 11.75a.75.75 0 000-1.5H5.75a.75.75 0 000 1.5h12.5z"></path></svg>
+                
+                <div id="dcd-project-card" class="project-card">
+                    <div class="project-card-face">
+                        <div class= "project-cardicon-unscored"> 
+                            <div class="score-circle"> <p>-%</p></div>
                         </div>                            
                         <h5 class="project-card-title">
-                            Data Centric Application Project
+                            Data Centric Application
                         </h5>
                     </div>
-                    <div class="js-project-card">
-
-                    </div>
+                    <div id="js-project-card-score" class="project-card-score">
+                        <div class="score-card-content" >
+                            <div class="project-card-score-wrapper">
+                                <div><p>Project Score</p></div>
+                                <div class="scoring-circles-wrapper">
+                                    <div class="score-circle bronze"> 60%
+                                    </div>
+                                    <div class="score-circle silver"> 80%
+                                    </div>
+                                    <div class="score-circle gold">100%
+                                    </div>
+                                </div>
+                                <div>
+                                    <div><p class="card-score-definition">60% - pass</p></div>
+                                    <div><p class="card-score-definition">80% - with merit</p></div>
+                                    <div><p class="card-score-definition">100% - with distinction</p></div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>     
                 </div>
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <div class= "project-cardicon-unscored"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34"><path fill-rule="evenodd" d="M2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0zM12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm6.25 11.75a.75.75 0 000-1.5H5.75a.75.75 0 000 1.5h12.5z"></path></svg>
+                
+                <div id="fsd-project-card" class="project-card">
+                   <div class="project-card-face">
+                        <div class= "project-cardicon-unscored"> 
+                            <div class="score-circle"> <p>-%</p></div>
                         </div>                            
                         <h5 class="project-card-title">
-                            Full Stack Application Project
+                            Full Stack Appliaction
                         </h5>
                     </div>
-                    <div class="js-project-card">
+                    <div id="js-project-card-score" class="project-card-score">
+                        <div class="score-card-content" >
+                            <div class="project-card-score-wrapper">
+                                <div><p>Project Score</p></div>
+                                <div class="scoring-circles-wrapper">
+                                    <div class="score-circle bronze"> 60%
+                                    </div>
+                                    <div class="score-circle silver"> 80%
+                                    </div>
+                                    <div class="score-circle gold">100%
+                                    </div>
+                                </div>
+                                <div>
+                                    <div><p class="card-score-definition">60% - pass</p></div>
+                                    <div><p class="card-score-definition">80% - with merit</p></div>
+                                    <div><p class="card-score-definition">100% - with distinction</p></div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div> 
 
-                    </div>
+
                 </div>
 
             </section>    
@@ -125,7 +197,20 @@
     <script>
        
        $(document).ready(function(){
-
+            
+            function openCard() {
+                    $('#js-project-card-score').toggle(200); // open-close card method
+                }
+            $('#ucfed-project-card').click(function(){ 
+			    openCard();                                 // call on click
+            });
+    
+            function scoreCard () {
+                        $('#js-score-circle').toggle(200); // open-close card method
+                    }
+                $('#c').click(function(){ 
+                    openCard();                                 // call on click
+                });
         });
     </script>
 </body>
