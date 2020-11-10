@@ -127,7 +127,7 @@ header{
     margin-left: 10px;
     flex-direction: column;
     justify-content: flex-start;
-    color: dimgray;
+    color: lightgray;
     font-weight: 400;
 }
 .menu-step-p{
@@ -140,7 +140,7 @@ header{
 }
 
 #js-card-score{
-    background-color: lightsteelblue;
+    background-color: lightgrey;
     cursor: pointer;
 }
 
@@ -221,24 +221,68 @@ header{
     align-content: center;
 }
 
+.score-project-summary{
+    border:1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 85vh;
+    width: 70vh;    
+}
+
+.project-summary-title{
+    max-width: 40vh;
+    text-align: center;
+    border:1px solid #ccc;
+
+}
+
+.progress-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.chart{
+    height: 30vh;
+    width: 30vh;
+    margin: 20px;
+    border:1px solid #ccc;
+    text-align: center;
+    border-radius: 50%;
+ 
+}
+
+.progress-wrapper{
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
 .score-project-section{
-    height: 80vh;
+    min-height: 85vh;
     width: 70vh;
     border:1px solid #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: auto;
+    overflow: scroll;
 }
 
 .project-card{
     margin: 15px;
     width: 40vh;
     border: 1px solid #ccc;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     padding: 5px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .project-card-face{
@@ -254,16 +298,6 @@ header{
     font-size: 3vh;
     align-items: center;
     padding: 5px;
-}
-
-.project-cardicon-unscored{
-    color: lightgrey;
-}
-
-
-.project-cardicon-scored{
-    color: green;
-    align-content: center;
 }
 
 .project-card-score{
@@ -310,32 +344,34 @@ header{
 }
 
 .gold{
-    
+    background-color: rgba(255,215,0 ,1 );
 }
 
 .silver{
-    
+    background-color: rgba(192,192,192 ,1 );
 }
 
 .bronze{
-    
+    background-color: rgba(205, 127, 50, 1);
 }
 
-
 .score-circle.gold:hover{
-    background-color: rgba(255,215,0 ,1 );
+    background-color: rgba(253, 100, 112, 1);
+    box-shadow: 0 0 0 0;
     cursor: pointer;
     transition: background-color 200ms ease-in-out;
 }
 
 .score-circle.silver:hover{
-    background-color: rgba(192,192,192 ,1 );
+    background-color: rgba(253, 100, 112, 1);
+    box-shadow: 0 0 0 0;
     cursor: pointer;
     transition: background-color 200ms ease-in-out;
 }
 
 .score-circle.bronze:hover{
-    background-color: rgba(205, 127, 50, 1);
+    background-color: rgba(253, 100, 112, 1);
+    box-shadow: 0 0 0 0;
     cursor: pointer;
     transition: background-color 200ms ease-in-out;
 }
@@ -345,9 +381,10 @@ header{
     margin: 0;
 }
 
-
-
-#js-project-card-score{
+#ucfed-card-score,
+#ifed-card-score,
+#dcd-card-score,
+#fsd-card-score{
  display:none;
 }
 

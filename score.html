@@ -18,9 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" 
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
     crossorigin="anonymous"></script>
-    <script type="text/js" href="assets/js/script.js"></script>
-    
-    
+    <script type="text/js" href="assets/js/script.js"></script>    
 
     <title>Full Stack Developer Skills Profile Dashboard. Home</title>
 </head>
@@ -38,15 +36,21 @@
         <div class="score-page-content">
             
             <!-- Scoring Project Section - Project Chart -->
-            <section class="score-project-section">
-                <div>Big Title</div>
-                <div>Chart</div>
-                <div>Progress</div>
+            <section class="score-project-summary">   
+                <div class="project-summary-title"><h2>Projects Score Summary</h2></div>
+                
+                <div class="progress-wrapper">
+                    <div><p>progress</p></div>
+                    <div><p>|||||||||||||||||</p></div>
+                </div>
+                
+                <div class="chart"><p>Chart</p></div>
+                    
             </section> 
             
             <!-- Scoring Project Section - Scoring Cards -->  
             <section class="score-project-section">
-                <div id="ucfed-project-card" class="project-card">
+                <div id="ucfed-card" class="project-card">
 
                     <div class="project-card-face">
                         <div class= "project-cardicon-unscored"> 
@@ -57,7 +61,7 @@
                         </h5>
                     </div>
 
-                    <div id="js-project-card-score" class="project-card-score">
+                    <div id="ucfed-card-score" class="project-card-score">
                         <div class="score-card-content" >
                             <div class="project-card-score-wrapper">
                                 <div><p>Project Score</p></div>
@@ -82,7 +86,7 @@
                 </div>
                     
 
-                <div id="ifed-project-card" class="project-card">
+                <div id="ifed-card" class="project-card">
                     <div class="project-card-face">
                         <div class= "project-cardicon-unscored"> 
                             <div class="score-circle"> <p>-%</p></div>
@@ -92,7 +96,7 @@
                         </h5>
                     </div>
 
-                    <div id="js-project-card-score" class="project-card-score">
+                    <div id="ifed-card-score" class="project-card-score">
                         <div class="score-card-content" >
                             <div class="project-card-score-wrapper">
                                 <div><p>Project Score</p></div>
@@ -125,7 +129,7 @@
                             Data Centric Application
                         </h5>
                     </div>
-                    <div id="js-project-card-score" class="project-card-score">
+                    <div id="dcd-card-score" class="project-card-score">
                         <div class="score-card-content" >
                             <div class="project-card-score-wrapper">
                                 <div><p>Project Score</p></div>
@@ -157,7 +161,7 @@
                             Full Stack Appliaction
                         </h5>
                     </div>
-                    <div id="js-project-card-score" class="project-card-score">
+                    <div id="fsd-card-score" class="project-card-score">
                         <div class="score-card-content" >
                             <div class="project-card-score-wrapper">
                                 <div><p>Project Score</p></div>
@@ -177,6 +181,7 @@
                             
                             </div>
                         </div>
+                    </div>
                     </div> 
 
 
@@ -195,23 +200,15 @@
     </footer>
 </article>
     <script>
-       
-       $(document).ready(function(){
-            
-            function openCard() {
-                    $('#js-project-card-score').toggle(200); // open-close card method
+        $(document).ready(function(){
+            function openCard (){
+                $('#ucfed-card-score').slideToggle(300);
                 }
-            $('#ucfed-project-card').click(function(){ 
-			    openCard();                                 // call on click
+
+            $('#ucfed-card').click (function(){openCard();
             });
-    
-            function scoreCard () {
-                        $('#js-score-circle').toggle(200); // open-close card method
-                    }
-                $('#c').click(function(){ 
-                    openCard();                                 // call on click
-                });
-        });
+
+       });
     </script>
 </body>
 </html>
