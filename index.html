@@ -5,21 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
-    <script defer src="https://kit.fontawesome.com/8bab7cf7fa.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" 
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
-    crossorigin="anonymous"></script>
-    <script type="text/js" href="assets/js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>   
-    
-    
-
-    
-    
-
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/> 
+    <script src="https://kit.fontawesome.com/8bab7cf7fa.js" crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+    </script>
     <title>Full Stack Developer Skills Profile Dashboard. Home</title>
 </head>
 
@@ -95,8 +89,10 @@
             <div class="wrapper-menu">
                 <div class="menu-item">
                     <div class="menu-step-title">
-                        <p class="menu-step-p">03.</p>
-                        <p class="menu-step-p">Preview</p>
+                        <a href="card.html">
+                            <p class="menu-step-p">03.</p>
+                            <p class="menu-step-p">Preview</p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -172,40 +168,38 @@
         </div>
     </footer>
 </article>
-    <script>
-       
-       $(document).ready(function(){
-            // the code is built based on example from https://codepen.io/brianhaferkamp/pen/GRgEeVG?editors=0100
-            $(function(){
-                $("#menu-button").click(function(){
-                    $("#js-home-title").slideToggle(400); // Find element with the id 'js-home-titlee' and apply an additional class of 'is-open'
-                    $("#js-card-menu").slideToggle(400);
-                }); 
-            });
-            
-            // the code for openning the full page menu is built based on example from https://codepen.io/rveruna/pen/qmvZJw?editors=0010
-            function openPage() {
-                $('#js-understand-page').slideDown(500); // Find element with the id 'js-understand-page' and hide it
-	        }
-            
-            function closePage() {
-                $('#js-understand-page').slideUp(500); // Find element with the id 'js-understand-page' and open it
-            }
-            
-            $('#js-card-understand').click(function(){ 
-                // When the element with the id 'js-card-understand' is clicked
-			    openPage(); // Run the openPage function
-            });
-            
-            $('#back-button').click(function(){ // When the element with the id 'back-button' is clicked
-			closePage(); // Run the closeMenu function
-		    });
-            
-            // the code is built based on example
-            
-
-        });
-    </script>
-</body>
+<script>
+    $(document).ready(function(){
+    // the code is built based on example from https://codepen.io/brianhaferkamp/pen/GRgEeVG?editors=0100
+    $(function(){
+        $("#menu-button").click(function(){
+            $("#js-home-title").slideToggle(400); // Find element with the id 'js-home-titlee' and apply an additional class of 'is-open'
+            $("#js-card-menu").slideToggle(400);
+        }); 
+    });
     
+    // the code for openning the full page menu is built based on example from https://codepen.io/rveruna/pen/qmvZJw?editors=0010
+    function openPage() {
+        $('#js-understand-page').slideDown(500); // Find element with the id 'js-understand-page' and hide it
+    }
+    
+    function closePage() {
+        $('#js-understand-page').slideUp(500); // Find element with the id 'js-understand-page' and open it
+    }
+    
+    $('#js-card-understand').click(function(){ 
+        // When the element with the id 'js-card-understand' is clicked
+        openPage(); // Run the openPage function
+    });
+    
+    $('#back-button').click(function(){ // When the element with the id 'back-button' is clicked
+    closePage(); // Run the closeMenu function
+    });
+    
+    // the code is built based on example
+    
+
+});
+</script>
+</body>
 </html>

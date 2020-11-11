@@ -207,7 +207,6 @@ header{
     display: flex;
     position: fixed;
     top:0;
-    left:0;
     height:100vh;
     width:100vw;
 }
@@ -220,6 +219,7 @@ header{
     flex-wrap: wrap;
     align-content: center;
 }
+/*-- SCORE_PAGE_SUMMARY --*/
 
 .score-project-summary{
     border:1px solid #ccc;
@@ -227,8 +227,9 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 85vh;
+    max-height: 80vh;
     width: 70vh;    
+    overflow: auto;
 }
 
 .project-summary-title{
@@ -243,6 +244,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border: 1px solid #ccc;
 
 }
 
@@ -255,13 +257,113 @@ header{
     border-radius: 50%;
  
 }
+/*-- SCORE_PAGE_SUMMARY --*/
 
-.progress-wrapper{
-    margin-top: 10px;
-    text-align: center;
-    border: 1px solid #ccc;
+.score-project-section{
+    position: relative;
+    max-height: 80vh;
+    width: 70vh;
+    border:1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: scroll; 
 }
 
+.scorecard{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: 45vh;
+    border-radius: 5px;
+    perspective: 1000px;
+}
+
+.scorecard-face{
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.scorecard-animation{
+    width: 100%;
+    height: 100%;
+    transition: transform  1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card__animation.is-open{
+    transform: rotateY(180deg);
+    border-radius: 16px;
+}
+
+
+.scorecard-face-front{
+
+}
+
+.scorecard-face-back{
+    flex-direction:column;
+}
+
+.scorcard-score{
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+   font-size: 2vh;
+   margin-left: 5px;
+}
+
+.scorecard-title{
+    width: 28vh;
+    padding: 5px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.scorecard-options{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    padding: 5px;
+    width: 30vh;
+}
+
+.score-circle {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 7vh;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+   font-size: 2vh;
+}
+
+.card-score-definition{
+    text-align: center;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+
+
+/*-- Library for score cards
 .score-project-section{
     min-height: 85vh;
     width: 70vh;
@@ -385,60 +487,16 @@ header{
 #ifed-card-score,
 #dcd-card-score,
 #fsd-card-score{
- display:none;
+
 }
 
 
-
-
-/*-- CSS for hidden project card 
-.js-project-card{
-    display: none; 
-    margin: 5px;
-    height: 15vh;
-    width: 40vh;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.open-card-content{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-around;
-}
-
-.project-cardicon-scored{
-    width: 10vh;
-}
-
-.scoring-circles-wrapper{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-}
-.score{
-    border: 1px solid #ccc;
-    border-radius: 50%
-}
-
-.bronze{}
-.silver{}
-.gold{}
 --*/
-/*-- color of Octicon can be changed only if svg property is addressed with fill: currenntColor --*/
-
-svg {
-  fill: currentColor;
-}
-
-
 
 /*-- ANIMATION CLASSES FOR JQUERY --*/
 
 
 
 /*-- SCORE-CARD --*/
-
 
 
