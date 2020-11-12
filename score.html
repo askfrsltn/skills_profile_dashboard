@@ -37,9 +37,14 @@
             <!-- Scoring Project Section - Project Chart -->
             <section class="score-project-summary">   
                 
-                <div class="project-summary-title"><h2>Projects Score Summary</h2></div>
+                <div class="project-summary-title">
+                <h3>Projects Score Summary</h3></div>
                 
-                <div class="chart"><p>Chart</p></div>
+                <div class="chart">
+                    <p>
+                        <span>%</span>
+                    </p>
+                </div>
                 
                 <div class="progress-wrapper">
                     <div><p>progress</p></div>
@@ -50,15 +55,18 @@
             
             <!-- Scoring Project Section - Scoring Cards -->  
             <section class="score-project-section">
+                    <div class="project-summary-title"><h3>Projects Score Cards</h3></div>
                     <div class="scorecard">
                         <div class="scorecard-animation">
                             <div class="scorecard-face scorecard-face-front">
-                                <div class="scorcard-score"><p>-%</p></div>
+                                <div id="project-ucfed" class="scorcard-score"><p>-%</p></div>
                                 <div class="scorecard-title"><h5>User-Centric Front end development</h5></div>
                             </div>
 
                             <div class="scorecard-face scorecard-face-back"> 
                                 <div class="scorecard-options">
+                                    <div class="score-circle"> -%
+                                    </div>
                                     <div class="score-circle bronze"> 60%
                                     </div>
                                     <div class="score-circle silver"> 80%
@@ -79,12 +87,14 @@
                     <div class="scorecard">
                         <div class="scorecard-animation">
                             <div class="scorecard-face scorecard-face-front">
-                                <div class="scorcard-score"><p>-%</p></div>
+                                <div id= "#project-ucfed" class="scorcard-score"><p>-%</p></div>
                                 <div class="scorecard-title"><h5>Interactive Front end development</h5></div>
                             </div>
 
                             <div class="scorecard-face scorecard-face-back"> 
                                 <div class="scorecard-options">
+                                    <div class="score-circle"> -%
+                                    </div>
                                     <div class="score-circle bronze"> 60%
                                     </div>
                                     <div class="score-circle silver"> 80%
@@ -111,6 +121,8 @@
 
                             <div class="scorecard-face scorecard-face-back"> 
                                 <div class="scorecard-options">
+                                    <div class="score-circle"> -%
+                                    </div>
                                     <div class="score-circle bronze"> 60%
                                     </div>
                                     <div class="score-circle silver"> 80%
@@ -137,6 +149,8 @@
 
                             <div class="scorecard-face scorecard-face-back"> 
                                 <div class="scorecard-options">
+                                    <div class="score-circle"> -%
+                                    </div>
                                     <div class="score-circle bronze"> 60%
                                     </div>
                                     <div class="score-circle silver"> 80%
@@ -154,144 +168,7 @@
                         </div>
                     </div>
             
-            <!--
-                <div id="ucfed-card" class="project-card">
-
-                    <div class="project-card-face">
-                        <div class= "project-cardicon-unscored"> 
-                            <div class="score-circle"> <p>-%</p></div>
-                        </div>                            
-                        <h5 class="project-card-title">
-                            User Centric Front-end Project
-                        </h5>
-                    </div>
-
-                    <div id="ucfed-card-score" class="project-card-score">
-                        <div class="score-card-content" >
-                            <div class="project-card-score-wrapper">
-                                <div><p>Project Score</p></div>
-                                <div class="scoring-circles-wrapper">
-                                    <div class="score-circle bronze"> 60%
-                                    </div>
-                                    <div class="score-circle silver"> 80%
-                                    </div>
-                                    <div class="score-circle gold">100%
-                                    </div>
-                                </div>
-                                <div>
-                                    <div><p class="card-score-definition">60% - pass</p></div>
-                                    <div><p class="card-score-definition">80% - with merit</p></div>
-                                    <div><p class="card-score-definition">100% - with distinction</p></div>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                    
-
-                <div id="ifed-card" class="project-card">
-                    <div class="project-card-face">
-                        <div class= "project-cardicon-unscored"> 
-                            <div class="score-circle"> <p>-%</p></div>
-                        </div>                            
-                        <h5 class="project-card-title">
-                            Interactive Front-end Project
-                        </h5>
-                    </div>
-
-                    <div id="ifed-card-score" class="project-card-score">
-                        <div class="score-card-content" >
-                            <div class="project-card-score-wrapper">
-                                <div><p>Project Score</p></div>
-                                <div class="scoring-circles-wrapper">
-                                    <div class="score-circle bronze"> 60%
-                                    </div>
-                                    <div class="score-circle silver"> 80%
-                                    </div>
-                                    <div class="score-circle gold">100%
-                                    </div>
-                                </div>
-                                <div>
-                                    <div><p class="card-score-definition">60% - pass</p></div>
-                                    <div><p class="card-score-definition">80% - with merit</p></div>
-                                    <div><p class="card-score-definition">100% - with distinction</p></div>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div id="dcd-project-card" class="project-card">
-                    <div class="project-card-face">
-                        <div class= "project-cardicon-unscored"> 
-                            <div class="score-circle"> <p>-%</p></div>
-                        </div>                            
-                        <h5 class="project-card-title">
-                            Data Centric Application
-                        </h5>
-                    </div>
-                    <div id="dcd-card-score" class="project-card-score">
-                        <div class="score-card-content" >
-                            <div class="project-card-score-wrapper">
-                                <div><p>Project Score</p></div>
-                                <div class="scoring-circles-wrapper">
-                                    <div class="score-circle bronze"> 60%
-                                    </div>
-                                    <div class="score-circle silver"> 80%
-                                    </div>
-                                    <div class="score-circle gold">100%
-                                    </div>
-                                </div>
-                                <div>
-                                    <div><p class="card-score-definition">60% - pass</p></div>
-                                    <div><p class="card-score-definition">80% - with merit</p></div>
-                                    <div><p class="card-score-definition">100% - with distinction</p></div>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>     
-                </div>
-                
-                <div id="fsd-project-card" class="project-card">
-                   <div class="project-card-face">
-                        <div class= "project-cardicon-unscored"> 
-                            <div class="score-circle"> <p>-%</p></div>
-                        </div>                            
-                        <h5 class="project-card-title">
-                            Full Stack Appliaction
-                        </h5>
-                    </div>
-                    <div id="fsd-card-score" class="project-card-score">
-                        <div class="score-card-content" >
-                            <div class="project-card-score-wrapper">
-                                <div><p>Project Score</p></div>
-                                <div class="scoring-circles-wrapper">
-                                    <div class="score-circle bronze"> 60%
-                                    </div>
-                                    <div class="score-circle silver"> 80%
-                                    </div>
-                                    <div class="score-circle gold">100%
-                                    </div>
-                                </div>
-                                <div>
-                                    <div><p class="card-score-definition">60% - pass</p></div>
-                                    <div><p class="card-score-definition">80% - with merit</p></div>
-                                    <div><p class="card-score-definition">100% - with distinction</p></div>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    </div> 
-
-
-                </div>
-                -->    
+            
             </section>    
                 
         </div>
@@ -305,20 +182,27 @@
     </footer>
 </article>
     <script>
-            const scorecard = document.querySelector('.scorecard-animation');
-
-            scorecard.addEventListener('click', function(){
-            scorecard.classList.toggle('is-open');
-            });
-        
-
-    </script>
-    
-    <!-- <script>
         $(document).ready(function(){
+            // the function trun around the scorecard
             
+            $(".scorecard-animation").click(function(){
+            $(this).toggleClass("is-open");
+            });
+            
+            // the function to get a score from scorecircle and set it to scorecard face-front with proper color
+            $(".score-circle").click(function(){
+                let scoreChoice= $(this).text();
+                let color=$(this).css("background-color");
+                let score = $(this).parent().parent().siblings().find(".scorcard-score");
+                
+                $(score).text(scoreChoice); 
+                $(score).css("background-color",color)
+
+            });
+           
+           
        });
-    </script> -->
+    </script>
 </body>
     <script src="assets/js/script.js"></script> 
 </html>

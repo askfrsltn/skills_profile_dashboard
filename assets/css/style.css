@@ -24,6 +24,14 @@ header, main, footer {
 p{
     margin: 0;
 }
+.shadow{
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+}
+
+.button-effect{
+    background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25));
+}
 
 /*-- GENERAL --*/
 
@@ -226,14 +234,16 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    max-height: 80vh;
+    justify-content: flex-start;
+    height: 85vh;
     width: 70vh;    
     overflow: auto;
 }
 
 .project-summary-title{
-    max-width: 40vh;
+    position: relative;
+    margin-top: 10px;
+    max-width: 45vh;
     text-align: center;
     border:1px solid #ccc;
 
@@ -245,23 +255,25 @@ header{
     align-items: center;
     justify-content: space-between;
     border: 1px solid #ccc;
-
+    order: 1;
+    margin-top: 40px;
 }
 
 .chart{
     height: 30vh;
     width: 30vh;
-    margin: 20px;
+    margin-top: 40px;
     border:1px solid #ccc;
     text-align: center;
     border-radius: 50%;
+    order: 2;
  
 }
 /*-- SCORE_PAGE_SUMMARY --*/
 
 .score-project-section{
     position: relative;
-    max-height: 80vh;
+    height: 85vh;
     width: 70vh;
     border:1px solid #ccc;
     display: flex;
@@ -272,49 +284,63 @@ header{
 }
 
 .scorecard{
-    margin: 10px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
-    width: 45vh;
-    border-radius: 5px;
+    width: 40vh;
     perspective: 1000px;
 }
 
 .scorecard-face{
-    height: 20vh;
+    height: 17vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
+
+
+.ucfed-scorecard-animation,
+.ifed-scorecard-animation,
+.dcd-scorecard-animation,
+.fsd-scorecard-animation,
 .scorecard-animation{
     width: 100%;
     height: 100%;
-    transition: transform  1s;
+    transition: transform  0.5s;
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
 }
 
-.card__animation.is-open{
+.scorecard-animation.is-open{
     transform: rotateY(180deg);
-    border-radius: 16px;
 }
 
 
 .scorecard-face-front{
-
+    width: 100%;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: lightgrey;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .scorecard-face-back{
     flex-direction:column;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: lightgrey;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .scorcard-score{
-    border: 1px solid #ccc;
     border-radius: 50%;
     width: 10vh;
     height: 10vh;
@@ -337,9 +363,9 @@ header{
 .scorecard-options{
     display: flex;
     flex-direction:row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 5px;
-    width: 30vh;
+    width: 35vh;
 }
 
 .score-circle {
@@ -352,6 +378,7 @@ header{
     align-items: center;
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+   background-color: #fafafa;
    font-size: 2vh;
 }
 
@@ -359,8 +386,46 @@ header{
     text-align: center;
     margin-bottom: 5px;
     line-height: 1;
+    font-size: 2vh;
 }
 
+.none{
+    background-color: grey;
+}
+
+
+.gold{
+    background-color: rgba(255,215,0 ,0.5);
+}
+
+.silver{
+    background-color: rgba(108,132,134 ,0.5 );
+}
+
+.bronze{
+    background-color: rgba(205, 127, 50, 0.5);;
+}
+
+.score-circle.gold:hover{
+    background-color: rgba(255,215,0 ,1);
+    box-shadow: 0 0 0 0;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+}
+
+.score-circle.silver:hover{
+    background-color: rgba(108,132,134,1);
+    box-shadow: 0 0 0 0;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+}
+
+.score-circle.bronze:hover{
+    background-color: rgba(205, 127, 50, 1);
+    box-shadow: 0 0 0 0;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+}
 
 
 /*-- Library for score cards
