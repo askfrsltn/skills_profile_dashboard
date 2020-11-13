@@ -121,7 +121,6 @@ header{
     align-items: center;
 }
 
-
 .menu-item {
     flex-basis: 70%;
     height: 12vh;
@@ -227,6 +226,7 @@ header{
     flex-wrap: wrap;
     align-content: center;
 }
+
 /*-- SCORE_PAGE_SUMMARY --*/
 
 .score-project-summary{
@@ -234,7 +234,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 85vh;
     width: 70vh;    
     overflow: auto;
@@ -243,33 +243,85 @@ header{
 .project-summary-title{
     position: relative;
     margin-top: 10px;
-    max-width: 45vh;
+    max-width: 70%;
     text-align: center;
-    border:1px solid #ccc;
-
 }
 
 .progress-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid #ccc;
-    order: 1;
+    width: 20vh;
+    max-height: 20vh; 
     margin-top: 40px;
+}
+.progress{
+    height: 5px;
 }
 
+.progress-bar{
+    width: 75%;
+    background-color: rebeccapurple;
+}
+
+
+
 .chart{
-    height: 30vh;
-    width: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40vh;
+    width: 40vh;
     margin-top: 40px;
-    border:1px solid #ccc;
     text-align: center;
     border-radius: 50%;
-    order: 2;
- 
 }
-/*-- SCORE_PAGE_SUMMARY --*/
+
+.project-progress-title{
+    text-align: center;
+}
+
+.chart-project-score{
+    font-family:"Roboto-Mono", sans-serif;
+    font-size: 3vh;
+    font-weight: 900;
+    color: rgb(252,100,77);
+}
+
+.theory-button{
+    margin-bottom: 20px;
+}
+
+/*-- CHART STYLING https://codepen.io/erinesullivan/pen/dmdBpQ?editors=0010 --*/
+
+svg.radial-progress {
+    height: auto;
+    max-width: 100%;
+    padding:0;
+    transform: rotate(-90deg);
+    width: 100%;
+}
+svg.radial-progress circle {
+    fill: rgba(0,0,0,0);
+    stroke: #fd6470;
+    stroke-dashoffset: 219.91148575129; /* Circumference */
+    stroke-width: 3;
+}
+svg.radial-progress circle.incomplete {
+    opacity: 0.25;
+}
+svg.radial-progress circle.complete {
+    stroke-dasharray: 219.91148575129; /* Circumference */
+}
+svg.radial-progress text {
+    fill: #fd6470;
+    font: 5vh;
+    font-family:'Roboto-Mono', sans-serif;
+    text-anchor: middle;
+}
+
+svg.radial-progress circle {
+    stroke: #fd6470;
+}
+
+/*-- PROJECTS-SCORING PAGE --*/
 
 .score-project-section{
     position: relative;
@@ -390,7 +442,7 @@ header{
 }
 
 .none{
-    background-color: grey;
+    background-color: lightgrey;
 }
 
 
@@ -406,157 +458,33 @@ header{
     background-color: rgba(205, 127, 50, 0.5);;
 }
 
+.score-circle.bronze:hover{
+    background-color: lightgrey;
+    box-shadow: 0 0 0 0;
+    cursor: pointer;
+    transition: background-color 10ms ease-in-out;
+}
+
 .score-circle.gold:hover{
     background-color: rgba(255,215,0 ,1);
     box-shadow: 0 0 0 0;
     cursor: pointer;
-    transition: background-color 100ms ease-in-out;
+    transition: background-color 10ms ease-in-out;
 }
 
 .score-circle.silver:hover{
     background-color: rgba(108,132,134,1);
     box-shadow: 0 0 0 0;
     cursor: pointer;
-    transition: background-color 100ms ease-in-out;
+    transition: background-color 10ms ease-in-out;
 }
 
 .score-circle.bronze:hover{
     background-color: rgba(205, 127, 50, 1);
     box-shadow: 0 0 0 0;
     cursor: pointer;
-    transition: background-color 100ms ease-in-out;
+    transition: background-color 10ms ease-in-out;
 }
-
-
-/*-- Library for score cards
-.score-project-section{
-    min-height: 85vh;
-    width: 70vh;
-    border:1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: scroll;
-}
-
-.project-card{
-    margin: 15px;
-    width: 40vh;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
-   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.project-card-face{
-    height: 15vh;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.project-card-title{
-    text-align: center;
-    font-weight: 200;
-    font-size: 3vh;
-    align-items: center;
-    padding: 5px;
-}
-
-.project-card-score{
-    position: relative;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255,255,255,0.95)
-}
-
-.project-card-score-wrapper{
-    text-align: center;
-    align-items: center;
-    padding: 3px;
-}
-
-.score-card-content{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.scoring-circles-wrapper{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-around;
-    padding: 5px;
-    width: 30vh;
-}
-
-.score-circle{
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 7vh;
-    height: 7vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
-   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-   font-size: 2vh;
-   margin-left: 5px;
-}
-
-.gold{
-    background-color: rgba(255,215,0 ,1 );
-}
-
-.silver{
-    background-color: rgba(192,192,192 ,1 );
-}
-
-.bronze{
-    background-color: rgba(205, 127, 50, 1);
-}
-
-.score-circle.gold:hover{
-    background-color: rgba(253, 100, 112, 1);
-    box-shadow: 0 0 0 0;
-    cursor: pointer;
-    transition: background-color 200ms ease-in-out;
-}
-
-.score-circle.silver:hover{
-    background-color: rgba(253, 100, 112, 1);
-    box-shadow: 0 0 0 0;
-    cursor: pointer;
-    transition: background-color 200ms ease-in-out;
-}
-
-.score-circle.bronze:hover{
-    background-color: rgba(253, 100, 112, 1);
-    box-shadow: 0 0 0 0;
-    cursor: pointer;
-    transition: background-color 200ms ease-in-out;
-}
-
-.card-score-definition{
-    font-size: 2vh;
-    margin: 0;
-}
-
-#ucfed-card-score,
-#ifed-card-score,
-#dcd-card-score,
-#fsd-card-score{
-
-}
-
-
---*/
 
 /*-- ANIMATION CLASSES FOR JQUERY --*/
 
