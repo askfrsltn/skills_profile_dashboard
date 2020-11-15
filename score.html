@@ -29,7 +29,7 @@
     <main>    
         <div>
             <div class="page-title">
-                <h1>Score Project</h1>
+                <h1>Score Projects</h1>
             </div>
         </div>
         <div class="score-page-content">
@@ -38,7 +38,7 @@
             <section class="score-project-summary">   
                 
                 <div class="project-summary-title">
-                <h3>Projects Score Summary</h3></div>
+                <h3>Projects Score</h3></div>
                 
                 <div class="progress-wrapper">
                     <div class="project-progress-title">
@@ -50,25 +50,32 @@
                     </div>
                     
                 </div>
-
+                
+                <!-- PROJECTs SCORE DONUT CHART -->
                 <div class="chart">
-                    <div class="chart-project-score">
-                        
-                        <svg class="radial-progress" data-percentage="85" viewBox="0 0 80 80">
-                            <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                            <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 63.774330867872806;"></circle>
-                            <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">%</text>
+                        <p class="projects-score score-text"><span id="projects-overall" class="score-text"></span><span>%</span></p> 
+                        <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path id="progress-bar" class="circle-incomplete"
+                            stroke-dasharray="0, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-complete"
+                            stroke-dasharray="100, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            </svg>
                         </svg>
-                        
-                        
-                    </div>
                 </div>
                 
-
-
                 <div class="button theory-button">
-                    <div class="smaller-title">
-                        <p id="menu-button"><span> [theory] </span><i class="far fa-dot-circle icon"></i>
+                    <div class="smaller-title" class="small-text">
+                        <p id="menu-button" class="middle-text"><span> [summary] </span><i class="far fa-dot-circle icon"></i>
                     </p>
                 </div>
                 </div>
@@ -77,14 +84,14 @@
             
             <!-- Scoring Project Section - Scoring Cards -->  
             <section class="score-project-section">
-                    <div class="project-summary-title"><h3>Projects Score Cards</h3></div>
+                    <div class="project-summary-title"><h3>Projects Scorecards</h3></div>
                     
                     <div class="scorecard">
                         <div class="scorecard-animation">
                             <div class="scorecard-face scorecard-face-front">
-                                <div class="scorcard-score">
+                                <div id="projects-ucfed" class="scorcard-score">
                                     <p>
-                                        <span id="projects-ucfed"></span><span>%</span>
+                                        <span></span><span>%</span>
                                     </p>
                                 </div>
                                 <div class="scorecard-title"><h5>User-Centric Front end development</h5></div>
@@ -126,9 +133,9 @@
                     <div class="scorecard">
                         <div class="scorecard-animation">
                             <div class="scorecard-face scorecard-face-front">
-                                <div class="scorcard-score">
+                                <div id="projects-ifed" class="scorcard-score">
                                     <p>
-                                        <span id="projects-ifed"></span><span>%</span>
+                                        <span></span><span>%</span>
                                     </p>
                                 </div>
                                 <div class="scorecard-title"><h5>Interactive Front end development</h5></div>
@@ -170,9 +177,9 @@
                     <div class="scorecard">
                         <div class="scorecard-animation">
                             <div class="scorecard-face scorecard-face-front">
-                                <div class="scorcard-score">
+                                <div id="projects-dcd" class="scorcard-score">
                                     <p>
-                                        <span id="projects-dcd"></span><span>%</span>
+                                        <span></span><span>%</span>
                                     </p>
                                 </div>
                                 <div class="scorecard-title"><h5>Data Centric Development</h5></div>
@@ -214,9 +221,9 @@
                     <div class="scorecard">
                         <div class="scorecard-animation">
                             <div class="scorecard-face scorecard-face-front">
-                                <div class="scorcard-score">
+                                <div id="projects-fsd" class="scorcard-score">
                                     <p>
-                                        <span id="projects-fsd"></span><span>%</span>
+                                        <span></span><span>%</span>
                                     </p>
                                 </div>
                                 <div class="scorecard-title"><h5>Full Stack Development</h5></div>
@@ -270,7 +277,7 @@
 </article>
     <script>
         $(document).ready(function(){
-            // the function trun around the scorecard
+            // the function flips around the scorecard
             
             $(".scorecard-animation").click(function(){
             $(this).toggleClass("is-open");
@@ -284,52 +291,24 @@
                 
                 $(score).text(scoreChoice); 
                 $(score).css("background-color",color)
-
-            });
-           // building pie chart form https://codepen.io/erinesullivan/pen/dmdBpQ?editors=0010
-            $(function(){
-            // Remove svg.radial-progress .complete inline styling
-            $('svg.radial-progress').each(function( index, value ) { 
-                $(this).find($('circle.complete')).removeAttr( 'style' );
-            });
-
-            // Activate progress animation on scroll
-            $(window).scroll(function(){
-            
-                $('svg.radial-progress').each(function( index, value ) { 
-                    // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
-                    if ( 
-                        $(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.75) &&
-                        $(window).scrollTop() < $(this).offset().top + $(this).height() - ($(window).height() * 0.25)
-                        ){                        
-                        
-                        percent = $(value).data('percentage'); // Get percentage of progress                        
-                        radius = $(this).find($('circle.complete')).attr('r'); // Get radius of the svg's circle.complete                        
-                        circumference = 2 * Math.PI * radius; // Get circumference (2πr)
-                        strokeDashOffset = circumference - ((percent * circumference) / 100);// Get stroke-dashoffset value based on the percentage of the circumference
-                        
-                        $(this).find($('circle.complete')).animate({'stroke-dashoffset': strokeDashOffset}, 1000); // Transition progress for 1.00 seconds
-                        }
-                });
-            }).trigger('scroll');
-
-            // calculate project-score based on scorecards choices
-            
-            $(".score-circle").click(function projectsScoreCalculation(){
-                let pr1 = $("#projects-ucfed").text();
-                let pr2 = $("#projects-ifed").text();
-                let pr3 = $("#projects-dcd").text();
-                let pr4 = $("#projects-fsd").text();
                 
-                let sumScore= parseInt(pr1) + parseInt(pr2) + parseInt(pr3) + parseInt(pr4);
-                let projectsScore= sumScore/4;
             });
-
+            
+            // the function to calculate projects score based on scorecards choices
+            $(".scorecard-face-back").mouseleave(function (){
+                const projectsNumber= 4; // number of cards in projeccts score calculation
+                var ucfed = parseInt($("#projects-ucfed").text()) || 0; // turn the string into number from the card score
+                var ifed = parseInt($("#projects-ifed").text()) || 0;
+                var dcd = parseInt($("#projects-dcd").text()) || 0;
+                var fsd = parseInt($("#projects-fsd").text()) || 0;
+                var projectsScore= (ucfed+ifed+dcd+fsd)/4;       // calculate overal score    
+                $("#projects-overall").text(projectsScore)/projectsNumber;  // set the number to center number on a summary
+                document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress chart (svg object)               
+            
+            });
+                
 
         });
-       
-       
-       });
     </script>
 </body>
     <script src="assets/js/script.js"></script> 

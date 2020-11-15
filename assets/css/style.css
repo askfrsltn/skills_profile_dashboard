@@ -52,6 +52,7 @@ header{
 .page-title{
     text-align: center;
     margin: 0 10px 0 10px;
+    border-bottom: 1px solid #ccc;
 }
 
 .roboto {
@@ -64,6 +65,43 @@ header{
     font-family: "Fira Code",sans-serif;
     font-weight: 100;
     font-size: 40px;
+}
+
+.score-text{
+    text-transform: uppercase;
+    font-family: "Roboto-Mono", sans-serif;
+    font-weight: 700;
+    font-size: 5vh;
+    color: #fd6470;
+    margin: 0;
+    height: 100%;
+}
+
+.title-text{
+    font-family: "Fire-code",sans-serif;
+    font-size: 5vh;
+    font-weight: 700;
+}
+
+.subtitle-text{
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 2vh;
+    font-family: "Fira-code", sans-serif;
+
+}
+
+.middle-text{
+    font-weight: 300;
+    font-size:2vh;
+    font-family: "Fira-code", sans-serif;
+}
+
+.small-text{
+    text-transform: uppercase;
+    font-family: "Fira-code", sans-serif;
+    font-weight: 300;
+    font-size: 1vh;
 }
 
 /*-- HEADER --*/
@@ -230,7 +268,6 @@ header{
 /*-- SCORE_PAGE_SUMMARY --*/
 
 .score-project-summary{
-    border:1px solid #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,11 +286,10 @@ header{
 
 .progress-wrapper{
     width: 20vh;
-    max-height: 20vh; 
-    margin-top: 40px;
 }
+
 .progress{
-    height: 5px;
+    height: 3px;
 }
 
 .progress-bar{
@@ -261,17 +297,15 @@ header{
     background-color: rebeccapurple;
 }
 
-
-
 .chart{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40vh;
-    width: 40vh;
-    margin-top: 40px;
+    flex-direction: column;
+    height: 50vh;
+    width: 50vh;
     text-align: center;
-    border-radius: 50%;
+    margin-top: 0;
 }
 
 .project-progress-title{
@@ -280,54 +314,56 @@ header{
 
 .chart-project-score{
     font-family:"Roboto-Mono", sans-serif;
-    font-size: 3vh;
-    font-weight: 900;
-    color: rgb(252,100,77);
+    font-weight: 700;
+    height: 100%;
 }
 
-.theory-button{
+.projects-score {
+    position:relative;
+    top: 47%;
+    height: 5vh;
+}
+
+.button{
     margin-bottom: 20px;
+ 
 }
 
-/*-- CHART STYLING https://codepen.io/erinesullivan/pen/dmdBpQ?editors=0010 --*/
-
-svg.radial-progress {
-    height: auto;
-    max-width: 100%;
-    padding:0;
-    transform: rotate(-90deg);
+/*-- CHART STYLING https://codepen.io/sergiopedercini/pen/aWawra?editors=1000 --*/
+.circular-chart {
     width: 100%;
-}
-svg.radial-progress circle {
-    fill: rgba(0,0,0,0);
-    stroke: #fd6470;
-    stroke-dashoffset: 219.91148575129; /* Circumference */
-    stroke-width: 3;
-}
-svg.radial-progress circle.incomplete {
-    opacity: 0.25;
-}
-svg.radial-progress circle.complete {
-    stroke-dasharray: 219.91148575129; /* Circumference */
-}
-svg.radial-progress text {
-    fill: #fd6470;
-    font: 5vh;
-    font-family:'Roboto-Mono', sans-serif;
-    text-anchor: middle;
+    max-height: 100%;
+    margin-top: 0;
+    padding: 10px;
 }
 
-svg.radial-progress circle {
-    stroke: #fd6470;
+.circle-incomplete {
+  stroke: #fd6470;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+  z-index: 1;
 }
 
+.circle-complete{
+
+    stroke: rgba(0,0,0,0.1);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
 /*-- PROJECTS-SCORING PAGE --*/
 
 .score-project-section{
     position: relative;
     height: 85vh;
     width: 70vh;
-    border:1px solid #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -371,11 +407,9 @@ svg.radial-progress circle {
     transform: rotateY(180deg);
 }
 
-
 .scorecard-face-front{
     width: 100%;
     position: absolute;
-    border: 1px solid #ccc;
     border-radius: 10px;
     background: lightgrey;
     backface-visibility: hidden;
