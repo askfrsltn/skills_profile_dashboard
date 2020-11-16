@@ -22,7 +22,8 @@
     <header class="top">
     </header>
     <main>
-        <!-- TITLE PAGE -->
+        <!-- LANDING PAGE  -->
+
         <div id="js-home-title" class="landing-page">
             <section class="landingpage-section">
                 <div class="wrapper-menu">
@@ -82,7 +83,7 @@
             </div>
         </div>
 
-        <!-- UNDERSAND SECTION -->
+        <!-- UNDERSAND PAGE -->
         <div id="js-card-menu" class="understand-page">
             <div>
                 <div class="smaller-title middle-text">
@@ -140,21 +141,23 @@
 </article>
 <script>
     $(document).ready(function(){
-    
-    $(function(){
-        $("#menu-button").click(function(){
-            $("#js-home-title").slideUp(500); 
-            $("#js-card-menu").slideDown(1000);
-        }); 
-        $("#js-back-login").click(function(){
-            $("#js-card-menu").slideUp(500);
-            $("#js-home-title").slideDown(1000); 
-        }); 
-        $("#js-back-login1").click(function(){
-            $("#js-card-menu").slideUp(500);
-            $("#js-home-title").slideDown(1000);
-        }); 
-    });
+        
+            $(function(){
+            // 2 functions to flip between landing page and understand page
+            $("#menu-button").click(function(){
+                $("#js-home-title").slideUp(500); 
+                $("#js-card-menu").slideDown(1000);
+            }); 
+            $("#js-back-login").click(function(){
+                $("#js-card-menu").slideUp(500);
+                $("#js-home-title").slideDown(1000); 
+            }); 
+            // the function to return from the bottom of the understand page to landing page
+            $("#js-back-login1").click(function(){ 
+                $("#js-card-menu").slideUp(500);
+                $("#js-home-title").slideDown(1000);
+            }); 
+        });
     
 
 });
