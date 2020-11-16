@@ -66,44 +66,66 @@ header{
     font-weight: 100;
     font-size: 40px;
 }
+.smaller-title{
+    text-align: center;
+    vertical-align: center;
+    margin-top: 30px;
+}
 
+.large-title{
+    text-align: center;
+    vertical-align: center;
+}
+/*-- TEXT SIZES --*/
 .score-text{
     text-transform: uppercase;
-    font-family: "Roboto-Mono", sans-serif;
+    font-family: "Fira Code", sans-serif;
     font-weight: 700;
-    font-size: 5vh;
+    font-size: 6vh;
     color: #fd6470;
     margin: 0;
     height: 100%;
 }
 
 .title-text{
-    font-family: "Fire-code",sans-serif;
-    font-size: 5vh;
-    font-weight: 700;
+    font-family: "Fira Code",sans-serif;
+    font-weight: 500;
+    font-size: 60px;
 }
 
 .subtitle-text{
-    text-transform: capitalize;
     font-weight: 500;
-    font-size: 2vh;
-    font-family: "Fira-code", sans-serif;
+    font-size: 40px;
+    font-family: "Fira Code", sans-serif;
 
 }
 
 .middle-text{
-    font-weight: 300;
-    font-size:2vh;
-    font-family: "Fira-code", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: "Fira Code", sans-serif;
 }
 
 .small-text{
-    text-transform: uppercase;
-    font-family: "Fira-code", sans-serif;
+    font-family: "Fira Code", sans-serif;
     font-weight: 300;
-    font-size: 1vh;
+    font-size: 16px;
 }
 
+.dot-icon{
+    font-size: 4vh;
+    color: grey;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+   border-radius: 50%;
+   transition: color 500ms ease-in-out;
+}
+
+.dot-icon:hover,
+.dot-icon:focus,
+.dot-icon:active, {
+   background-color:rgba(0,0,0,0.8);
+}
 /*-- HEADER --*/
 .top{
     display: flex;
@@ -135,27 +157,14 @@ header{
     margin: 10px;
 }
 
-.smaller-title{
-    font-size: 20px;
-    text-align: center;
-    vertical-align: center;
-    margin-top: 20px;
-}
-
-.large-title{
-    font-size: 60px;
-    text-align: center;
-    vertical-align: center;
-    font-weight: 500;
-}
-
-/*-- MENU --*/
-/*--
 #js-card-menu{
     display:none;
     background:white;
     z-index: 5;
 }
+/*-- MENU --*/
+/*--
+
 
 .wrapper-menu{
     display: flex;
@@ -216,7 +225,18 @@ header{
     flex-wrap:wrap;
 }
 
-.landingpage-section,
+.landingpage-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    width: 70vh;    
+    overflow: auto;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
 .login-section{
     display: flex;
     flex-direction: column;
@@ -234,8 +254,7 @@ header{
     align-items: center;
     justify-content: space-around; 
     min-height: 50vh;
-    width: 70%;
-    border: 1px solid #ccc;
+    width: 80%;
 }
 
 .login-explanation{
@@ -243,6 +262,7 @@ header{
 }
 
 .login-inputs-wrapper{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,11 +270,14 @@ header{
 }
 
 .login-input{
-    min-width: 40vh;
-    margin: 10px;
+    min-width: 100%;
+    margin: 5px;
     border-radius:5px;
-    border-bottom: 1px solid #ccc;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
+
+
 /*-- FANCY INPUT --*/
 
 /*-- UNDERSTAND PAGE --*/
@@ -293,7 +316,7 @@ header{
 
 .dashboard-dummy{
     height: 69vh;
-    width: 50vh;
+    width: 45vh;
     border: 1px solid #ccc;
     order: 1;
     margin: 20px;
@@ -553,7 +576,7 @@ header{
     background-color: lightgrey;
     box-shadow: 0 0 0 0;
     cursor: pointer;
-    transition: background-color 10ms ease-in-out;
+    transition: background-color 500ms ease-in-out;
 }
 
 .score-circle.gold:hover{
