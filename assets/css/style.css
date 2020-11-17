@@ -21,7 +21,7 @@ header, main, footer {
     flex-shrink: 0;
 }
 
-p{
+h1,h2,h3,h4,h5,p{
     margin: 0;
 }
 .shadow{
@@ -109,7 +109,7 @@ header{
 .small-text{
     font-family: "Fira Code", sans-serif;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 0,75px;
 }
 
 .dot-icon{
@@ -159,7 +159,7 @@ header{
 
 
 #js-card-menu{
-    display:none;
+    display:;
     background:white;
     z-index: 5;
 }
@@ -254,6 +254,7 @@ header{
     cursor: pointer;
 }
 
+.scoringprocess-pages,
 .dashboard-pages{
     display: flex;
     flex-direction: row;
@@ -271,6 +272,83 @@ header{
 	background-size: cover;
 }
 
+/*-- UNDERSTAND PAGE-PROCESS SECTION --*/
+.process-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    margin: auto;
+}
+
+.process-step{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 12vh;
+    width: 90%;
+    margin: 10px;
+}
+
+.process-step-number{
+    border: 1px solid #ccc;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%; 
+    margin:5px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+
+}
+.process-step-icon{
+    font-size: 40px;
+    color: #fd6470;
+}
+
+.process-step-title{
+    margin-left: 10px;
+    width: 40vh;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 3;
+}
+.process-step-description{
+    font-size: 0,5rem;
+    color:grey;
+}
+
+/*-- UNDERSTAND PAGE-LOGIC SECTION --*/
+.logic-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+.logic-card{
+    border: 1px solid #ccc;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+}
+.logic-card-title{
+    text-align: center;
+}
+
+.logic-description{
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
 
 /*-- SCORE_PAGE --*/
 #js-scoresummary{
@@ -403,6 +481,8 @@ header{
   }
 }
 /*-- PROJECTS-SCORING PAGE --*/
+.scoring-logic-section,
+.process-section,
 .score-modules-section,
 .score-project-section{
     position: relative;
@@ -415,6 +495,7 @@ header{
     overflow-y: scroll; 
     border: 1px solid #ccc;
 }
+
 
 .scorecard{
     margin: 5px;
