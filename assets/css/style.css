@@ -283,6 +283,12 @@ header{
     z-index: 5;
 }
 
+#js-theory{
+    display:;
+    background:white;
+    z-index: 6;
+}
+
 
 
 .score-page{
@@ -314,7 +320,7 @@ header{
     overflow: auto;
     border: 1px solid #ccc;
 }
-
+.theory-summary-title,
 .project-summary-title{
     position: relative;
     margin-top: 10px;
@@ -397,7 +403,7 @@ header{
   }
 }
 /*-- PROJECTS-SCORING PAGE --*/
-
+.score-modules-section,
 .score-project-section{
     position: relative;
     height: 85vh;
@@ -407,6 +413,7 @@ header{
     align-items: center;
     justify-content: space-between;
     overflow-y: scroll; 
+    border: 1px solid #ccc;
 }
 
 .scorecard{
@@ -425,8 +432,6 @@ header{
     justify-content: space-around;
     align-items: center;
 }
-
-
 
 .ucfed-scorecard-animation,
 .ifed-scorecard-animation,
@@ -558,4 +563,4 @@ header{
     transition: background-color 10ms ease-in-out;
 }
 
-/*-- ANIMATION CLASSES FOR JQUERY --*/
+/*-- THEORY SCORING --*/
