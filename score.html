@@ -27,14 +27,15 @@
     <header class="top">
     </header>
     <main>    
+        <!-- OVERALL SUMMARY -->
         <article id="js-scoresummary">   
             <div>
                 <div class="page-title">
                     <h1>Summary</h1>
                 </div>
                 <div class="score-page-content">   
-                    <!-- SUMMARY - PROJECTS SECTION -->
-                    <section class="score-project-summary">   
+                    <!-- PROJECTS SECTION - SUMMARY -->
+                    <section class="score-project-summary projects-background">   
 
                         <div class="project-summary-title">
                             <h3>Projects Score</h3>
@@ -44,14 +45,14 @@
                             <div class="project-progress-title">
                                 <p>Progress:</p>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="4"></div>
+                                    <div class="projects-progress-bar progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                                <p>3/4</p>
+                                <p><span id="project-scoring-progress">0</span><span>/4</span></p>
                             </div>
                             
                         </div>
                         
-                        <!-- summary page Donut Chart for projects -->
+                        <!-- PROJECTS - summary page Donut Chart -->
                         <div class="chart">
                                 <p class="projects-score score-text"><span id="projects-overall-summary" class="score-text"></span><span>%</span></p> 
                                 <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
@@ -81,23 +82,23 @@
                         </div>
                     </section>
 
-                    <!-- SUMMARY - THEORY SECTION -->
-                    <section class="score-theory-summary">
+                    <!-- THEORY SECTION - SUMMARY -->
+                    <section class="score-theory-summary theory-background">
                         <div class="project-summary-title">
                             <h3>Theory Score</h3>
                         </div>
                         <div class="progress-wrapper">
                             <div class="project-progress-title">
                                 <p>Progress:</p>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="10"></div>
-                                </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
                                 <p>3/10</p>
                             </div>
                             
                         </div>
                         
-                        <!-- summary page Donut Chart for projects -->
+                        <!-- THEORY. summary page Donut Chart  -->
                         <div class="chart">
                                 <p class="projects-score score-text"><span id="theory-overall-summary" class="score-text"></span><span>%</span></p> 
                                 <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
@@ -129,7 +130,9 @@
                 </div>
             </div>
         </article>
-        <article id="js-projects">
+        
+        <!-- PROJECTS SCORING PAGE -->
+        <article id="js-projects" class="projects-background">
             <div>
                 <div class="page-title">
                     <h1>Projects</h1>
@@ -146,15 +149,15 @@
                     <div class="progress-wrapper">
                         <div class="project-progress-title">
                             <p>Progress:</p>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="4"></div>
-                            </div>
-                            <p>3/4</p>
+                                <div class="progress">
+                                    <div class="projects-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            <p><span id="project-scoring-progress1">0</span><span>/4</span></p>
                         </div>
                         
                     </div>
                     
-                    <!-- PROJECTs SCORE DONUT CHART -->
+                    <!-- PROJECTs SCORE DONUT CHART for THEORY-->
                     <div class="chart">
                             <p class="projects-score score-text"><span id="projects-overall" class="score-text"></span><span>%</span></p> 
                             <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
@@ -368,7 +371,7 @@
         </article>
         
         <!-- THEORY SCORING PAGE -->
-        <article id="js-theory">
+        <article id="js-theory" class="theory-background">
             <div>
                 <div class="page-title">
                     <h1>Theory</h1>
@@ -377,7 +380,7 @@
             
             <div class="score-page-content">
                 
-                <!-- Scoring Theory Section - Theory Chart -->
+                <!-- THEORY Section -->
                 <section class="score-theory-summary">
                     <div class="project-summary-title">
                         <h3>Score</h3>
@@ -386,15 +389,15 @@
                     <div class="progress-wrapper">
                         <div class="project-progress-title">
                             <p>Progress:</p>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="4"></div>
-                            </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             <p>3/10</p>
                         </div>
                         
                     </div>
                         
-                    <!-- PROJECTs SCORE DONUT CHART -->
+                    <!-- THEORY SCORE DONUT CHART -->
                     <div class="chart">
                             <p class="projects-score score-text"><span id="" class="score-text"></span><span>%</span></p> 
                             <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
@@ -418,16 +421,150 @@
                         
                     <div class="button theory-button">
                             <div class="smaller-title" class="small-text">
-                                <p id="" class="middle-text"><span> [summary] </span><i class="dot-icon far fa-dot-circle icon"></i>
+                                <p id="js-summary-button1" class="middle-text"><span> [summary] </span><i class="dot-icon far fa-dot-circle icon"></i>
                             </p>
                         </div>
                     </div>
                 </section>
                 
-                <!-- Scoring Theory Section - 10 Modules Cards -->
+                <!-- THEORY Section - 10 Modules Cards Scorig-->
                 <section class="score-modules-section">
                     <div class="theory-summary-title"><h3>Scorecards</h3></div>
                     
+                    <!-- THEORY.HTML Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-html" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>HTML</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- THEORY.CSS Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-css" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>CSS</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- THEORY.UCFED Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-ucfed" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>User Centric Front End Development</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- THEORY.IFED Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-js" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Java Script FUndamentals</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- THEORY.Java Script Fundamentals Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-ifed" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Interactive Front End Deelopment</h5></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- THEORY.Python Fundamentals Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-pythonfu" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Python Fundamentals</h5></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- THEORY.Practical Python Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-pythonpr" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Practical Python</h5></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- THEORY.Data centric Development Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-dcd" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Data centric Development</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- THEORY.Fullstack framework with Django Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-fsd" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Fullstack framework with Django</h5></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- THEORY.Development Project management Module -->
+                    <div class="scorecard-module">
+                        <div class="scorecard-animation-module">
+                            <div class="scorecard-face-module scorecard-face-front-module">
+                                <div id="theory-dpm" class="scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Development Project Management</h5></div>
+                            </div>
+                        </div>
+                    </div>
+<!--
                     <div class="scorecard">
                         <div class="scorecard-animation">
                             <div class="scorecard-face scorecard-face-front">
@@ -443,17 +580,17 @@
                                 <div class="scorecard-options">
                                     <div class="score-circle"> 
                                         <p>
-                                            <span id=""></span>0<span>%</span>
+                                            <span ></span>0<span>%</span>
                                         </p>
                                     </div>
                                     <div class="score-circle bronze"> 
                                         <p>
-                                            <span id=""></span>60<span>%</span>
+                                            <span ></span>60<span>%</span>
                                         </p>
                                     </div>
                                     <div class="score-circle silver"> 
                                         <p>
-                                            <span id=""></span>80<span>%</span>
+                                            <span ></span>80<span>%</span>
                                         </p>
                                     </div>
                                     <div class="score-circle gold">
@@ -468,7 +605,7 @@
                                     <span><p class="card-score-definition">100% - used many times, can teach</p></span>
                                 </div>
                             </div>
-
+-->
                         </div>
                     </div>
 
@@ -492,40 +629,51 @@
         </div>
     </footer>
 </article>
+    <!-- JAVASCRIPT SECTION -->
     <script>
         $(document).ready(function(){
-            //the function to go from score summary to projects/theory scoring page
+            //PAGES. the function to go from score summary to projects scoring page
             $(function(){
-            // 2 functions to flip between landing page and understand page
-            $("#projects-button").click(function(){
-                $("#js-scoresummary").slideUp(500); 
-                $("#js-projects").slideDown(1000);
-            }); 
-            $("#js-summary-button").click(function(){
-                $("#js-projects").slideUp(500);
-                $("#js-scoresummary").slideDown(1000); 
-            }); 
-            // the function to return from the bottom of the understand page to landing page
-             
+            
+                $("#projects-button").click(function(){
+                    $("#js-scoresummary").slideUp(500); 
+                    $("#js-projects").slideDown(1000);
+                }); 
+                $("#js-summary-button").click(function(){
+                    $("#js-projects").slideUp(500);
+                    $("#js-scoresummary").slideDown(1000); 
+                });              
             });
-
-            // the function flips around the scorecard
+            
+            //PAGES.the function to go from score summary to THEORY projects scoring page
+            $(function(){
+            
+                $("#theory-button").click(function(){ //click event
+                    $("#js-scoresummary").slideUp(500); 
+                    $("#js-theory").slideDown(1000);
+                }); 
+                $("#js-summary-button1").click(function(){//click event 
+                    $("#js-theory").slideUp(500);
+                    $("#js-scoresummary").slideDown(1000); 
+                });             
+            });
+            // PROJECT CARD. the function flips around the scorecard
             $(".scorecard-animation").click(function(){
             $(this).toggleClass("is-open");
             });
             
-            // the function to get a score from scorecircle and set it to scorecard face-front with proper color
+            // CARD. the function to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards
             $(".score-circle").click(function(){
                 let scoreChoice= $(this).text();
                 let color=$(this).css("background-color");
                 let score = $(this).parent().parent().siblings().find(".scorcard-score");
                 
-                $(score).text(scoreChoice); 
-                $(score).css("background-color",color)
-                
+                $(score).text(scoreChoice); // score
+                $(score).css("background-color",color) // color
+                              
             });
             
-            // the function to calculate projects score based on scorecards choices
+            // CHART. the function to calculate projects score and scoring progress based on scorecards choices based on any scorecard click
             $(".scorecard-face-back").mouseleave(function (){
                 const projectsNumber= 4; // number of cards in projeccts score calculation
                 var ucfed = parseInt($("#projects-ucfed").text()) || 0; // turn the string into number from the card score
@@ -533,12 +681,39 @@
                 var dcd = parseInt($("#projects-dcd").text()) || 0;
                 var fsd = parseInt($("#projects-fsd").text()) || 0;
                 var projectsScore= (ucfed+ifed+dcd+fsd)/4;       // calculate overal score    
-                $("#projects-overall").text(projectsScore)/projectsNumber;  // set the number to center number on a summary
-                document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress chart (svg object)               
-            
-            });
+                $("#projects-overall").text(projectsScore)/projectsNumber; // set the number to chart % on a summary section
+                $("#projects-overall-summary").text(projectsScore)/projectsNumber;   // set the number to chart % on a summary section
                 
+                document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress red bar on the chart section(svg object)
+                document.getElementById("progress-bar1").setAttribute("stroke-dasharray", projectsScore+", 100" );// set the score to the donut progress red bar on the summary page chart (svg object)
 
+
+                // PROGRESS. progress bar for projects calulcation
+                if(document.getElementById("projects-ucfed").innerText=="%"){
+                    ucfedProgress = 0;
+                } else {ucfedProgress = 1;};
+                if(document.getElementById("projects-ifed").innerText=="%"){
+                    ifedProgress = 0;
+                } else {ifedProgress = 1;};
+                if(document.getElementById("projects-dcd").innerText=="%"){
+                    dcdProgress = 0;
+                } else {dcdProgress = 1;};
+                if(document.getElementById("projects-fsd").innerText=="%"){
+                    fsdProgress = 0;
+                } else {fsdProgress = 1;};
+                var projectsScoringProgress=ucfedProgress+ifedProgress+dcdProgress+fsdProgress;
+                
+                // PROGRESS. progress number for projects on 2 projects summary pages
+                $("#project-scoring-progress").text(projectsScoringProgress);
+                $("#project-scoring-progress1").text(projectsScoringProgress);
+                
+                // PROGRESS. vertical progress bar for projects on 2 summary section and page
+                $(".projects-progress-bar").css("width", projectsScoringProgress/projectsNumber*100+"%");
+             });
+            
+            
+            
+            
         });
     </script>
 </body>

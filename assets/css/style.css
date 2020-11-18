@@ -21,7 +21,23 @@ header, main, footer {
     flex-shrink: 0;
 }
 
-h1,h2,h3,h4,h5,p{
+
+
+/*-- GENERAL --*/
+
+body{
+    font-family: "Fira Code", sans-serif;
+    font-weight: 200;
+}
+
+footer{
+    display: flex;
+}
+
+header{
+    padding: 10px;
+}
+ul,h1,h2,h3,h4,h5,p{
     margin: 0;
 }
 .shadow{
@@ -32,23 +48,6 @@ h1,h2,h3,h4,h5,p{
 .button-effect{
     background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25));
 }
-
-/*-- GENERAL --*/
-
-body{
-    font-family: "Fira Code", sans-serif;
-    font-weight: 200;
-}
-
-footer{
-    padding: 10px;
-    display: flex;
-}
-
-header{
-    padding: 10px;
-}
-
 .page-title{
     text-align: center;
     margin: 0 10px 0 10px;
@@ -114,29 +113,30 @@ header{
 
 .dot-icon{
     font-size: 4vh;
-    color: grey;
+    color: rgb(187, 155, 155);
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
    border-radius: 50%;
-   transition: color 500ms ease-in-out;
+   transition: color 1000ms ease-in-out;
 }
 
 .dot-icon:hover,
 .dot-icon:focus,
-.dot-icon:active, {
-    background-color:rgba(0, 0, 0.8);
+.dot-icon:active{
+    color: #fd6470;
 }
 /*-- HEADER --*/
 .top{
     display: flex;
     justify-content: flex-end;
-
+    height: 0;
 }
 
 .copyright{
     font-size: 20px;
     color: #ccc;
     justify-content: center;
+    margin: 10px;
 }
 
 /*-- LANDING --*/
@@ -159,7 +159,7 @@ header{
 
 
 #js-card-menu{
-    display:;
+    display:none;
     background:white;
     z-index: 5;
 }
@@ -334,12 +334,18 @@ header{
     height: 100%;
 }
 .logic-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     border: 1px solid #ccc;
-    margin: 15px;
+    width: 95%;
+    margin-top: 5px;
     border-radius: 10px;
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
+
 .logic-card-title{
     text-align: center;
 }
@@ -349,25 +355,27 @@ header{
     padding: 10px;
     text-align: left;
 }
-
-/*-- SCORE_PAGE --*/
-#js-scoresummary{
-
+.scorecard-exmaple-theory,
+.scorecard-exmaple-project{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    perspective: 1000px;
 }
 
+/*-- SCORE_PAGE --*/
 #js-projects{
     display:none;
-    background:white;
     z-index: 5;
 }
 
 #js-theory{
-    display:;
-    background:white;
+    display:none;
     z-index: 6;
 }
-
-
 
 .score-page{
     display: flex;
@@ -394,10 +402,11 @@ header{
     align-items: center;
     justify-content: space-between;
     height: 85vh;
-    width: 70vh;    
+    width: 72vh;    
     overflow: auto;
     border: 1px solid #ccc;
 }
+
 .theory-summary-title,
 .project-summary-title{
     position: relative;
@@ -414,10 +423,12 @@ header{
     height: 3px;
 }
 
-.progress-bar{
-    width: 75%;
-    background-color: rebeccapurple;
+.projects-progress-bar{
+    width: 0;
+    background-color: black;
 }
+
+
 
 .chart{
     display: flex;
@@ -452,14 +463,14 @@ header{
 }
 
 /*-- CHART STYLING https://codepen.io/sergiopedercini/pen/aWawra?editors=1000 --*/
-.circular-chart {
+.circular-chart{
     width: 100%;
     max-height: 100%;
     margin-top: 0;
     padding: 10px;
 }
 
-.circle-incomplete {
+.circle-incomplete{
   stroke: #fd6470;
   fill: none;
   stroke-width: 2;
@@ -480,10 +491,14 @@ header{
     stroke-dasharray: 0 100;
   }
 }
+
 /*-- PROJECTS-SCORING PAGE --*/
+.projects-background{
+    background-color: rgba(38,80,119,0.2);
+}
+
 .scoring-logic-section,
 .process-section,
-.score-modules-section,
 .score-project-section{
     position: relative;
     height: 85vh;
@@ -512,6 +527,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .ucfed-scorecard-animation,
@@ -535,7 +551,7 @@ header{
     width: 100%;
     position: absolute;
     border-radius: 10px;
-    background: lightgrey;
+    background-color: rgba(38,80,119,0.5);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
@@ -544,7 +560,7 @@ header{
     flex-direction:column;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background: lightgrey;
+    background-color: rgba(38,80,119,0.5);
     transform: rotateY(180deg);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -579,7 +595,7 @@ header{
 }
 
 .score-circle {
-    border: 1px solid #ccc;
+    border: rgba(38,80,119,1);
     border-radius: 50%;
     width: 7vh;
     height: 7vh;
@@ -603,9 +619,8 @@ header{
     background-color: lightgrey;
 }
 
-
 .gold{
-    background-color: rgba(255,215,0 ,0.5);
+    background-color: rgba(255, 215, 0 , 0.5);
 }
 
 .silver{
@@ -644,4 +659,94 @@ header{
     transition: background-color 10ms ease-in-out;
 }
 
-/*-- THEORY SCORING --*/
+/*-- THEORY SCORING PAGE--*/
+
+.theory-background{
+    background-color: rgba(73,75,104,0.4);
+}
+.score-modules-section{
+    position: relative;
+    width: 70vh;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: scroll; 
+    border: 1px solid #ccc;
+}
+
+.scorecard-module{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vh;
+    perspective: 1000px;
+}
+.scorecard-animation-module{
+    width: 100%;
+    height: 100%;
+    transition: transform  0.5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.scorecard-face-module{
+    height: 13vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba( 73,75,104, 0.5);
+}
+
+scorecard-element{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    perspective: 1000px;
+}
+.scorecard-animation-element{
+    width: 100%;
+    height: 100%;
+    transition: transform  0.5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+scorecard-face-element{
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+scorecard-face-front-element{
+    width: 100%;
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgba(73,75,104,0.5);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+scorecard-face-back-element {
+  flex-direction:column;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(73,75,104,0.5);
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+scorecard-animation-element.is-open{
+    transform: rotateY(180deg);
+}
