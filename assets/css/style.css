@@ -108,14 +108,18 @@ ul,h1,h2,h3,h4,h5,p{
 .small-text{
     font-family: "Fira Code", sans-serif;
     font-weight: 300;
-    font-size: 0,75px;
+    font-size: 0,4rem;
+    text-transform: uppercase;
 }
 
 .dot-icon{
     font-size: 4vh;
-    color: rgb(187, 155, 155);
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
-   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    color: #fd6470;
+    box-shadow: inset 0 0 15px rgba(55, 84, 170,0),
+    inset 0 0 20px rgba(255, 255, 255,0),
+    7px 7px 15px rgba(55, 84, 170,.15),
+    -7px -7px 20px rgba(255, 255, 255,1),
+    inset 0px 0px 4px rgba(255, 255, 255,.2);
    border-radius: 50%;
    transition: color 1000ms ease-in-out;
 }
@@ -123,7 +127,12 @@ ul,h1,h2,h3,h4,h5,p{
 .dot-icon:hover,
 .dot-icon:focus,
 .dot-icon:active{
-    color: #fd6470;
+    color: rgba(112, 128, 144, 0.6);
+    box-shadow: 
+      inset 7px 7px 15px rgba(55, 84, 170,.15),
+      inset -7px -7px 20px rgba(255, 255, 255,1),
+      0px 0px 4px rgba(255, 255, 255,.2);
+
 }
 /*-- HEADER --*/
 .top{
@@ -134,7 +143,7 @@ ul,h1,h2,h3,h4,h5,p{
 
 .copyright{
     font-size: 20px;
-    color: #ccc;
+    color: rgba(112,126,144,1);
     justify-content: center;
     margin: 10px;
 }
@@ -322,7 +331,7 @@ ul,h1,h2,h3,h4,h5,p{
 }
 .process-step-description{
     font-size: 0,5rem;
-    color:grey;
+    color:rgba(112,126,144,1);
 }
 
 /*-- UNDERSTAND PAGE-LOGIC SECTION --*/
@@ -409,7 +418,6 @@ ul,h1,h2,h3,h4,h5,p{
 
 .theory-summary-title,
 .project-summary-title{
-    position: relative;
     margin-top: 10px;
     max-width: 70%;
     text-align: center;
@@ -523,7 +531,7 @@ ul,h1,h2,h3,h4,h5,p{
 }
 
 .scorecard-face{
-    height: 17vh;
+    height: 15vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -586,6 +594,7 @@ ul,h1,h2,h3,h4,h5,p{
     line-height: 1.5;
 }
 
+
 .scorecard-options{
     display: flex;
     flex-direction:row;
@@ -609,10 +618,10 @@ ul,h1,h2,h3,h4,h5,p{
 }
 
 .card-score-definition{
-    text-align: center;
+    text-align: left;
     margin-bottom: 5px;
     line-height: 1;
-    font-size: 2vh;
+    font-size: 1.5vh;
 }
 
 .none{
@@ -682,7 +691,7 @@ ul,h1,h2,h3,h4,h5,p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40vh;
+    width: 39vh;
     perspective: 1000px;
 }
 .scorecard-animation-module{
@@ -699,54 +708,99 @@ ul,h1,h2,h3,h4,h5,p{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: rgba( 73,75,104, 0.5);
 }
 
-scorecard-element{
-    margin: 5px;
+.modules-scorecard-section{
+    position: relative;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*-- Theory Element Scorecard --*/ 
+
+.scorecard-element{
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     perspective: 1000px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+        margin-top:5px;
 }
+
 .scorecard-animation-element{
     width: 100%;
     height: 100%;
-    transition: transform  0.5s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    position: relative;
 }
 
-scorecard-face-element{
-    height: 15vh;
+.scorecard-face-element{
+    height: 12vh;
+    margin-top:5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-scorecard-face-front-element{
+.scorecard-face-front-element{
     width: 100%;
     position: absolute;
-    border-radius: 10px;
-    background-color: rgba(73,75,104,0.5);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    cursor: pointer;
+    margin-top:5px;
 }
 
-scorecard-face-back-element {
-  flex-direction:column;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: rgba(73,75,104,0.5);
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+.scorecard-face-back-element {
+    flex-direction:column;
+    border-radius: 5px;
+    display: none;
+    margin-top:5px;
+    
+}
+.scorecard-face-front-element.close{
+    visibility: hidden;
+    -webkit-visibility: hidden;
 }
 
-scorecard-animation-element.is-open{
-    transform: rotateY(180deg);
+.scorecard-title-element{
+    width: 20vh;
+    padding: 5px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.scorecard-module-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.progress-wrapper-module{
+    width: 13vh;
+    margin-top: 15px;
+    align-self: center;
+    justify-content: space-around;
+}
+.scorecard-title-mod{
+    width: 25vh;
+    padding: 5px;
+    text-align: left;
+    line-height: 1.2;
+    margin-left:10px;
+    font-size: 1rem;
+}
+.progress-definition{
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1;
+    font-size: 1.5vh;
+}
+/*-- Connector to js progress calculator --*/
+
+.module-progress-bar{
+    width: 0;
+    background-color: darkmagenta;
 }
