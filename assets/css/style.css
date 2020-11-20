@@ -673,6 +673,8 @@ ul,h1,h2,h3,h4,h5,p{
 .theory-background{
     background-color: rgba(73,75,104,0.4);
 }
+/*-- Theory Element Scorecard --*/ 
+
 .score-modules-section{
     position: relative;
     width: 70vh;
@@ -685,33 +687,6 @@ ul,h1,h2,h3,h4,h5,p{
     border: 1px solid #ccc;
 }
 
-.scorecard-module{
-    margin: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 39vh;
-    perspective: 1000px;
-}
-.scorecard-animation-module{
-    width: 100%;
-    height: 100%;
-    transition: transform  0.5s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    position: relative;
-}
-
-.scorecard-face-module{
-    height: 13vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 5px;
-    background-color: rgba( 73,75,104, 0.5);
-}
-
 .modules-scorecard-section{
     position: relative;
     display: flex;
@@ -719,57 +694,34 @@ ul,h1,h2,h3,h4,h5,p{
     justify-content: flex-start;
 }
 
-/*-- Theory Element Scorecard --*/ 
-
-.scorecard-element{
+.scorecard-module{
+    margin: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    perspective: 1000px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-        margin-top:5px;
+    width: 39vh;
 }
 
-.scorecard-animation-element{
+.scorecard-animation-module{
     width: 100%;
+    height: 15vh;
+    transition: transform  0.5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.scorecard-face-module{
     height: 100%;
-}
-
-.scorecard-face-element{
-    height: 12vh;
-    margin-top:5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.scorecard-face-front-element{
-    width: 100%;
-    position: absolute;
-    cursor: pointer;
-    margin-top:5px;
-}
-
-.scorecard-face-back-element {
-    flex-direction:column;
     border-radius: 5px;
-    display: none;
-    margin-top:5px;
-    
-}
-.scorecard-face-front-element.close{
-    visibility: hidden;
-    -webkit-visibility: hidden;
+    background-color: rgba( 73,75,104, 0.5);
 }
 
-.scorecard-title-element{
-    width: 20vh;
-    padding: 5px;
-    text-align: center;
-    line-height: 1.5;
-}
+
 
 .scorecard-module-title{
     display: flex;
@@ -779,11 +731,74 @@ ul,h1,h2,h3,h4,h5,p{
 }
 
 .progress-wrapper-module{
-    width: 13vh;
+    width: 15vh;
     margin-top: 15px;
     align-self: center;
     justify-content: space-around;
 }
+
+/*-- Theory Element Scorecard --*/ 
+
+
+.scorecard-element{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 39vh;
+    perspective: 1000px;
+    border-radius: 5px;
+    margin-top:5px;
+}
+
+.scorecard-animation-element{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.scorecard-face-element{
+    height: 15vh;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+.scorecard-face-front-element{
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.scorecard-face-back-element {
+    width: 100%;
+    position: relative;
+    flex-direction:column;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.scorecard-title-element{
+    width: 70%;
+    padding: 5px;
+    text-align: left;
+    font-size: 1rem;
+    font-family: "Roboto-Mono", sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #f1f1f1;
+}
+
+.hidden{
+    display: none;
+}
+
 .scorecard-title-mod{
     width: 25vh;
     padding: 5px;
@@ -792,11 +807,15 @@ ul,h1,h2,h3,h4,h5,p{
     margin-left:10px;
     font-size: 1rem;
 }
+
 .progress-definition{
     text-align: center;
     margin-top: 10px;
     line-height: 1;
     font-size: 1.5vh;
+}
+.scorecard-logic{
+    padding-left: 10px;
 }
 /*-- Connector to js progress calculator --*/
 
