@@ -779,7 +779,7 @@
                                     <div class="scorecard-title-mod"><h5>CSS</h5></div>
                                     <div class="progress-wrapper-module">
                                         <div class="progress">
-                                            <div class="css-progress-bar" role="progressbar" style="width:0%;" 
+                                            <div class="css-progress-bar" role="progressbar" style="width: 0%;" 
                                             aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <p class="progress-definition">
@@ -1158,11 +1158,11 @@
                                     <div class="scorecard-title-mod"><h5>User-Centric front end</h5></div>
                                     <div class="progress-wrapper-module">
                                         <div class="progress">
-                                            <div class="module-progress-bar" role="progressbar" style="width: 35%;" 
+                                            <div class="ucfed-progress-bar" role="progressbar" style="width: 0%;" 
                                             aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <p class="progress-definition">
-                                            scored <span id="ucfed-progress">4</span><span> of 11</span>
+                                            scored <span id="ucfed-progress">0</span><span> of 11</span>
                                         </p>
                                     </div>
                                 </div>
@@ -1261,7 +1261,7 @@
                             <div class="scorecard-element hidden">
                                 <div class="scorecard-animation-element">
                                     <div class="scorecard-face-element scorecard-face-front-element">
-                                        <div id="theory-ucfedheroimage" class="scorcard-score">
+                                        <div id="theory-ucfed-heroimage" class="scorcard-score">
                                             <p>
                                                 <span></span><span>%</span>
                                             </p>
@@ -4600,13 +4600,14 @@
                 
                 // PROGRESS. vertical progress bar for projects on 2 summary section and page
                 $(".projects-progress-bar").css("width", projectsScoringProgress/projectsNumber*100+"%");
+
              });
             
             
             // THEORY. MODULE. open list of element for the module
             $(".scorecard-animation-module").click(function(){
-                $(this).siblings().children().slideToggle();
-                $(this).parents().siblings().children().find(".scorecard-element").slideUp();// close previously open list of element for other modules
+                $(this).siblings().children().slideToggle(700);
+                $(this).parents().siblings().children().find(".scorecard-element").slideUp(700);// close previously open list of element for other modules
                 
             });
 
@@ -4623,16 +4624,7 @@
                 });             
             });
 
-            // PROGRESS. progress bar for elemennts within modules calculation
-                $(".score-circle").click(function(){
-                $(".scorecard-module").each(function() {
-                    // select visible children
-                    let a = $(this).find('.scorecard-animation-element').length;
-                    });
-                });
-
             // PROGRESS. HTML progress bar for modules calculation
-/*--
             $(".score-circle").click(function(){
                 if(document.getElementById("theory-html-document").innerText=="%"){
                     htmlDocument = 0;
@@ -4692,11 +4684,71 @@
                 
                 const cssScoringNumber=8
                 let cssScoringProgress= cssTypes + cssDom + cssPriority + cssFont + cssBox + cssBackground + cssLayout + cssVisibility;
+                
                 $("#css-progress").text(cssScoringProgress); // PROGRESS. progress number for projects 
                 $(".css-progress-bar").css("width", cssScoringProgress/cssScoringNumber*100+"%"); // PROGRESS. vertical progress bar for HTML 
-             
             });
-            --*/
+            
+            // PROGRESS. UCFED progress bar for modules calculation
+            $(".score-circle").click(function(){
+                if(document.getElementById("theory-ucfed-setup").innerText=="%"){
+                    ucfedSetup = 0;
+                } else {ucfedSetup = 1;};
+                if(document.getElementById("theory-ucfed-header").innerText=="%"){
+                    ucfedContent = 0;
+                } else {ucfedContent = 1;};
+                if(document.getElementById("theory-ucfed-heroimage").innerText=="%"){
+                    ucfedHeroimage = 0;
+                } else {ucfedHeroimage = 1;};
+                if(document.getElementById("theory-ucfed-responsiveness").innerText=="%"){
+                    ucfedResponsiveness = 0;
+                } else {ucfedResponsiveness = 1;};
+                if(document.getElementById("theory-ucfed-signupform").innerText=="%"){
+                    ucfedContactpage = 0;
+                } else {ucfedContactpage = 1;};
+                if(document.getElementById("theory-ucfed-git").innerText=="%"){
+                    ucfedGit = 0;
+                } else {ucfedGit = 1;};
+                if(document.getElementById("theory-ucfed-inspect").innerText=="%"){
+                    ucfedFix = 0;
+                } else {ucfedFix = 1;}
+                if(document.getElementById("theory-ucfed-bootstrap").innerText=="%"){
+                    ucfedBootstrap = 0;
+                } else {ucfedBootstrap = 1;}
+                if(document.getElementById("theory-ucfed-gridflexbox").innerText=="%"){
+                    ucfedGrid = 0;
+                } else {ucfedGrid = 1;}
+                if(document.getElementById("theory-ucfed-uxd").innerText=="%"){
+                    ucfedUid = 0;
+                } else {ucfedUid = 1;}
+                if(document.getElementById("theory-ucfed-cvsetup").innerText=="%"){
+                    ucfedCvProject = 0;
+                } else {ucfedCvProject = 1;}
+                
+                const ucfedScoringNumber=11
+                let ucfedScoringProgress= ucfedSetup+
+                                            ucfedContent+
+                                            ucfedHeroimage+
+                                            ucfedResponsiveness+
+                                            ucfedContactpage+
+                                            ucfedGit+
+                                            ucfedFix+
+                                            ucfedBootstrap+
+                                            ucfedGrid+
+                                            ucfedUid+
+                                            ucfedCvProject;
+                
+                $("#ucfed-progress").text(ucfedScoringProgress); // PROGRESS. progress number for projects 
+                $(".ucfed-progress-bar").css("width", ucfedScoringProgress/ucfedScoringNumber*100+"%"); // PROGRESS. vertical progress bar for HTML 
+            });
+            // PROGRESS. JS progress bar for modules calculation
+            // PROGRESS. IFED progress bar for modules calculation
+            // PROGRESS. PYTHON THEORY progress bar for modules calculation
+            // PROGRESS. PYTHON PRACTICAL progress bar for modules calculation
+            // PROGRESS. DCD progress bar for modules calculation
+            // PROGRESS. FSD progress bar for modules calculation
+
+
         });
     </script>
 </body>
