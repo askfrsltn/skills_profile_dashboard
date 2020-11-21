@@ -821,5 +821,10 @@ ul,h1,h2,h3,h4,h5,p{
 
 .module-progress-bar{
     width: 0;
+    background-color: darkgrey;
+}
+
+.html-progress-bar{
+    width: 0;
     background-color: darkmagenta;
 }
