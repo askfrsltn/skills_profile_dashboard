@@ -14,9 +14,6 @@
     
     <script src="https://kit.fontawesome.com/8bab7cf7fa.js" crossorigin="anonymous"></script>
     
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-   
-
     <title>Full Stack Developer Skills Profile Dashboard. Home</title>
 </head>
 
@@ -98,24 +95,24 @@
                         
                         <!-- THEORY. summary page Donut Chart  -->
                         <div class="chart">
-                                <p class="projects-score score-text"><span id="theory-overall-summary" class="score-text"></span><span>%</span></p> 
-                                <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
+                            <p class="projects-score score-text"><span id="theory-overall-summary" class="score-text"></span><span>%</span></p> 
+                            <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path id="progress-bar-theory1" class="circle-incomplete"
+                                stroke-dasharray="0, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
                                 <svg viewBox="0 0 36 36" class="circular-chart">
-                                    <path id="progress-bar-theory1" class="circle-incomplete"
-                                    stroke-dasharray="0, 100"
-                                    d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    />
-                                    <svg viewBox="0 0 36 36" class="circular-chart">
-                                    <path class="circle-complete"
-                                    stroke-dasharray="100, 100"
-                                    d="M18 2.0845
-                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                                    />
-                                    </svg>
+                                <path class="circle-complete"
+                                stroke-dasharray="100, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
                                 </svg>
+                            </svg>
                         </div>
                         
                         <div class="button theory-button">
@@ -4519,134 +4516,12 @@
         </div>
     </footer>
 </article>
-   <!-- JAVASCRIPT SECTION -->
-    <script>
-        $(document).ready(function(){
-            //PAGES. the function to go from score summary to projects scoring page
-            $(function(){
-            
-                $("#projects-button").click(function(){
-                    $("#js-scoresummary").slideUp(500); 
-                    $("#js-projects").slideDown(1000);
-                }); 
-                $("#js-summary-button").click(function(){
-                    $("#js-projects").slideUp(500);
-                    $("#js-scoresummary").slideDown(1000); 
-                });              
-            });
-            
-            //PAGES.the function to go from score summary to THEORY projects scoring page
-            $(function(){
-            
-                $("#theory-button").click(function(){ //click event
-                    $("#js-scoresummary").slideUp(500); 
-                    $("#js-theory").slideDown(1000);
-                }); 
-                $("#js-summary-button1").click(function(){//click event 
-                    $("#js-theory").slideUp(500);
-                    $("#js-scoresummary").slideDown(1000); 
-                });             
-            });
-            // PROJECT CARD. the function flips around the scorecard
-            $(".scorecard-animation").click(function(){
-            $(this).toggleClass("is-open");
-            });
-            
-            // CARD. the function to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards
-            $(".score-circle").click(function(){
-                let scoreChoice= $(this).text();
-                let color=$(this).css("background-color");
-                let score = $(this).parent().parent().siblings().find(".scorcard-score");
-                $(score).text(scoreChoice); // score
-                $(score).css("background-color",color) // color
-                              
-            });
-            
-            // CHART. the function to calculate projects score and scoring progress based on scorecards choices based on any scorecard click
-            $(".scorecard-face-back").mouseleave(function (){
-                const projectsNumber= 4; // number of cards in projeccts score calculation
-                var ucfed = parseInt($("#projects-ucfed").text()) || 0; // turn the string into number from the card score
-                var ifed = parseInt($("#projects-ifed").text()) || 0;
-                var dcd = parseInt($("#projects-dcd").text()) || 0;
-                var fsd = parseInt($("#projects-fsd").text()) || 0;
-                var projectsScore= (ucfed+ifed+dcd+fsd)/4;       // calculate overal score    
-                $("#projects-overall").text(projectsScore)/projectsNumber; // set the number to chart % on a summary section
-                $("#projects-overall-summary").text(projectsScore)/projectsNumber;   // set the number to chart % on a summary section
-                
-                document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress red bar on the chart section(svg object)
-                document.getElementById("progress-bar1").setAttribute("stroke-dasharray", projectsScore+", 100" );// set the score to the donut progress red bar on the summary page chart (svg object)
 
-
-                // PROGRESS. progress bar for projects calculation
-                if(document.getElementById("projects-ucfed").innerText=="%"){
-                    ucfedProgress = 0;
-                } else {ucfedProgress = 1;};
-                if(document.getElementById("projects-ifed").innerText=="%"){
-                    ifedProgress = 0;
-                } else {ifedProgress = 1;};
-                if(document.getElementById("projects-dcd").innerText=="%"){
-                    dcdProgress = 0;
-                } else {dcdProgress = 1;};
-                if(document.getElementById("projects-fsd").innerText=="%"){
-                    fsdProgress = 0;
-                } else {fsdProgress = 1;};
-                var projectsScoringProgress=ucfedProgress+ifedProgress+dcdProgress+fsdProgress;
-                
-                // PROGRESS. progress number for projects on 2 projects summary pages
-                $("#project-scoring-progress").text(projectsScoringProgress);
-                $("#project-scoring-progress1").text(projectsScoringProgress);
-                
-                // PROGRESS. vertical progress bar for projects on 2 summary section and page
-                $(".projects-progress-bar").css("width", projectsScoringProgress/projectsNumber*100+"%");
-
-             });
-            
-            
-            // THEORY. MODULE. open list of element for the module
-            $(".scorecard-animation-module").click(function(){
-                $(this).siblings().children().slideToggle(700);
-                $(this).parents().siblings().children().find(".scorecard-element").slideUp(700);// close previously open list of element for other modules
-                
-            });
-
-            
-            // THEORY. MODULE. ELEMENTS. slide down and up of the card on click - all the element cards
-           $(document).ready(function(){
-                $(".scorecard-face-front-element").click(function(){
-                    $(this).slideUp();
-                    $(this).siblings().slideDown();
-                });
-                $(".scorecard-face-back-element").click(function(){
-                    $(this).slideUp();
-                    $(this).siblings().slideDown();
-                });             
-            });
-        // alternative script to calculate progress
-        $(".scorecard-animation-module").click(function(){
-            let a=$(this).siblings().children().find(".scorcard-score").length;            
-        });
-
-        // Creating object for the module and all the elements each time we slide down module scorecards: https://stackoverflow.com/questions/48996441/javascript-iterate-over-form-inputs-and-collect-values-as-key-value-pairs-in-o
-        $(".scorecard-module").click(function(){
-            let scoreCards = this.querySelectorAll('.scorcard-score');
-            let moduleObject = {};
-            for (let i = 0; i < scoreCards.length; i++) {
-                moduleObject[scoreCards[i].id] = scoreCards[i].value;
-                }
-                console.log(moduleObject);
-        });
-    
-/*--        
-        $(".scorecard-module").click(function(){
-            let module = {
-                name: $(this).find(".scorecard-title-mod").text(),
-                numberOfElements:$(this).children().find(".scorcard-score").length-1,
-                numberOfScoredElements: $(this).children().find("%").length,
-        }
-         alert(module.name+" - "+ module.numberOfElements+" - "+ module.numberOfScoredElements);   
-        });
---*/        
-    });
-    </script> 
-</body>
+</body> 
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="assets/js/script.js"></script> 
 </html>

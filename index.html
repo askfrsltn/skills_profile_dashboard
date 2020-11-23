@@ -7,13 +7,8 @@
     
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/> 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>    
     <script src="https://kit.fontawesome.com/8bab7cf7fa.js" crossorigin="anonymous"></script>
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous">
-    </script>
     <title>Full Stack Developer Skills Profile Dashboard. Home</title>
 </head>
 
@@ -23,7 +18,6 @@
     </header>
     <main>
         <!-- LANDING PAGE  -->
-
         <div id="js-home-title" class="landing-page">
             <section class="landingpage-section">
                 <div class="wrapper-menu">
@@ -60,7 +54,7 @@
                 <div><h3>Login</h3></div>
                 <form class="login-form" action="score.html">
                     <div class="login-explanation">
-                        <p>If you want to contiinue from the place you left, please enter your login details</div>
+                        <p>If you want to continue from the place you left, please enter your login details</div>
                         </p>
                     <div class="login-inputs-wrapper">
                         <input class="shadow-none form-control login-input" type="text" name="name" placeholder="Name">
@@ -70,7 +64,7 @@
                         <button class="btn" type="submit"><p>[start scoring]  <i class="dot-icon far fa-dot-circle icon"></i></p></button>
                     </div>                   
                 </form>
-                <div class="small-text"><p>or lern more to understand the process and logic<p></div>
+                <div class="small-text"><p>or lern more about process and logic<p></div>
             </section>
         </div>
         <!-- BUTTON -->
@@ -319,43 +313,52 @@
         </div>
     </footer>
 </article>
-<script>
-    $(document).ready(function(){
-        
-            $(function(){
-            // 2 functions to flip between landing page and understand page
-            $("#menu-button").click(function(){
-                $("#js-home-title").slideUp(500); 
-                $("#js-card-menu").slideDown(1000);
-            }); 
-            $("#js-back-login").click(function(){
-                $("#js-card-menu").slideUp(500);
-                $("#js-home-title").slideDown(1000); 
-            }); 
-            // the function to return from the bottom of the understand page to landing page
-            $("#js-back-login1").click(function(){ 
-                $("#js-card-menu").slideUp(500);
-                $("#js-home-title").slideDown(1000);
-            }); 
-        });
-    
-    // the function flips around the scorecard on logic page
-            $(".scorecard-animation").click(function(){
-            $(this).toggleClass("is-open");
-            });
+    <script>
+/*--
+        $(document).ready(function(){
             
-            // the function to get a score from scorecircle and set it to scorecard face-front with proper color
-            $(".score-circle").click(function(){
-                let scoreChoice= $(this).text();
-                let color=$(this).css("background-color");
-                let score = $(this).parent().parent().siblings().find(".scorcard-score");
-                
-                $(score).text(scoreChoice); 
-                $(score).css("background-color",color)
-                
+                $(function(){
+                // 2 functions to flip between landing page and understand page
+                $("#menu-button").click(function(){
+                    $("#js-home-title").slideUp(500); 
+                    $("#js-card-menu").slideDown(1000);
+                }); 
+                $("#js-back-login").click(function(){
+                    $("#js-card-menu").slideUp(500);
+                    $("#js-home-title").slideDown(1000); 
+                }); 
+                // the function to return from the bottom of the understand page to landing page
+                $("#js-back-login1").click(function(){ 
+                    $("#js-card-menu").slideUp(500);
+                    $("#js-home-title").slideDown(1000);
+                }); 
             });
+        
+        // the function flips around the scorecard on logic page
+                $(".scorecard-animation").click(function(){
+                $(this).toggleClass("is-open");
+                });
+                
+                // the function to get a score from scorecircle and set it to scorecard face-front with proper color
+                $(".score-circle").click(function(){
+                    let scoreChoice= $(this).text();
+                    let color=$(this).css("background-color");
+                    let score = $(this).parent().parent().siblings().find(".scorcard-score");
+                    
+                    $(score).text(scoreChoice); 
+                    $(score).css("background-color",color)
+                    
+                });
 
-});
-</script>
+    });
+--*/
+    </script>
 </body>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+    </script>
+    
+    <script type="text/javascript" src="assets/js/script.js"></script>  
 </html>
