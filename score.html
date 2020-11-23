@@ -38,11 +38,11 @@
                         
                         <div class="progress-wrapper">
                             <div class="project-progress-title">
-                                <p>Progress:</p>
+                                <p>Projects Progress:</p>
                                 <div class="progress">
-                                    <div class="projects-progress-bar progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div id="project-scoring-progress-bar" class="projects-progress-bar progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                                <p><span id="project-scoring-progress">0</span><span>/4</span></p>
+                                <p><span class="progress-number" id="project-scoring-progress">0</span><span>/4</span></p>
                             </div>
                             
                         </div>
@@ -68,7 +68,7 @@
                                     </svg>
                                 </svg>
                         </div>
-                        
+                        <!-- PROJECTS - summary page button to projects -->
                         <div class="button theory-button">
                             <div class="smaller-title" class="small-text">
                                 <p id="projects-button" class="middle-text"><span> [projects] </span><i class="dot-icon far fa-dot-circle icon"></i>
@@ -82,18 +82,16 @@
                         <div class="project-summary-title">
                             <h3>Theory Score</h3>
                         </div>
-                        <div class="progress-wrapper">
-                            <div class="project-progress-title">
-                                <p>Progress:</p>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                <p>3/10</p>
-                            </div>
-                            
+                        
+                        <div class="project-progress-title">
+                            <p>Modules Progress:</p>
+                                <div class="progress">
+                                    <div id="theory-scoring-progress-bar" class="projects-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            <p><span class="progress-number" id="theory-scoring-progress">0</span><span>/9</span></p>
                         </div>
                         
-                        <!-- THEORY. summary page Donut Chart  -->
+                        <!-- THEORY. summary page Donut Chart -->
                         <div class="chart">
                             <p class="projects-score score-text"><span id="theory-overall-summary" class="score-text"></span><span>%</span></p> 
                             <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
@@ -114,7 +112,7 @@
                                 </svg>
                             </svg>
                         </div>
-                        
+                        <!-- THEORY. Button to theory modules  -->
                         <div class="button theory-button">
                             <div class="smaller-title" class="small-text">
                                 <p id="theory-button" class="middle-text"><span> [theory modules] </span><i class="dot-icon far fa-dot-circle icon"></i>
@@ -142,18 +140,18 @@
                     <h3>Score</h3>
                 </div>
                 
+                <!-- PROJECTs SUMMARY ROGRESS BAR-->
                 <div class="progress-wrapper">
                     <div class="project-progress-title">
-                        <p>Progress:</p>
+                        <p>Projects Progress:</p>
                             <div class="progress">
-                                <div class="projects-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div id="project-scoring-progress-bar1" class="projects-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        <p><span id="project-scoring-progress1">0</span><span>/4</span></p>
+                        <p><span class="progress-number" id="project-scoring-progress1">0</span><span>/4</span></p>
                     </div>
-                    
                 </div>
                 
-                <!-- PROJECTs SCORE DONUT CHART for THEORY-->
+                <!-- PROJECTS SUMMARY DONUT CHART for THEORY-->
                 <div class="chart">
                     <p class="projects-score score-text"><span id="projects-overall" class="score-text"></span><span>%</span></p> 
                     <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
@@ -175,6 +173,7 @@
                     </svg>
                 </div>
                 
+                <!-- PROJECTS - summary page button to summary section -->
                 <div class="button theory-button">
                     <div class="smaller-title" class="small-text">
                         <p id="js-summary-button" class="middle-text"><span> [summary] </span><i class="dot-icon far fa-dot-circle icon"></i>
@@ -387,37 +386,34 @@
                         <h3>Score</h3>
                     </div>
                         
-                    <div class="progress-wrapper">
-                        <div class="project-progress-title">
-                            <p>Progress:</p>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            <p>3/10</p>
-                        </div>
-                        
+                    <div class="project-progress-title">
+                        <p>Modules Progress:</p>
+                            <div class="progress">
+                                <div id="theory-scoring-progress-bar1" class="projects-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        <p><span class="progress-number" id="theory-scoring-progress1">0</span><span>/9</span></p>
                     </div>
                         
                     <!-- THEORY SCORE DONUT CHART -->
                     <div class="chart">
-                            <p class="projects-score score-text"><span id="" class="score-text"></span><span>%</span></p> 
-                            <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
+                        <p class="projects-score score-text"><span id="" class="score-text"></span><span>%</span></p> 
+                        <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path id="" class="circle-incomplete"
+                            stroke-dasharray="0, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
                             <svg viewBox="0 0 36 36" class="circular-chart">
-                                <path id="" class="circle-incomplete"
-                                stroke-dasharray="0, 100"
-                                d="M18 2.0845
-                                a 15.9155 15.9155 0 0 1 0 31.831
-                                a 15.9155 15.9155 0 0 1 0 -31.831"
-                                />
-                                <svg viewBox="0 0 36 36" class="circular-chart">
-                                <path class="circle-complete"
-                                stroke-dasharray="100, 100"
-                                d="M18 2.0845
-                                a 15.9155 15.9155 0 0 1 0 31.831
-                                a 15.9155 15.9155 0 0 1 0 -31.831"
-                                />
-                                </svg>
+                            <path class="circle-complete"
+                            stroke-dasharray="100, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
                             </svg>
+                        </svg>
                     </div>
                         
                     <div class="button theory-button">
@@ -4523,5 +4519,5 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="assets/js/script.js"></script> 
+    <script type="text/javascript" src="assets/js/scorescript.js"></script> 
 </html>

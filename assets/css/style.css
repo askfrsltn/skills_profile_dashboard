@@ -429,6 +429,7 @@ ul,h1,h2,h3,h4,h5,p{
 
 .progress{
     height: 3px;
+    width: 100%
 }
 
 .projects-progress-bar{

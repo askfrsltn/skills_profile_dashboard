@@ -1,21 +1,5 @@
- $( document ).ready(function() {
-        // -- INDEX PAGE SCRIPTS
-            $(function(){
-                // 2 functions to flip between landing page and understand page
-                $("#menu-button").click(function(){
-                    $("#js-home-title").slideUp(500); 
-                    $("#js-card-menu").slideDown(1000);
-                }); 
-                $("#js-back-login").click(function(){
-                    $("#js-card-menu").slideUp(500);
-                    $("#js-home-title").slideDown(1000); 
-                }); 
-                // the function to return from the bottom of the understand page to landing page
-                $("#js-back-login1").click(function(){ 
-                    $("#js-card-menu").slideUp(500);
-                    $("#js-home-title").slideDown(1000);
-                }); 
-            });
+$( document ).ready(function() {
+    
         
             // the function flips around the scorecard on logic page
                 $(".scorecard-animation").click(function(){
@@ -135,6 +119,78 @@
                     $(this).siblings().slideDown();
                 });             
             });
+        
+        // Create 3 objects upon login to add to individual object: scores, progress, progress-bars  
+
+        $(document).ready(function(){
+            // Create object for scores
+            let ids = document.querySelectorAll('.scorcard-score')
+            let scoresObject = {}
+            for (let i = 0; i < ids.length; i++) {
+            scoresObject[ids[i].id] = null;
+            }
+            
+            // Create object for progress bar
+            let progressBar = document.querySelectorAll('.projects-progress-bar')
+            let progressBarObject = {}
+            for (let i = 0; i < progressBar.length; i++) {
+            progressBarObject[progressBar[i].id] = null;
+            }
+            
+            // Create object for progress            
+            let progressNumber = document.querySelectorAll('.progress-number')
+            let progressObject = {}
+            for (let i = 0; i < progressNumber.length; i++) {
+            progressObject[progressNumber[i].id] = null;
+            }
+            // add objects to the object in ocalStorage
+            userObject=JSON.parse(localStorage.getItem("userObject")) // parse from LocalStorage
+            userObject.scores=scoresObject; // add scores dataset to object
+            userObject.progressBar=progressBarObject; // add progressBar dataset to object
+            userObject.progress=progressObject; // add progress dataset to object
+            localStorage.setItem('userObject', JSON.stringify(userObject));
+            
+            console.log(userObject);
+        });
+        
+            
+/*--
+        let ids = document.querySelectorAll(".scorcard-score");    
+let myObject = {};
+
+for (let i = 0; i < ids.length; i++) {
+  myObject[ids[i].id] = ids[i].text();
+}
+        
+localStorage.setItem('userObject', JSON.stringify(userObject));            
+let userObject=JSON.parse(localStorage.getItem("userObject"));
+
+            userObject.scores=scores;
+
+let userObject=JSON.parse(localStorage.getItem("userObject"));
+
+            userObject.data=idList;
+            console.log(userObject); 
+
+console.log('userObject: ', JSON.parse(UserObject))
+    
+    for (let i = 0; i < idList.length; i++) {
+    data[idList[i].id] = data[i].value;
+    } // assign id's inside var data 
+    localStorage.setItem('userObject', JSON.stringify(userObject.data));// add updated key to userObject        
+            
+    let testObject.data = idList // create a key object "data" for all the id's found with data values
+            
+            for (let i = 0; i < idList.length; i++) {
+                data[idList[i].id] = data[i].value;
+                } // assign id's inside var data 
+            
+                localStorage.setItem('testObject', JSON.stringify(userObject.data));// add updated key to userObject
+        --*/
+        
+
+
+        
         /*-- Ceate an object for scorecards upon login based on logic from: https://stackoverflow.com/questions/48996441/javascript-iterate-over-form-inputs-and-collect-values-as-key-value-pairs-in-o
         $(".scorecard-module").click(function(){
             let scoreCards = this.querySelectorAll('.scorcard-score');
@@ -145,35 +201,6 @@
                 console.log(moduleObject);
         });
     --*/
-    /*--   
-    // the code is built based on example from https://codepen.io/brianhaferkamp/pen/GRgEeVG?editors=0100
-    $(function(){
-        $("#menu-button").click(function(){
-            $("#js-home-title").slideToggle(400); // Find element with the id 'js-home-title' and apply an additional class of 'is-open'
-            $("#js-card-menu").slideToggle(400);
-        }); 
-    });
     
-    // the code for openning the full page menu is built based on example from https://codepen.io/rveruna/pen/qmvZJw?editors=0010
-    function openPage() {
-        $('#js-understand-page').slideDown(500); // Find element with the id 'js-understand-page' and hide it
-    }
-    
-    function closePage() {
-        $('#js-understand-page').slideUp(500); // Find element with the id 'js-understand-page' and open it
-    }
-    
-    $('#js-card-understand').click(function(){ 
-        // When the element with the id 'js-card-understand' is clicked
-        openPage(); // Run the openPage function
-    });
-    
-    $('#back-button').click(function(){ // When the element with the id 'back-button' is clicked
-    closePage(); // Run the closeMenu function
-    });
-    
-    // the code is built based on example
-    
---*/
 
 });
