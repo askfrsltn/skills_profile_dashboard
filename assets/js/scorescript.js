@@ -156,6 +156,7 @@ $( document ).ready(function() {
     });
     
     // LOCAL STORAGE. REPLACE key-value pair with chosen score from scorecard
+        
         $(".score-circle").click(function(){
             let value= $(this).text().trim().slice(0,-1);
             let key=$(this).parent().parent().siblings().find(".scorcard-score").attr("id");// find card id
@@ -163,6 +164,50 @@ $( document ).ready(function() {
                 userObject.scores[key]=value;//change value of scored id
                 localStorage.setItem("userObject", JSON.stringify(userObject));//return object into LocalStorage with updated value                   
         });
-    
+    // Calculate module score visualisation functions
+    $(".score-circle").click(function(){
+        //1. find a module key id
+        let moduleObjectKey = $(this).parent().parent().parent().parent().parent().siblings().children().find('.scorcard-score').attr("id");
+        let moduleKey="#"+moduleObjectKey;
+        
+        // 2. get the scores of the elements from all the module elements           
+        let values = $(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').text();// return all the values within the module
+        
+        //3. turn the string into numbers array - crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string - who can ever come up with this logic???          
+        let valuesArray = values.match(/\d+/g).map(Number); 
+        
+        //4. Claculate average in the array
+        let moduleSum = 0 // create elements cum number variable
+        let scoredElements = valuesArray.length; // create variable to calculate number of elements scored
+        // calculate sum of scores in the array
+        for (let i = 0; i < valuesArray.length; i++) {
+            moduleSum += parseInt(valuesArray[i]); 
+        }
+        //6. Assign average to module score circle on the module scorecard
+        let moduleAverageScore = moduleSum/scoredElements; // calculate average module score
+        $(moduleKey).text(parseInt(moduleAverageScore)+"%"); // assign calculated average to module scorecard score
+        
+        //7. Store the moduleaverage score inside userObject
+        userObject=JSON.parse(localStorage.getItem("userObject"));// retrieve object from local storage
+        userObject.scores[moduleObjectKey]=moduleAverageScore;//change value of scored id
+        localStorage.setItem("userObject", JSON.stringify(userObject));//return object into LocalStorage with updated value
 
+        // 6. Change progress bar
+        // a.find this module key
+        let thisModuleProgressId= $(this).parent().parent().parent().parent().parent().siblings().find(".module-progress-number").attr("id"); 
+        $().text()
+        // b. assign the length var to the key - progress number
+        $("#"+thisModuleProgressId).text(scoredElements);
+        
+        // calculate percentage for progress bar
+        const numberOfElements=$(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').length;
+        let moduleProgressBarWidth = parseInt(scoredElements / numberOfElements * 100) ;
+        // assign % to the progress bar 
+        
+        $(this).parent().parent().parent().parent().parent().parent().find(".module-progress-bar").css("width", moduleProgressBarWidth+"%");
+        
+            // save progress parameters to the userObject and localStorage
+            console.log(valuesArray +";" +moduleProgressBarWidth);
+        });
+    
 });
