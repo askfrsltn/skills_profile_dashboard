@@ -131,7 +131,7 @@ $( document ).ready(function() {
         }
         
         // Create object for progress bar
-        let progressBar = document.querySelectorAll('.projects-progress-bar')
+        let progressBar = document.querySelectorAll('.progress-bar')
         let progressBarObject = {}
         for (let i = 0; i < progressBar.length; i++) {
         progressBarObject[progressBar[i].id] = null;
@@ -151,19 +151,11 @@ $( document ).ready(function() {
         userObject.progressBar=progressBarObject; // add progressBar dataset to object            
         userObject.progress=progressObject; // add progress dataset to object            
         localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage   
-        
-        console.log(userObject);
+    
     });
     
-    // LOCAL STORAGE. REPLACE key-value pair with chosen score from scorecard
+    
         
-        $(".score-circle").click(function(){
-            let value= $(this).text().trim().slice(0,-1);
-            let key=$(this).parent().parent().siblings().find(".scorcard-score").attr("id");// find card id
-                userObject=JSON.parse(localStorage.getItem("userObject"));// retrieve object from local storage
-                userObject.scores[key]=value;//change value of scored id
-                localStorage.setItem("userObject", JSON.stringify(userObject));//return object into LocalStorage with updated value                   
-        });
     // Calculate module score visualisation functions
     $(".score-circle").click(function(){
         //1. find a module key id
@@ -172,42 +164,126 @@ $( document ).ready(function() {
         
         // 2. get the scores of the elements from all the module elements           
         let values = $(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').text();// return all the values within the module
-        
+
         //3. turn the string into numbers array - crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string - who can ever come up with this logic???          
         let valuesArray = values.match(/\d+/g).map(Number); 
         
         //4. Claculate average in the array
         let moduleSum = 0 // create elements cum number variable
         let scoredElements = valuesArray.length; // create variable to calculate number of elements scored
+        let totalNumberOfElements=$(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').length; // calculates total number of elements;
+        
         // calculate sum of scores in the array
         for (let i = 0; i < valuesArray.length; i++) {
             moduleSum += parseInt(valuesArray[i]); 
         }
+
         //6. Assign average to module score circle on the module scorecard
-        let moduleAverageScore = moduleSum/scoredElements; // calculate average module score
+        let moduleAverageScore = moduleSum/totalNumberOfElements; // calculate average module score
         $(moduleKey).text(parseInt(moduleAverageScore)+"%"); // assign calculated average to module scorecard score
         
-        //7. Store the moduleaverage score inside userObject
-        userObject=JSON.parse(localStorage.getItem("userObject"));// retrieve object from local storage
-        userObject.scores[moduleObjectKey]=moduleAverageScore;//change value of scored id
-        localStorage.setItem("userObject", JSON.stringify(userObject));//return object into LocalStorage with updated value
-
-        // 6. Change progress bar
+        // 7. Change progress bar
         // a.find this module key
-        let thisModuleProgressId= $(this).parent().parent().parent().parent().parent().siblings().find(".module-progress-number").attr("id"); 
-        $().text()
+            let thisModuleProgressId= $(this).parent().parent().parent().parent().parent().siblings().find(".module-progress-number").attr("id"); 
+
         // b. assign the length var to the key - progress number
-        $("#"+thisModuleProgressId).text(scoredElements);
+            $("#"+thisModuleProgressId).text(scoredElements);
         
-        // calculate percentage for progress bar
-        const numberOfElements=$(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').length;
-        let moduleProgressBarWidth = parseInt(scoredElements / numberOfElements * 100) ;
-        // assign % to the progress bar 
+        // c. calculate percentage for progress bar
+            const numberOfElements=$(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').length;
+            let moduleProgressBarWidth = parseInt(scoredElements / numberOfElements * 100) ;
         
-        $(this).parent().parent().parent().parent().parent().parent().find(".module-progress-bar").css("width", moduleProgressBarWidth+"%");
+        // d. assign % to the progress bar 
+            $(this).parent().parent().parent().parent().parent().parent().find(".module-progress-bar").css("width", moduleProgressBarWidth+"%");
         
-            // save progress parameters to the userObject and localStorage
-            console.log(valuesArray +";" +moduleProgressBarWidth);
-        });
-    
+        //8. LOCAL STORAGE. REPLACE key-value pairs with chosen score from scorecard
+            
+            let key=$(this).parent().parent().siblings().find(".scorcard-score").attr("id");// find card id
+            
+            userObject=JSON.parse(localStorage.getItem("userObject"));// retrieve object from local storage
+            let value= $(this).text().trim().slice(0,-1);
+        
+            
+            userObject.scores[key]=value;//change value of scored id
+            userObject.scores[moduleObjectKey]=moduleAverageScore;//change value of scored id
+            userObject.scores[thisModuleProgressId]=scoredElements;//change value of scored id
+            
+            localStorage.setItem("userObject", JSON.stringify(userObject));//return object into LocalStorage with updated value  
+            
+            //8. CALCULATE THEORY AVERAGES
+            userObject = JSON.parse(localStorage.getItem("userObject"));
+            
+            const numberOfModules=$.find('.scorecard-module').length;
+            let theoryHtml = userObject.scores["theory-html"];
+            let theoryCss = userObject.scores["theory-css"];
+            let theoryUcfed = userObject.scores["theory-ucfed"];
+            let theoryJs = userObject.scores["theory-js"]
+            let theoryIfed = userObject.scores["theory-ifed"]
+            let theoryPythonfu = userObject.scores["theory-pythonfu"]
+            let theoryPythonpr = userObject.scores["theory-pythonpr"]
+            let theoryDcd = userObject.scores["theory-dcd"]
+            let theoryFsd = userObject.scores["theory-fsd"]
+            
+            let theoryScoreFloat = (theoryHtml+theoryCss+theoryUcfed+theoryJs+theoryIfed+theoryPythonfu+theoryPythonpr+theoryDcd+theoryFsd)/numberOfModules;
+            let theoryScore=Math.round(theoryScoreFloat);
+            
+            //8. Assign numbers to 2 theory Donut Charts including red progress bar
+            $('#theory-overall').text(theoryScore);// asign number to donut chart on theory scorring section
+            $('#theory-overall-summary').text(theoryScore);// asign number to donut chart on theory scorring section
+
+            document.getElementById("progress-bar-theory1").setAttribute("stroke-dasharray", theoryScore+", 100" ); // // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
+            document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", theoryScore+", 100" ); // // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
+
+
+            //9. Assign numbers to 2 modules progress bar including red progress bar
+            const numberOfTheoryElements = $.find(".scorecard-element").length; // count all the elemnts scorecards without modules
+            console.log(numberOfTheoryElements);
+            
+            let allTheScoredElements = $('.scorecard-element').find('.scorcard-score').text();// return all the scored elements values within the module
+            //Make an array from found values and count number of scores for all the elements.Use crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string     
+            
+            let numberOfScoredElements = allTheScoredElements.match(/\d+/g).map(Number).length; // count number of elements that have been scored
+            
+            let theoryProgressBarWidth = numberOfScoredElements/numberOfTheoryElements*100; // calculate width of the theory scoring bar
+            
+            
+            $('#theory-scoring-progress1').text(numberOfScoredElements);
+            $('#theory-scoring-progress').text(numberOfScoredElements);
+            $(".theory-progress-bar").css("width", theoryProgressBarWidth+"%");
+            console.log();
+            
+        
+        
+    });
+            
+            
+            
+        
+        
+        
 });
+
+/*-- PARKING LOT
+        theoryCss = userObject.scores.theory-css;
+        theoryUcfed = userObject.scores.theory-ucfed;
+        theoryJs = userObject.scores.theory-js;
+        theoryIfed = userObject.scores.theory-ifed;
+        theoryPythonfu = userObject.scores.theory-pythonfu;
+        theoryPythonpr = userObject.scores.theory-pythonpr;
+        theoryDcd = userObject.scores.theory-dcd;
+        theoryFsd = userObject.scores.theory-fsd;
+        if (userObject.scores.theory-html=null) 
+        {theoryHtml=0} 
+        else {theoryHtml=userObject.scores.theory-html}
+
+
+        console.log(valuesArray +";" +moduleProgressBarWidth);
+
+        console.log(userObject.scores["theory-html"]);
+        userObject.scores[theory]=scoredElements;
+            localStorage.setItem("userObject", JSON.stringify(userObject)
+            document.getElementById("").;
+                        
+            console.log(theoryScore);
+            console.log(numberOfModules);
+--*/
