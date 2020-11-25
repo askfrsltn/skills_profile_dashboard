@@ -143,13 +143,32 @@ $( document ).ready(function() {
         for (let i = 0; i < progressNumber.length; i++) {
         progressObject[progressNumber[i].id] = null;
         }
+
+        //create object for Donut chart numbers
+        let donutProgressNumbers = document.querySelectorAll('.score-identifier');
+        let donutProgressNumbersObject={}
+        for (let i = 0; i < donutProgressNumbers.length; i++) {
+        donutProgressNumbersObject[donutProgressNumbers[i].id] = null;
+        }
+
+        //create object for Donut chart progress bar
+        let donutProgressBar = document.querySelectorAll('.circle-incomplete');
+        let donutProgressBarObject={}
+        for (let i = 0; i < donutProgressBar.length; i++) {
+        donutProgressBarObject[donutProgressBar[i].id] = null;
+        }
+
+        // create object for Donut chart number Bars
         
         // add objects to the object in localStorage
         
         userObject=JSON.parse(localStorage.getItem("userObject")) // parse from LocalStorage
         userObject.scores=scoresObject; // add scores dataset to object            
         userObject.progressBar=progressBarObject; // add progressBar dataset to object            
-        userObject.progress=progressObject; // add progress dataset to object            
+        userObject.progress=progressObject; // add progress dataset to object       
+        userObject.donutProgressNumbers=donutProgressNumbersObject; //add progress numbers for donut charts into local storage data object
+        userObject.donutProgressBar=donutProgressBarObject; 
+
         localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage   
     
     });
@@ -164,6 +183,7 @@ $( document ).ready(function() {
         
         // 2. get the scores of the elements from all the module elements           
         let values = $(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').text();// return all the values within the module
+        let value= $(this).text().trim().slice(0,-1);// get rid of spaces and % sign at the end
 
         //3. turn the string into numbers array - crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string - who can ever come up with this logic???          
         let valuesArray = values.match(/\d+/g).map(Number); 
@@ -201,31 +221,31 @@ $( document ).ready(function() {
             let key=$(this).parent().parent().siblings().find(".scorcard-score").attr("id");// find card id
             
             userObject=JSON.parse(localStorage.getItem("userObject"));// retrieve object from local storage
-            let value= $(this).text().trim().slice(0,-1);
+            
         
             
             userObject.scores[key]=value;//change value of scored id
             userObject.scores[moduleObjectKey]=moduleAverageScore;//change value of scored id
             userObject.scores[thisModuleProgressId]=scoredElements;//change value of scored id
             
-            localStorage.setItem("userObject", JSON.stringify(userObject));//return object into LocalStorage with updated value  
+            localStorage.setItem("userObject", JSON.stringify(userObject));//????return object into LocalStorage with updated value  ???? - split to separate functions GROUP BY EVENTS.
             
-            //8. CALCULATE THEORY AVERAGES
-            userObject = JSON.parse(localStorage.getItem("userObject"));
+        //9. CALCULATE THEORY AVERAGES
+            userObject = JSON.parse(localStorage.getItem("userObject"));//retrieve object from LocalStorage
             
-            const numberOfModules=$.find('.scorecard-module').length;
-            let theoryHtml = userObject.scores["theory-html"];
-            let theoryCss = userObject.scores["theory-css"];
-            let theoryUcfed = userObject.scores["theory-ucfed"];
-            let theoryJs = userObject.scores["theory-js"]
-            let theoryIfed = userObject.scores["theory-ifed"]
-            let theoryPythonfu = userObject.scores["theory-pythonfu"]
-            let theoryPythonpr = userObject.scores["theory-pythonpr"]
-            let theoryDcd = userObject.scores["theory-dcd"]
-            let theoryFsd = userObject.scores["theory-fsd"]
+            const numberOfModules=$.find('.scorecard-module').length;// count number of theory modules
+            let theoryHtml = userObject.scores["theory-html"]; // assign html module score to var
+            let theoryCss = userObject.scores["theory-css"]; //assign css module score to var
+            let theoryUcfed = userObject.scores["theory-ucfed"]; //assign ucfed module score to var
+            let theoryJs = userObject.scores["theory-js"] //assign js module score to var
+            let theoryIfed = userObject.scores["theory-ifed"] // assign ifed module score to var
+            let theoryPythonfu = userObject.scores["theory-pythonfu"] //assign python theory module score to var
+            let theoryPythonpr = userObject.scores["theory-pythonpr"]//assign python module score to var
+            let theoryDcd = userObject.scores["theory-dcd"]//assign dcd module score to var
+            let theoryFsd = userObject.scores["theory-fsd"]//assign fsd module score to var
             
-            let theoryScoreFloat = (theoryHtml+theoryCss+theoryUcfed+theoryJs+theoryIfed+theoryPythonfu+theoryPythonpr+theoryDcd+theoryFsd)/numberOfModules;
-            let theoryScore=Math.round(theoryScoreFloat);
+            let theoryScoreFloat = (theoryHtml+theoryCss+theoryUcfed+theoryJs+theoryIfed+theoryPythonfu+theoryPythonpr+theoryDcd+theoryFsd)/numberOfModules; //calculate tehory score for charts
+            let theoryScore=Math.round(theoryScoreFloat); //had to make a separate variable to round it, wierd
             
             //8. Assign numbers to 2 theory Donut Charts including red progress bar
             $('#theory-overall').text(theoryScore);// asign number to donut chart on theory scorring section
@@ -237,8 +257,7 @@ $( document ).ready(function() {
 
             //9. Assign numbers to 2 modules progress bar including red progress bar
             const numberOfTheoryElements = $.find(".scorecard-element").length; // count all the elemnts scorecards without modules
-            console.log(numberOfTheoryElements);
-            
+           
             let allTheScoredElements = $('.scorecard-element').find('.scorcard-score').text();// return all the scored elements values within the module
             //Make an array from found values and count number of scores for all the elements.Use crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string     
             
@@ -247,12 +266,31 @@ $( document ).ready(function() {
             let theoryProgressBarWidth = numberOfScoredElements/numberOfTheoryElements*100; // calculate width of the theory scoring bar
             
             
-            $('#theory-scoring-progress1').text(numberOfScoredElements);
+            $('#theory-scoring-progress1').text(numberOfScoredElements); // 
             $('#theory-scoring-progress').text(numberOfScoredElements);
             $(".theory-progress-bar").css("width", theoryProgressBarWidth+"%");
-            console.log();
-            
-        
+
+            //9. Store donut the inputs into local storage 
+            //variables
+
+            // visual elements assigned to unique ids in userObject
+
+                userObject.progress["theory-scoring-progress"]=numberOfScoredElements;
+                userObject.progress["theory-scoring-progress1"]=numberOfScoredElements;
+
+                userObject.progressBar["theory-scoring-progress-bar"]=theoryProgressBarWidth;
+                userObject.progressBar["theory-scoring-progress-bar1"]=theoryProgressBarWidth;
+                
+                userObject.donutProgressNumbers["theory-overall"]=theoryScore;
+                userObject.donutProgressNumbers["theory-overall-summary"]=theoryScore;
+
+                userObject.donutProgressBar["progress-bar-theory"]=theoryProgressBarWidth;
+                userObject.donutProgressBar["progress-bar-theory1"]=theoryProgressBarWidth;
+                
+                // userObject saved in localStorage
+                localStorage.setItem("userObject", JSON.stringify(userObject));
+                
+                console.log(userObject);
         
     });
             
@@ -275,7 +313,7 @@ $( document ).ready(function() {
         if (userObject.scores.theory-html=null) 
         {theoryHtml=0} 
         else {theoryHtml=userObject.scores.theory-html}
-
+localStorage.setItem("userObject", JSON.stringify(userObject);
 
         console.log(valuesArray +";" +moduleProgressBarWidth);
 
