@@ -39,7 +39,7 @@ footer{
 header{
     padding: 10px;
 }
-ul,h1,h2,h3,h4,h5,p{
+ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0;
 }
 .shadow{
@@ -863,6 +863,9 @@ ul,h1,h2,h3,h4,h5,p{
     overflow: auto;
     border: 1px solid #ccc;
     margin: 0 5px 0 5px;
+    background-color:#f1f1f1;
+    box-shadow:2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);;
 }
 
 .dashboard-title{
@@ -896,7 +899,6 @@ ul,h1,h2,h3,h4,h5,p{
 .dashboard-header{
     width: 100%;
     height: 10vh;
-    border: 1px solid #ccc;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -906,7 +908,7 @@ ul,h1,h2,h3,h4,h5,p{
 .dashboard-body{
     width: 100%;
     height: 70vh;
-    border: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -915,7 +917,7 @@ ul,h1,h2,h3,h4,h5,p{
 .dashboard-footer{
     width: 100%;
     height: 5vh;
-    border: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -931,7 +933,6 @@ ul,h1,h2,h3,h4,h5,p{
 .dashboard-donuts-section{
     width: 100%;
     height: 30vh;
-    border: 1px solid #ccc;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -941,7 +942,7 @@ ul,h1,h2,h3,h4,h5,p{
 .dashboard-detail-section{
     width: 100%;
     height: 40vh;
-    border: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -950,7 +951,6 @@ ul,h1,h2,h3,h4,h5,p{
 
 .dashboard-barcharts-section{
     width: 100%;
-    border: 1px solid #ccc;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -961,29 +961,27 @@ ul,h1,h2,h3,h4,h5,p{
 .dashboard-logic-section{
     width: 100%;
     height: 20vh;
-    border: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    border-top: 1px solid #ccc;
 }
 
 .dashboard-logic-title,
 .dashboard-donut-title{
     width: 100%;
     height: 5vh;
-    border: 1px solid #ccc;
     text-align: center;
     padding-top: 5px;
     text-decoration: underline;
 }
 
 .dashboard-donut{
-    width: 30vh;
-    height: 30vh;
-    border: 1px solid #ccc;
+    width: 25vh;
+    height: 25vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
 }
@@ -992,7 +990,7 @@ ul,h1,h2,h3,h4,h5,p{
 .dashboard-details-section{
     width: 100%;
     height: 40vh;
-    border: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -1003,7 +1001,6 @@ ul,h1,h2,h3,h4,h5,p{
 .dashboard-detail{
     width: 50%;
     height: 40vh;
-    border: 1px solid #ccc;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -1016,7 +1013,6 @@ ul,h1,h2,h3,h4,h5,p{
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    border: 1px solid #ccc;
 }
 
 .dashboard-medal-wrapper{
@@ -1026,7 +1022,6 @@ ul,h1,h2,h3,h4,h5,p{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    border: 1px solid #ccc;
 }
 
 .dashboard-project-circle{
@@ -1085,18 +1080,17 @@ ul,h1,h2,h3,h4,h5,p{
     font-size: 12px;
 }
 .dashboard-skills-section{
-    border: 1px solid #ccc;
     width: 33%;
-    height: 45vh;
+    height: 40vh;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
+    margin-top:20px;
 }
 .dashboard-skills-title{
     height: 5vh;
     width: 100%;
-    border: 1px solid #ccc;
     text-align: center;
     padding-top: 5px;
     text-decoration: underline;
@@ -1108,7 +1102,6 @@ ul,h1,h2,h3,h4,h5,p{
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    border: 1px solid #ccc;
 }
 
 .dashbord-logic-square{
@@ -1118,7 +1111,6 @@ ul,h1,h2,h3,h4,h5,p{
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    border: 1px solid #ccc;
 }
 
 .dashboard-logic-description{
@@ -1148,4 +1140,53 @@ ul,h1,h2,h3,h4,h5,p{
     align-items: center;
     font-size: 12px;
     text-decoration: none;
+}
+/*-- CHARTS --*/
+.dashboard-donut-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 25vh;
+    width: 25vh;
+    text-align: center;
+    margin-top: 0;
+}
+
+.dashboard-circular-chart{
+    width: 100%;
+    max-height: 100%;
+    margin-top: 0;
+}
+
+.dashboard-circle-incomplete{
+  stroke: black;
+  fill: none;
+  stroke-width: 1;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+  z-index: 1;
+}
+
+.dashboard-circle-complete{
+
+    stroke: rgba(0,0,0,0.1);
+    fill: none;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.dashboard-score-text{
+    text-transform: uppercase;
+    font-family: "Fira Code", sans-serif;
+    font-weight: 700;
+    font-size: 5vh;
+    color: black;
+    margin: 0;
+    height: 100%;
 }
