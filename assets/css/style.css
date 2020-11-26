@@ -440,7 +440,7 @@ ul,h1,h2,h3,h4,h5,p{
     width: 20vh;
 }
 
-.progress{
+.progress-score-bar{
     height: 3px;
     width: 100%
 }
@@ -950,10 +950,9 @@ ul,h1,h2,h3,h4,h5,p{
 
 .dashboard-barcharts-section{
     width: 100%;
-    height: 50vh;
     border: 1px solid #ccc;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
     align-items: center;
 
@@ -965,10 +964,11 @@ ul,h1,h2,h3,h4,h5,p{
     border: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
+.dashboard-logic-title,
 .dashboard-donut-title{
     width: 100%;
     height: 5vh;
@@ -988,6 +988,7 @@ ul,h1,h2,h3,h4,h5,p{
     align-items: center;
 }
 
+
 .dashboard-details-section{
     width: 100%;
     height: 40vh;
@@ -996,6 +997,7 @@ ul,h1,h2,h3,h4,h5,p{
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .dashboard-detail{
@@ -1003,7 +1005,147 @@ ul,h1,h2,h3,h4,h5,p{
     height: 40vh;
     border: 1px solid #ccc;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
+}
+
+.dashboard-project-medals{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+}
+
+.dashboard-medal-wrapper{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #ccc;
+}
+
+.dashboard-project-circle{
+    height:7vh;
+    width: 7vh;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dashboard-project-title{
+    flex: 3;
+    height: 7vh;
+    width: 70%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+}
+
+.dashboard-modules-chart{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashboard-module-bar{
+    width: 40%;
+    height: 12px;
+}
+
+.dashboard-module-wrapper{
+    width: 90%;
+    height: 8.5;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+    flex-direction: row;
+}
+
+.dashboard-module-title{
+    height: 3.5vh;
+    width: 60%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+}
+.dashboard-skills-section{
+    border: 1px solid #ccc;
+    width: 33%;
+    height: 45vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+.dashboard-skills-title{
+    height: 5vh;
+    width: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding-top: 5px;
+    text-decoration: underline;
+}
+.dashboard-logics-wrapper{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #ccc;
+}
+
+.dashbord-logic-square{
+    width: 50%;
+    height: 15vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+}
+
+.dashboard-logic-description{
+    font-size: 12px;
+}
+
+.dashboard-skill-wrapper{
+    width: 90%;
+    height: 8.5;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.dashboard-skill-bar{
+    width: 35%;
+    height: 12px;
+}
+
+.dashboard-skill-title{
+    height: 3.5vh;
+    width: 65%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+    text-decoration: none;
 }
