@@ -180,7 +180,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0 20px 0 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap:wrap;
 }
@@ -201,13 +201,16 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 85vh;
     width: 70vh;    
     overflow: auto;
     border: 1px solid #ccc;
 }
-
+.login-description{
+    width: 80%;
+    text-align: center;
+}
 .login-form{
     display: flex;
     flex-direction: column;
@@ -226,7 +229,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around; 
+    justify-content: center; 
 }
 
 .login-input{
@@ -401,7 +404,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0 20px 0 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-content: center;
 }
@@ -422,7 +425,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 85vh;
     width: 72vh;    
     overflow: auto;
@@ -500,7 +503,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .circle-incomplete{
   stroke: #fd6470;
   fill: none;
-  stroke-width: 2;
+  stroke-width: 1;
   stroke-linecap: round;
   animation: progress 1s ease-out forwards;
   z-index: 1;
@@ -510,7 +513,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
     stroke: rgba(0,0,0,0.1);
     fill: none;
-    stroke-width: 2;
+    stroke-width: 1;
     stroke-linecap: round;
 }
 @keyframes progress {
@@ -848,9 +851,10 @@ ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0 20px 0 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-content: center;
+    margin-top: 10px;
 }
 
 .dashboard-page-section{
@@ -978,10 +982,10 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .dashboard-donut{
-    width: 25vh;
-    height: 25vh;
+    width: 30vh;
+    height: 30vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
@@ -1157,6 +1161,8 @@ ul,h1,h2,h3,h4,h5,h6,p{
     width: 100%;
     max-height: 100%;
     margin-top: 0;
+    position: relative;
+    top:0;
 }
 
 .dashboard-circle-incomplete{
@@ -1182,11 +1188,8 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .dashboard-score-text{
-    text-transform: uppercase;
-    font-family: "Fira Code", sans-serif;
-    font-weight: 700;
-    font-size: 5vh;
-    color: black;
-    margin: 0;
-    height: 100%;
+    position: relative;
+    top:45%;
+    font-size: 20px;
 }
+

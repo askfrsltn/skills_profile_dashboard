@@ -106,9 +106,7 @@ $( document ).ready(function() {
             $(score).text(scoreChoice); // score
             $(score).css("background-color",color) // color
             
-            let projectKey = $(this).parent().parent().siblings().find(".scorcard-score").attr("id");
-            console.log(projectKey+";"+scoreChoice);
-                            
+            let projectKey = $(this).parent().parent().siblings().find(".scorcard-score").attr("id");                          
         });      
     
  
@@ -145,8 +143,8 @@ $( document ).ready(function() {
             $("#projects-overall").text(projectsScore); // set the number to chart % on a summary section
             $("#projects-overall-summary").text(projectsScore);   // set the number to chart % on a summary section
             
-            document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress red bar on the chart section(svg object). (JQuery attr() doesn't work)
-            document.getElementById("progress-bar1").setAttribute("stroke-dasharray", projectsScore+", 100" );// set the score to the donut progress red bar on the summary page chart (svg object) (JQuery attr() doesn't work)
+            document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress RED CIRCLE BAR on the chart section(SVG OBJECT). (JQuery attr() doesn't work)
+            document.getElementById("progress-bar1").setAttribute("stroke-dasharray", projectsScore+", 100" );// set the score to the donut progress RED CIRCLE BAR on the SUMMARY page chart (svg object) (JQuery attr() doesn't work)
 
 
         // SCORE. PROJECTS. PROGRESS. progress bar for projects calculation
@@ -164,12 +162,36 @@ $( document ).ready(function() {
             } else {fsdProgress = 1;};
             let projectsScoringProgress=ucfedProgress+ifedProgress+dcdProgress+fsdProgress;
                 
-        // PROGRESS. progress number for projects on 2 projects summary pages
+        // PROGRESS. progress NUMBER for projects on 2 projects summary pages
             $("#project-scoring-progress").text(projectsScoringProgress);
             $("#project-scoring-progress1").text(projectsScoringProgress);
-                
-        // PROGRESS. vertical progress bar for projects on 2 summary section and page
-            $(".projects-progress-bar").css("width", projectsScoringProgress/projectsNumber*100+"%");
+            let projectsScoringProgressWidth = projectsScoringProgress/projectsNumber*100;
+        // PROGRESS. vertical progress BAR for projects on 2 summary section and page
+            $(".projects-progress-bar").css("width", projectsScoringProgressWidth+"%");
+            
+
+            // retrieve object from localStorage
+            userObject=localStorage.JSON.parse(localStorage.getItem("userObject"));
+            
+            // store individual scores variables into userObject
+            userObject.scores["projects-ucfed"]=ucfed;
+            userObject.scores["projects-ifed"]=ifed;
+            userObject.scores["projects-dcd"]=dcd;
+            userObject.scores["projects-fsd"]=fsd;
+            
+            // store calculated scores into userObject
+            userObject.donutProgressNumbers["projects-overall"]=projectsScore;
+            userObject.donutProgressNumbers["projects-overall-summary"]=projectsScore;
+            userObject.donutProgressBar["progress-bar"]=projectsScore;
+            userObject.donutProgressBar["progress-bar1"]=projectsScore;
+            
+            // store projects scoring progress for vertical bar
+            userObject.progressBar["project-scoring-progress-bar"]=projectsScoringProgressWidth;
+            userObject.progressBar["project-scoring-progress-bar1"]=projectsScoringProgressWidth;
+            console.log(userObject);
+
+            // store updated userObject into localStorage
+            localStorage.setItem("userObject", JSON.stringify(userObject));
 
         });
     
@@ -284,10 +306,7 @@ $( document ).ready(function() {
                     userObject.donutProgressBar["progress-bar-theory1"]=theoryProgressBarWidth;
                     
                     // userObject saved in localStorage
-                    localStorage.setItem("userObject", JSON.stringify(userObject));
-                    
-                    console.log(userObject);
-            
+                    localStorage.setItem("userObject", JSON.stringify(userObject));            
         });
             
             
