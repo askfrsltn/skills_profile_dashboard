@@ -1,7 +1,8 @@
-$( document ).ready(function() {
+
  // LOCALSTORAGE 
 
-    // Create three objects upon login to add to individual object: scores, progress, progress-bars  (logic from: https://stackoverflow.com/questions/48996441/javascript-iterate-over-form-inputs-and-collect-values-as-key-value-pairs-in-o)
+    // Create userObject object upon login to add to individual object: scores, progress, progress-bars  (logic from: https://stackoverflow.com/questions/48996441/javascript-iterate-over-form-inputs-and-collect-values-as-key-value-pairs-in-o)
+    
     $(document).ready(function(){
         // 1. Create object for scores
         let ids = document.querySelectorAll('.scorcard-score')
@@ -38,9 +39,10 @@ $( document ).ready(function() {
         donutProgressBarObject[donutProgressBar[i].id] = null;
         }
         
-        // add objects to the object in localStorage
+        // add objects to the userObject in localStorage
         
-        userObject=JSON.parse(localStorage.getItem("userObject")) // parse from LocalStorage
+        userObject=JSON.parse(localStorage.getItem("userObject")); // parse from LocalStorage
+        
         userObject.scores=scoresObject; // add scores dataset to object            
         userObject.progressBar=progressBarObject; // add progressBar dataset to object            
         userObject.progress=progressObject; // add progress dataset to object       
@@ -48,58 +50,59 @@ $( document ).ready(function() {
         userObject.donutProgressBar=donutProgressBarObject; 
 
         localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage   
-    
+        
     });
       
-
+$(document).ready(function() {
             
-            // the function to get a score from scorecircle and set it to scorecard face-front with proper color
-            $(".score-circle").click(function(){
-                let scoreChoice= $(this).text();
-                let color=$(this).css("background-color");
-                let score = $(this).parent().parent().siblings().find(".scorcard-score");
-                $(score).text(scoreChoice); 
-                $(score).css("background-color",color);
-            });
+// -- SCORE PAGE SCRIPTS
+    //SCORE. PAGES. the function to go from score summary to projects scoring page
+        $(function(){
+            $("#projects-button").click(function(){
+                $("#js-scoresummary").slideUp(500); 
+                $("#js-projects").slideDown(1000);
+            }); 
+            $("#js-summary-button").click(function(){
+                $("#js-projects").slideUp(500);
+                $("#js-scoresummary").slideDown(1000); 
+            });              
+        });
 
-    // -- SCORE PAGE SCRIPTS
-        //SCORE. PAGES. the function to go from score summary to projects scoring page
-            $(function(){
-            
-                $("#projects-button").click(function(){
-                    $("#js-scoresummary").slideUp(500); 
-                    $("#js-projects").slideDown(1000);
-                }); 
-                $("#js-summary-button").click(function(){
-                    $("#js-projects").slideUp(500);
-                    $("#js-scoresummary").slideDown(1000); 
-                });              
-            });
-        //SCORE. PAGES. hide summary section, open  THEORY projects scoring page
-            $(function(){
-            
-                $("#theory-button").click(function(){ //click event
-                    $("#js-scoresummary").slideUp(500); 
-                    $("#js-theory").slideDown(1000);
-                }); 
-                $("#js-summary-button1").click(function(){//click event 
-                    $("#js-theory").slideUp(500);
-                    $("#js-scoresummary").slideDown(1000); 
-                });             
-            });
+    //SCORE. PAGES. hide summary section, open  THEORY projects scoring page
+        $(function(){
+            $("#theory-button").click(function(){ //click event
+                $("#js-scoresummary").slideUp(500); 
+                $("#js-theory").slideDown(1000);
+            }); 
+            $("#js-summary-button1").click(function(){//click event 
+                $("#js-theory").slideUp(500);
+                $("#js-scoresummary").slideDown(1000); 
+            });             
+        });
 
-        //SCORE. PROJECT CARD. the function flips the project scorecard around
-            $(".scorecard-animation").click(function(){
-                $(this).toggleClass("is-open");
-            });
+    //SCORE. PROJECT CARD. the function flips the project scorecard around
+        $(".scorecard-animation").click(function(){
+            $(this).toggleClass("is-open");
+        });
 
-        //SCORE. PROJECT CARD. the function flips the scorecard around (for some reason if I remove this duplicate it does not work anymore)
-            $(".scorecard-animation").click(function(){
-                $(this).toggleClass("is-open");
-            });
+    //SCORE. PROJECT CARD. the function flips the scorecard around (for some reason if I remove this duplicate it does not work anymore)
+        $(".scorecard-animation").click(function(){
+            $(this).toggleClass("is-open");
+        });
         
-    // SCORE. CARD. GENERAL. the function to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards. works for all the cards both on projects and theory sections
+    // SCORE. CARD. GENERAL. 2 functions to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards. works for the cards on theory sections
         $(".score-circle").click(function(){
+            let scoreChoice= $(this).text();
+            let color=$(this).css("background-color");
+            let score = $(this).parent().parent().siblings().find(".scorcard-score");
+            $(score).text(scoreChoice); // score
+            $(score).css("background-color",color) // color
+            
+            let elementKey = $(this).parent().parent().siblings().find(".scorcard-score").attr("id");                          
+        }); 
+
+        // same for projects section
+        $(".projects-score-circle").click(function(){
             let scoreChoice= $(this).text();
             let color=$(this).css("background-color");
             let score = $(this).parent().parent().siblings().find(".scorcard-score");
@@ -108,8 +111,6 @@ $( document ).ready(function() {
             
             let projectKey = $(this).parent().parent().siblings().find(".scorcard-score").attr("id");                          
         });      
-    
- 
 
     // SCORE. THEORY. MODULE. open list of element for the module when clicked
         $(".scorecard-animation-module").click(function(){
@@ -119,22 +120,25 @@ $( document ).ready(function() {
         });
 
     // SCORE. THEORY. MODULE. ELEMENTS. slide down and up the card on click - works for each element card
-        $(document).ready(function(){
-            $(".scorecard-face-front-element").click(function(){
-                $(this).slideUp();
-                $(this).siblings().slideDown();
-            });
-            $(".scorecard-face-back-element").click(function(){
-                $(this).slideUp();
-                $(this).siblings().slideDown();
-            });             
+    $(document).ready(function(){
+        $(".scorecard-face-front-element").click(function(){
+            $(this).slideUp();
+            $(this).siblings().slideDown();
         });
+        $(".scorecard-face-back-element").click(function(){
+            $(this).slideUp();
+            $(this).siblings().slideDown();
+        });             
+    });
     
-    // SCORE. PROJECTS. CHART. the function to calculate projects score and scoring progress inputs based on scorecards choices triggered by any scorecard click
-        $(".score-circle").click(function (){
+    // SCORE. PROJECTS. CHART. calculate projects score and scoring progress inputs based on scorecards choices triggered project scorecard click
+        
+    $(".projects-score-circle").click(function (){
+            // retrieve object from localStorage
+                       
             const projectsNumber= 4; // number of cards in projects score calculation
             
-            let ucfed = parseInt($("#projects-ucfed").text()) || 0; // turn the string into number from the card score
+            let ucfed = parseInt($("#projects-ucfed").text()) || 0; // turn the string into number from the card score or 0
             let ifed = parseInt($("#projects-ifed").text()) || 0;
             let dcd = parseInt($("#projects-dcd").text()) || 0;
             let fsd = parseInt($("#projects-fsd").text()) || 0;
@@ -144,10 +148,11 @@ $( document ).ready(function() {
             $("#projects-overall-summary").text(projectsScore);   // set the number to chart % on a summary section
             
             document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress RED CIRCLE BAR on the chart section(SVG OBJECT). (JQuery attr() doesn't work)
+            
             document.getElementById("progress-bar1").setAttribute("stroke-dasharray", projectsScore+", 100" );// set the score to the donut progress RED CIRCLE BAR on the SUMMARY page chart (svg object) (JQuery attr() doesn't work)
 
 
-        // SCORE. PROJECTS. PROGRESS. progress bar for projects calculation
+        // SCORE. PROJECTS. PROGRESS. progress bar for projects calculation - can be replaced by  crazy array formula ==> map(/\d+/g etc)...
             if(document.getElementById("projects-ucfed").innerText=="%"){
                 ucfedProgress = 0; // 
             } else {ucfedProgress = 1;};
@@ -167,11 +172,11 @@ $( document ).ready(function() {
             $("#project-scoring-progress1").text(projectsScoringProgress);
             let projectsScoringProgressWidth = projectsScoringProgress/projectsNumber*100;
         // PROGRESS. vertical progress BAR for projects on 2 summary section and page
-            $(".projects-progress-bar").css("width", projectsScoringProgressWidth+"%");
             
-
-            // retrieve object from localStorage
-            userObject=localStorage.JSON.parse(localStorage.getItem("userObject"));
+            $(".projects-progress-bar").css("width", projectsScoringProgressWidth+"%");
+            let userObject=0;
+            //retrieve data from localStorage
+            userObject=JSON.parse(localStorage.getItem("userObject"));
             
             // store individual scores variables into userObject
             userObject.scores["projects-ucfed"]=ucfed;
@@ -188,6 +193,9 @@ $( document ).ready(function() {
             // store projects scoring progress for vertical bar
             userObject.progressBar["project-scoring-progress-bar"]=projectsScoringProgressWidth;
             userObject.progressBar["project-scoring-progress-bar1"]=projectsScoringProgressWidth;
+            userObject.progress["project-scoring-progress"]=projectsScoringProgress;
+            userObject.progress["project-scoring-progress1"]=projectsScoringProgress;
+            
             console.log(userObject);
 
             // store updated userObject into localStorage
@@ -282,8 +290,7 @@ $( document ).ready(function() {
                 let numberOfScoredElements = allTheScoredElements.match(/\d+/g).map(Number).length; // count number of elements that have been scored
                 
                 let theoryProgressBarWidth = numberOfScoredElements/numberOfTheoryElements*100; // calculate width of the theory scoring bar
-                
-                
+
                 $('#theory-scoring-progress1').text(numberOfScoredElements); // 
                 $('#theory-scoring-progress').text(numberOfScoredElements);
                 $(".theory-progress-bar").css("width", theoryProgressBarWidth+"%");
@@ -308,42 +315,10 @@ $( document ).ready(function() {
                     // userObject saved in localStorage
                     localStorage.setItem("userObject", JSON.stringify(userObject));            
         });
-            
-            
-            
-//RESOLVE -LOGIC PAGE SCRIPT IMPACTS SCORECARD PAGE       
+
+    //RESOLVE -LOGIC PAGE SCRIPT IMPACTS SCORECARD PAGE       
         // the function flips around the scorecard on logic page
             $(".scorecard-animation").click(function(){
             $(this).toggleClass("is-open");
-            });        
-        
-        
+            });    
 });
-
-/*-- PARKING LOT
-        theoryCss = userObject.scores.theory-css;
-        theoryUcfed = userObject.scores.theory-ucfed;
-        theoryJs = userObject.scores.theory-js;
-        theoryIfed = userObject.scores.theory-ifed;
-        theoryPythonfu = userObject.scores.theory-pythonfu;
-        theoryPythonpr = userObject.scores.theory-pythonpr;
-        theoryDcd = userObject.scores.theory-dcd;
-        theoryFsd = userObject.scores.theory-fsd;
-        if (userObject.scores.theory-html=null) 
-        {theoryHtml=0} 
-        else {theoryHtml=userObject.scores.theory-html}
-localStorage.setItem("userObject", JSON.stringify(userObject);
-
-        console.log(valuesArray +";" +moduleProgressBarWidth);
-
-        console.log(userObject.scores["theory-html"]);
-        userObject.scores[theory]=scoredElements;
-            localStorage.setItem("userObject", JSON.stringify(userObject)
-            document.getElementById("").;
-                        
-            console.log(theoryScore);
-            console.log(numberOfModules);
-
-
-
---*/

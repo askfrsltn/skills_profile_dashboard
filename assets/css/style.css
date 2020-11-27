@@ -625,6 +625,8 @@ ul,h1,h2,h3,h4,h5,h6,p{
     width: 35vh;
 }
 
+
+.projects-score-circle,
 .score-circle {
     border: rgba(38,80,119,1);
     border-radius: 50%;
@@ -662,6 +664,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     background-color: rgba(205, 127, 50, 0.5);;
 }
 
+.projects-score-circle.bronze:hover,
 .score-circle.bronze:hover{
     background-color: lightgrey;
     box-shadow: 0 0 0 0;
@@ -669,6 +672,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     transition: background-color 500ms ease-in-out;
 }
 
+.projects-score-circle.gold:hover,
 .score-circle.gold:hover{
     background-color: rgba(255,215,0 ,1);
     box-shadow: 0 0 0 0;
@@ -676,6 +680,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     transition: background-color 10ms ease-in-out;
 }
 
+.projects-score-circle.silver:hover,
 .score-circle.silver:hover{
     background-color: rgba(108,132,134,1);
     box-shadow: 0 0 0 0;
@@ -683,6 +688,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     transition: background-color 10ms ease-in-out;
 }
 
+.projects-score-circle.bronze:hover,
 .score-circle.bronze:hover{
     background-color: rgba(205, 127, 50, 1);
     box-shadow: 0 0 0 0;
