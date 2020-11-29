@@ -226,8 +226,8 @@ $(document).ready(function() {
             }
 
             //6. Assign average to module score circle on the module scorecard
-            let moduleAverageScore = moduleSum/totalNumberOfElements; // calculate average module score
-            $(moduleKey).text(parseInt(moduleAverageScore)+"%"); // assign calculated average to module scorecard score
+            let moduleAverageScore = parseInt(moduleSum/totalNumberOfElements); // calculate average module score
+            $(moduleKey).text(moduleAverageScore+"%"); // assign calculated average to module scorecard score
             
             // 7. Change progress bar
             // a.find this module key
