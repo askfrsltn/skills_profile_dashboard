@@ -8,35 +8,35 @@
         let ids = document.querySelectorAll('.scorcard-score')
         let scoresObject = {}
         for (let i = 0; i < ids.length; i++) {
-        scoresObject[ids[i].id] = null;
+        scoresObject[ids[i].id] = 0;
         }
         
         // 2. Create object for progress bar
         let progressBar = document.querySelectorAll('.progress-bar')
         let progressBarObject = {}
         for (let i = 0; i < progressBar.length; i++) {
-        progressBarObject[progressBar[i].id] = null;
+        progressBarObject[progressBar[i].id] = 0;
         }
         
         // 3. Create object for progress            
         let progressNumber = document.querySelectorAll('.progress-number')
         let progressObject = {}
         for (let i = 0; i < progressNumber.length; i++) {
-        progressObject[progressNumber[i].id] = null;
+        progressObject[progressNumber[i].id] = 0;
         }
 
         //4. create object for Donut chart numbers
         let donutProgressNumbers = document.querySelectorAll('.score-identifier');
         let donutProgressNumbersObject={}
         for (let i = 0; i < donutProgressNumbers.length; i++) {
-        donutProgressNumbersObject[donutProgressNumbers[i].id] = null;
+        donutProgressNumbersObject[donutProgressNumbers[i].id] = 0;
         }
 
         //5. create object for Donut chart progress bar
         let donutProgressBar = document.querySelectorAll('.circle-incomplete');
         let donutProgressBarObject={}
         for (let i = 0; i < donutProgressBar.length; i++) {
-        donutProgressBarObject[donutProgressBar[i].id] = null;
+        donutProgressBarObject[donutProgressBar[i].id] = 0;
         }
         
         // add objects to the userObject in localStorage
@@ -195,8 +195,6 @@ $(document).ready(function() {
             userObject.progressBar["project-scoring-progress-bar1"]=projectsScoringProgressWidth;
             userObject.progress["project-scoring-progress"]=projectsScoringProgress;
             userObject.progress["project-scoring-progress1"]=projectsScoringProgress;
-            
-            console.log(userObject);
 
             // store updated userObject into localStorage
             localStorage.setItem("userObject", JSON.stringify(userObject));

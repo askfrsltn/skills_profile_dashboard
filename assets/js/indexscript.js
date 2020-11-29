@@ -1,4 +1,6 @@
  $( document ).ready(function() {
+    localStorage.setItem("userObject", JSON.stringify(userObject));
+    
     // -- INDEX PAGE SCRIPTS
     $(function(){
         // 2 functions to flip between landing page and understand page

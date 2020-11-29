@@ -49,7 +49,7 @@
                                     <h5>Fullstack Developer Skills Profile<h5>
                                 </div>
                                 <div class="dashboard-title">
-                                    <h5 class="dashboard-name"><span id="dashboard-name">Name Surename</span><h5>
+                                    <h5 class="dashboard-name"><span id="name">Name Surename</span><h5>
                                 </div>
                             </div>
                             <!-- DASHBOARD PAGE 1.2 DONUTS CHARTs  -->
@@ -58,11 +58,11 @@
                                     <div class="dashboard-donut">
                                         <div class="dashboard-donut-title"><h6>Projects:</h6>
                                         </div>
-                                        <h6 class="dashboard-score-text"><span id="dashboard-projects-score"></span><span>%</span></h6>
+                                        <h6 class="dashboard-score-text"><span id="projects-overall"></span><span>%</span></h6>
                                         <div class="dashboard-donut-chart">
                                               <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
                                                 <svg viewBox="0 0 36 36" class="dashboard-circular-chart">
-                                                    <path id="dashbard-progress-bar1" class="dashboard-circle-incomplete"
+                                                    <path id="progress-bar" class="dashboard-circle-incomplete"
                                                     stroke-dasharray="0, 100"
                                                     d="M18 2.0845
                                                     a 15.9155 15.9155 0 0 1 0 31.831
@@ -81,11 +81,11 @@
                                     </div>
                                     <div class="dashboard-donut dashboard-donut-theory">
                                         <div class="dashboard-donut-title"><h6>Theory:</h6></div>
-                                        <h6 class="dashboard-score-text"><span id="dashboard-theory-score"></span><span>%</span></h6>
+                                        <h6 class="dashboard-score-text"><span id="theory-overall"></span><span>%</span></h6>
                                         <div class="dashboard-donut-chart">
                                               <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
                                                 <svg viewBox="0 0 36 36" class="dashboard-circular-chart">
-                                                    <path id="dashbard-progress-bar1" class="dashboard-circle-incomplete"
+                                                    <path id="progress-bar-theory" class="dashboard-circle-incomplete"
                                                     stroke-dasharray="0, 100"
                                                     d="M18 2.0845
                                                     a 15.9155 15.9155 0 0 1 0 31.831
@@ -112,28 +112,28 @@
                                         <div class="dashboard-project-medals">
                                             <div class="dashboard-medal-wrapper">
                                                 <div class="dashboard-project-circle">
-                                                    <p id="dashboard-ucfed">%
+                                                    <p><span id="projects-ucfed"></span><span>%</span>
                                                     </p>
                                                 </div>
                                                 <div class="dashboard-project-title"><p>User-Centric Front End Development</p></div>
                                             </div>
                                             <div class="dashboard-medal-wrapper">
                                                 <div class="dashboard-project-circle">
-                                                    <p id="dashboard-ifed">%
+                                                    <p><span id="projects-ifed"></span><span>%</span>
                                                     </p>
                                                     </div>
                                                 <div class="dashboard-project-title"><p>Interactive Front End Development</p></div>
                                             </div>
                                             <div class="dashboard-medal-wrapper">
                                                 <div class="dashboard-project-circle">
-                                                    <p id="dashboard-dcd">%
+                                                    <p><span id="projects-dcd"></span><span>%</span>
                                                     </p>
                                                     </div>
                                                 <div class="dashboard-project-title"><p>Data Centric Development</p></div>
                                             </div>
                                             <div class="dashboard-medal-wrapper">
                                                 <div class="dashboard-project-circle">
-                                                    <p id="dashboard-dcd">%
+                                                    <p><span id="projects-fsd"></span><span>%</span>
                                                     </p>
                                                     </div>
                                                 <div class="dashboard-project-title"><p>Full Stack Development</p></div>
@@ -149,7 +149,7 @@
                                                     <p>HTML:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-html" class="progress-bar bg-info" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                    <div id="theory-html" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                         <p>96%</p>
                                                     </div>
                                                 </div>
@@ -159,7 +159,7 @@
                                                     <p>CSS:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-css" class="progress-bar bg-info" role="progressbar" style="width: 97%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                    <div id="theory-css" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                         <p>97%</p>
                                                     </div>
                                                 </div>
@@ -169,8 +169,8 @@
                                                     <p>UCFED:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-ucfed" class="progress-bar bg-info" role="progressbar" style="width: 92%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                        <p>92%</p>
+                                                    <div id="theory-ucfed" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        <p></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -179,8 +179,8 @@
                                                     <p>Javascript:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-js" class="progress-bar bg-info" role="progressbar" style="width: 69%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                        <p>69%</p>
+                                                    <div id="theory-js" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        <p></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -189,8 +189,8 @@
                                                     <p>IFED:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-ifed" class="progress-bar bg-info" role="progressbar" style="width: 87%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                        <p>87%</p>
+                                                    <div id="theory-ifed" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        <p></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -199,8 +199,8 @@
                                                     <p>Python theory:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-pythonfu" class="progress-bar bg-info" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                        <p>95%</p>
+                                                    <div id="theory-pythonfu" class="progress-bar bg-info" role="progressbar" style="width:0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        <p></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -209,8 +209,8 @@
                                                     <p>Practicle Python:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-pythonth" class="progress-bar bg-info" role="progressbar" style="width: 67%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                        <p>67%</p>
+                                                    <div id="theorypr-pythonth" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        <p></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -219,8 +219,8 @@
                                                     <p>Data-Centric Dev:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-dcd" class="progress-bar bg-info" role="progressbar" style="width: 71%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                        <p>71%</p>
+                                                    <div id="theory-dcd" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        <p></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -229,7 +229,7 @@
                                                     <p>Full Stack Dev:</p>
                                                 </div>
                                                 <div class="progress dashboard-module-bar">
-                                                    <div id="dashboard-module-fsd" class="progress-bar bg-info" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                    <div id="theory-fsd" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                         <p>75%</p>
                                                     </div>
                                                 </div>
@@ -265,7 +265,7 @@
                                     <h5>Fullstack Developer Skills Profile<h5>
                                 </div>
                                 <div class="dashboard-title">
-                                    <h5 class="dashboard-name"><span id="dashboard-name">Name Surename</span><h5>
+                                    <h5 class="dashboard-name"><span id="name1">Name Surename</span><h5>
                                 </div>
                             </div>
                             <div class="dashboard-body">
@@ -283,7 +283,7 @@
                                                 <p>1. HTML:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-html" class="progress-bar bg-info" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-html" class="skill-identifier progress-bar bg-info" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -293,7 +293,7 @@
                                                 <p>2. CSS:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-css" class="progress-bar bg-info" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-css" class="skill-identifier progress-bar bg-info" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -303,7 +303,7 @@
                                                 <p>3. Javascript:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-js" class="progress-bar bg-info" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-js" class="skill-identifier progress-bar bg-info" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -313,7 +313,7 @@
                                                 <p>4. Python:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-python" class="progress-bar bg-info" role="progressbar" style="width: 67%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-python" class="skill-identifier progress-bar bg-info" role="progressbar" style="width: 67%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>67%</p>
                                                 </div>
                                             </div>
@@ -323,7 +323,7 @@
                                                 <p>5. MySQL/SQL:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-sql" class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-sql" class="skill-identifier progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>70%</p>
                                                 </div>
                                             </div>
@@ -339,7 +339,7 @@
                                                 <p>1. Bootstrap:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-bootstrap" class="progress-bar bg-danger" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-bootstrap" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -349,7 +349,7 @@
                                                 <p>2. Jasmine:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-jasmine" class="progress-bar bg-danger" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-jasmine" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -359,7 +359,7 @@
                                                 <p>3. JQuery:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-jquery" class="progress-bar bg-danger" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-jquery" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -369,7 +369,7 @@
                                                 <p>4. Flask:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-flask" class="progress-bar bg-danger" role="progressbar" style="width: 67%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-flask" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 67%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>67%</p>
                                                 </div>
                                             </div>
@@ -379,7 +379,7 @@
                                                 <p>5. Heroku:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-heroku" class="progress-bar bg-danger" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-heroku" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>70%</p>
                                                 </div>
                                             </div>
@@ -389,7 +389,7 @@
                                                 <p>6. Mongo DB:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-mongo" class="progress-bar bg-danger" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-mongo" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>70%</p>
                                                 </div>
                                             </div>
@@ -399,7 +399,7 @@
                                                 <p>7.Django:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-django" class="progress-bar bg-danger" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-django" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>70%</p>
                                                 </div>
                                             </div>
@@ -414,7 +414,7 @@
                                                 <p>1. FrontEnd:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-project" class="progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-project" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -424,7 +424,7 @@
                                                 <p>2. Git:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-git" class="progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-git" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -434,7 +434,7 @@
                                                 <p>3. Inspect:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-browser" class="progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-browser" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -444,7 +444,7 @@
                                                 <p>4. API:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-api" class="progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-api" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -454,7 +454,7 @@
                                                 <p>5. Databases:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-databases" class="progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-databases" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -464,7 +464,7 @@
                                                 <p>6. Full stack:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-fsdframeworks" class="progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-fsdframeworks" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -474,7 +474,7 @@
                                                 <p>7. UD/UI:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
-                                                <div id="dashboard-skill-udui" class="progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <div id="dashboard-skill-udui" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                                     <p>96%</p>
                                                 </div>
                                             </div>
@@ -495,7 +495,7 @@
                                         <div class="dashbord-logic-square">
                                             <h6>Theory Scoring:</h6>
                                             <div class="dashboard-logic-description">
-                                                <p>0% - no knowledge</p>
+                                                <p>0% - not familiar</p>
                                                 <p>60% - familiar with</p>
                                                 <p>80% - used at least once</p>
                                                 <p>100% - used many times, can teach</p>
@@ -504,7 +504,7 @@
                                         <div class="dashbord-logic-square">
                                             <h6>Projects Scoring:</h6>
                                             <div class="dashboard-logic-description">
-                                                <p>0% - not passed</p>
+                                                <p>0% - not complete</p>
                                                 <p>60% - pass</p>
                                                 <p>80% - pass with merit</p>
                                                 <p>100% - pass with distinction</p>
@@ -516,7 +516,7 @@
                             <!-- DASHBOARD PAGE 2. STANDARD FOOTER-->
                             <div class="dashboard-footer">
                                 <div class="date">
-                                    <div id="date">
+                                    <div id="date1">
                                         Date
                                     </div>
                                 </div>
