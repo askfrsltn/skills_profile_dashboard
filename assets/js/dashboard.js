@@ -37,7 +37,7 @@ $(document).ready(function(){
 
                 skillsObject["dashboard-skill-mongo"]=parseInt((parseInt(userObject.scores["theory-mongodb-intro"])+parseInt(userObject.scores["theory-mongodb-shell"]))/2)+"%";//MONGO
 
-                skillsObject["dashboard-skill-django"]=parseInt((parseInt(userObject.scores["theory-django-isetup"])+parseInt(userObject.scores["theory-django-urls"])+parseInt(userObject.scores["theory-django-adminmigration"])+parseInt(userObject.scores["theory-django-models"])+parseInt(userObject.scores["theory-django-deploy"])+parseInt(userObject.scores["theory-django-test"]))/6);//DAJNGO
+                skillsObject["dashboard-skill-django"]=parseInt((parseInt(userObject.scores["theory-django-isetup"])+parseInt(userObject.scores["theory-django-urls"])+parseInt(userObject.scores["theory-django-adminmigration"])+parseInt(userObject.scores["theory-django-models"])+parseInt(userObject.scores["theory-django-deploy"])+parseInt(userObject.scores["theory-django-test"]))/6)+"%";//DAJNGO
 
                 skillsObject["dashboard-skill-heroku"]=parseInt(userObject.scores["theory-python-heroku"])+"%"; //HEROKU
 
@@ -71,7 +71,6 @@ $(document).ready(function(){
         // create one single dimension object
 //5.  CREATE A ONE ONE-DIMENSIONAL OBJECT WITH ALL THE VALUES FROM PREVIOUS PAGE SCORING (USEROBJECT) AND CALCULATION OF NEW "SKILLS" VARIALES ABOVE
         
-    function createDashboardObject(){
         //retrieve 6 objects inside user object
         userObjectDonutProgressBar=userObject.donutProgressBar;
         userObjectDonutProgressNumbers=userObject.donutProgressNumbers;
@@ -85,11 +84,6 @@ $(document).ready(function(){
         dashboardObject.name=userObject.name;// add name variable from login
         dashboardObject.email=userObject.email; // add email variable from login
         
-        console.log(dashboardObject);
-        for (let i=0; i=dashboardObject.length; i++){
-            parseInt(dashboardObject);
-        }
-        console.log(dashboardObject);
 
 // 6. USE LOOP TO ASSIGN ALL VALUES FROM ONE-DIMENSIONAL OBJECT TO ALL THE VALUE IDS ON A PAGE - DASHBOARDOBJECT
         
@@ -99,14 +93,94 @@ $(document).ready(function(){
             $(`#${key}`).text(`${value}`);
             }else{}
         }
-    }
+
+
 //7. ASSIGN VISUALS ATTRIBUTES
+    // a. DONUT CHART BARS. visuals for Donut charts
+        document.getElementById("progress-bar").setAttribute("stroke-dasharray", userObject.donutProgressBar["progress-bar"]+", 100" );//set up a progress bar on the project donut chart
+        document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", userObject.donutProgressBar["progress-bar-theory"]+", 100" );//set up a progress bar on the project donut chart
+    // b. ROJECTS MEDALS. find project medals check the value, add class. I simply hard coded the style condition, it took me 20 min, before that I spent 3 hours tring to find the way to make 1) an array of ids and values, 2) create a switch condition inside the loop to addclass depending on 60,80 or 100. BUT It works.
+        
+        let ucfed=$("#projects-ucfed").text();
+        let ifed=$("#projects-ifed").text();
+        let dcd=$("#projects-dcd").text();
+        let fsd=$("#projects-fsd").text();
+
+        if(ucfed==60){
+        $("#projects-ucfed").parent().parent().addClass("bronze");
+        } else if (ucfed==80){$("#projects-ucfed").parent().parent().addClass("silver");} else if (ucfed==100){$("#projects-ucfed").parent().parent().addClass("gold");}else{}
+        
+        if(ifed==60){
+            $("#projects-ifed").parent().parent().addClass("bronze");
+        } else if (ifed==80){$("#projects-ifed").parent().parent().addClass("silver");} else if (ifed==100){$("#projects-ifed").parent().parent().addClass("gold");}else{}
+
+        if(dcd==60){
+            $("#projects-dcd").parent().parent().addClass("bronze");
+        } else if (dcd==80){$("#projects-dcd").parent().parent().addClass("silver");} else if (dcd==100){$("#projects-dcd").parent().parent().addClass("gold");}else{}
+
+        if(fsd==60){
+            $("#projects-fsd").parent().parent().addClass("bronze");
+        } else if (fsd==80){$("#projects-fsd").parent().parent().addClass("silver");} else if (fsd==100){$("#projects-fsd").parent().parent().addClass("gold");}else{}
+    console.log(dashboardObject)
+    // c. MODULE BARS. 
+    $("#theory-html").css("width",userObject.scores["theory-html"]+"%");
+    $("#theory-css").css("width",userObject.scores["theory-css"]+"%");
+    $("#theory-ucfed").css("width",userObject.scores["theory-ucfed"]+"%");
+    $("#theory-js").css("width",userObject.scores["theory-js"]+"%");
+    $("#theory-ifed").css("width",userObject.scores["theory-ifed"]+"%");
+    $("#theory-pythonfu").css("width",userObject.scores["theory-pythonfu"]+"%");
+    $("#theory-pythonpr").css("width",userObject.scores["theory-pythonpr"]+"%");
+    $("#theory-dcd").css("width",userObject.scores["theory-dcd"]+"%");
+    $("#theory-fsd").css("width",userObject.scores["theory-fsd"]+"%");
+    
+    // c. MODULE BARS. 
+    $("#theory-html").css("width",dashboardObject["theory-html"]+"%");
+    $("#theory-css").css("width",dashboardObject["theory-css"]+"%");
+    $("#theory-ucfed").css("width",dashboardObject["theory-ucfed"]+"%");
+    $("#theory-js").css("width",dashboardObject["theory-js"]+"%");
+    $("#theory-ifed").css("width",dashboardObject["theory-ifed"]+"%");
+    $("#theory-pythonfu").css("width",dashboardObject["theory-pythonfu"]+"%");
+    $("#theory-pythonpr").css("width",dashboardObject["theory-pythonpr"]+"%");
+    $("#theory-dcd").css("width",dashboardObject["theory-dcd"]+"%");
+    $("#theory-fsd").css("width",dashboardObject["theory-fsd"]+"%");
+    
+    // d. SKILLS BARS. 
+    //languages
+    $("#dashboard-skill-html").css("width",dashboardObject["dashboard-skill-html"]);
+    $("#dashboard-skill-css").css("width",dashboardObject["dashboard-skill-css"]);
+    $("#dashboard-skill-js").css("width",dashboardObject["dashboard-skill-js"]);
+    $("#dashboard-skill-python").css("width",dashboardObject["dashboard-skill-python"]);
+    $("#dashboard-skill-sql").css("width",dashboardObject["dashboard-skill-sql"]);
+    
+    //frameworks
+    $("#dashboard-skill-bootstrap").css("width",dashboardObject["dashboard-skill-bootstrap"]);
+    $("#dashboard-skill-jasmine").css("width",dashboardObject["dashboard-skill-jasmine"]);
+    $("#dashboard-skill-jquery").css("width",dashboardObject["dashboard-skill-jquery"]);
+    $("#dashboard-skill-flask").css("width",dashboardObject["dashboard-skill-flask"]);
+    $("#dashboard-skill-heroku").css("width",dashboardObject["dashboard-skill-heroku"]);
+    $("#dashboard-skill-mongo").css("width",dashboardObject["dashboard-skill-mongo"]);
+    $("#dashboard-skill-django").css("width",dashboardObject["dashboard-skill-django"]);
+
+    // developer tools
+    $("#dashboard-skill-project").css("width",dashboardObject["dashboard-skill-project"]);
+    $("#dashboard-skill-git").css("width",dashboardObject["dashboard-skill-git"]);
+    $("#dashboard-skill-browser").css("width",dashboardObject["dashboard-skill-browser"]);
+    $("#dashboard-skill-api").css("width",dashboardObject["dashboard-skill-api"]);
+    $("#dashboard-skill-databases").css("width",dashboardObject["dashboard-skill-databases"]);
+    $("#dashboard-skill-fsdframeworks").css("width",dashboardObject["dashboard-skill-fsdframeworks"]);
+    $("#dashboard-skill-udui").css("width",dashboardObject["dashboard-skill-udui"]);
+
+
+
+
+
+        
+        
 
 //8. ASSIGN OTHER IDS THAT WERE MISSED IN THE STEP NUMBER 6
-    $("#name1").text(userObject.name);
+    $("#name1").text(userObject.name);//name to second page id
 
 //9.  SAVE ALL THE DATA TO LOCAL STORAGE   
-    createDashboardObject()
     localStorage.setItem('userObject', JSON.stringify(userObject)); // save user Object
 
 });

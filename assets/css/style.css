@@ -1,5 +1,5 @@
 /*-- FONTS --*/
-@import url('https://fonts.googleapis.com/css?family=Fira+Code:300,400,500,600,700|Roboto+Mono:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:300,400,500,600,700|Roboto+Mono:300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 
 /*-- KEEPING FOOTER AT THE BOTTOM --*/
 html, body {
@@ -654,14 +654,17 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 .gold{
     background-color: rgba(255, 215, 0 , 0.5);
+    box-shadow: none;
 }
 
 .silver{
     background-color: rgba(108,132,134 ,0.5 );
+    box-shadow: none;
 }
 
 .bronze{
-    background-color: rgba(205, 127, 50, 0.5);;
+    background-color: rgba(205, 127, 50, 0.5);
+    box-shadow: none;
 }
 
 .projects-score-circle.bronze:hover,

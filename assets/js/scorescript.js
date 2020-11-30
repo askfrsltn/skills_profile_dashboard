@@ -202,7 +202,7 @@ $(document).ready(function() {
         });
     
         
-    // SCORE.THEORY. VISUALS. Calculate module score visualisation functions
+    // SCORE.THEORY. VISUALS. Calculate module score visualisation functions. 
         $(".score-circle").click(function(){
             //1. find a module key id
             let moduleObjectKey = $(this).parent().parent().parent().parent().parent().siblings().children().find('.scorcard-score').attr("id");

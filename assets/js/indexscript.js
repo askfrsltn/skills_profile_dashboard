@@ -1,5 +1,5 @@
  $( document ).ready(function() {
-    localStorage.setItem("userObject", JSON.stringify(userObject));
+    //localStorage.setItem("userObject", JSON.stringify(userObject));
     
     // -- INDEX PAGE SCRIPTS
     $(function(){
@@ -39,11 +39,16 @@
             let name=$("#name").val();
             let email=$("#email").val();
             
-            let userObject = {
-                "name": name,
-                "email": email,
-            }
-            localStorage.setItem('userObject', JSON.stringify(userObject));
+            userObject = JSON.parse(localStorage.getItem("userObject"));
 
+            if(name==userObject.name){
+                alert("Welcome back, "+name+"!");
+            } else {
+                let userObject = {
+                "name": name,
+                "email": email
+                }
+                localStorage.setItem('userObject', JSON.stringify(userObject));
+            }
     });
 });
