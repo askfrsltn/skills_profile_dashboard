@@ -1,6 +1,6 @@
 $(document).ready(function(){
 // 1. DEFINE NEW SET OF VARIABLES -"SKILLS"- THAT EXIST ONLY ON THIS PAGE - SEE PAGE 2 OF THE DASHBOARD
-    //a. find a skill IDs and place it in userObject in local Storage
+    //a. find all skill IDs and place it in userObject in local Storage
         let skills = document.querySelectorAll('.skill-identifier');//specific ids
         let skillsObject = {}        // push them to sperate object
         for (let i = 0; i < skills.length; i++) {
@@ -81,19 +81,18 @@ $(document).ready(function(){
         
         // combine 6 objects inside userObject, add name them appropriately 
         let dashboardObject={...userObjectDonutProgressBar,...userObjectDonutProgressNumbers,...userObjectProgress,...userObjectProgressBar,...userObjectScores,...userObjectSkills};
-        dashboardObject.name=userObject.name;// add name variable from login
-        dashboardObject.email=userObject.email; // add email variable from login
+        loginObject=JSON.parse(localStorage.getItem("loginObject"));
+        dashboardObject.name=loginObject.name;// add name variable from login
+        dashboardObject.email=loginObject.email; // add email variable from login
         
 
 // 6. USE LOOP TO ASSIGN ALL VALUES FROM ONE-DIMENSIONAL OBJECT TO ALL THE VALUE IDS ON A PAGE - DASHBOARDOBJECT
-        
     // !! loop over Object key/value: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries - thanks to Tim from tutor support.
         for (const [key, value] of Object.entries(dashboardObject)) {
             if (`${value}`!==0){ //check if the value is 0
             $(`#${key}`).text(`${value}`);
             }else{}
         }
-
 
 //7. ASSIGN VISUALS ATTRIBUTES
     // a. DONUT CHART BARS. visuals for Donut charts
@@ -178,12 +177,22 @@ $(document).ready(function(){
         
 
 //8. ASSIGN OTHER IDS THAT WERE MISSED IN THE STEP NUMBER 6
-    $("#name1").text(userObject.name);//name to second page id
+    $("#name1").text(loginObject.name);//name to second page id
 
 //9.  SAVE ALL THE DATA TO LOCAL STORAGE   
     localStorage.setItem('userObject', JSON.stringify(userObject)); // save user Object
 
+// 10. MODAL.SUMMARY
+
+    $("#summary-button").click(function(){
+        $(".modal-container").removeClass("hidden");
+    });
+    $(".modal-container").click(function(){
+        $(".modal-container").addClass("hidden");
+    });
 });
+
+
 
     //Parking lot
     /*--

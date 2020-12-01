@@ -4,53 +4,57 @@
     // Create userObject object upon login to add to individual object: scores, progress, progress-bars  (logic from: https://stackoverflow.com/questions/48996441/javascript-iterate-over-form-inputs-and-collect-values-as-key-value-pairs-in-o)
     
     $(document).ready(function(){
-        // 1. Create object for scores
-        let ids = document.querySelectorAll('.scorcard-score')
-        let scoresObject = {}
-        for (let i = 0; i < ids.length; i++) {
-        scoresObject[ids[i].id] = 0;
-        }
         
-        // 2. Create object for progress bar
-        let progressBar = document.querySelectorAll('.progress-bar')
-        let progressBarObject = {}
-        for (let i = 0; i < progressBar.length; i++) {
-        progressBarObject[progressBar[i].id] = 0;
-        }
-        
-        // 3. Create object for progress            
-        let progressNumber = document.querySelectorAll('.progress-number')
-        let progressObject = {}
-        for (let i = 0; i < progressNumber.length; i++) {
-        progressObject[progressNumber[i].id] = 0;
-        }
+        // check login data with userObject data
+            let userObject={}
 
-        //4. create object for Donut chart numbers
-        let donutProgressNumbers = document.querySelectorAll('.score-identifier');
-        let donutProgressNumbersObject={}
-        for (let i = 0; i < donutProgressNumbers.length; i++) {
-        donutProgressNumbersObject[donutProgressNumbers[i].id] = 0;
-        }
 
-        //5. create object for Donut chart progress bar
-        let donutProgressBar = document.querySelectorAll('.circle-incomplete');
-        let donutProgressBarObject={}
-        for (let i = 0; i < donutProgressBar.length; i++) {
-        donutProgressBarObject[donutProgressBar[i].id] = 0;
-        }
-        
-        // add objects to the userObject in localStorage
-        
-        userObject=JSON.parse(localStorage.getItem("userObject")); // parse from LocalStorage
-        
-        userObject.scores=scoresObject; // add scores dataset to object            
-        userObject.progressBar=progressBarObject; // add progressBar dataset to object            
-        userObject.progress=progressObject; // add progress dataset to object       
-        userObject.donutProgressNumbers=donutProgressNumbersObject; //add progress numbers for donut charts into local storage data object
-        userObject.donutProgressBar=donutProgressBarObject; 
+            // 1. Create object for scores
+            let ids = document.querySelectorAll('.scorcard-score')
+            let scoresObject = {}
+            for (let i = 0; i < ids.length; i++) {
+            scoresObject[ids[i].id] = 0;
+            }
+            
 
-        localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage   
+            // 2. Create object for progress bar
+            let progressBar = document.querySelectorAll('.progress-bar')
+            let progressBarObject = {}
+            for (let i = 0; i < progressBar.length; i++) {
+            progressBarObject[progressBar[i].id] = 0;
+            }
+            
+            // 3. Create object for progress            
+            let progressNumber = document.querySelectorAll('.progress-number')
+            let progressObject = {}
+            for (let i = 0; i < progressNumber.length; i++) {
+            progressObject[progressNumber[i].id] = 0;
+            }
+            console.log(progressObject);
+            //4. create object for Donut chart numbers
+            let donutProgressNumbers = document.querySelectorAll('.score-identifier');
+            let donutProgressNumbersObject={}
+            for (let i = 0; i < donutProgressNumbers.length; i++) {
+            donutProgressNumbersObject[donutProgressNumbers[i].id] = 0;
+            }
+
+            //5. create object for Donut chart progress bar
+            let donutProgressBar = document.querySelectorAll('.circle-incomplete');
+            let donutProgressBarObject={}
+            for (let i = 0; i < donutProgressBar.length; i++) {
+            donutProgressBarObject[donutProgressBar[i].id] = 0;
+            }
         
+            // add objects to the userObject in localStorage
+            
+            userObject.scores=scoresObject; // add scores dataset to object            
+            userObject.progressBar=progressBarObject; // add progressBar dataset to object            
+            userObject.progress=progressObject; // add progress dataset to object       
+            userObject.donutProgressNumbers=donutProgressNumbersObject; //add progress numbers for donut charts into local storage data object
+            userObject.donutProgressBar=donutProgressBarObject; 
+            console.log(userObject);
+            localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage
+
     });
       
 $(document).ready(function() {
@@ -313,10 +317,27 @@ $(document).ready(function() {
                     // userObject saved in localStorage
                     localStorage.setItem("userObject", JSON.stringify(userObject));            
         });
+    // 10. MODALs.
+        // a. back to login
+        $("#login-button").click(function(){
+            $(".modal-container").removeClass("hidden");
+        });
+        $(".modal-container").click(function(){
+            $(".modal-container").addClass("hidden");
+        });
 
+        // a. back to login
+        $("#dashboard-button").click(function(){
+            $(".dashboard-modal-container").removeClass("hidden");
+        });
+        $(".dashboard-modal-container").click(function(){
+            $(".dashboard-modal-container").addClass("hidden");
+        });
+
+        
     //RESOLVE -LOGIC PAGE SCRIPT IMPACTS SCORECARD PAGE       
         // the function flips around the scorecard on logic page
             $(".scorecard-animation").click(function(){
             $(this).toggleClass("is-open");
-            });    
+            });
 });

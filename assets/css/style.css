@@ -653,37 +653,20 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .gold{
-    background-color: rgba(255, 215, 0 , 0.5);
-    box-shadow: none;
+    background-color: rgba(255,215,0 ,1);
+}
+.bronze{
+    background-color: rgba(205, 127, 50, 0.8);
 }
 
 .silver{
-    background-color: rgba(108,132,134 ,0.5 );
-    box-shadow: none;
+    background-color: rgba(108,132,134,0.8);
 }
 
-.bronze{
-    background-color: rgba(205, 127, 50, 0.5);
-    box-shadow: none;
-}
-
-.projects-score-circle.bronze:hover,
-.score-circle.bronze:hover{
-    background-color: lightgrey;
-    box-shadow: 0 0 0 0;
-    cursor: pointer;
-    transition: background-color 500ms ease-in-out;
-}
-
-.projects-score-circle.gold:hover,
-.score-circle.gold:hover{
-    background-color: rgba(255,215,0 ,1);
-    box-shadow: 0 0 0 0;
-    cursor: pointer;
     transition: background-color 10ms ease-in-out;
 }
 
-.projects-score-circle.silver:hover,
+.probackground-color:rgba(205, 127, 50, 1);ver,
 .score-circle.silver:hover{
     background-color: rgba(108,132,134,1);
     box-shadow: 0 0 0 0;
@@ -1205,4 +1188,80 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .progress{
     background-color:lightgrey;
     border-radius: 2px;
+}
+
+/*-- MODALS and WARNINGS --*/
+.dashboard-modal-container,
+.modal-container{
+    background-color: black;
+    position: absolute;
+    top:0;
+    left:0;
+    min-height: 100vh;
+    min-width: 100vw;
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.this-modal{
+    position: absolute;
+    top:30%;
+    left:30%;
+    height: 40vh;
+    width: 40vw;
+    border: 1px solid black;
+    background-color: white;
+    opacity: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.modal-text{
+    text-align: center;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    
+}
+
+.modal-header{
+    text-align: center;
+    color: red;
+}
+
+.close{
+    align-self: flex-end;
+}
+.modal-button{
+    margin-bottom: 40px;
+    border-radius:5px;
+    background-color:darkgrey;
+    border:none;
+    color: #fafafa;
+    height: 5vh;
+    padding: 10px 20px;
+    box-shadow: inset 0 0 15px rgba(55, 84, 170,0),
+    inset 0 0 20px rgba(255, 255, 255,0),
+    7px 7px 15px rgba(55, 84, 170,.15),
+    -7px -7px 20px rgba(255, 255, 255,1),
+    inset 0px 0px 4px rgba(255, 255, 255,.2);;
+}
+
+.hidden{
+   display:none; 
+}
+
+.modal-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

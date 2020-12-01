@@ -14,7 +14,7 @@
     
     <script src="https://kit.fontawesome.com/8bab7cf7fa.js" crossorigin="anonymous"></script>
     
-    <title>Full Stack Developer Skills Profile Dashboard. Home</title>
+    <title>Full Stack Developer Skills Profile Dashboard. Scorecards Page</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                 <div class="scorepage-title-section">
                     <div class="button theory-button">
                         <div class="smaller-title" class="smaller-text">
-                            <p id="login-button"><a href="index.html"><i class="dot-icon far fa-dot-circle icon"></i><span> [login] </span></a>
+                            <p id="login-button"><a><i class="dot-icon far fa-dot-circle icon"></i><span> [login] </span></a>
                             </p>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="button theory-button">
                         <div class="smaller-title" class="smaller-text no-underline">
-                            <p id="dashboard-button"><a href="dashboard.html"><span> [dashboard] </span><i class="dot-icon far fa-dot-circle icon"></i></a>
+                            <p id="dashboard-button"><a><span> [dashboard] </span><i class="dot-icon far fa-dot-circle icon"></i></a>
                             </p>
                         </div>
                     </div>
@@ -4527,7 +4527,38 @@
             </a>
         </div>
     </footer>
+    <!-- MODALS --> 
+        <!-- trigerred by LOGIN BUTTON--> 
+        <div id="login-modal" class="modal-container hidden">
+            <div class="this-modal">  
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <div class="modal-header">
+                    <h4>Warning!</h4>
+                    
+                </div>
+                <div class="modal-body">
+                    <p class="modal-text">If you proceed to LOGIN PAGE section you may lose your progress</p>
+                </div>
+                <button class="modal-button" id="login-modal-button" type="button modal-button"><a href="index.html"score.html"">...PROCEED </a></button>
+            </div>
+        </div>
+        <!-- trigerred by DASHBOARD BUTTON--> 
+        <div class="dashboard-modal-container hidden">
+            <div class="this-modal">  
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <div class="modal-header">
+                    <h4>Warning!</h4>
+                    
+                </div>
+                <div class="modal-body">
+                    <p class="modal-text">If you completed scoring 4 projects and 9 theory modules please proceed</p>
+                </div>
+                <button class="modal-button" id="dashboard-modal-button" type="button modal-button"><a href="dashboard.html"score.html"">...PROCEED </a></button>
+            </div>
+        </div>
+        
 </article>
+<footer></footer>
 
 </body> 
     <script
