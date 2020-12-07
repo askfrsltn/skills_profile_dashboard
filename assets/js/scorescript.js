@@ -284,7 +284,7 @@ $(document).ready(function() {
                 document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", theoryScore+", 100" ); // // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
 
                 //9. Assign numbers to 2 modules progress bar including red progress bar
-                const numberOfTheoryElements = $.find(".scorecard-element").length; // count all the elemnts scorecards without modules
+                const numberOfTheoryElements = $.find(".scorecard-element").length; // count all the elements scorecards without modules
             
                 let allTheScoredElements = $('.scorecard-element').find('.scorcard-score').text();// return all the scored elements values within the module
                 //Make an array from found values and count number of scores for all the elements.Use crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string     
@@ -311,8 +311,8 @@ $(document).ready(function() {
                     userObject.donutProgressNumbers["theory-overall"]=theoryScore;
                     userObject.donutProgressNumbers["theory-overall-summary"]=theoryScore;
 
-                    userObject.donutProgressBar["progress-bar-theory"]=theoryProgressBarWidth;
-                    userObject.donutProgressBar["progress-bar-theory1"]=theoryProgressBarWidth;
+                    userObject.donutProgressBar["progress-bar-theory"]=theoryScore; // check accuracy
+                    userObject.donutProgressBar["progress-bar-theory1"]=theoryScore; // check accuracy
                     
                     // userObject saved in localStorage
                     localStorage.setItem("userObject", JSON.stringify(userObject));            
