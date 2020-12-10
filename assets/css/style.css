@@ -11,6 +11,12 @@ article {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    /*-- source for perfect background:https://css-tricks.com/perfect-full-page-background-image/ --*/
+    background: url("/assets/img/hero1.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 main {
@@ -30,6 +36,7 @@ a,a:active, a:visited, a:focus, a:hover{
 body{
     font-family: "Fira Code", sans-serif;
     font-weight: 200;
+    color:#fafafa
 }
 
 footer{
@@ -190,11 +197,13 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height: 90vh;
     width: 70vh;    
     overflow: auto;
-    border: 1px solid #ccc;
-    margin: 5px;
+    border-radius: 10px;
+    /*-- source for frost effect: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/ 
+    background-color: rgba(255, 255, 255, .15); 
+    backdrop-filter: blur(10px);
 }
 
 .login-section{
@@ -202,11 +211,14 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 85vh;
+    height: 90vh;
     width: 70vh;    
     overflow: auto;
-    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(10px);
 }
+
 .login-description{
     width: 80%;
     text-align: center;
