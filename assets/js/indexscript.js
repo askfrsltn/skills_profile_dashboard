@@ -48,5 +48,15 @@
 
                 localStorage.setItem('loginObject', JSON.stringify(loginObject));
         });
-
+    // EXAMPLE. SCORE. THEORY. ELEMENT. slide down and up the card on click - works for each element card
+        $(document).ready(function(){
+            $(".scorecard-face-front-element").click(function(){
+                $(this).slideUp();
+                $(this).siblings().slideDown();
+            });
+            $(".scorecard-face-back-element").click(function(){
+                $(this).slideUp();
+                $(this).siblings().slideDown();
+            });             
+        });
     });

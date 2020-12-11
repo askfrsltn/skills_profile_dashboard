@@ -36,7 +36,7 @@ a,a:active, a:visited, a:focus, a:hover{
 body{
     font-family: "Fira Code", sans-serif;
     font-weight: 200;
-    color:#fafafa
+    color:rgb(78, 73, 73)
 }
 
 footer{
@@ -46,9 +46,11 @@ footer{
 header{
     padding: 10px;
 }
+
 ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0;
 }
+
 .shadow{
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
@@ -57,6 +59,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .button-effect{
     background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25));
 }
+
 .page-title{
     text-align: center;
     margin: 0 10px 0 10px;
@@ -118,8 +121,10 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .small-text{
     font-family: "Fira Code", sans-serif;
     font-weight: 300;
-    font-size: 0,4rem;
-    text-transform: uppercase;
+    font-size: 0,3rem;
+}
+.text-light{
+    color: #fafafa;
 }
 
 .dot-icon{
@@ -204,19 +209,21 @@ ul,h1,h2,h3,h4,h5,h6,p{
     /*-- source for frost effect: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/ 
     background-color: rgba(255, 255, 255, .15); 
     backdrop-filter: blur(10px);
+    margin-bottom: 10px;
 }
 
 .login-section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 90vh;
     width: 70vh;    
     overflow: auto;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(10px);
+    margin: 5px;
 }
 
 .login-description{
@@ -252,9 +259,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
 
-
-/*-- FANCY INPUT --*/
-
 /*-- UNDERSTAND PAGE --*/
 
 #js-understand-page{
@@ -271,14 +275,14 @@ ul,h1,h2,h3,h4,h5,h6,p{
     overflow: scroll;
 }
 
-.understand-page-example,
-.understand-page-logic{
-    height: 90vh;
-}
-
 #js-card-understand {
     background-color: lightslategray;
     cursor: pointer;
+}
+.understand-page-logic{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .scoringprocess-pages,
@@ -287,12 +291,12 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 10px;
 }
 
 .dashboard-dummy{
-    height: 69vh;
-    width: 45vh;
-    border: 1px solid #ccc;
+    height: 45vh;
+    width: 36vh;
     order: 1;
     margin: 20px;
     background-position: center center;
@@ -353,24 +357,32 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 /*-- UNDERSTAND PAGE-LOGIC SECTION --*/
-.logic-wrapper{
+.understand-logic-section{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    height: 100%;
+    justify-content: flex-start;
+    height: 90vh;
+    width: 70vh;    
+    overflow: auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .1);  
+    backdrop-filter: blur(10px);
+    margin: 5px;
 }
-.logic-card{
+
+.logic-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid #ccc;
-    width: 95%;
-    margin-top: 5px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
-   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    height: 80vh;
+}
+.scorecards-examples{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .logic-card-title{
@@ -382,15 +394,40 @@ ul,h1,h2,h3,h4,h5,h6,p{
     padding: 10px;
     text-align: left;
 }
-.scorecard-exmaple-theory,
-.scorecard-exmaple-project{
-    margin: 10px;
+
+.scorecard-example-theory{
+    height: 15vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 40vh;
     perspective: 1000px;
+    border-radius: 5px;
+    margin-top:5px;
+}
+
+.scorecard-element-style{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vh;
+    perspective: 1000px;
+    border-radius: 10px;
+    margin-top:5px;
+    background-color:#c0c0c0; 
+    backdrop-filter: blur(10px);
+}
+
+.understand-page-example{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.back-to-login{
+    margin-bottom: 45px;
 }
 
 /*-- SCORE_PAGE --*/
@@ -438,7 +475,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 85vh;
+    height: 90vh;
     width: 72vh;    
     overflow: auto;
     border: 1px solid #ccc;
@@ -522,7 +559,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .circle-complete{
-
     stroke: rgba(0,0,0,0.1);
     fill: none;
     stroke-width: 1;
@@ -543,7 +579,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .process-section,
 .score-project-section{
     position: relative;
-    height: 85vh;
+    height: 90vh;
     width: 70vh;
     display: flex;
     flex-direction: column;
@@ -673,12 +709,10 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 .silver{
     background-color: rgba(108,132,134,0.8);
-}
-
     transition: background-color 10ms ease-in-out;
 }
 
-.probackground-color:rgba(205, 127, 50, 1);ver,
+.projects-score-circle.silver,
 .score-circle.silver:hover{
     background-color: rgba(108,132,134,1);
     box-shadow: 0 0 0 0;
@@ -702,22 +736,17 @@ ul,h1,h2,h3,h4,h5,h6,p{
 /*-- Theory Element Scorecard --*/ 
 
 .score-modules-section{
-    position: relative;
-    width: 70vh;
-    max-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    overflow: scroll; 
-    border: 1px solid #ccc;
-}
-
-.modules-scorecard-section{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
+    height: 90vh;
+    width: 70vh;    
+    overflow: auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .1);  
+    backdrop-filter: blur(10px);
+    margin: 5px;
 }
 
 .scorecard-module{
@@ -771,7 +800,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 39vh;
+    width: 40vh;
     perspective: 1000px;
     border-radius: 5px;
     margin-top:5px;
@@ -785,8 +814,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 
 .scorecard-face-element{
-    height: 15vh;
-    margin-top: 5px;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -819,6 +847,13 @@ ul,h1,h2,h3,h4,h5,h6,p{
     text-transform: uppercase;
     font-weight: 300;
     color: #f1f1f1;
+}
+
+.scorecard-title-element1{
+    width: 70%;
+    padding: 5px;
+    text-align: left;
+    font-weight: 300;
 }
 
 .hidden{
@@ -866,7 +901,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 85vh;
+    height: 90vh;
     width: 70vh;    
     overflow: auto;
     border: 1px solid #ccc;
