@@ -1,6 +1,13 @@
 /*-- FONTS --*/
 @import url('https://fonts.googleapis.com/css?family=Fira+Code:300,400,500,600,700|Roboto+Mono:300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 
+/*-- MEDIAQUERIES to ficx responsiveness issues --*/
+
+@media only screen and (max-width: 900px) {
+
+}
+
+
 /*-- KEEPING FOOTER AT THE BOTTOM --*/
 html, body {
     width: 100%;
@@ -62,7 +69,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .page-title{
     text-align: center;
     margin: 0 10px 0 10px;
-    border-bottom: 1px solid #ccc;
     font-size:2rem;
 }
 .theory-button{
@@ -175,7 +181,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
     align-content: center;
     height: 100vh;
     width: 50%;
-    border: 1px solid #ccc;
 }
 
 .title-item{
@@ -439,13 +444,13 @@ ul,h1,h2,h3,h4,h5,h6,p{
 #js-projects{
     display:none;
     z-index: 5;
-    height: 100vh;
+    height: 100%;
 }
 
 #js-theory{
     display:none;
     z-index: 6;
-    height: 100vh;
+    height: 100%;
 }
 
 .score-page{
@@ -473,11 +478,22 @@ ul,h1,h2,h3,h4,h5,h6,p{
     max-height: 100%;
 }
 
+.scorepage-background{
+    background: url("/assets/img/code4.png") no-repeat center center fixed;
+}
+
 .scorepage-title-section{
     margin: 0 20px 0 20px;
     max-height: 7vh;
 }
 
+.projects-background{
+    background-color: rgba(73, 75, 104, .9);
+}
+
+.theory-background{
+    background-color: rgba(38, 80, 119, .5);
+}
 
 .score-theory-section{
     display: flex;
@@ -491,10 +507,31 @@ ul,h1,h2,h3,h4,h5,h6,p{
     overflow: auto;
     border-radius: 10px;
     margin: 10px;
+    background-color: rgba(255, 255, 255, .15); 
+    backdrop-filter: blur(10px);
+    margin-bottom: 10px;
+    order: 1;
 }
 
 .score-project-summary,
-.score-theory-summary,
+.score-theory-summary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 85vh;
+    width: 72vh;    
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: auto;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, .15); 
+    backdrop-filter: blur(10px);
+    margin-bottom: 10px;
+    order: 2;
+}
+
 .score-project-section{
     display: flex;
     flex-direction: column;
@@ -507,6 +544,10 @@ ul,h1,h2,h3,h4,h5,h6,p{
     overflow: auto;
     border-radius: 10px;
     margin: 10px;
+    background-color: rgba(255, 255, 255, .15); 
+    backdrop-filter: blur(10px);
+    margin-bottom: 10px;
+    order: 1;
 }
 
 .theory-summary-title,
@@ -600,9 +641,8 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 /*-- PROJECTS-SCORING PAGE --*/
-.projects-background{
-    background-color: rgba(38,80,119,0.2);
-}
+
+
 
 .scoring-logic-section{
     position: relative;
@@ -757,9 +797,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 /*-- THEORY SCORING PAGE--*/
 
-.theory-background{
-    background-color: rgba(73,75,104,0.4);
-}
+
 /*-- Theory Element Scorecard --*/ 
 
 .score-modules-section{
