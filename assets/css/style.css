@@ -720,7 +720,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     align-items: center;
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-   font-size: 2vh;
+   font-size: 3vh;
    margin-left: 5px;
 }
 
@@ -752,8 +752,8 @@ ul,h1,h2,h3,h4,h5,h6,p{
     align-items: center;
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-   background-color: #fafafa;
-   font-size: 2vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 2vh;
 }
 
 .card-score-definition{
@@ -817,7 +817,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 39vh;
+    width: 40vh;
 }
 
 .scorecard-animation-module{
@@ -880,7 +880,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid #ccc;
+    
 }
 
 .scorecard-face-front-element{
@@ -888,16 +888,21 @@ ul,h1,h2,h3,h4,h5,h6,p{
     position: relative;
     cursor: pointer;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, .5);  
+    backdrop-filter: blur(20px);
 }
 
 .scorecard-face-back-element {
     width: 100%;
     position: relative;
     flex-direction:column;
+    align-items: center;
+    justify-content: space-around;
     border-radius: 5px;
     display: none;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, .5);  
+    backdrop-filter: blur(20px);
 }
 
 .scorecard-title-element{
@@ -905,10 +910,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     padding: 5px;
     text-align: left;
     font-size: 1rem;
-    font-family: "Roboto-Mono", sans-serif;
-    text-transform: uppercase;
     font-weight: 300;
-    color: #f1f1f1;
 }
 
 .scorecard-title-element1{
