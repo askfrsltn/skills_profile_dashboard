@@ -46,10 +46,6 @@ footer{
     display: flex;
 }
 
-header{
-    padding: 10px;
-}
-
 ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0;
 }
@@ -68,6 +64,10 @@ ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0 10px 0 10px;
     border-bottom: 1px solid #ccc;
     font-size:2rem;
+}
+.theory-button{
+    text-align: center;
+ 
 }
 
 .roboto {
@@ -430,6 +430,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     align-items: center;
     justify-content: flex-start;
 }
+
 .back-to-login{
     margin-bottom: 45px;
 }
@@ -438,11 +439,13 @@ ul,h1,h2,h3,h4,h5,h6,p{
 #js-projects{
     display:none;
     z-index: 5;
+    height: 100vh;
 }
 
 #js-theory{
     display:none;
     z-index: 6;
+    height: 100vh;
 }
 
 .score-page{
@@ -463,18 +466,20 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 /*-- SCORE_PAGE_SUMMARY --*/
-.scorepage-title-section{
+.scorepage-overall-summary{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+    max-height: 100%;
+}
+
+.scorepage-title-section{
     margin: 0 20px 0 20px;
     max-height: 7vh;
 }
 
 
-.score-theory-summary,
-.score-project-summary{
+.score-theory-section{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -484,6 +489,24 @@ ul,h1,h2,h3,h4,h5,h6,p{
     border: 1px solid #ccc;
     position: relative;
     overflow: auto;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.score-project-summary,
+.score-theory-summary,
+.score-project-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 85vh;
+    width: 72vh;    
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: auto;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .theory-summary-title,
@@ -581,8 +604,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     background-color: rgba(38,80,119,0.2);
 }
 
-.scoring-logic-section,
-.score-project-section{
+.scoring-logic-section{
     position: relative;
     height: 90vh;
     width: 70vh;

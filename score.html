@@ -24,28 +24,15 @@
     <main>    
         <!-- OVERALL SUMMARY -->
         <article id="js-scoresummary">   
-            <div>
+            <div class="scorepage-overall-summary">
                 <div class="scorepage-title-section">
-                    <div class="button theory-button">
-                        <div class="smaller-title" class="smaller-text">
-                            <p id="login-button"><a><i class="dot-icon far fa-dot-circle icon"></i><span> [login] </span></a>
-                            </p>
-                        </div>
-                    </div>
                     <div class="page-title">
                         <h1>Score Summary</h1>
-                    </div>
-                    <div class="button theory-button">
-                        <div class="smaller-title" class="smaller-text no-underline">
-                            <p id="dashboard-button"><a><span> [dashboard] </span><i class="dot-icon far fa-dot-circle icon"></i></a>
-                            </p>
-                        </div>
                     </div>
                 </div>
                 <div class="score-page-content">   
                     <!-- PROJECTS SECTION - SUMMARY -->
                     <section class="score-project-summary projects-background">   
-
                         <div class="project-summary-title">
                             <h3>Projects Score</h3>
                         </div>
@@ -136,10 +123,16 @@
                     </section>
                 </div>
             </div>
+            <div class="button theory-button">
+                <div class="smaller-text no-underline">
+                    <p id="dashboard-button"><a><span> [dashboard] </span><i class="dot-icon far fa-dot-circle icon"></i></a>
+                    </p>
+                </div>
+            </div>
         </article>
         
         <!-- PROJECTS SCORING PAGE -->
-        <article id="js-projects" class="projects-background">
+        <article id="js-projects" class="projects-background projects-height">
             <div>
                 <div class="page-title">
                     <h1>Projects</h1>
@@ -157,7 +150,7 @@
                 <!-- PROJECTs SUMMARY ROGRESS BAR-->
                 <div class="progress-wrapper">
                     <div class="project-progress-title">
-                        <p>Projects Progress:</p>
+                        <p>Projects scored:</p>
                             <div class="progress progress-score-bar">
                                 <div id="project-scoring-progress-bar1" class="projects-progress-bar progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
@@ -199,7 +192,9 @@
             
             <!-- PROJECTS Section - Scoring Cards -->  
             <section class="score-project-section">
-                <div class="project-summary-title"><h3>Scorecards</h3></div>
+                <div class="project-summary-title">
+                    <h3>Scorecards</h3>
+                </div>
                 
                 <!-- PROJECTS. 01 UCFED -->
                 <div class="scorecard">
@@ -439,7 +434,7 @@
                 </section>
                 
                 <!-- THEORY Section - 9 Modules Scorecards-->
-                <section class="score-theory-summary">
+                <section class="score-theory-section">
                     <div class="theory-summary-title">
                         <h3>Scorecards</h3>
                     </div>
@@ -4517,14 +4512,9 @@
                 </section>
             </div>
         </article>        
-        </div>
+    </div>
     </main>       
     <footer>
-        <div class="copyright">
-            <a>
-                <p><i class="far fa-copyright"></i></p>      
-            </a>
-        </div>
     </footer>
     <!-- MODALS --> 
         <!-- trigerred by LOGIN BUTTON--> 
