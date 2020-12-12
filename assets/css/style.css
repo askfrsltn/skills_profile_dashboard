@@ -11,6 +11,9 @@ article {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    
+}
+.landing-background{
     /*-- source for perfect background:https://css-tricks.com/perfect-full-page-background-image/ --*/
     background: url("/assets/img/hero1.png") no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -357,6 +360,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 /*-- UNDERSTAND PAGE-LOGIC SECTION --*/
+.process-section,
 .understand-logic-section{
     display: flex;
     flex-direction: column;
@@ -474,15 +478,17 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    height: 90vh;
+    justify-content: flex-start;
+    height: 85vh;
     width: 72vh;    
-    overflow: auto;
     border: 1px solid #ccc;
+    position: relative;
+    overflow: auto;
 }
 
 .theory-summary-title,
 .project-summary-title{
+    position: relative;
     margin-top: 10px;
     max-width: 50%;
     text-align: center;
@@ -576,7 +582,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .scoring-logic-section,
-.process-section,
 .score-project-section{
     position: relative;
     height: 90vh;
@@ -740,13 +745,10 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 90vh;
+    height: 85vh;
     width: 70vh;    
     overflow: auto;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, .1);  
-    backdrop-filter: blur(10px);
-    margin: 5px;
 }
 
 .scorecard-module{
