@@ -51,6 +51,7 @@ body{
 
 footer{
     display: flex;
+    margin: 0;
 }
 
 ul,h1,h2,h3,h4,h5,h6,p{
@@ -167,9 +168,8 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 .copyright{
     font-size: 20px;
-    color: rgba(112,126,144,1);
+    color: rgb(77, 86, 99);
     justify-content: center;
-    margin: 10px;
 }
 
 /*-- LANDING --*/
@@ -197,12 +197,13 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .landing-page{
-    margin: 0 20px 0 20px;
+    margin: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     flex-wrap:wrap;
+    height: 100%;
 }
 
 .landingpage-section {
@@ -492,7 +493,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .theory-background{
-    background-color: rgba(38, 80, 119, .5);
+    background-color: rgba(38, 80, 119, .7);
 }
 
 .score-theory-section{
@@ -703,7 +704,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 .scorecard-face-back{
     flex-direction:column;
-    border: 1px solid #ccc;
     border-radius: 10px;
     background-color: rgba(38,80,119,0.5);
     transform: rotateY(180deg);
@@ -768,7 +768,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .gold{
-    background-color: rgba(255,215,0 ,1);
+    background-color: rgba(207,181,59 ,1);
 }
 .bronze{
     background-color: rgba(205, 127, 50, 0.8);
@@ -790,6 +790,14 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .projects-score-circle.bronze:hover,
 .score-circle.bronze:hover{
     background-color: rgba(205, 127, 50, 1);
+    box-shadow: 0 0 0 0;
+    cursor: pointer;
+    transition: background-color 10ms ease-in-out;
+}
+
+.projects-score-circle.gold:hover,
+.score-circle.gold:hover{
+    background-color: rgba(207,181,59 ,1);
     box-shadow: 0 0 0 0;
     cursor: pointer;
     transition: background-color 10ms ease-in-out;
@@ -862,7 +870,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40vh;
+    width: 38vh;
     perspective: 1000px;
     border-radius: 5px;
     margin-top:5px;
@@ -889,7 +897,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     cursor: pointer;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, .5);  
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
 }
 
 .scorecard-face-back-element {
@@ -902,14 +910,14 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: none;
     cursor: pointer;
     background-color: rgba(0, 0, 0, .5);  
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
 }
 
 .scorecard-title-element{
     width: 70%;
-    padding: 5px;
+    padding: 10px;
     text-align: left;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 300;
 }
 
@@ -930,7 +938,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     text-align: left;
     line-height: 1.2;
     margin-left:10px;
-    font-size: 1rem;
+    font-size: 14px;
 }
 
 .progress-definition{
@@ -1278,8 +1286,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .dashboard-circle-complete{
-
-    stroke: rgba(0,0,0,0.1);
+    stroke: rgba(0,0,0,0.5);
     fill: none;
     stroke-width: 1;
     stroke-linecap: round;
