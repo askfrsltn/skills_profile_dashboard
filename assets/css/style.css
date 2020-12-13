@@ -995,6 +995,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 }
 
 /*-- DASHBOARD PREVIEW PAGE --*/
+
 .dashboard-page-content{
     margin: 0 20px 0 20px;
     display: flex;
@@ -1005,19 +1006,27 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
     margin-top: 10px;
 }
 
+.dashboard-title-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
 .dashboard-page-section{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 90vh;
-    width: 70vh;    
+    height: 650px;
+    width: 560px;    
     overflow: auto;
     border: 1px solid #ccc;
     margin: 0 5px 0 5px;
     background-color:#f1f1f1;
     box-shadow:2px 2px 3px 0 rgba(0, 0, 0, 0.15),
-   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);;
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    margin: 10px;
 }
 
 .dashboard-title{
@@ -1050,25 +1059,27 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashboard-header{
     width: 100%;
-    height: 10vh;
+    height: 80px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     margin: 0;
 }
+
 .dashboard-body{
     width: 100%;
-    height: 70vh;
+    height: 560px;
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
 }
+
 .dashboard-footer{
     width: 100%;
-    height: 5vh;
+    height: 40px;
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-around;
@@ -1082,9 +1093,10 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
     font-family:"Roboto Mono", sans-serif;
     margin: 0;
 }
+
 .dashboard-donuts-section{
     width: 100%;
-    height: 30vh;
+    height: 280px;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -1093,7 +1105,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashboard-detail-section{
     width: 100%;
-    height: 40vh;
+    height: 320px;
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
@@ -1112,7 +1124,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashboard-logic-section{
     width: 100%;
-    height: 20vh;
+    height: 20160px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -1123,15 +1135,15 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 .dashboard-logic-title,
 .dashboard-donut-title{
     width: 100%;
-    height: 5vh;
+    height: 40px;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 15px;
     text-decoration: underline;
 }
 
 .dashboard-donut{
-    width: 30vh;
-    height: 30vh;
+    width: 240px;
+    height: 240px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1141,7 +1153,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashboard-details-section{
     width: 100%;
-    height: 40vh;
+    height: 320px;
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
@@ -1152,7 +1164,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashboard-detail{
     width: 50%;
-    height: 40vh;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -1169,7 +1181,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashboard-medal-wrapper{
     width: 100%;
-    height: 8vh;
+    height: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1177,8 +1189,8 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 }
 
 .dashboard-project-circle{
-    height:7vh;
-    width: 7vh;
+    height:56px;
+    width: 56px;
     margin-left: 10px;
     border: 1px solid #ccc;
     border-radius: 50%;
@@ -1208,13 +1220,12 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 }
 
 .dashboard-module-bar{
-    width: 40%;
+    width: 35%;
     height: 12px;
 }
 
 .dashboard-module-wrapper{
     width: 90%;
-    height: 8.5;
     display: flex;
     justify-content: space-between;
     margin: 0;
@@ -1223,7 +1234,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 }
 
 .dashboard-module-title{
-    height: 3.5vh;
+    height: 28px;
     width: 60%;
     margin-right: 10px;
     display: flex;
@@ -1231,25 +1242,33 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
     align-items: center;
     font-size: 12px;
 }
+
 .dashboard-skills-section{
     width: 33%;
-    height: 40vh;
+    height: 320px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     margin-top:20px;
 }
+
+.dashboard-skills-section.borders{
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
 .dashboard-skills-title{
-    height: 5vh;
+    height: 40px;
     width: 100%;
     text-align: center;
     padding-top: 5px;
     text-decoration: underline;
 }
+
 .dashboard-logics-wrapper{
     width: 100%;
-    height: 15vh;
+    height: 120px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1258,7 +1277,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashbord-logic-square{
     width: 50%;
-    height: 15vh;
+    height: 120px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -1271,7 +1290,6 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashboard-skill-wrapper{
     width: 90%;
-    height: 8.5;
     display: flex;
     justify-content: space-between;
     margin-left: 10px;
@@ -1280,12 +1298,12 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 }
 
 .dashboard-skill-bar{
-    width: 35%;
+    width: 30%;
     height: 12px;
 }
 
 .dashboard-skill-title{
-    height: 3.5vh;
+    height: 28px;
     width: 65%;
     display: flex;
     justify-content: flex-start;
@@ -1293,28 +1311,20 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
     font-size: 12px;
     text-decoration: none;
 }
+
 /*-- CHARTS --*/
 .dashboard-donut-chart{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 25vh;
-    width: 25vh;
+    height: 160px;
+    width: 160px;
     text-align: center;
     margin-top: 0;
 }
-
-.dashboard-circular-chart{
-    width: 100%;
-    max-height: 100%;
-    margin-top: 0;
-    position: relative;
-    top:0;
-}
-
 .dashboard-circle-incomplete{
-  stroke: black;
+  stroke: red;
   fill: none;
   stroke-width: 1;
   stroke-linecap: round;
@@ -1323,7 +1333,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 }
 
 .dashboard-circle-complete{
-    stroke: rgba(0,0,0,0.5);
+    stroke: rgba(0,0,0,0.2);
     fill: none;
     stroke-width: 1;
     stroke-linecap: round;
@@ -1336,13 +1346,22 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
 
 .dashboard-score-text{
     position: relative;
-    top:47%;
-    font-size: 20px;
+    top:40%;
+    font-size: 25px;
+    color: red;
 }
 
 .progress{
-    background-color:lightgrey;
-    border-radius: 2px;
+    background-color:rgba(0,0,0,0.2);
+    border-radius: 1px;
+}
+
+.final-buttons-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
 }
 
 /*-- MODALS and WARNINGS --*/

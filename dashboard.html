@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="viewport" content="width= 1440, initial-scale=1, maximum-scale=1"> <!-- https://stackoverflow.com/questions/15510172/how-would-i-make-a-site-non-responsive-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
@@ -26,21 +26,9 @@
                 
 
                 <article id="dashoboards-page-background">   
-                    <div class="scorepage-title-section">
-                        <div class="button theory-button">
-                            <div class="smaller-title" class="smaller-text">
-                                <p id="summary-button" ><a><i class="dot-icon far fa-dot-circle icon" ></i><span>[score summary]</span></a>
-                                </p>
-                            </div>
-                        </div>
+                    <div class="dashboard-title-section">
                         <div class="page-title">
-                            <h1>Dashboards</h1>
-                        </div>
-                        <div class="button theory-button">
-                            <div class="smaller-title" class="smaller-text no-underline">
-                                <p id="dashboard-button"><a href="#"><span> [Print] </span><i class="dot-icon far fa-dot-circle icon"></i></a>
-                                </p>
-                            </div>
+                            <h1>Skills Profile</h1>
                         </div>
                     </div>
                     <div class="dashboard-page-content">   
@@ -54,7 +42,7 @@
                                     <h5 class="dashboard-name"><span id="name">Name Surename</span><h5>
                                 </div>
                             </div>
-                            <!-- DASHBOARD PAGE 1.2 DONUTS CHARTs  -->
+                            <!-- DASHBOARD PAGE 1 2 DONUTS CHARTs  -->
                             <div class="dashboard-body">
                                 <div class="dashboard-donuts-section">
                                     <div class="dashboard-donut">
@@ -62,38 +50,38 @@
                                         </div>
                                         <h6 class="dashboard-score-text"><span id="projects-overall"></span><span>%</span></h6>
                                         <div class="dashboard-donut-chart">
-                                              <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
-                                                <svg viewBox="0 0 36 36" class="dashboard-circular-chart">
-                                                    <path id="progress-bar" class="dashboard-circle-incomplete"
-                                                    stroke-dasharray="0, 100"
-                                                    d="M18 2.0845
-                                                    a 15.9155 15.9155 0 0 1 0 31.831
-                                                    a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                                    
-                                                    <svg viewBox="0 0 36 36" class="dashboard-circular-chart">
+                                            <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
+                                            <svg viewBox="0 0 36 36">
+                                                <path id="progress-bar" class="dashboard-circle-incomplete"
+                                                stroke-dasharray="0, 100"
+                                                d="M18 2.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831
+                                                a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                                
+                                                <svg viewBox="0 0 36 36">
                                                     <path class="dashboard-circle-complete"
                                                     stroke-dasharray="100, 100"
                                                     d="M18 2.0845
                                                     a 15.9155 15.9155 0 0 1 0 31.831
                                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                                    
-                                                    </svg>
+                                                
                                                 </svg>
+                                            </svg>
                                         </div>
                                     </div>
-                                    <div class="dashboard-donut dashboard-donut-theory">
+                                    <div class="dashboard-donut">
                                         <div class="dashboard-donut-title"><h6>Theory:</h6></div>
                                         <h6 class="dashboard-score-text"><span id="theory-overall"></span><span>%</span></h6>
                                         <div class="dashboard-donut-chart">
                                               <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
-                                                <svg viewBox="0 0 36 36" class="dashboard-circular-chart">
+                                                <svg viewBox="0 0 36 36">
                                                     <path id="progress-bar-theory" class="dashboard-circle-incomplete"
                                                     stroke-dasharray="0, 100"
                                                     d="M18 2.0845
                                                     a 15.9155 15.9155 0 0 1 0 31.831
                                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                                     
-                                                    <svg viewBox="0 0 36 36" class="dashboard-circular-chart">
+                                                    <svg viewBox="0 0 36 36">
                                                     <path class="dashboard-circle-complete"
                                                     stroke-dasharray="100, 100"
                                                     d="M18 2.0845
@@ -105,7 +93,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- DASHBOARD PAGE 1.DETAILED PROJECTS AND MODULES CHARTS -->
+                                <!-- DASHBOARD PAGE 1: DETAILED PROJECTS AND MODULES CHARTS -->
                                 <div class="dashboard-details-section">
                                     <div class="dashboard-detail dashboard-detail-projects">
                                         <div class="dashboard-donut-title"><h6>4 projects:</h6>
@@ -245,20 +233,13 @@
                             <!-- DASHBOARD PAGE 1. STANDARD FOOTER -->
                             <div class="dashboard-footer">
                                 <div class="date">
-                                        <div id="date">
-                                            Date
-                                        </div>
+                                    <div id="date">
+                                        Date
                                     </div>
-                                    <div class="pagenumber">
-                                        <p>page 1 of 2</p>
-                                    </div>
-                                    <div class="copyright">
-                                        <a>
-                                            <p>
-                                                <i class="far fa-copyright"></i>
-                                            </p>      
-                                        </a>
-                                    </div>
+                                </div>
+                                <div class="pagenumber">
+                                    <p>page 1 of 2</p>
+                                </div>   
                             </div>
                         </section>
 
@@ -334,7 +315,7 @@
                                         </div>
                                         
                                     </div>
-                                    <div class="dashboard-skills-section">
+                                    <div class="dashboard-skills-section borders">
                                         <div class="dashboard-skills-title">
                                             <h6>Frameworks:</h6>
                                         </div>
@@ -400,7 +381,7 @@
                                         </div>
                                         <div class="dashboard-skill-wrapper">
                                             <div class="dashboard-skill-title">
-                                                <p>7.Django:</p>
+                                                <p>7. Django:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
                                                 <div id="dashboard-skill-django" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -527,17 +508,25 @@
                                 <div class="pagenumber">
                                     <p>page 2 of 2</p>
                                 </div>
-                                <div class="copyright">
-                                    <a>
-                                        <p>
-                                            <i class="far fa-copyright"></i>
-                                        </p>      
-                                    </a>
-                                </div>
                             </div>
                         </section>
+                        
                     </div>
                 </article>
+                <div class="final-buttons-section">
+                    <div class="button">
+                        <div>
+                            <p id="summary-button" ><a><i class="dot-icon far fa-dot-circle icon" ></i><span>[back to login]</span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <div class="no-underline">
+                            <p id="dashboard-button"><a href="#"><span> [print] </span><i class="dot-icon far fa-dot-circle icon"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
         </article>
     </main>
     <footer><!-- MODAL-WARNING for GOING BACK --->
@@ -551,9 +540,9 @@
                             
                         </div>
                         <div class="modal-body">
-                            <p class="modal-text">If you proceed to SCORING SUMMARY section you may lose your progress.</p>
+                            <p class="modal-text">If you proceed to login page you will lose your personalised dashboard content.</p>
                         </div>
-                        <button class="modal-button" id="summary-modal-button" type="button modal-button"><a href="score.html"score.html"">...to Scoring </a></button>
+                        <button class="modal-button" id="summary-modal-button" type="button modal-button"><a href="index.html"score.html"">YES Proceed</a></button>
                     </div>
 
                 </div>
