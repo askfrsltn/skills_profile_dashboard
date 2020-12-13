@@ -140,19 +140,20 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .dot-icon{
     font-size: 4vh;
     color: #fd6470;
-    box-shadow: inset 0 0 15px rgba(55, 84, 170,0),
-    inset 0 0 20px rgba(255, 255, 255,0),
-    7px 7px 15px rgba(55, 84, 170,.15),
-    -7px -7px 20px rgba(255, 255, 255,1),
-    inset 0px 0px 4px rgba(255, 255, 255,.2);
-   border-radius: 50%;
-   transition: color 1000ms ease-in-out;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+    border-radius: 50%;
+    transition: color 10ms ease-in-out;
 }
 
 .dot-icon:hover,
 .dot-icon:focus,
 .dot-icon:active{
-    color: rgba(112, 128, 144, 0.6);
+    color: red;
     box-shadow: 
       inset 7px 7px 15px rgba(55, 84, 170,.15),
       inset -7px -7px 20px rgba(255, 255, 255,1),
@@ -218,7 +219,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     /*-- source for frost effect: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/ 
     background-color: rgba(255, 255, 255, .15); 
     backdrop-filter: blur(10px);
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .login-section{
@@ -232,7 +233,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     border-radius: 10px;
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(10px);
-    margin: 5px;
+    margin: 10px;
 }
 
 .login-description{
@@ -282,16 +283,19 @@ ul,h1,h2,h3,h4,h5,h6,p{
     height:100vh;
     width:100vw;
     overflow: scroll;
+    
 }
 
 #js-card-understand {
     background-color: lightslategray;
     cursor: pointer;
 }
+
 .understand-page-logic{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background-image: linear-gradient(to top, #ccdae1, #cde1e3, #d2e7e2, #dbece0, #e8f0de);
 }
 
 .scoringprocess-pages,
@@ -393,6 +397,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .logic-card-title{
@@ -411,7 +416,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40vh;
+    width: 38vh;
     perspective: 1000px;
     border-radius: 5px;
     margin-top:5px;
@@ -422,12 +427,18 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40vh;
+    width: 38vh;
     perspective: 1000px;
     border-radius: 10px;
     margin-top:5px;
-    background-color:#c0c0c0; 
+    background-color: rgba(38, 80, 119, .05); 
     backdrop-filter: blur(10px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
 }
 
 .understand-page-example{
@@ -480,16 +491,16 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .scorepage-background{
-    background: url("/assets/img/code4.png") no-repeat center center fixed;
+    background-image: linear-gradient(to right, #454062, #404468, #3a486e, #314c73, #265077);
 }
 
 .scorepage-title-section{
     margin: 0 20px 0 20px;
     max-height: 7vh;
 }
-
+/*-- gradient generator: https://mycolor.space/gradient?ori=to+bottom&hex=%23454062&hex2=%237A759D&sub=1 --*/
 .projects-background{
-    background-color: rgba(73, 75, 104, .9);
+    background-image: linear-gradient(to bottom, #454062, #524d70, #5f5a7f, #6c678e, #7a759d);
 }
 
 .theory-background{
@@ -503,7 +514,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
     justify-content: flex-start;
     height: 85vh;
     width: 72vh;    
-    border: 1px solid #ccc;
     position: relative;
     overflow: auto;
     border-radius: 10px;
@@ -522,7 +532,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
     justify-content: space-around;
     height: 85vh;
     width: 72vh;    
-    border: 1px solid #ccc;
     position: relative;
     overflow: auto;
     border-radius: 10px;
@@ -540,7 +549,6 @@ ul,h1,h2,h3,h4,h5,h6,p{
     justify-content: space-around;
     height: 85vh;
     width: 72vh;    
-    border: 1px solid #ccc;
     position: relative;
     overflow: auto;
     border-radius: 10px;
@@ -614,10 +622,12 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 /*-- CHART STYLING https://codepen.io/sergiopedercini/pen/aWawra?editors=1000 --*/
 .circular-chart{
-    width: 100%;
-    max-height: 100%;
+    width: 90%;
+    max-height: 90%;
     margin-top: 0;
     padding: 10px;
+    border-radius: 50%;
+
 }
 
 .circle-incomplete{
@@ -630,7 +640,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .circle-complete{
-    stroke: rgba(0,0,0,0.1);
+    stroke: rgba(0,0,0,0.2);
     fill: none;
     stroke-width: 1;
     stroke-linecap: round;
@@ -664,7 +674,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40vh;
+    width: 38vh;
     perspective: 1000px;
 }
 
@@ -700,6 +710,12 @@ ul,h1,h2,h3,h4,h5,h6,p{
     background-color: rgba(38,80,119,0.5);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
 }
 
 .scorecard-face-back{
@@ -709,6 +725,12 @@ ul,h1,h2,h3,h4,h5,h6,p{
     transform: rotateY(180deg);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
 }
 
 .scorcard-score{
@@ -718,10 +740,14 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
-   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-   font-size: 3vh;
-   margin-left: 5px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+    font-size: 3vh;
+    margin-left: 5px;
 }
 
 .scorecard-title{
@@ -750,8 +776,12 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
-   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
     background-color: rgba(0, 0, 0, 0.2);
     font-size: 2vh;
 }
@@ -779,7 +809,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     transition: background-color 10ms ease-in-out;
 }
 
-.projects-score-circle.silver,
+.projects-score-circle.silver:hover,
 .score-circle.silver:hover{
     background-color: rgba(108,132,134,1);
     box-shadow: 0 0 0 0;
@@ -825,7 +855,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40vh;
+    width: 38vh;
 }
 
 .scorecard-animation-module{
@@ -844,6 +874,12 @@ ul,h1,h2,h3,h4,h5,h6,p{
     align-items: center;
     border-radius: 5px;
     background-color: rgba( 73,75,104, 0.5);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
 }
 
 
@@ -870,7 +906,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 38vh;
+    width: 36vh;
     perspective: 1000px;
     border-radius: 5px;
     margin-top:5px;
@@ -911,6 +947,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     cursor: pointer;
     background-color: rgba(0, 0, 0, .5);  
     backdrop-filter: blur(10px);
+    
 }
 
 .scorecard-title-element{

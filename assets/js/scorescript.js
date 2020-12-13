@@ -1,4 +1,3 @@
-
  // LOCALSTORAGE 
 
     // Create userObject object upon login to add to individual object: scores, progress, progress-bars  (logic from: https://stackoverflow.com/questions/48996441/javascript-iterate-over-form-inputs-and-collect-values-as-key-value-pairs-in-o)
@@ -30,8 +29,8 @@
             for (let i = 0; i < progressNumber.length; i++) {
             progressObject[progressNumber[i].id] = 0;
             }
-            console.log(progressObject);
-            //4. create object for Donut chart numbers
+            
+            //4. create object for Donut chart numbers test: console.log(progressObject);
             let donutProgressNumbers = document.querySelectorAll('.score-identifier');
             let donutProgressNumbersObject={}
             for (let i = 0; i < donutProgressNumbers.length; i++) {
@@ -52,8 +51,8 @@
             userObject.progress=progressObject; // add progress dataset to object       
             userObject.donutProgressNumbers=donutProgressNumbersObject; //add progress numbers for donut charts into local storage data object
             userObject.donutProgressBar=donutProgressBarObject; 
-            console.log(userObject);
-            localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage
+            
+            localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage test: console.log(userObject);
 
     });
       
@@ -118,8 +117,8 @@ $(document).ready(function() {
 
     // SCORE. THEORY. MODULE. open list of element for the module when clicked
         $(".scorecard-animation-module").click(function(){
-            $(this).siblings().children().slideToggle(700);
-            $(this).parents().siblings().children().find(".scorecard-element").slideUp(700);// close previously open list of element for other modules
+            $(this).siblings().children().slideToggle(200);
+            $(this).parents().siblings().children().find(".scorecard-element").slideUp(200);// close previously open list of element for other modules
             
         });
 
