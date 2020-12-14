@@ -1,17 +1,18 @@
-# Full Stack Developer Skills Profile Dashboard start
+# Full Stack Developer Skills Profile Dashboad
+Project lnk: https://askfrsltn.github.io/skills_profile_dashboard/ 
 
 
 ## Introduction
-The project is a part of Interactive front end development module of Code Institue Full Stack development course. 
-It is a web based tool for Full web stack developers to build and print visually appealing simple 1 page fact based individual skills profile. 
-Skills structure was developed on CodeInstitute course structure. Profile assessement includes theoretical and practical components. 
+The application is a reslt of Interactive front end development module (MS2 IFED) of Code Institue Full Stack development course. 
+It is a web based application for Full web stack developers. It helps to build and print visually appealing simple 2 pages individual skills profile dashbaord using intercative scorecard interface and charts. 
+Skills structure was developed based on CodeInstitute course program. Profile assessement includes 2 domains - theoretical and practical. 
 Scoring logic was partially developped by myself based on my previous consulting experience in carreer succession planning.
 
 ## 1. UX
 #### 1.1	Goals
 * **Developer Goals**
-1. Clerify full scope of the skills I am going to aquire during the course
-2. Identify gaps in my FSWD profile
+1. Clerify full scope of the skills that Full STack Development course student will aquire during the course.
+2. Identify gaps in FSWD profile, especially from applicability point of view.
 3. Reinforce knowledge of Javascript, especially ion working with numbers and connecting it to interactive design
 4. Learn new functionalities in Interactive Front- end: canvas, googlesheets api, print from the page.
 5. Promote my FSD skills and knowledge in 2 differnet domains - application development and consulting.

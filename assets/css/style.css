@@ -295,7 +295,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: #ADC5CF;
+    background-image: #adc5cf;
 }
 
 .scoringprocess-pages,
@@ -565,6 +565,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     margin-top: 10px;
     max-width: 50%;
     text-align: center;
+    flex: 0 0 auto;
 }
 
 .progress-wrapper{
@@ -721,7 +722,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .scorecard-face-back{
     flex-direction:column;
     border-radius: 10px;
-    background-color: rgba(38,80,119,0.5);
+    background-color: rgba(56, 90, 122, 0.5);
     transform: rotateY(180deg);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -740,7 +741,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     align-items: center;
-box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
                 0 2px 4px rgba(0,0,0,0.07), 
                 0 4px 8px rgba(0,0,0,0.07), 
                 0 8px 16px rgba(0,0,0,0.07),
@@ -856,6 +857,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
     justify-content: center;
     align-items: center;
     width: 38vh;
+    
 }
 
 .scorecard-animation-module{
@@ -1119,6 +1121,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
+    flex: 0 0 auto;
 
 }
 
@@ -1139,6 +1142,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
     text-align: center;
     padding-top: 15px;
     text-decoration: underline;
+    flex: 0 0 auto;
 }
 
 .dashboard-donut{
@@ -1251,6 +1255,7 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.07),
     flex-direction: column;
     align-items: center;
     margin-top:20px;
+    flex: 0 0 auto;
 }
 
 .dashboard-skills-section.borders{
