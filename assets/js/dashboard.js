@@ -11,6 +11,7 @@ $(document).ready(function(){
     //b.   find all data IDs and place it in userObject in local Storage
         let dates = document.querySelectorAll('.date');//specific ids        
         let datesObject = {}
+        // ids update and Adutomatic date stamp for dashboard pages with the help of  https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_month
         for (let i = 0; i < dates.length; i++) {
             let date=new Date
             let months=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]
@@ -152,7 +153,6 @@ $(document).ready(function(){
         if(fsd==60){
             $("#projects-fsd").parent().parent().addClass("bronze");
         } else if (fsd==80){$("#projects-fsd").parent().parent().addClass("silver");} else if (fsd==100){$("#projects-fsd").parent().parent().addClass("gold");}else{}
-    console.log(dashboardObject)
     // c. MODULE BARS. 
     $("#theory-html").css("width",userObject.scores["theory-html"]+"%");
     $("#theory-css").css("width",userObject.scores["theory-css"]+"%");
