@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width= 1440, initial-scale=1, maximum-scale=1"> <!-- https://stackoverflow.com/questions/15510172/how-would-i-make-a-site-non-responsive-->
+    <meta name="viewport" content="width= 700, initial-scale=1, maximum-scale=1"> <!-- https://stackoverflow.com/questions/15510172/how-would-i-make-a-site-non-responsive-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
@@ -232,10 +232,10 @@
                             </div>
                             <!-- DASHBOARD PAGE 1. STANDARD FOOTER -->
                             <div class="dashboard-footer">
-                                <div class="date">
-                                    <div id="date">
+                                <div>
+                                    <p class="date" id="date">
                                         Date
-                                    </div>
+                                    </p>
                                 </div>
                                 <div class="pagenumber">
                                     <p>page 1 of 2</p>
@@ -500,10 +500,10 @@
                             </div>
                             <!-- DASHBOARD PAGE 2. STANDARD FOOTER-->
                             <div class="dashboard-footer">
-                                <div class="date">
-                                    <div id="date1">
+                                <div>
+                                    <p class="date" id="date1">
                                         Date
-                                    </div>
+                                    </p>
                                 </div>
                                 <div class="pagenumber">
                                     <p>page 2 of 2</p>
@@ -533,22 +533,23 @@
     </footer>
     <!-- MODALS --> 
                 <div class="modal-container hidden">
-                    <div class="this-modal">  
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <div class="this-modal">
                         <div class=modal-header>
                             <h4>Warning!</h4>
                             
                         </div>
                         <div class="modal-body">
-                            <p class="modal-text">If you proceed to login page you will lose your personalised dashboard content.</p>
+                            <p class="modal-text">If you proceed to login page you will lose your personalised dashboard content. Are You sure you want to return to login page?</p>
                         </div>
-                        <button class="modal-button" id="summary-modal-button" type="button modal-button"><a href="index.html"score.html"">YES Proceed</a></button>
+                        <button class="modal-button" id="summary-modal-button" type="button modal-button"><a href="index.html"score.html"">Yes Proceed</a></button>
                     </div>
 
                 </div>
     
 
 </body> 
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js">
+    </script>
     <script
         src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="

@@ -2,11 +2,20 @@ $(document).ready(function(){
 // 1. DEFINE NEW SET OF VARIABLES -"SKILLS"- THAT EXIST ONLY ON THIS PAGE - SEE PAGE 2 OF THE DASHBOARD
     //a. find all skill IDs and place it in userObject in local Storage
         let skills = document.querySelectorAll('.skill-identifier');//specific ids
+        
         let skillsObject = {}        // push them to sperate object
         for (let i = 0; i < skills.length; i++) {
         skillsObject[skills[i].id] = 0;
         }    
-//2. RETRIEVE THE DATA SAVED FROM PREVIOUS PAGE IN LOCAL STORAGE USEROBJECT        
+
+    //b.   find all data IDs and place it in userObject in local Storage
+        let dates = document.querySelectorAll('.date');//specific ids        
+        let datesObject = {}
+        for (let i = 0; i < dates.length; i++) {
+        datesObject[dates[i].id] = 0;
+        }  
+
+        //2. RETRIEVE THE DATA SAVED FROM PREVIOUS PAGE IN LOCAL STORAGE USEROBJECT        
         // retrieve userObject from the localStoarge
         userObject=JSON.parse(localStorage.getItem("userObject")); // parse from LocalStorage
         // add skills object into userObject
@@ -57,7 +66,8 @@ $(document).ready(function(){
                 skillsObject["dashboard-skill-udui"]=parseInt(userObject.scores["theory-ucfed-uxd"])+"%";//USER DESIGN
 
         userObject.skills=skillsObject; // add skills object into userObject
-        
+        userObject.dates=datesObject; // add dates object into userObject
+
 // 4. GENERATE AN ARRAY WITH ALL THE IDS ON A PAGE    
         //create an array with all the ids on a page
         let dashboardIds = []; 
@@ -66,9 +76,6 @@ $(document).ready(function(){
                     return this.id; 
                 } 
             }).get();
-
-    
-        // create one single dimension object
 //5.  CREATE A ONE ONE-DIMENSIONAL OBJECT WITH ALL THE VALUES FROM PREVIOUS PAGE SCORING (USEROBJECT) AND CALCULATION OF NEW "SKILLS" VARIALES ABOVE
         
         //retrieve 6 objects inside user object
@@ -78,14 +85,16 @@ $(document).ready(function(){
         userObjectProgressBar=userObject.progressBar;
         userObjectScores=userObject.scores;
         userObjectSkills=userObject.skills;
+        userObjectDates=userObject.dates
         
         // combine 6 objects inside userObject, add name them appropriately 
-        let dashboardObject={...userObjectDonutProgressBar,...userObjectDonutProgressNumbers,...userObjectProgress,...userObjectProgressBar,...userObjectScores,...userObjectSkills};
+        let dashboardObject={...userObjectDonutProgressBar,...userObjectDonutProgressNumbers,...userObjectProgress,...userObjectProgressBar,...userObjectScores,...userObjectSkills,...userObjectDates};
+        
         loginObject=JSON.parse(localStorage.getItem("loginObject"));
+        
         dashboardObject.name=loginObject.name;// add name variable from login
         dashboardObject.email=loginObject.email; // add email variable from login
-        
-
+   
 // 6. USE LOOP TO ASSIGN ALL VALUES FROM ONE-DIMENSIONAL OBJECT TO ALL THE VALUE IDS ON A PAGE - DASHBOARDOBJECT
     // !! loop over Object key/value: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries - thanks to Tim from tutor support.
         for (const [key, value] of Object.entries(dashboardObject)) {
@@ -197,21 +206,5 @@ $(document).ready(function(){
 
     //Parking lot
     /*--
-        function copyScoresToDashboard(){
-            for (let i=0; i<dashboardIds.length;i++){
-              if(createDashboardObject.dashboardIds[i]!=0){
-                dashboardIds.length[i]=
-              }  else{}
-            }
-        }
-    
-    for (let i=0; i<dashboardIds.length; i++){
-                      
-            console.log(userObject.scores.dashboardIds[i]);
-       
-
-
-            
-       
             --*/ 
         
