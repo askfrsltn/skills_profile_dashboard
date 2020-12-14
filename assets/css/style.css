@@ -1,11 +1,10 @@
 /*-- FONTS --*/
 @import url('https://fonts.googleapis.com/css?family=Fira+Code:300,400,500,600,700|Roboto+Mono:300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 
-/*-- MEDIAQUERIES to ficx responsiveness issues --*/
+/*-- MEDIAQUERIES to fix responsiveness issues --*/
 
-@media only screen and (max-width: 900px) {
 
-}
+
 
 
 /*-- KEEPING FOOTER AT THE BOTTOM --*/
@@ -22,7 +21,7 @@ article {
 }
 .landing-background{
     /*-- source for perfect background:https://css-tricks.com/perfect-full-page-background-image/ --*/
-    background: url("../img/hero1.png") no-repeat center center fixed; 
+    background: url("../img/hero13.png") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -131,8 +130,9 @@ ul,h1,h2,h3,h4,h5,h6,p{
 .small-text{
     font-family: "Fira Code", sans-serif;
     font-weight: 300;
-    font-size: 0,3rem;
+    font-size: .8rem;
 }
+
 .text-light{
     color: #fafafa;
 }
@@ -217,7 +217,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     overflow: auto;
     border-radius: 10px;
     /*-- source for frost effect: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/ 
-    background-color: rgba(255, 255, 255, .15); 
+    background-color: rgba(255, 255, 255, .2); 
     backdrop-filter: blur(10px);
     margin: 10px;
 }
@@ -231,7 +231,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     width: 70vh;    
     overflow: auto;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, .15);  
+    background-color: rgba(255, 255, 255, .2);  
     backdrop-filter: blur(10px);
     margin: 10px;
 }
