@@ -1,6 +1,6 @@
 # Full Stack Developer Skills Profile Dashboard start
 
-
+link: https://askfrsltn.github.io/skills_profile_dashboard/
 ## Introduction
 The project is a part of Interactive front end development module of Code Institue Full Stack development course. 
 It is a web based tool for Full web stack developers to build and print visually appealing simple 1 page fact based individual skills profile. 
