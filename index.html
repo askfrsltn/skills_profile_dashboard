@@ -18,10 +18,11 @@
 </head>
 
 <body>
-<article class="landing-background">
+
     <header class="top">
     </header>
     <main>
+        <article class="landing-background">
         <!-- LANDING PAGE  -->
         <div id="js-home-title" class="landing-page">
             <section class="landingpage-section shadow">
@@ -56,7 +57,7 @@
                 <div class="start-button">             
                     <div>
                         <div class="smaller-title small-text text-light">
-                        <button id="menu-button" class="btn text-light" type="submit"><p>[learn more]  <i class="dot-icon far fa-dot-circle icon"></i></p></button>
+                        <button id="menu-button" class="btn text-light" type="submit">[learn more]<i class="dot-icon far fa-dot-circle icon"></i></button>
                     </div>
                     </div>
                 </div>
@@ -68,8 +69,9 @@
                 </div>
                 <form class="login-form" action="score.html">
                     <div class="login-explanation">
-                        <p>Your full name input will be used for Dahsboard title. Please, enter your login details to build your dashboard:</div>
+                        <p>Your full name input will be used for Dahsboard title. Please, enter your login details to build your dashboard:
                         </p>
+                        </div>
                     <div class="login-inputs-wrapper">
                         <input id="login" class="shadow-none form-control login-input" type="text" name="login" placeholder="Your Login" required>
                         <input id="name" class="shadow-none form-control login-input" type="text" name="name" placeholder="Name and Surename" required>
@@ -77,9 +79,8 @@
                     </div>
                     <div class="smaller-title small-text">
                         <button id="btn-login" class="btn text-light" type="submit">
-                            <p>[start scoring]  
+                            [start scoring]  
                                 <i class="dot-icon far fa-dot-circle icon"></i>
-                            </p>
                         </button>
                     </div>                   
                 </form>
@@ -193,29 +194,29 @@
                                                 <div class="scorecard-options">
                                                     <div class="score-circle"> 
                                                         <p>
-                                                            <span id=""></span>0<span>%</span>
+                                                            <span></span>0<span>%</span>
                                                         </p>
                                                     </div>
                                                     <div class="score-circle bronze"> 
                                                         <p>
-                                                            <span id=""></span>60<span>%</span>
+                                                            <span></span>60<span>%</span>
                                                         </p>
                                                     </div>
                                                     <div class="score-circle silver"> 
                                                         <p>
-                                                            <span id=""></span>80<span>%</span>
+                                                            <span></span>80<span>%</span>
                                                         </p>
                                                     </div>
                                                     <div class="score-circle gold">
                                                         <p>
-                                                            <span id=""></span>100<span>%</span>
+                                                            <span></span>100<span>%</span>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="scorecard-logic">
-                                                    <span><p class="card-score-definition">60% - pass</p></span>
-                                                    <span><p class="card-score-definition">80% - pass with merit</p></span>
-                                                    <span><p class="card-score-definition">100% - pass with distinction</p></span>
+                                                    <p class="card-score-definition"><span>60% - pass</span>
+                                                    <p class="card-score-definition"><span>80% - pass with merit</span></p>
+                                                    <p class="card-score-definition"><span>100% - pass with distinction</span></p>
                                                 </div>
                                             </div>
                                             
@@ -270,7 +271,7 @@
                         </div>
                     </div>                    
                     <!-- DASHBOARD EXAMPLE SECTION -->
-                    <div calss="understand-page-example">
+                    <div class="understand-page-example">
                         <div>
                             <div class="page-title">
                                 <h3>Dashboard Example</h3>
@@ -285,9 +286,9 @@
                             </div>
                         </div>
                         <div class="smaller-title small-text">
-                            <button class="btn back-to-login">
-                                <p id="js-back-login1"><span> [back to login] </span><i class="dot-icon far fa-dot-circle icon"></i>
-                                </p>
+                            <button id="js-back-login1"class="btn back-to-login">
+                                <span> [back to login] </span>
+                                <i class="dot-icon far fa-dot-circle icon"></i>
                             </button>
                         </div>
                     </div>
@@ -299,17 +300,15 @@
         <!-- OTHER SECTIONs -->
     <footer>
     </footer>
-    </main>       
+        
     
 </article>
-    <script>
-
-    </script>
-</body>
-    <script
+</main>  
+<script
         src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="assets/js/indexscript.js"></script> 
+    <script type="text/javascript" src="assets/js/indexscript.js"></script>  
+</body>
 </html>

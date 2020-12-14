@@ -18,10 +18,11 @@
 </head>
 
 <body>
-<article>
+    <main>
+    <article>
     <header class="top">
     </header>
-    <main>    
+    
         <!-- OVERALL SUMMARY -->
         <article id="js-scoresummary" class="scorepage-background text-light">   
             <div class="scorepage-overall-summary">
@@ -71,7 +72,7 @@
                         </div>
                         <!-- PROJECTS - summary page button to projects -->
                         <div class="button theory-button">
-                            <div class="smaller-title" class="small-text">
+                            <div class="smaller-title small-text">
                                 <p id="projects-button"><span> [score projects] </span><i class="dot-icon far fa-dot-circle icon"></i>
                                 </p>
                             </div>
@@ -115,7 +116,7 @@
                         </div>
                         <!-- THEORY. Button to theory modules  -->
                         <div class="button theory-button">
-                            <div class="smaller-title" class="small-text">
+                            <div class="smaller-title small-text">
                                 <p id="theory-button"><span> [score theory] </span><i class="dot-icon far fa-dot-circle icon"></i>
                                 </p>
                             </div>
@@ -140,243 +141,262 @@
             </div>
             <div class="score-page-content">
                 
-            <!-- Scoring Project Section - Project Chart -->
-            <section class="score-project-summary">   
-                
-                <div class="project-summary-title">
-                    <h3>Score</h3>
-                </div>
-                
-                <!-- PROJECTs SUMMARY ROGRESS BAR-->
-                <div class="progress-wrapper">
-                    <div class="project-progress-title">
-                        <p>Projects scored:</p>
-                            <div class="progress progress-score-bar">
-                                <div id="project-scoring-progress-bar1" class="projects-progress-bar progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        <p><span class="progress-number" id="project-scoring-progress1">0</span><span>/4</span></p>
+                <!-- Scoring Project Section - Project Chart -->
+                <section class="score-project-summary">   
+                    
+                    <div class="project-summary-title">
+                        <h3>Score</h3>
                     </div>
-                </div>
-                
-                <!-- PROJECTS SUMMARY DONUT CHART for THEORY-->
-                <div class="chart">
-                    <p class="projects-score score-text"><span id="projects-overall" class="score-text score-identifier"></span><span>%</span></p> 
-                    <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
-                    <svg viewBox="0 0 36 36" class="circular-chart">
-                        <path id="progress-bar" class="circle-incomplete"
-                        stroke-dasharray="0, 100"
-                        d="M18 2.0845
-                        a 15.9155 15.9155 0 0 1 0 31.831
-                        a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
+                    
+                    <!-- PROJECTs SUMMARY ROGRESS BAR-->
+                    <div class="progress-wrapper">
+                        <div class="project-progress-title">
+                            <p>Projects scored:</p>
+                                <div class="progress progress-score-bar">
+                                    <div id="project-scoring-progress-bar1" class="projects-progress-bar progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            <p><span class="progress-number" id="project-scoring-progress1">0</span><span>/4</span></p>
+                        </div>
+                    </div>
+                    
+                    <!-- PROJECTS SUMMARY DONUT CHART for THEORY-->
+                    <div class="chart">
+                        <p class="projects-score score-text"><span id="projects-overall" class="score-text score-identifier"></span><span>%</span></p> 
+                        <!-- SVG OBJECT for DONUT CHART based on https://codepen.io/sergiopedercini/pen/aWawra?editors=1000-->
                         <svg viewBox="0 0 36 36" class="circular-chart">
-                        <path class="circle-complete"
-                        stroke-dasharray="100, 100"
-                        d="M18 2.0845
-                        a 15.9155 15.9155 0 0 1 0 31.831
-                        a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
+                            <path id="progress-bar" class="circle-incomplete"
+                            stroke-dasharray="0, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-complete"
+                            stroke-dasharray="100, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            </svg>
                         </svg>
-                    </svg>
-                </div>
-                
-                <!-- PROJECTS - summary page button to summary section -->
-                <div class="button theory-button">
-                    <div>
-                        <p id="js-summary-button"><span> [summary] </span><i class="dot-icon far fa-dot-circle icon"></i>
-                        </p>
                     </div>
-                </div>
-
-            </section> 
-            
-            <!-- PROJECTS Section - Scoring Cards -->  
-            <section class="score-project-section">
-                <div class="project-summary-title">
-                    <h3>Scorecards</h3>
-                </div>
-                
-                <!-- PROJECTS. 01 UCFED -->
-                <div class="scorecard">
-                    <div class="scorecard-animation">
-                        <div class="scorecard-face scorecard-face-front">
-                            <div id="projects-ucfed" class="scorcard-score project-scorcard-score">
-                                <p>
-                                    <span></span><span>%</span>
-                                </p>
-                            </div>
-                            <div class="scorecard-title"><h5>User-Centric Front end development</h5></div>
+                    
+                    <!-- PROJECTS - summary page button to summary section -->
+                    <div class="button theory-button">
+                        <div>
+                            <p id="js-summary-button"><span> [summary] </span><i class="dot-icon far fa-dot-circle icon"></i>
+                            </p>
                         </div>
-
-                        <div class="scorecard-face scorecard-face-back"> 
-                            <div class="scorecard-options">
-                                <div class="projects-score-circle"> 
-                                    <p>
-                                        <span>0</span><span>%</span>
-                                    </p>
-                                </div>
-                                <div class="projects-score-circle bronze"> 
-                                    <p>
-                                        <span>60</span><span>%</span>
-                                    </p>
-                                </div>
-                                <div class="projects-score-circle silver"> 
-                                    <p>
-                                        <span>80</span><span>%</span>
-                                    </p>
-                                </div>
-                                <div class="projects-score-circle gold">
-                                    <p>
-                                        <span>100</span><span>%</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="scorecard-logic">
-                                <span><p class="card-score-definition">60% - pass</p></span>
-                                <span><p class="card-score-definition">80% - with merit</p></span>
-                                <span><p class="card-score-definition">100% - with distinction</p></span>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
+
+                </section> 
                 
-                <!-- PROJECTS. 02 IFED -->
-                <div class="scorecard">
-                    <div class="scorecard-animation">
-                        <div class="scorecard-face scorecard-face-front">
-                            <div id="projects-ifed" class="scorcard-score project-scorcard-score">
-                                <p>
-                                    <span></span><span>%</span>
-                                </p>
-                            </div>
-                            <div class="scorecard-title"><h5>Interactive Front end development</h5></div>
-                        </div>
-
-                        <div class="scorecard-face scorecard-face-back"> 
-                            <div class="scorecard-options">
-                                <div class="score-circle"> 
-                                    <p>
-                                        <span>0</span><span>%</span>
-                                    </p>
-                                </div>
-                                <div class="projects-score-circle bronze"> 
-                                    <p>
-                                        <span>60</span><span>%</span>
-                                    </p>
-                                </div>
-                                <div class="projects-score-circle silver"> 
-                                    <p>
-                                        <span>80</span><span>%</span>
-                                    </p>
-                                </div>
-                                <div class="projects-score-circle gold">
-                                    <p>
-                                        <span>100</span><span>%</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="scorecard-logic">
-                                <span><p class="card-score-definition">60% - pass</p></span>
-                                <span><p class="card-score-definition">80% - with merit</p></span>
-                                <span><p class="card-score-definition">100% - with distinction</p></span>
-                            </div>
-                        </div>
-
+                <!-- PROJECTS Section - Scoring Cards -->  
+                <section class="score-project-section">
+                    <div class="project-summary-title">
+                        <h3>Scorecards</h3>
                     </div>
-                </div>
-                
-                <!-- PROJECTS. 02 DCD -->
-                <div class="scorecard">
-                    <div class="scorecard-animation">
-                        <div class="scorecard-face scorecard-face-front">
-                            <div id="projects-dcd" class="scorcard-score project-scorcard-score">
-                                <p>
-                                    <span></span><span>%</span>
-                                </p>
+                    
+                    <!-- PROJECTS. 01 UCFED -->
+                    <div class="scorecard">
+                        <div class="scorecard-animation">
+                            <div class="scorecard-face scorecard-face-front">
+                                <div id="projects-ucfed" class="scorcard-score project-scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>User-Centric Front end development</h5></div>
                             </div>
-                            <div class="scorecard-title"><h5>Data Centered Development</h5></div>
-                        </div>
 
-                        <div class="scorecard-face scorecard-face-back"> 
-                            <div class="scorecard-options">
-                                <div class="projects-score-circle"> 
-                                    <p>
-                                        <span>0</span><span>%</span>
-                                    </p>
+                            <div class="scorecard-face scorecard-face-back"> 
+                                <div class="scorecard-options">
+                                    <div class="projects-score-circle"> 
+                                        <p>
+                                            <span>0</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle bronze"> 
+                                        <p>
+                                            <span>60</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle silver"> 
+                                        <p>
+                                            <span>80</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle gold">
+                                        <p>
+                                            <span>100</span><span>%</span>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="projects-score-circle bronze"> 
-                                    <p>
-                                        <span>60</span><span>%</span>
+                                <div class="scorecard-logic">
+                                    <p class="card-score-definition">
+                                        60% - pass
                                     </p>
-                                </div>
-                                <div class="projects-score-circle silver"> 
-                                    <p>
-                                        <span>80</span><span>%</span>
+                                    <p class="card-score-definition">
+                                        80% - with merit
                                     </p>
-                                </div>
-                                <div class="projects-score-circle gold">
-                                    <p>
-                                        <span>100</span><span>%</span>
+                                    <p class="card-score-definition">
+                                        100% - with distinction
                                     </p>
                                 </div>
                             </div>
-                            <div class="scorecard-logic">
-                                <span><p class="card-score-definition">60% - pass</p></span>
-                                <span><p class="card-score-definition">80% - with merit</p></span>
-                                <span><p class="card-score-definition">100% - with distinction</p></span>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
-                
-                <!-- PROJECTS. 04 FSD -->
-                <div class="scorecard">
-                    <div class="scorecard-animation">
-                        <div class="scorecard-face scorecard-face-front">
-                            <div id="projects-fsd" class="scorcard-score project-scorcard-score">
-                                <p>
-                                    <span></span><span>%</span>
-                                </p>
+                    
+                    <!-- PROJECTS. 02 IFED -->
+                    <div class="scorecard">
+                        <div class="scorecard-animation">
+                            <div class="scorecard-face scorecard-face-front">
+                                <div id="projects-ifed" class="scorcard-score project-scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Interactive Front end development</h5></div>
                             </div>
-                            <div class="scorecard-title"><h5>Full Stack Development</h5></div>
-                        </div>
 
-                        <div class="scorecard-face scorecard-face-back"> 
-                            <div class="scorecard-options">
-                                <div class="projects-score-circle"> 
-                                    <p>
-                                        <span>0</span><span>%</span>
-                                    </p>
+                            <div class="scorecard-face scorecard-face-back"> 
+                                <div class="scorecard-options">
+                                    <div class="score-circle"> 
+                                        <p>
+                                            <span>0</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle bronze"> 
+                                        <p>
+                                            <span>60</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle silver"> 
+                                        <p>
+                                            <span>80</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle gold">
+                                        <p>
+                                            <span>100</span><span>%</span>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="projects-score-circle bronze"> 
-                                    <p>
-                                        <span>60</span><span>%</span>
+                                <div class="scorecard-logic">
+                                    <p class="card-score-definition">
+                                        60% - pass
                                     </p>
-                                </div>
-                                <div class="projects-score-circle silver"> 
-                                    <p>
-                                        <span>80</span><span>%</span>
+                                    <p class="card-score-definition">
+                                        80% - with merit
                                     </p>
-                                </div>
-                                <div class="projects-score-circle gold">
-                                    <p>
-                                        <span>100</span><span>%</span>
+                                    <p class="card-score-definition">
+                                        100% - with distinction
                                     </p>
                                 </div>
                             </div>
-                            <div class="scorecard-logic">
-                                <span><p class="card-score-definition">60% - pass</p></span>
-                                <span><p class="card-score-definition">80% - with merit</p></span>
-                                <span><p class="card-score-definition">100% - with distinction</p></span>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
+                    
+                    <!-- PROJECTS. 02 DCD -->
+                    <div class="scorecard">
+                        <div class="scorecard-animation">
+                            <div class="scorecard-face scorecard-face-front">
+                                <div id="projects-dcd" class="scorcard-score project-scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Data Centered Development</h5></div>
+                            </div>
 
-            </section>    
+                            <div class="scorecard-face scorecard-face-back"> 
+                                <div class="scorecard-options">
+                                    <div class="projects-score-circle"> 
+                                        <p>
+                                            <span>0</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle bronze"> 
+                                        <p>
+                                            <span>60</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle silver"> 
+                                        <p>
+                                            <span>80</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle gold">
+                                        <p>
+                                            <span>100</span><span>%</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="scorecard-logic">
+                                    <p class="card-score-definition">
+                                        60% - pass
+                                    </p>
+                                    <p class="card-score-definition">
+                                        80% - with merit
+                                    </p>
+                                    <p class="card-score-definition">
+                                        100% - with distinction
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <!-- PROJECTS. 04 FSD -->
+                    <div class="scorecard">
+                        <div class="scorecard-animation">
+                            <div class="scorecard-face scorecard-face-front">
+                                <div id="projects-fsd" class="scorcard-score project-scorcard-score">
+                                    <p>
+                                        <span></span><span>%</span>
+                                    </p>
+                                </div>
+                                <div class="scorecard-title"><h5>Full Stack Development</h5></div>
+                            </div>
+
+                            <div class="scorecard-face scorecard-face-back"> 
+                                <div class="scorecard-options">
+                                    <div class="projects-score-circle"> 
+                                        <p>
+                                            <span>0</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle bronze"> 
+                                        <p>
+                                            <span>60</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle silver"> 
+                                        <p>
+                                            <span>80</span><span>%</span>
+                                        </p>
+                                    </div>
+                                    <div class="projects-score-circle gold">
+                                        <p>
+                                            <span>100</span><span>%</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="scorecard-logic">
+                                    <p class="card-score-definition">60% - pass</p>
+                                    <p class="card-score-definition">80% - with merit</p>
+                                    <p class="card-score-definition">100% - with distinction</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>  
+            </div>  
         </article>
         
         <!-- THEORY SCORING PAGE -->
@@ -501,9 +521,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -545,9 +565,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -632,9 +652,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -719,9 +739,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -763,9 +783,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -833,9 +853,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -921,9 +941,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -965,9 +985,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1053,9 +1073,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1097,9 +1117,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1141,9 +1161,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1212,9 +1232,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1256,9 +1276,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1300,9 +1320,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1344,9 +1364,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1388,9 +1408,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1432,9 +1452,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1476,9 +1496,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1520,9 +1540,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1564,9 +1584,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1608,9 +1628,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1652,9 +1672,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1723,9 +1743,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1767,9 +1787,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1811,9 +1831,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1855,9 +1875,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1899,9 +1919,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1943,9 +1963,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -1987,9 +2007,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2031,9 +2051,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2102,9 +2122,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2146,10 +2166,10 @@
                                             </div>
                                     </div>
                                     <div class="scorecard-logic">
-                                        <span><p class="card-score-definition">60% - understood theory</p></span>
-                                        <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                        <span><p class="card-score-definition">100% - used many times, can teach</p></span>
-                                    </div>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
+                                        </div>
                                 </div>
                             </div>    
                         </div>
@@ -2190,9 +2210,9 @@
                                             </div>
                                     </div>
                                     <div class="scorecard-logic">
-                                        <span><p class="card-score-definition">60% - understood theory</p></span>
-                                        <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                        <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                        <p class="card-score-definition"> 60% - understood theory</p>
+                                        <p class="card-score-definition"> 80% - used once on projects</p>
+                                        <p class="card-score-definition"> 100% - used many times, can teach</p>
                                     </div>
                                 </div>
                             </div>    
@@ -2234,9 +2254,9 @@
                                             </div>
                                     </div>
                                     <div class="scorecard-logic">
-                                        <span><p class="card-score-definition">60% - understood theory</p></span>
-                                        <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                        <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                        <p class="card-score-definition"> 60% - understood theory</p>
+                                        <p class="card-score-definition"> 80% - used once on projects</p>
+                                        <p class="card-score-definition"> 100% - used many times, can teach</p>
                                     </div>
                                 </div>
                             </div>    
@@ -2278,9 +2298,9 @@
                                             </div>
                                     </div>
                                     <div class="scorecard-logic">
-                                        <span><p class="card-score-definition">60% - understood theory</p></span>
-                                        <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                        <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                        <p class="card-score-definition"> 60% - understood theory</p>
+                                        <p class="card-score-definition"> 80% - used once on projects</p>
+                                        <p class="card-score-definition"> 100% - used many times, can teach</p>
                                     </div>
                                 </div>
                             </div>    
@@ -2322,9 +2342,9 @@
                                             </div>
                                     </div>
                                     <div class="scorecard-logic">
-                                        <span><p class="card-score-definition">60% - understood theory</p></span>
-                                        <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                        <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                        <p class="card-score-definition"> 60% - understood theory</p>
+                                        <p class="card-score-definition"> 80% - used once on projects</p>
+                                        <p class="card-score-definition"> 100% - used many times, can teach</p>
                                     </div>
                                 </div>
                             </div>    
@@ -2366,9 +2386,9 @@
                                             </div>
                                     </div>
                                     <div class="scorecard-logic">
-                                        <span><p class="card-score-definition">60% - understood theory</p></span>
-                                        <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                        <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                        <p class="card-score-definition"> 60% - understood theory</p>
+                                        <p class="card-score-definition"> 80% - used once on projects</p>
+                                        <p class="card-score-definition"> 100% - used many times, can teach</p>
                                     </div>
                                 </div>
                             </div>    
@@ -2437,9 +2457,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2481,9 +2501,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2525,9 +2545,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2569,9 +2589,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2613,9 +2633,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2657,9 +2677,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2701,9 +2721,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2745,9 +2765,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2789,9 +2809,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2833,9 +2853,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2904,9 +2924,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2948,9 +2968,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -2992,9 +3012,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3036,9 +3056,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3080,9 +3100,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3124,9 +3144,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3168,9 +3188,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3212,9 +3232,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3283,9 +3303,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3327,9 +3347,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3371,9 +3391,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3415,9 +3435,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3459,9 +3479,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3503,9 +3523,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3547,9 +3567,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3591,9 +3611,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3635,9 +3655,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3679,9 +3699,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3723,9 +3743,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3794,9 +3814,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3838,9 +3858,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3882,9 +3902,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3926,9 +3946,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -3970,9 +3990,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4014,9 +4034,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4058,9 +4078,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4102,9 +4122,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4146,9 +4166,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4190,9 +4210,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4234,9 +4254,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4278,9 +4298,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4322,9 +4342,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4366,9 +4386,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4410,9 +4430,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4454,9 +4474,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4498,9 +4518,9 @@
                                             </div>
                                         </div>
                                         <div class="scorecard-logic">
-                                            <span><p class="card-score-definition">60% - understood theory</p></span>
-                                            <span><p class="card-score-definition">80% - used once on projects</p></span>
-                                            <span><p class="card-score-definition">100% - used many times, can teach</p></span>
+                                            <p class="card-score-definition"> 60% - understood theory</p>
+                                            <p class="card-score-definition"> 80% - used once on projects</p>
+                                            <p class="card-score-definition"> 100% - used many times, can teach</p>
                                         </div>
                                     </div>
                                 </div>    
@@ -4512,33 +4532,30 @@
                 </section>
             </div>
         </article>        
-    </div>
-    </main>       
-    <footer>
-    </footer>
+    </div>       
     <!-- MODALS --> 
-        <!-- trigerred by DASHBOARD BUTTON--> 
-        <div class="dashboard-modal-container hidden">
-            <div class="this-modal">  
-                <div class="modal-header">
-                    <h4>Warning!</h4>
-                    
-                </div>
-                <div class="modal-body">
-                    <p class="modal-text">If you move to dashboard page now, you will not be able to modify yourse scorecards choices. Have you scored 4 projects and 87 theory elements?</p>
-                </div>
-                <button class="modal-button" id="dashboard-modal-button" type="button modal-button"><a href="dashboard.html"score.html"">Yes, proceed!</a></button>
+    <!-- trigerred by DASHBOARD BUTTON--> 
+    <div class="dashboard-modal-container hidden">
+        <div class="this-modal">  
+            <div class="modal-header">
+                <h4>Warning!</h4>
+                
             </div>
+            <div class="modal-body">
+                <p class="modal-text">If you move to dashboard page now, you will not be able to modify yourse scorecards choices. Have you scored 4 projects and 87 theory elements?</p>
+            </div>
+            <a href="dashboard.html"><button class="modal-button" id="dashboard-modal-button" type="button">Yes, proceed!</button></a>
         </div>
+    </div>
         
 </article>
+    </main>
 <footer></footer>
-
 </body> 
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="assets/js/scorescript.js"></script> 
+<script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+</script>
+<script src="assets/js/scorescript.js"></script> 
 </html>
