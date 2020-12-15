@@ -291,7 +291,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: linear-gradient(to right bottom, #12d3eb, #36dae1, #56e0d5, #73e6c9, #8feabe);
+    background-image: linear-gradient(to right bottom, #b1e0eb, #a7d5de, #9ccad1, #93bfc4, #89b4b7);
 }
 
 .scoringprocess-pages,
