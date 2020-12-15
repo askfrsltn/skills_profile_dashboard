@@ -20,12 +20,8 @@ article {
     
 }
 .landing-background{
-    /*-- source for perfect background:https://css-tricks.com/perfect-full-page-background-image/ --*/
-    background: url("../img/hero13.png") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    /*-- source:https://css-tricks.com/perfect-full-page-background-image/ --*/
+    background-image: linear-gradient(to right bottom, #051937, #084167, #006e97, #009fc4, #12d3eb);
 }
 
 main {
@@ -295,7 +291,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: #adc5cf;
+    background-image: linear-gradient(to right bottom, #12d3eb, #36dae1, #56e0d5, #73e6c9, #8feabe);
 }
 
 .scoringprocess-pages,
@@ -508,7 +504,8 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .score-theory-section{
-    display: flex;
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -857,7 +854,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     justify-content: center;
     align-items: center;
     width: 38vh;
-    
+    flex: 0 0 auto;
 }
 
 .scorecard-animation-module{
