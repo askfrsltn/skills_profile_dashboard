@@ -73,10 +73,23 @@ A major purpose of the application to be able to revisit all the elements learnt
 #### 1.5 Structure Plain
 - The application is focused on functionality, therefore its interactivity has a single purpose of helping user to achieve the goal without obsessive decoration
 
-
 - Defines how user interact with the product, how system behave when user interact, how it’s organized, prioritized, and how much of it. Structure is split into two components, **Interaction Design** & **Information Architecture**.
-**Interaction Design** Given the functional requirements, It defines how user can interact with the product, and how the system behaves in response to the user interactions.
-- **Information Architecture** Given the content requirements, It defines the arrangement of content elements, how they are organized, to facilitate human understanding.
+
+**Interaction Design** 
+- there are 3 ways that the user interscts with application: reading information, field inputs, mouse clicks
+- **Reading**: First page will have 2 buttons - "learn more" and "login", learn more button helps the user to open a subpage that describes what s/he needs to do to builda a dashboard., Going through the scoring process, the user will constantly read throguh the comments that help hime to make a scoring choice, understand where  in the scoring process s/he is and how much more he needs to do to finish the process. 
+- **Field Inputs**: The user needs to eneter a 3 field inputs to start the scoring process and go from landing page to the scoring page. One of the inputs - Full Name is critical because it will be used on the dashboard page.
+- **Mouse click**: The user needs to make a prdefined choice for each of the project or scoring element. That means that the user will not have a space for error. All the choices then automatically calculated by JavaScript codes. 
+
+**Information Architecture** 
+The content will be grouped by 3 pages - Explanation, Scoring Input and The Result preview. Explanation and Scoring Inputs will have subsections:
+
+- **Explanation** the page where the user landed after s/he inputs an url. It has 2 subsections, one of the is hidden.
+
+- **Scorepage** will  devided into **Summary**, **Project Scoring** and **Theory Scoring** sections, only one of them will be visible to a user:
+    - **Scoring Summary** will show projects and theory donut charts, scoring progress of each section and 2 buttons directing the user to Project Scoring or Theory scoring subsection.
+    - **Project Scoring** subsection will be identical to **Theory Scoring**
+
 
 - **Good Interaction design**
     - helps people to accomplish their goals.
@@ -90,14 +103,18 @@ A major purpose of the application to be able to revisit all the elements learnt
     - appropriate for the audience.
 
 #### 1.6 Skeleton Plain
-#### 1.7 Surface Plain
-___
+- What visual form of all things that will be presented on screen?
+- How interactions will be presented and arranged?
+- How will users move around the site, or application?
+- How content will be presented clearly?
+- **Interface Design** (*arranging elements*)
+- **Navigation Design** (*how to navigate*)
+- **Information Design**(*presenting and managing information*)
 
-## 2. UI
-#### 2.1 Walkthrough
-#### 2.2 Flow
-#### 2.3 Wireframes
-___
+#### 1.7 Surface Plain
+- **Layout**
+- **Typography**
+- **Colors**
 
 ## 3.	Features
 #### 3.1 Design choices
@@ -106,11 +123,12 @@ ___
 * Typography
 
 #### 3.2 Interactive Features
-* **Cards** - unfolding cards to expand showing a) Show hidden elements of each course and b) Show hidden scoring functionality inside each section
+- **Swipe Down Pages** 
+- **ScoreCards** - unfolding cards with swipedown/up functionality - showing a) Show hidden elements of each course and b) Show hidden scoring functionality inside each section
 * **Scoring Status** for each element (green tickmark or grey minus sign)
 * **Cumulative progress** bar for each module and counting percentage during the scoring process.
 * **Courses Progress assessment** - when going from module to module it helps to vusally highlight the progress on a module level.
-* **Button Arrows** help to direct the user decisions. Making it intuitive.
+**Local Storage** 
 
 #### 3.4 Challanges
 1. **Print out page preview**
