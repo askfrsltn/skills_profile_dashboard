@@ -61,39 +61,43 @@ A major purpose of the application to be able to revisit all the elements learnt
     - Thoeoretical elements on the final dashboard should also be alternatively grouped by 3 alternative criterea - "Developer Languages", "Frameworks/Liibraries" and "Developer tools"with appropriate grpahical representation.
 
 - **Functionally**: 
-    - Functionality of the apliaction has 4 goals - 1) Explain to user the process and the scoring logic; 2) Suggest to a user the accurate scoring choices for Project and Theoretical elements 3) Visualise the progress and the intermediate result during the scoring, and 4) Build 2 pages dashboard.
-    - EXPLANATION: an app should have simple Clear Explanation what the application does, scoring process, the 2 page dashboard example and scoring logic for Project and Theory elements
-    - INPUTS: an app needs to personalise dashbard therefore there should be a login page with 3 fields  - login, Full Name and an email. That will help to store the information into local storage
-    - INPUTS: an app needs to provide simple 3-choice scoring functionaliy that can be  learnt intuitively and correctly applied during scoring process. 
-    - OUTPUT: Visual Representation of Theory and Projects overall score should be updated after each scoring choice
-    - OUTPUT: Visual Representation of Asessment/Scoring Progress needs to be updated after each scoring choice
-    - OUTPUT: Each Scorecard to make a choice needs to have interactive user functionality to demonstrate available scoring choices and indicate the status of scoring on each of the scorecards (Yes/No), so that user is able to immidiately see whether project or theory element is scored or not
+    - Functionality of the apliaction has 4 goals - 1) Explain to a user the process and the scoring logic; 2) Suggest to a user the accurate scoring choices for Project and Theoretical elements 3) Visualise the scoring progress and scoring result during the scoring, and 4) Build 2 pages of individually customised dashboard.
+    - EXPLANATION: an app should have simple Explanation section about what the application is, what it does does, how it works. It should have a dashboard example and scoring choices description for Project and Theory elements
+    - INPUTS: an app needs to personalise dashbard therefore there should be a login page with 3 fields  - login, Full Name for dahsboard heading and an email. That will help to store the information into local storage
+    - INPUTS: an app needs to provide simple 3-choice scoring functionaliy that can be  learnt intuitively and correctly applied during scoring process. Interactive scorecards should be used for interactive input. 
+    - OUTPUT: Visual Representation of Theory and Projects overall score should be updated after each scoring choice. Donut chart will be the best choice for visualisation.
+    - OUTPUT: Visual Representation of Asessment/Scoring Progress needs to be updated after each scoring choice in a form of vertical bar for Projects, Overall Theory progress and each module within theory section
+    - OUTPUT: Each Scorecard needs to have interactive user functionality to demonstrate available scoring choices and indicate the status of scoring on each of the scorecards (Yes/No) after the choice has been made, so that user is able to immidiately see whether project or theory element is scored or not.
 
 
 #### 1.5 Structure Plain
-- The application is focused on functionality, therefore its interactivity has a single purpose of helping user to achieve the goal without obsessive decoration
+- The application is focused on functionality, therefore its interactivity has a single purpose of helping user to achieve the goal without destracting decorations.
 
-- Defines how user interact with the product, how system behave when user interact, how it’s organized, prioritized, and how much of it. Structure is split into two components, **Interaction Design** & **Information Architecture**.
+- **User Interaction**
 
-**Interaction Design** 
-- there are 3 ways that the user interscts with application: reading information, field inputs, mouse clicks
-- **Reading**: First page will have 2 buttons - "learn more" and "login", learn more button helps the user to open a subpage that describes what s/he needs to do to builda a dashboard., Going through the scoring process, the user will constantly read throguh the comments that help hime to make a scoring choice, understand where  in the scoring process s/he is and how much more he needs to do to finish the process. 
-- **Field Inputs**: The user needs to eneter a 3 field inputs to start the scoring process and go from landing page to the scoring page. One of the inputs - Full Name is critical because it will be used on the dashboard page.
-- **Mouse click**: The user needs to make a prdefined choice for each of the project or scoring element. That means that the user will not have a space for error. All the choices then automatically calculated by JavaScript codes. 
+    - Defines how user interact with the product, how system behave when user interact, how it’s organized, prioritized, and how much of it. Structure is split into two components, **Interaction Design** & **Information Architecture**.
 
-**Information Architecture** 
-The content will be grouped by 3 pages - Explanation, Scoring Input and The Result preview. Explanation and Scoring Inputs will have subsections:
+    - **Interaction Design** - there are 3 ways that the user interscts with application: reading information, field inputs, mouse clicks
+        - **Reading**: First/Landing page will have 2 buttons - "learn more" and "login", learn more button helps the user to open a subpage that describes what s/he needs to do to builda a dashboard., Going through the scoring process, the user will constantly read throguh the comments that help hime to make a scoring choice, understand where  in the scoring process s/he is and how much more he needs to do to finish the process. 
+        - **Field Inputs**: The user needs to eneter a 3 field inputs to start the scoring process and go from landing page to the scoring page. One of the inputs - Full Name is critical because it will be used on the dashboard page.
+        - **Mouse click**: The user needs to make a prdefined choice for each of the project or scoring element. That means that the user will not have a space for error. All the choices then automatically calculated by JavaScript codes. 
 
-- **Explanation** the page where the user landed after s/he inputs an url. It has 2 subsections, one of the is hidden.
+- **Information Architecture** 
+The content will be grouped by 3 pages - **Explanation**, **Scoring Input** and **Dashboard**. 
+    - **Explanation** - the page where the user landed after s/he inputs an url. It will have 2 subsections, one of them is hidden while another is visible.
 
-- **Scorepage** will  devided into **Summary**, **Project Scoring** and **Theory Scoring** sections, only one of them will be visible to a user:
-    - **Scoring Summary** will show projects and theory donut charts, scoring progress of each section and 2 buttons directing the user to Project Scoring or Theory scoring subsection.
-    - **Project Scoring** subsection will be identical to **Theory Scoring**
+    - **Scorepage** will be devided into **Summary**, **Project Scoring** and **Theory Scoring** sections, only one of them will be visible to a user:
+        - **Scoring Summary** will show projects and theory donut charts, scoring progress of each section scoring and 2 buttons directing the user to *Project Scoring* or *Theory scoring* subsection.
+        - **Project Scoring** and **Theory Scoring** will be idetnical, also visible one at a time. Each page will be devided into 2 sections: Visual showing scoring progress and Scoring Result and scorecards themselves. For example Project Scoring page will have 4 interactive projects scorecards on one side and on the other side it will have Title, Scoring progress e.g. "3 of 4") and a donut chart with circle showing average percantage score calculated based on scorecard choices. Theory scoring page will be more complex because it will have 87 elements grouped into 9 modules. Modules score and progress will be visible and calculated automatically based on elements scorecard choices. Modules scorecards will be intercative and will respond to click, when the clicked the module will slide down uncovering 8-17 elements scorecards for the module. Scorecards will resond to user click in the same manner as projects scorecards. All the scorecards will be double sided - on one side they wil have tile and a chosen score (or % sign if not scored yet), on reverse side (openned by click) the scorecard will have score choices and brief legend for each scorechoice (see [wireframes file]("assets/library/wireframes.pdf")).
+    - **Dashboard** - in fact will be a preview page of the scoring result a summary of projects and theory scoring grouped into projects, theory modules, Languages, Frameworks and Developer tools (see detailed table in the [GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing)
+    - It is important to mention certain features that will help to avoid confusion when facing some user interaction scenario:
+        - The user needs to clearly understand 
+
 
 
 - **Good Interaction design**
     - helps people to accomplish their goals.
-    - effectively communicates interactivity and functionality(what user can do).
+    - effectively communicates interactivity and functionality(what user can do)
     - informs user about state changes(file has been saved, or any feedback), while they interact.
     - prevents user error or mistakes, like the system asks user to confirm potentially harmful action(i.e. deletion).
 **Good Information Architecture**
@@ -164,8 +168,8 @@ ___
 10. Fix bugs finalise README
 11. Deploy
 
-#### 4.4 Problems – Solutions](#problems)
-#### 4.5 Features that were not installed](#featurers-pending)
+#### 4.4 Problems – Solutions
+#### 4.5 Features that were not installed
 ___
 
 ## 5. Testing
