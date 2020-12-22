@@ -1,10 +1,12 @@
-# Full Stack Developer Skills Profile Dashboad
-Project lnk: https://askfrsltn.github.io/skills_profile_dashboard/ 
+# FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD
 
 ___
-Picture
-___
+![responsive](assets/img/responsive.png "applications responsive screens")
 
+## SUMMARY
+Project lnk: [Full Stack Skills Profile Dashboard](https://askfrsltn.github.io/skills_profile_dashboard/) 
+This interactive application is developped based on Code Institute Full Sack Developer course. It is an interactive tool to collect scroing inputs for 4 projects and 87 theoretical elements to build an individual 2 pages skills profile dashboard consisting of 5 sections - Projects (4 projetcs), Theory (9 Theory modules), Languages (5 programing langusages), Frameworks (7 frameworks and libraries) and Other developers tools.
+___
 
 ## Content 
 
@@ -73,20 +75,15 @@ A major purpose of the application to be able to revisit all the elements learnt
 #### 1.5 Structure Plain
 - The application is focused on functionality, therefore its interactivity has a single purpose of helping user to build Full Stack Developer Skills Dashboard without destractive decorations.
 
-- **Prioritisation** 
+- **Features Prioritisation** 
     - List of features to prioritise and status:
-        - **Scoroecards** - prirority feature on the scorecard page
+        - **Logical course structure** - to build calculation logic foundation - priority No1, planning started with it.
         - **Visual Charts** - prirority feature - key focus of the site - scorepage and dashboard page
-        - **Print out functionality** - deprioritised due to availability of priint screen function across various devices
+        - **Scorecards** - prirority feature on the scorecard page
         - **Local Storage** - priority feature for scorepage and dashboard page
         - **Description** - prirority feature for landing page
-        - **Login** - prirority feature for landing page
+        - **Login** - prirority feature for landing page, it helps to store information into local storage
         - **Calculation logic** - absolutely critical prirority feature
-        - **Connection to google appplication by API** - deprioritised
-        - **Interactive menu** - built as per wireframe, deprioritised and scrapped
-        - **Decoration with pictures and various fonts** - deprioritised, distracting from core purpose
-        - **Dark/Light mode for the dashboard** - deprioritised - nice but not practical.
-        - **Logical course structure** to build calculation logic foundation - priority No1, planning started with it.
         - **Description of the scoring logic** - prirority feature on the landing/understanding page. 
         - **Buttons** - prirority feature to navigate between pages and scoring sections
         - **Limited intuitive navigation between pages** - priority feature
@@ -94,8 +91,13 @@ A major purpose of the application to be able to revisit all the elements learnt
         - Personalisation with Name - priority feature - dashboard page wokrs based on login page data inputs
         - **Date stamp** - priority feature on dashboard page
         - **Option to score data in the local storage** forever and linking it to login data so that it can be retrieved evry time the user returns to the website - partialy implemented on a scorpage and dashboard page, though is not built to store user data forever
-        - **Modals with warnings** - priority feature across the site
-        - **Standardised scoring choices** to ensure correct calculations of inputs
+        - **Modals with warnings** - priority feature across the site to avoid confusing scenario and repetition of data inputs
+        - **Standardised scoring choices on each scorecard** to ensure correct calculations of inputs
+        - **Decoration with pictures and various fonts** - deprioritised, distracting from core purpose
+        - **Dark/Light mode for the dashboard** - deprioritised - nice but not practical.
+        - **Print out functionality** - deprioritised due to availability of priint screen function across various devices
+        - **Connection to google appplication by API** - deprioritised
+        - **Interactive menu** - built as per wireframe, deprioritised and scrapped
 
 
 - **Interaction Design** - there are 3 ways that the user will interact interact with application: reading information, field inputs, mouse clicks
@@ -119,43 +121,57 @@ A major purpose of the application to be able to revisit all the elements learnt
 
 #### 1.6 Skeleton Plain
 Interface Structure, Interaction flow, Information Design are shown the pictures below:
-**Picture 1: User flow**
-**Picture 2: Wireframes (mobile and desktop)**
-**Picture 3: information design**
 
-- What visual form of all things that will be presented on screen?
-- How interactions will be presented and arranged?
-- How will users move around the site, or application?
-- How content will be presented clearly?
-- **Interface Design** (*arranging elements*)
-- **Navigation Design** (*how to navigate*)
-- **Information Design**(*presenting and managing information*)
+**Picture 1: User flow**
+![user_flow_simple](assets/img/simple_user_flow.png "siimple user flow")
+
+**Picture 2: Detailed User flow**
+![detailed user flow](assets/img/detailed_user_flow.png "detailed user flow")
+
+**Picture 3: Wireframes (mobile and desktop)**
+![Wireframes](assets/img/wireframes.png "mobile wireframes")
+### LINK: [see detailed wireframes in pdf](https://drive.google.com/file/d/1aWA3Vvm8ca3t3giy7lGN4xQeEzzdPC8s/view?usp=sharing)
+
+**Information Design**
+- Information related to individual user will be stored in Local stoarge. Functionally it means that the moment the user enters 3 fields of input to transition from landing page to scoring page the JS code will generate a new user object and store it in local storage. This object (userObject) will be used to store all the information everytime when the choice is made on a scoring page. 
+- In other words, every scorecard will have a key, and the score choice made by user will be stored in the local storage as a value of that key. The data in user object will be grouped in various objects scores, input for visuals, alculated values (e.g. cumulative average scores), and date. That means that userObject in Local stoarage will be multidimensional.
+- userObject will be used again at the moment when the user goes from the scoring page to the dahboard page. The infomation is copied into one dimensional array - dahsboardObject and than values are assigned to identical ids on a page and inserted into html elements to produce graphical dahsboard. the echanism is described in more detailed in the section 3 - Features.
+- As mentioned above if the user decides to leave dashboard and start the scoring process again, userObject will be overwritten. Modals will be developped to warn the user about this. 
+- That will reinforce the user to make a conscious choice when transitioning from login to scoring page, from scoring page to dashboard and from dashboard back to login page.
+- Return from dashboard to scoring page is not built into application to avoid unwanted user navigation.
 
 #### 1.7 Surface Plain
 - **Layout**
+    -  As can be seen on the wireframes (picture 3) to make it maximum functional and responsive each page is divided into 2 sections. Each section will have either information to read, scorecards to make a choice or a chart showing the result of scoring. Round buttons will be used to navigate from page to page. 
+
 - **Typography**
+    - I used only 2 types of fonts:
+        - **Fira-Code** - because it is one of the recognised coding fonts, I wanted the application style reminded a coding experience 
+        - **Robotot-Mono** - used only on a dashboard page
+
 - **Colors**
+    - **FONT** - grey on light pages, cream-white on dark-background
+    - **BACKGROUND** - 2 gradient, randomly selected, I used a website to generate gradient colors: https://mycolor.space/gradient 
+    - **SPECIAL BACKGROUND CHOICE** - for each pages sub-section I used a frost effect background using backdrop-filter (source: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/), however it works nice only in Chrome. Safari and Firefox requires canvas, therefore I did not bother to build it in.
+    - **BUTTONS** - red dot icons with small text in square brackets were used as button to navigate between the pages
+    - **SCORES** - I used 3 colors for scoring, it folows a medal awards logic - gold, silver, bronze, the same colors were applied for theory elements score colors.
+Overall I used colors and fonts to enhance functionality, maintain reesponsiveness and make priority things (buttons, scores) visible and maintain resemblance to coding process.
 
 ## 3.	Features
-#### 3.1 Design choices
-* Colors
-* Fonts
-* Typography
-
-#### 3.2 Interactive Features
-- **Swipe Down Pages** 
-- **ScoreCards** - unfolding cards with swipedown/up functionality - showing a) Show hidden elements of each course and b) Show hidden scoring functionality inside each section
-* **Scoring Status** for each element (green tickmark or grey minus sign)
+#### 3.1 Interactive Features
+- **Layout**
+- **Pages Swipe Down** 
+- **ScoreCards interactivity** - unfolding cards with rotating or swipedown/up functionality - showing a) hidden elements within each module and b) flipping face and back side of the scorecard
+* **Scoring Status** for each element once the choice is mad the choice graphics is copied fron back side to front side
 * **Cumulative progress** bar for each module and counting percentage during the scoring process.
 * **Courses Progress assessment** - when going from module to module it helps to vusally highlight the progress on a module level.
 **Local Storage** 
 
-#### 3.4 Challanges
+#### 3.2 Challanges
 1. **Print out page preview**
-2. **API for google Sheets** - the answers are collected and stored in Google Sheets, so that they can be retrieved later using Name and email address.
-3. **API for EMailjs** to send final Print out to the user
 3. **Donut Charts** - canvas was used to develop an interactive charts
 4. **Summary report customisation** for print out in a dark and a light mode.
+5. **Local Storage** to store the scoring result and copy the result into elements on the dashboard page.
 
 ___
 
