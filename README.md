@@ -63,7 +63,7 @@ A major purpose of the application to be able to revisit all the elements learnt
     - Thoeoretical elements on the final dashboard should also be alternatively grouped by 3 alternative criterea - "Developer Languages", "Frameworks/Liibraries" and "Developer tools"with appropriate grpahical representation.
 
 - **Functionally**: 
-    - Functionality of the apliaction has 4 goals - 1) Explain to a user the process and the scoring logic; 2) Suggest to a user the accurate scoring choices for Project and Theoretical elements 3) Visualise the scoring progress and scoring result during the scoring, and 4) Build 2 pages of individually customised dashboard.
+- Functionality of the apliaction has 4 goals - 1) Explain to a user the process and the scoring logic; 2) Suggest to a user the accurate scoring choices for Project and Theoretical elements 3) Visualise the scoring progress and scoring result during the scoring, and 4) Build 2 pages of individually customised dashboard.
     - EXPLANATION: an app should have simple Explanation section about what the application is, what it does does, how it works. It should have a dashboard example and scoring choices description for Project and Theory elements
     - INPUTS: an app needs to personalise dashbard therefore there should be a login page with 3 fields  - login, Full Name for dahsboard heading and an email. That will help to store the information into local storage
     - INPUTS: an app needs to provide simple 3-choice scoring functionaliy that can be  learnt intuitively and correctly applied during scoring process. Interactive scorecards should be used for interactive input. 
@@ -152,20 +152,254 @@ Interface Structure, Interaction flow, Information Design are shown the pictures
 - **Colors**
     - **FONT** - grey on light pages, cream-white on dark-background
     - **BACKGROUND** - 2 gradient, randomly selected, I used a website to generate gradient colors: https://mycolor.space/gradient 
-    - **SPECIAL BACKGROUND CHOICE** - for each pages sub-section I used a frost effect background using backdrop-filter (source: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/), however it works nice only in Chrome. Safari and Firefox requires canvas, therefore I did not bother to build it in.
+    - **SPECIAL BACKGROUND CHOICE** - for each pages sub-section I used a frost effect background using backdrop-filter (source: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/), however it works nice only in Chrome. Safari and Firefox requires canvas, therefore I did not build it in.
     - **BUTTONS** - red dot icons with small text in square brackets were used as button to navigate between the pages
     - **SCORES** - I used 3 colors for scoring, it folows a medal awards logic - gold, silver, bronze, the same colors were applied for theory elements score colors.
 Overall I used colors and fonts to enhance functionality, maintain reesponsiveness and make priority things (buttons, scores) visible and maintain resemblance to coding process.
-
+___
 ## 3.	Features
-#### 3.1 Interactive Features
-- **Layout**
-- **Pages Swipe Down** 
-- **ScoreCards interactivity** - unfolding cards with rotating or swipedown/up functionality - showing a) hidden elements within each module and b) flipping face and back side of the scorecard
-* **Scoring Status** for each element once the choice is mad the choice graphics is copied fron back side to front side
-* **Cumulative progress** bar for each module and counting percentage during the scoring process.
-* **Courses Progress assessment** - when going from module to module it helps to vusally highlight the progress on a module level.
-**Local Storage** 
+#### 3.1 Interactive Features with JavaScript/JQUERY/JSON
+##### LANDING PAGE:
+- **Hidden Page Sections**: 2 functions to flip between landing page and understand page using JQuery library
+    
+        $(function(){
+        $("#menu-button").click(function(){
+            $("#js-home-title").slideUp(500); 
+            $("#js-card-menu").slideDown(1000);
+        }); 
+        $("#js-back-login").click(function(){
+            $("#js-card-menu").slideUp(500);
+            $("#js-home-title").slideDown(1000); 
+        }); 
+        // the function to return from the bottom of the understand page to landing page
+        $("#js-back-login1").click(function(){ 
+            $("#js-card-menu").slideUp(500);
+            $("#js-home-title").slideDown(1000);});
+        });
+    
+
+- **ScoreCards interactivity** - unfolding cards with rotating or swipedown/up functionality - showing a) hidden elements within each module and b) flipping face and back side of the scorecard:
+        
+        $(".scorecard-animation").click(function(){
+            $(this).toggleClass("is-open");
+        });
+
+
+- **Scoring Status** for each element once the choice is made the choice graphics is copied from back side to front side using JQUERY Traversing functionality:
+
+        $(".score-circle").click(function(){
+            let scoreChoice= $(this).text();
+            let color=$(this).css("background-color");
+            let score = $(this).parent().parent().siblings().find(".scorcard-score");
+            $(score).text(scoreChoice); 
+            $(score).css("background-color",color)
+            
+        });
+- **Create Local Storage object** - generate loginObject upon click of login button, login button can not be pressed if one of the fields is input incorrectly. The functionality is built with JS JSON and object generation script:
+
+        $("#btn-login").click(function(){
+            let login=$("#login").val();
+            let loginName=$("#name").val();
+            let loginEmail=$("#email").val();          
+            let loginObject = {
+                "login": login,
+                "name": loginName,
+                "email": loginEmail
+            }
+                localStorage.setItem('loginObject', JSON.stringify(loginObject));
+        });
+
+- **Slide The scorecard up and Down**  on click:
+
+        $(document).ready(function(){
+            $(".scorecard-face-front-element").click(function(){
+                $(this).slideUp();
+                $(this).siblings().slideDown();
+            });
+            $(".scorecard-face-back-element").click(function(){
+                $(this).slideUp();
+                $(this).siblings().slideDown();
+            });             
+        });
+
+##### SCORING PAGE:
+- **Local Storage** - create local storage upon page load:
+
+        let userObject={}
+- **Local Storage** - Create userObject object upon login to add to individual object: scores, progress, progress-bars:
+
+        $(document).ready(function(){
+            let userObject={}
+            // 1. Create object for scores
+            let ids = document.querySelectorAll('.scorcard-score')
+            let scoresObject = {}
+            for (let i = 0; i < ids.length; i++) {
+            scoresObject[ids[i].id] = 0;
+            }
+            
+            // 2. Create object for progress bar
+            let progressBar = document.querySelectorAll('.progress-bar')
+            let progressBarObject = {}
+            for (let i = 0; i < progressBar.length; i++) {
+            progressBarObject[progressBar[i].id] = 0;
+            }
+            
+            // 3. Create object for progress            
+            let progressNumber = document.querySelectorAll('.progress-number')
+            let progressObject = {}
+            for (let i = 0; i < progressNumber.length; i++) {
+            progressObject[progressNumber[i].id] = 0;
+            }
+            
+            //4. create object for Donut chart numbers test: console.log(progressObject);
+            let donutProgressNumbers = document.querySelectorAll('.score-identifier');
+            let donutProgressNumbersObject={}
+            for (let i = 0; i < donutProgressNumbers.length; i++) {
+            donutProgressNumbersObject[donutProgressNumbers[i].id] = 0;
+            }
+
+            //5. create object for Donut chart progress bar
+            let donutProgressBar = document.querySelectorAll('.circle-incomplete');
+            let donutProgressBarObject={}
+            for (let i = 0; i < donutProgressBar.length; i++) {
+            donutProgressBarObject[donutProgressBar[i].id] = 0;
+            }
+        
+            // 6. add objects to the userObject in localStorage
+            userObject.scores=scoresObject; // add scores dataset to object            
+            userObject.progressBar=progressBarObject; // add progressBar dataset to object            
+            userObject.progress=progressObject; // add progress dataset to object       
+            userObject.donutProgressNumbers=donutProgressNumbersObject; //add progress numbers for donut charts into local storage data object
+            userObject.donutProgressBar=donutProgressBarObject; 
+            
+            //7. Save onedimensinal objects inside userObject in local storage using JSON
+            localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage test: console.log(userObject);  });
+
+- **Moing Between Subsections of the scoring page** - hide summary section, open  THEORY projects scoring page:
+
+        $(function(){
+            $("#theory-button").click(function(){ //click event
+                $("#js-scoresummary").slideUp(500); 
+                $("#js-theory").slideDown(1000);
+            }); 
+            $("#js-summary-button1").click(function(){//click event 
+                $("#js-theory").slideUp(500);
+                $("#js-scoresummary").slideDown(1000); 
+            });             
+        });
+- **Rotate Projects scorecard around** - the function flips the project scorecard around on click:
+        
+        $(".scorecard-animation").click(function(){
+            $(this).toggleClass("is-open");
+        });
+- ***Copy the score choice and formatting into face score circle** - 2 functions to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards. works for the cards on theory sections: 
+
+        $(".score-circle").click(function(){
+            let scoreChoice= $(this).text();
+            let color=$(this).css("background-color");
+            let score = $(this).parent().parent().siblings().find(".scorcard-score");
+            $(score).text(scoreChoice); // score
+            $(score).css("background-color",color) // color                  
+        }); 
+
+        // same for projects section
+        $(".projects-score-circle").click(function(){
+            let scoreChoice= $(this).text();
+            let color=$(this).css("background-color");
+            let score = $(this).parent().parent().siblings().find(".scorcard-score");
+            $(score).text(scoreChoice); // score
+            $(score).css("background-color",color) // color                      
+        });
+- **Open List of Module elements** - when the user clicks on a theory module, this helps to rol down the lsit of elements for each module - using JQUERY and this element of JS:: 
+
+        $(".scorecard-animation-module").click(function(){
+            $(this).siblings().children().slideToggle(200);
+            $(this).parents().siblings().children().find(".scorecard-element").slideUp(200);// close previously open list of element for other modules
+            
+        });
+
+- **Sliding up and down each theory module element scorecard** - using JQUERY and this JS script:
+
+        $(document).ready(function(){
+        $(".scorecard-face-front-element").click(function(){
+            $(this).slideUp();
+            $(this).siblings().slideDown();
+        });
+        $(".scorecard-face-back-element").click(function(){
+            $(this).slideUp();
+            $(this).siblings().slideDown();
+        });           });      
+
+
+- **Calulcate project scores** - complex code to calculate projects score and scoring progress inputs based on scorecards choices triggered project scorecard click and insert those values into visual charts:
+    - **Open a function on click** - open a separate function on click:
+
+            $(".projects-score-circle").click(function (){
+            ...        });
+    - **Get the number from the card score** - within the function above, still trigerred by a click
+
+            // 1. turn the string into number from the card score or 0
+            let ucfed = parseInt($("#projects-ucfed").text()) || 0; 
+            let ifed = parseInt($("#projects-ifed").text()) || 0;
+            let dcd = parseInt($("#projects-dcd").text()) || 0;
+            let fsd = parseInt($("#projects-fsd").text()) || 0;
+
+    - **Calculate average project score** - within the function above, still trigerred by a click:
+            
+            let projectsScore= (ucfed+ifed+dcd+fsd)/projectsNumber;
+    
+    - **Insert calculation into visuals for donut charts** - within the function above, still trigerred by a click:
+
+            $("#projects-overall").text(projectsScore); // set the number to chart % on a projects section
+            $("#projects-overall-summary").text(projectsScore);   // set the number to chart % on a summary section
+
+    - **Target Chart visuals** - insert calculation into donut chart progress bar
+            
+            document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress RED CIRCLE BAR on the chart section(SVG OBJECT). (JQuery attr() doesn't work)
+            document.getElementById("progress-bar1").setAttribute("stroke-dasharray", projectsScore+", 100" );// set the score to the donut progress RED CIRCLE BAR on the SUMMARY page chart (svg object) (JQuery attr() doesn't work)
+
+    - **Setting up a progress vertical bar for projects** - on summary section and on projects scoring section:
+
+            // SCORE. PROJECTS. PROGRESS. progress bar for projects calculation - can be replaced by interesteing array formula ==> map(/\d+/g etc)...
+            if(document.getElementById("projects-ucfed").innerText=="%"){
+                ucfedProgress = 0; // 
+            } else {ucfedProgress = 1;};
+            if(document.getElementById("projects-ifed").innerText=="%"){
+                ifedProgress = 0;
+            } else {ifedProgress = 1;};
+            if(document.getElementById("projects-dcd").innerText=="%"){
+                dcdProgress = 0;
+            } else {dcdProgress = 1;};
+            if(document.getElementById("projects-fsd").innerText=="%"){
+                fsdProgress = 0;
+            } else {fsdProgress = 1;};
+            let projectsScoringProgress=ucfedProgress+ifedProgress+dcdProgress+fsdProgress;
+                
+            // PROGRESS. progress NUMBER for projects on 2 projects summary pages
+                $("#project-scoring-progress").text(projectsScoringProgress);
+                $("#project-scoring-progress1").text(projectsScoringProgress);
+                let projectsScoringProgressWidth = projectsScoringProgress/projectsNumber*100;
+            // PROGRESS. vertical progress BAR for projects on 2 summary section and page
+                $(".projects-progress-bar").css("width", projectsScoringProgressWidth+"%");
+
+- **Store the scoring result into local storage** 
+
+            // store calculated scores into userObject
+            userObject.donutProgressNumbers["projects-overall"]=projectsScore;
+            userObject.donutProgressNumbers["projects-overall-summary"]=projectsScore;
+            userObject.donutProgressBar["progress-bar"]=projectsScore;
+            userObject.donutProgressBar["progress-bar1"]=projectsScore;
+            
+            // store projects scoring progress for vertical bar
+            userObject.progressBar["project-scoring-progress-bar"]=projectsScoringProgressWidth;
+            userObject.progressBar["project-scoring-progress-bar1"]=projectsScoringProgressWidth;
+            userObject.progress["project-scoring-progress"]=projectsScoringProgress;
+            userObject.progress["project-scoring-progress1"]=projectsScoringProgress;
+
+            // store updated userObject into localStorage
+            localStorage.setItem("userObject", JSON.stringify(userObject));
+
+- **193 - visuals for theory** 
 
 #### 3.2 Challanges
 1. **Print out page preview**

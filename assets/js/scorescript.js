@@ -1,13 +1,8 @@
  // LOCALSTORAGE 
 
     // Create userObject object upon login to add to individual object: scores, progress, progress-bars  (logic from: https://stackoverflow.com/questions/48996441/javascript-iterate-over-form-inputs-and-collect-values-as-key-value-pairs-in-o)
-    
     $(document).ready(function(){
-        
-        // check login data with userObject data
             let userObject={}
-
-
             // 1. Create object for scores
             let ids = document.querySelectorAll('.scorcard-score')
             let scoresObject = {}
@@ -87,21 +82,14 @@ $(document).ready(function() {
         $(".scorecard-animation").click(function(){
             $(this).toggleClass("is-open");
         });
-
-    //SCORE. PROJECT CARD. the function flips the scorecard around (for some reason if I remove this duplicate it does not work anymore)
-        $(".scorecard-animation").click(function(){
-            $(this).toggleClass("is-open");
-        });
-        
+            
     // SCORE. CARD. GENERAL. 2 functions to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards. works for the cards on theory sections
         $(".score-circle").click(function(){
             let scoreChoice= $(this).text();
             let color=$(this).css("background-color");
             let score = $(this).parent().parent().siblings().find(".scorcard-score");
             $(score).text(scoreChoice); // score
-            $(score).css("background-color",color) // color
-            
-            let elementKey = $(this).parent().parent().siblings().find(".scorcard-score").attr("id");                          
+            $(score).css("background-color",color) // color                  
         }); 
 
         // same for projects section
@@ -110,9 +98,7 @@ $(document).ready(function() {
             let color=$(this).css("background-color");
             let score = $(this).parent().parent().siblings().find(".scorcard-score");
             $(score).text(scoreChoice); // score
-            $(score).css("background-color",color) // color
-            
-            let projectKey = $(this).parent().parent().siblings().find(".scorcard-score").attr("id");                          
+            $(score).css("background-color",color) // color                      
         });      
 
     // SCORE. THEORY. MODULE. open list of element for the module when clicked
@@ -137,8 +123,7 @@ $(document).ready(function() {
     // SCORE. PROJECTS. CHART. calculate projects score and scoring progress inputs based on scorecards choices triggered project scorecard click
         
     $(".projects-score-circle").click(function (){
-            // retrieve object from localStorage
-                       
+                     
             const projectsNumber= 4; // number of cards in projects score calculation
             
             let ucfed = parseInt($("#projects-ucfed").text()) || 0; // turn the string into number from the card score or 0
@@ -155,7 +140,7 @@ $(document).ready(function() {
             document.getElementById("progress-bar1").setAttribute("stroke-dasharray", projectsScore+", 100" );// set the score to the donut progress RED CIRCLE BAR on the SUMMARY page chart (svg object) (JQuery attr() doesn't work)
 
 
-        // SCORE. PROJECTS. PROGRESS. progress bar for projects calculation - can be replaced by  crazy array formula ==> map(/\d+/g etc)...
+        // SCORE. PROJECTS. PROGRESS. progress bar for projects calculation - can be replaced by interesteing array formula ==> map(/\d+/g etc)...
             if(document.getElementById("projects-ucfed").innerText=="%"){
                 ucfedProgress = 0; // 
             } else {ucfedProgress = 1;};
@@ -174,8 +159,8 @@ $(document).ready(function() {
             $("#project-scoring-progress").text(projectsScoringProgress);
             $("#project-scoring-progress1").text(projectsScoringProgress);
             let projectsScoringProgressWidth = projectsScoringProgress/projectsNumber*100;
-        // PROGRESS. vertical progress BAR for projects on 2 summary section and page
-            
+        
+            // PROGRESS. vertical progress BAR for projects on 2 summary section and page
             $(".projects-progress-bar").css("width", projectsScoringProgressWidth+"%");
             let userObject=0;
             //retrieve data from localStorage

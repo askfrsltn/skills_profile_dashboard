@@ -131,7 +131,7 @@ $(document).ready(function(){
         document.getElementById("progress-bar").setAttribute("stroke-dasharray", userObject.donutProgressBar["progress-bar"]+", 100" );//set up a progress bar on the project donut chart
         document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", userObject.donutProgressBar["progress-bar-theory"]+", 100" );//set up a progress bar on the project donut chart
     
-        // b. ROJECTS MEDALS. find project medals check the value, add class. I simply hard coded the style condition, it took me 20 min, before that I spent 3 hours tring to find the way to make 1) an array of ids and values, 2) create a switch condition inside the loop to addclass depending on 60,80 or 100. BUT It works.
+    // b. ROJECTS MEDALS. find project medals check the value, add class. I simply hard coded the style condition, it took me 20 min, before that I spent 3 hours tring to find the way to make 1) an array of ids and values, 2) create a switch condition inside the loop to addclass depending on 60,80 or 100. BUT It works.
         
         let ucfed=$("#projects-ucfed").text();
         let ifed=$("#projects-ifed").text();
@@ -200,13 +200,6 @@ $(document).ready(function(){
     $("#dashboard-skill-databases").css("width",dashboardObject["dashboard-skill-databases"]);
     $("#dashboard-skill-fsdframeworks").css("width",dashboardObject["dashboard-skill-fsdframeworks"]);
     $("#dashboard-skill-udui").css("width",dashboardObject["dashboard-skill-udui"]);
-
-
-
-
-
-        
-        
 
 //8. ASSIGN OTHER IDS THAT WERE MISSED IN THE STEP NUMBER 6
     $("#name1").text(loginObject.name);//name to second page id
