@@ -10,7 +10,6 @@
             scoresObject[ids[i].id] = 0;
             }
             
-
             // 2. Create object for progress bar
             let progressBar = document.querySelectorAll('.progress-bar')
             let progressBarObject = {}
@@ -54,7 +53,7 @@
 $(document).ready(function() {
             
 // -- SCORE PAGE SCRIPTS
-    //SCORE. PAGES. the function to go from score summary to projects scoring page
+    //SCORE. PAGES. the function to navigate from score summary to projects scoring page
         $(function(){
             $("#projects-button").click(function(){
                 $("#js-scoresummary").slideUp(500); 
@@ -80,8 +79,13 @@ $(document).ready(function() {
 
     //SCORE. PROJECT CARD. the function flips the project scorecard around
         $(".scorecard-animation").click(function(){
-            $(this).toggleClass("is-open");
+        $(this).toggleClass("is-open");
         });
+
+    //SCORE. PROJECT CARD. it is duplicated code, without this dulication the card does not work - mistery???
+        $(".scorecard-animation").click(function(){
+        $(this).toggleClass("is-open");
+        }); 
             
     // SCORE. CARD. GENERAL. 2 functions to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards. works for the cards on theory sections
         $(".score-circle").click(function(){

@@ -67,22 +67,12 @@ ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0 10px 0 10px;
     font-size:2rem;
 }
+
 .theory-button{
     text-align: center;
  
 }
 
-.roboto {
-    font-family: "Roboto",sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.fira {
-    font-family: "Fira Code",sans-serif;
-    font-weight: 100;
-    font-size: 40px;
-}
 .smaller-title{
     text-align: center;
     vertical-align: center;
@@ -93,6 +83,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     text-align: center;
     vertical-align: center;
 }
+
 /*-- TEXT SIZES --*/
 .score-text{
     text-transform: uppercase;
@@ -144,6 +135,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
                 0 32px 64px rgba(0,0,0,0.07);
     border-radius: 50%;
     transition: color 10ms ease-in-out;
+    border-radius: 50%;
 }
 
 .dot-icon:hover,
@@ -212,7 +204,8 @@ ul,h1,h2,h3,h4,h5,h6,p{
     width: 70vh;    
     overflow: auto;
     border-radius: 10px;
-    /*-- source for frost effect: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/ 
+    /*-- source for frost effect: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535 
+    --*/
     background-color: rgba(255, 255, 255, .2); 
     backdrop-filter: blur(10px);
     margin: 10px;
@@ -291,7 +284,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: linear-gradient(to right bottom, #b1e0eb, #a7d5de, #9ccad1, #93bfc4, #89b4b7);
+    background-image: linear-gradient(to right bottom, #4d6180, #55658c, #606997, #6d6ca1, #7d6ea9);
 }
 
 .scoringprocess-pages,
@@ -334,7 +327,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .process-step-number{
-    border: 1px solid #ccc;
+    border: 1px solid rgba(223, 211, 211, 0.5);
     height: 10vh;
     width: 10vh;
     border-radius: 50%; 
@@ -342,13 +335,11 @@ ul,h1,h2,h3,h4,h5,h6,p{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15),
-   -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 
 }
 .process-step-icon{
     font-size: 40px;
-    color: #fd6470;
+    color: #f1e7e7;
 }
 
 .process-step-title{
@@ -502,6 +493,10 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 .theory-background{
     background-color: rgba(38, 80, 119, .7);
+}
+
+.theory-background1{
+    background-image: linear-gradient(to left top, #152c50, #213161, #333470, #49357d, #623387);
 }
 
 .score-theory-section{
