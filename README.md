@@ -1,7 +1,7 @@
 # FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD
 
 ___
-![responsive](assets/img/responsive.png "applications responsive screens")
+![responsive](assets/img/responsive1.png "applications responsive screens")
 
 ## SUMMARY
 Project lnk: [Full Stack Skills Profile Dashboard](https://askfrsltn.github.io/skills_profile_dashboard/) 
