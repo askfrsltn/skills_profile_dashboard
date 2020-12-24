@@ -136,7 +136,7 @@ Interface Structure, Interaction flow, Information Design are shown the pictures
 - Information related to individual user will be stored in Local stoarge. Functionally it means that the moment the user enters 3 fields of input to transition from landing page to scoring page the JS code will generate a new user object and store it in local storage. This object (userObject) will be used to store all the information everytime when the choice is made on a scoring page. 
 - In other words, every scorecard will have a key, and the score choice made by user will be stored in the local storage as a value of that key. The data in user object will be grouped in various objects scores, input for visuals, alculated values (e.g. cumulative average scores), and date. That means that userObject in Local stoarage will be multidimensional.
 - userObject will be used again at the moment when the user goes from the scoring page to the dahboard page. The infomation is copied into one dimensional array - dahsboardObject and than values are assigned to identical ids on a page and inserted into html elements to produce graphical dahsboard. the echanism is described in more detailed in the section 3 - Features.
-- As mentioned above if the user decides to leave dashboard and start the scoring process again, userObject will be overwritten. Modals will be developped to warn the user about this. 
+- If the user decides to leave dashboard and start the scoring process again, userObject will be overwritten. Modals will be developped to warn the user about this. 
 - That will reinforce the user to make a conscious choice when transitioning from login to scoring page, from scoring page to dashboard and from dashboard back to login page.
 - Return from dashboard to scoring page is not built into application to avoid unwanted user navigation.
 
@@ -399,13 +399,173 @@ ___
             // store updated userObject into localStorage
             localStorage.setItem("userObject", JSON.stringify(userObject));
 
-- **193 - visuals for theory** 
+- **Theory modules calculation** - a complex JS code that is trigereed by click on a score circle of the lement scorecard. It consists of 13 steps: (1) find a module key id, (2) get the scores of the elements from all current module elements, (3) turn the string into numbers array, (4) Calculate average in the array, (5) calculate sum of scores in the array, (6) Assign average to module score circle on the module scorecard, (7) CHANGE MODULE PROGRESS BAR using traversing, (8) replace key-value pairs with chosen score from scorecard inside userObject in Local Storage, (9) calculate theory averages based on module averages, (10) Assign numbers to theory Donut Charts visual elements, (11) Calculate inputs for progress bar calculation - substeps a,b,c,d, (12) Assign calculated value to progress bar visuals
+Overall the code looks like this:
 
+        $(".score-circle").click(function(){
+            //1. find a module key id
+            let moduleObjectKey = $(this).parent().parent().parent().parent().parent().siblings().children().find('.scorcard-score').attr("id");
+            let moduleKey="#"+moduleObjectKey;
+            
+            // 2. get the scores of the elements from all the module elements           
+            let values = $(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').text();// return all the values within the module
+            let value= $(this).text().trim().slice(0,-1);// get rid of spaces and % sign at the end
+
+            //3. turn the string into numbers array - unbelieavable code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string - who can ever come up with this logic??? It actually  wokrs!      
+            let valuesArray = values.match(/\d+/g).map(Number); 
+            
+            //4. Calculate average in the array
+            let moduleSum = 0 // create elements cum number variable
+            let scoredElements = valuesArray.length; // create variable to calculate number of elements scored
+            let totalNumberOfElements=$(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').length; // calculates total number of elements;
+            
+            // 5. calculate sum of scores in the array
+            for (let i = 0; i < valuesArray.length; i++) {
+                moduleSum += parseInt(valuesArray[i]); 
+            }
+
+            //6. Assign average to module score circle on the module scorecard
+            let moduleAverageScore = parseInt(moduleSum/totalNumberOfElements); // calculate average module score
+            $(moduleKey).text(moduleAverageScore+"%"); // assign calculated average to module scorecard score
+            
+            // 7. CHANGE PROGRESS BAR
+            // a.find this module key
+                let thisModuleProgressId= $(this).parent().parent().parent().parent().parent().siblings().find(".module-progress-number").attr("id"); 
+
+            // b. assign the length var to the key - progress number
+                $("#"+thisModuleProgressId).text(scoredElements);
+            
+            // c. calculate percentage for progress bar
+                const numberOfElements=$(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').length;
+                let moduleProgressBarWidth = parseInt(scoredElements / numberOfElements * 100) ;
+            
+            // d. assign % to the progress bar 
+                $(this).parent().parent().parent().parent().parent().parent().find(".module-progress-bar").css("width", moduleProgressBarWidth+"%");
+            
+            //8. LOCAL STORAGE. replace key-value pairs with chosen score from scorecard
+                
+                let key=$(this).parent().parent().siblings().find(".scorcard-score").attr("id");// find card id
+                
+                userObject=JSON.parse(localStorage.getItem("userObject"));// retrieve object from local storage
+
+                userObject.scores[key]=value;//change value of scored id
+                userObject.scores[moduleObjectKey]=moduleAverageScore;//change value of scored id
+                userObject.scores[thisModuleProgressId]=scoredElements;//change value of scored id
+                
+                localStorage.setItem("userObject", JSON.stringify(userObject));//????return object into LocalStorage with updated value  ???? - split to separate functions GROUP BY EVENTS.
+                
+            //9. CALCULATE THEORY AVERAGES
+                userObject = JSON.parse(localStorage.getItem("userObject"));//retrieve object from LocalStorage
+                
+                const numberOfModules=$.find('.scorecard-module').length;// count number of theory modules
+                let theoryHtml = userObject.scores["theory-html"]; // assign html module score to var
+                let theoryCss = userObject.scores["theory-css"]; //assign css module score to var
+                let theoryUcfed = userObject.scores["theory-ucfed"]; //assign ucfed module score to var
+                let theoryJs = userObject.scores["theory-js"] //assign js module score to var
+                let theoryIfed = userObject.scores["theory-ifed"] // assign ifed module score to var
+                let theoryPythonfu = userObject.scores["theory-pythonfu"] //assign python theory module score to var
+                let theoryPythonpr = userObject.scores["theory-pythonpr"]//assign python module score to var
+                let theoryDcd = userObject.scores["theory-dcd"]//assign dcd module score to var
+                let theoryFsd = userObject.scores["theory-fsd"]//assign fsd module score to var
+                
+                let theoryScoreFloat = (theoryHtml+theoryCss+theoryUcfed+theoryJs+theoryIfed+theoryPythonfu+theoryPythonpr+theoryDcd+theoryFsd)/numberOfModules; //calculate theory score for charts
+                let theoryScore=Math.round(theoryScoreFloat); //had to make a separate variable to round it, strange.
+                
+            //10. Assign numbers to 2 theory Donut Charts including red progress bar
+                $('#theory-overall').text(theoryScore);// asign number to donut chart on theory scorring section
+                $('#theory-overall-summary').text(theoryScore);// asign number to donut chart on theory scorring section
+
+                document.getElementById("progress-bar-theory1").setAttribute("stroke-dasharray", theoryScore+", 100" ); // // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
+                document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", theoryScore+", 100" ); // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
+
+            //11. Calculate inputs for progress bar calculation
+                // a. count all the elements scorecards without modules
+                const numberOfTheoryElements = $.find(".scorecard-element").length; 
+                // b. return all the scored elements values within the module
+                let allTheScoredElements = $('.scorecard-element').find('.scorcard-score').text();
+                //c. Make an array from found values and count number of scores for all the elements. Use crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string again.   
+                let numberOfScoredElements = allTheScoredElements.match(/\d+/g).map(Number).length; // count number of elements that have been scored
+                // d. calculate width of the theory scoring bar
+                let theoryProgressBarWidth = numberOfScoredElements/numberOfTheoryElements*100; 
+            
+            //12. Assign calculated value to progress bar visual
+                $('#theory-scoring-progress1').text(numberOfScoredElements); // 
+                $('#theory-scoring-progress').text(numberOfScoredElements);
+                $(".theory-progress-bar").css("width", theoryProgressBarWidth+"%");
+- **Store the values inside userObject into Local storage** - this JS code is executed within score circle click code, first the values are stored in user object, then saved in local storage:
+
+        //THEORY. LOCAL STORAGE. Store donut the inputs into local storage 
+                // a. visual elements assigned to unique ids in userObject
+
+                    userObject.progress["theory-scoring-progress"]=numberOfScoredElements;
+                    userObject.progress["theory-scoring-progress1"]=numberOfScoredElements;
+
+                    userObject.progressBar["theory-scoring-progress-bar"]=theoryProgressBarWidth;
+                    userObject.progressBar["theory-scoring-progress-bar1"]=theoryProgressBarWidth;
+                    
+                    userObject.donutProgressNumbers["theory-overall"]=theoryScore;
+                    userObject.donutProgressNumbers["theory-overall-summary"]=theoryScore;
+
+                    userObject.donutProgressBar["progress-bar-theory"]=theoryScore; // check accuracy
+                    userObject.donutProgressBar["progress-bar-theory1"]=theoryScore; // check accuracy
+                    
+                    // b. userObject saved in localStorage
+                    localStorage.setItem("userObject", JSON.stringify(userObject));    
+##### DASHBOARD PAGE:
+- **Create new variables for new skills groups visuals on the skills profile** 
+
+        // 1. DEFINE NEW SET OF VARIABLES -"SKILLS"- THAT EXIST ONLY ON THIS PAGE - SEE PAGE 2 OF THE DASHBOARD
+            //a. find all skill IDs and place it in userObject in local Storage
+            let skills = document.querySelectorAll('.skill-identifier');//specific ids
+            let skillsObject = {} // push found ids to sperate object
+            for (let i = 0; i < skills.length; i++) {
+            skillsObject[skills[i].id] = 0;
+            }    
+
+            //b.   get date stamp and place it into the dashboard
+            let dates = document.querySelectorAll('.date');//specific ids       let datesObject = {}
+            // ids update and Adutomatic date stamp for dashboard pages with the help of  https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_month
+            for (let i = 0; i < dates.length; i++) {
+                let date=new Date
+                let months=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]
+                let d=date.getDate()+"-"+months[date.getMonth()]+"-"+date.getFullYear();
+                datesObject[dates[i].id] = d;
+
+- ***Get Data form local storage userObject** - this step is needed to work with visuals on dashboard page:     
+        
+        // retrieve userObject from the localStoarge
+        userObject=JSON.parse(localStorage.getItem("userObject")); // parse from LocalStorage       
+
+- **Create new group of visuals for 2nd page** - this step unfortunately required quite simple but long routine manual coding and calculation in JS. In order to prepare for this step I grouped the skills and theory elements in separate table in Google sheet (see picture 4 for fragment image). If interested you can see complete file following the link -  [complete GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing). 
+
+**Picture 4: Fragment od skills analysis table:**
+![detailed user flow](assets/img/skillstable.png "fragment of table used to group skills")
+
+
+
+##### MODALS:
+- **Modal Interactivity** - warning to a user when s/he decides to leave scoring page navigating to dashboard and when s/he wants to navigate from dashboard to the login page:
+
+        // a. back to login
+        $("#login-button").click(function(){
+            $(".modal-container").removeClass("hidden");
+        });
+        $(".modal-container").click(function(){
+            $(".modal-container").addClass("hidden");
+        });
+
+        // a. back to login
+        $("#dashboard-button").click(function(){
+            $(".dashboard-modal-container").removeClass("hidden");
+        });
+        $(".dashboard-modal-container").click(function(){
+            $(".dashboard-modal-container").addClass("hidden");
+        });
 #### 3.2 Challanges
 1. **Print out page preview**
 3. **Donut Charts** - canvas was used to develop an interactive charts
-4. **Summary report customisation** for print out in a dark and a light mode.
-5. **Local Storage** to store the scoring result and copy the result into elements on the dashboard page.
+4. **Summary report customisation** - it was decided to make it irresposnsive with fixed width and hight to alow the user see the output as it will look like when printed, in this way the pages can be easily taken from the screen by using accessible Windows (printScrieen), iOS (Capture) or taking a screen picture on any device. I used an A4 paper ratio (roughly 1:2).
+5. **Local Storage** to store the scoring result and copy the result into elements on the dashboard page I used JSON functionalyity of interacting with local storage.
 
 ___
 

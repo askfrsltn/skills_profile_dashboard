@@ -81,11 +81,6 @@ $(document).ready(function() {
         $(".scorecard-animation").click(function(){
         $(this).toggleClass("is-open");
         });
-
-    //SCORE. PROJECT CARD. it is duplicated code, without this dulication the card does not work - mistery???
-        $(".scorecard-animation").click(function(){
-        $(this).toggleClass("is-open");
-        }); 
             
     // SCORE. CARD. GENERAL. 2 functions to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards. works for the cards on theory sections
         $(".score-circle").click(function(){
@@ -194,7 +189,7 @@ $(document).ready(function() {
         });
     
         
-    // SCORE.THEORY. VISUALS. Calculate module score visualisation functions. 
+    // SCORE.THEORY. VISUALS. Calculate theory module score visualisation functions. 
         $(".score-circle").click(function(){
             //1. find a module key id
             let moduleObjectKey = $(this).parent().parent().parent().parent().parent().siblings().children().find('.scorcard-score').attr("id");
@@ -204,7 +199,7 @@ $(document).ready(function() {
             let values = $(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').text();// return all the values within the module
             let value= $(this).text().trim().slice(0,-1);// get rid of spaces and % sign at the end
 
-            //3. turn the string into numbers array - crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string - who can ever come up with this logic???          
+            //3. turn the string into numbers array - unbelieavable code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string - who can ever come up with this logic??? It actually  wokrs!      
             let valuesArray = values.match(/\d+/g).map(Number); 
             
             //4. Calculate average in the array
@@ -221,7 +216,7 @@ $(document).ready(function() {
             let moduleAverageScore = parseInt(moduleSum/totalNumberOfElements); // calculate average module score
             $(moduleKey).text(moduleAverageScore+"%"); // assign calculated average to module scorecard score
             
-            // 7. Change progress bar
+            // 7. CHANGE PROGRESS BAR
             // a.find this module key
                 let thisModuleProgressId= $(this).parent().parent().parent().parent().parent().siblings().find(".module-progress-number").attr("id"); 
 
@@ -235,7 +230,7 @@ $(document).ready(function() {
             // d. assign % to the progress bar 
                 $(this).parent().parent().parent().parent().parent().parent().find(".module-progress-bar").css("width", moduleProgressBarWidth+"%");
             
-            //8. LOCAL STORAGE. REPLACE key-value pairs with chosen score from scorecard
+            //8. LOCAL STORAGE. replace key-value pairs with chosen score from scorecard
                 
                 let key=$(this).parent().parent().siblings().find(".scorcard-score").attr("id");// find card id
                 
@@ -261,34 +256,33 @@ $(document).ready(function() {
                 let theoryDcd = userObject.scores["theory-dcd"]//assign dcd module score to var
                 let theoryFsd = userObject.scores["theory-fsd"]//assign fsd module score to var
                 
-                let theoryScoreFloat = (theoryHtml+theoryCss+theoryUcfed+theoryJs+theoryIfed+theoryPythonfu+theoryPythonpr+theoryDcd+theoryFsd)/numberOfModules; //calculate tehory score for charts
-                let theoryScore=Math.round(theoryScoreFloat); //had to make a separate variable to round it, wierd
+                let theoryScoreFloat = (theoryHtml+theoryCss+theoryUcfed+theoryJs+theoryIfed+theoryPythonfu+theoryPythonpr+theoryDcd+theoryFsd)/numberOfModules; //calculate theory score for charts
+                let theoryScore=Math.round(theoryScoreFloat); //had to make a separate variable to round it, strange.
                 
-                //8. Assign numbers to 2 theory Donut Charts including red progress bar
+            //10. Assign numbers to 2 theory Donut Charts including red progress bar
                 $('#theory-overall').text(theoryScore);// asign number to donut chart on theory scorring section
                 $('#theory-overall-summary').text(theoryScore);// asign number to donut chart on theory scorring section
 
                 document.getElementById("progress-bar-theory1").setAttribute("stroke-dasharray", theoryScore+", 100" ); // // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
-                document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", theoryScore+", 100" ); // // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
+                document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", theoryScore+", 100" ); // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
 
-                //9. Assign numbers to 2 modules progress bar including red progress bar
-                const numberOfTheoryElements = $.find(".scorecard-element").length; // count all the elements scorecards without modules
-            
-                let allTheScoredElements = $('.scorecard-element').find('.scorcard-score').text();// return all the scored elements values within the module
-                //Make an array from found values and count number of scores for all the elements.Use crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string     
-                
+            //11. Calculate inputs for progress bar calculation
+                // a. count all the elements scorecards without modules
+                const numberOfTheoryElements = $.find(".scorecard-element").length; 
+                // b. return all the scored elements values within the module
+                let allTheScoredElements = $('.scorecard-element').find('.scorcard-score').text();
+                //c. Make an array from found values and count number of scores for all the elements. Use crazy code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string again.   
                 let numberOfScoredElements = allTheScoredElements.match(/\d+/g).map(Number).length; // count number of elements that have been scored
-                
-                let theoryProgressBarWidth = numberOfScoredElements/numberOfTheoryElements*100; // calculate width of the theory scoring bar
-
+                // d. calculate width of the theory scoring bar
+                let theoryProgressBarWidth = numberOfScoredElements/numberOfTheoryElements*100; 
+            
+            //12. Assign calculated value to progress bar visual
                 $('#theory-scoring-progress1').text(numberOfScoredElements); // 
                 $('#theory-scoring-progress').text(numberOfScoredElements);
                 $(".theory-progress-bar").css("width", theoryProgressBarWidth+"%");
 
-                //9. THEORY. LOACAL STORAGE. Store donut the inputs into local storage 
-                //variables
-
-                // visual elements assigned to unique ids in userObject
+            //THEORY. LOCAL STORAGE. Store donut the inputs into local storage 
+                // a. visual elements assigned to unique ids in userObject
 
                     userObject.progress["theory-scoring-progress"]=numberOfScoredElements;
                     userObject.progress["theory-scoring-progress1"]=numberOfScoredElements;
@@ -302,10 +296,11 @@ $(document).ready(function() {
                     userObject.donutProgressBar["progress-bar-theory"]=theoryScore; // check accuracy
                     userObject.donutProgressBar["progress-bar-theory1"]=theoryScore; // check accuracy
                     
-                    // userObject saved in localStorage
+                    // b. userObject saved in localStorage
                     localStorage.setItem("userObject", JSON.stringify(userObject));            
         });
-    // 10. MODALs.
+    
+    // MODALs.
         // a. back to login
         $("#login-button").click(function(){
             $(".modal-container").removeClass("hidden");
@@ -321,11 +316,4 @@ $(document).ready(function() {
         $(".dashboard-modal-container").click(function(){
             $(".dashboard-modal-container").addClass("hidden");
         });
-
-        
-    //RESOLVE -LOGIC PAGE SCRIPT IMPACTS SCORECARD PAGE       
-        // the function flips around the scorecard on logic page
-            $(".scorecard-animation").click(function(){
-            $(this).toggleClass("is-open");
-            });
 });

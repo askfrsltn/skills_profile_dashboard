@@ -4,7 +4,22 @@
 /*-- MEDIAQUERIES to fix responsiveness issues --*/
 
 
+@media only screen and (max-device-width: 450px) {
+   .logic-description {
+       font-size: 12px;
+   }
+   .small-text{
+       font-size: 10px;
+   }
 
+   .login-explanation{
+       font-size: 10px;
+   }
+   
+   .scorecard-title-element{
+       font-size: 10px;
+   }
+}
 
 
 /*-- KEEPING FOOTER AT THE BOTTOM --*/
@@ -316,14 +331,18 @@ ul,h1,h2,h3,h4,h5,h6,p{
     margin: auto;
 }
 
+.process-title{
+    margin-bottom: 10px;
+}
+
 .process-step{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     height: 12vh;
     width: 90%;
-    margin: 10px;
+    margin: 5px;
 }
 
 .process-step-number{
@@ -337,8 +356,9 @@ ul,h1,h2,h3,h4,h5,h6,p{
     align-items: center;
 
 }
+
 .process-step-icon{
-    font-size: 40px;
+    font-size: 5vh;
     color: #f1e7e7;
 }
 
@@ -844,7 +864,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 }
 
 .scorecard-module{
-    margin: 5px;
+    margin: 10px 0 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -875,6 +895,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
                 0 8px 16px rgba(0,0,0,0.07),
                 0 16px 32px rgba(0,0,0,0.07), 
                 0 32px 64px rgba(0,0,0,0.07);
+    border: 1px solid #4d5052;
 }
 
 
@@ -1365,7 +1386,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 /*-- MODALS and WARNINGS --*/
 .dashboard-modal-container,
 .modal-container{
-    background-color: black;
+    background-color: rgba(000, 000, 000, 0.9);
     position: fixed;
     top:0;
     left:0;
@@ -1377,11 +1398,11 @@ ul,h1,h2,h3,h4,h5,h6,p{
     flex-direction: column;
 }
 
-.this-modal{
+.score-modal{
     position: absolute;
-    top:30%;
-    height: 45%;
-    width: 50vh;
+    top:20%;
+    height: 300px;
+    width: 300px;
     background-color: white;
     border-radius: 10px;
     display: flex;
@@ -1389,6 +1410,24 @@ ul,h1,h2,h3,h4,h5,h6,p{
     align-items: center;
     flex-direction: column;
     padding: 10px;
+    box-shadow:2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-modal{
+    position: absolute;
+    top:20%;
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow:2px 2px 3px 0 rgba(0, 0, 0, 0.15),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
 
 .modal-text{
@@ -1409,13 +1448,13 @@ ul,h1,h2,h3,h4,h5,h6,p{
     background-color:black;
     border:none;
     color: #fafafa;
-    height: 5vh;
+    height: 40px;
     padding: 10px 20px;
     box-shadow: inset 0 0 15px rgba(55, 84, 170,0),
     inset 0 0 20px rgba(255, 255, 255,0),
     7px 7px 15px rgba(55, 84, 170,.15),
     -7px -7px 20px rgba(255, 255, 255,1),
-    inset 0px 0px 4px rgba(255, 255, 255,.2);;
+    inset 0px 0px 4px rgba(255, 255, 255,.2);
 }
 
 .hidden{
