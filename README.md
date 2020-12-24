@@ -538,10 +538,196 @@ Overall the code looks like this:
 
 - **Create new group of visuals for 2nd page** - this step unfortunately required quite simple but long routine manual coding and calculation in JS. In order to prepare for this step I grouped the skills and theory elements in separate table in Google sheet (see picture 4 for fragment image). If interested you can see complete file following the link -  [complete GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing). 
 
-**Picture 4: Fragment od skills analysis table:**
-![detailed user flow](assets/img/skillstable.png "fragment of table used to group skills")
+    **Picture 4: Fragment od skills analysis table:**
+    ![detailed user flow](assets/img/skillstable.png "fragment of table used to group skills")
 
+    Java Script code:
 
+        // 3.CALCULATE SKILLS VARIABLES FOR DASHBOARD PAGE to assign it later to all
+
+        // LANGUAGES
+            // HTML
+            skillsObject["dashboard-skill-html"]=parseInt((parseInt(userObject.scores["theory-html-document"])+parseInt(userObject.scores["theory-html-divspans"])+parseInt(userObject.scores["theory-html-links"])+parseInt(userObject.scores["theory-html-lists"])+parseInt(userObject.scores["theory-html-images"])+parseInt(userObject.scores["theory-html-forms"])+parseInt(userObject.scores["theory-html-iframes"]))/7)+"%"; 
+
+            // CSS
+            skillsObject["dashboard-skill-css"]=parseInt((parseInt(userObject.scores["theory-css-background"])+parseInt(userObject.scores["theory-css-boxmodel"])+parseInt(userObject.scores["theory-css-fonts"])+parseInt(userObject.scores["theory-css-domselectors"])+parseInt(userObject.scores["theory-css-layout"])+parseInt(userObject.scores["theory-css-priority"])+parseInt(userObject.scores["theory-css-typeclass"])+parseInt(userObject.scores["theory-css-visibility"]))/8)+"%"; 
+            
+            //JAVASCRIPT
+            skillsObject["dashboard-skill-js"]=parseInt((parseInt(userObject.scores["theory-js-variables"])+parseInt(userObject.scores["theory-js-numbers"])+parseInt(userObject.scores["theory-js-decisions"])+parseInt(userObject.scores["theory-js-loops"])+parseInt(userObject.scores["theory-js-dom"])+parseInt(userObject.scores["theory-js-functions"])+parseInt(userObject.scores["theory-js-oop"])+parseInt(userObject.scores["theory-js-console"]))/8)+"%"; 
+
+            // PYTHON
+            skillsObject["dashboard-skill-python"]=parseInt((parseInt(userObject.scores["theory-python-numvartypes"])+parseInt(userObject.scores["theory-python-strings"])+parseInt(userObject.scores["theory-python-userinputs"])+parseInt(userObject.scores["theory-python-boolean"])+parseInt(userObject.scores["theory-python-indexing"])+parseInt(userObject.scores["theory-python-reuse"])+parseInt(userObject.scores["theory-python-scopingfunctions"])+parseInt(userObject.scores["theory-python-mdules"])+parseInt(userObject.scores["theory-python-mutability"])+parseInt(userObject.scores["theory-python-dictionaries"])+parseInt(userObject.scores["theory-python-projectsetup"])+parseInt(userObject.scores["theory-python-projectexpand"])+parseInt(userObject.scores["theory-python-upgrade"])+parseInt(userObject.scores["theory-python-datamanipulation"])+parseInt(userObject.scores["theory-python-interface"]))/15)+"%";
+
+            //MYSQL
+            skillsObject["dashboard-skill-sql"]=parseInt((parseInt(userObject.scores["theory-mysql-dtbmntstm"])+parseInt(userObject.scores["theory-mysql-python"]))/2)+"%";
+
+            // FRAMEWORKS calculation
+                // Bootstrap,Grid
+                skillsObject["dashboard-skill-bootstrap"]=parseInt((parseInt(userObject.scores["theory-ucfed-bootstrap"])+parseInt(userObject.scores["theory-ucfed-gridflexbox"]))/2)+"%";
+  
+                //JASMINE
+                skillsObject["dashboard-skill-jasmine"]=parseInt(userObject.scores["theory-ifed-jasmine"])+"%";
+                
+                //JQUERY
+                skillsObject["dashboard-skill-jquery"]=parseInt(userObject.scores["theory-ifed-jquery"])+"%";
+
+                // FLASK
+                skillsObject["dashboard-skill-flask"]=parseInt((parseInt(userObject.scores["theory-python-flask"])+parseInt(userObject.scores["theory-python-flaskstyles"])+parseInt(userObject.scores["theory-python-flasktemplates"]))/3)+"%";
+                
+                //MONGO
+                skillsObject["dashboard-skill-mongo"]=parseInt((parseInt(userObject.scores["theory-mongodb-intro"])+parseInt(userObject.scores["theory-mongodb-shell"]))/2)+"%";
+
+                //DAJNGO
+                skillsObject["dashboard-skill-django"]=parseInt((parseInt(userObject.scores["theory-django-isetup"])+parseInt(userObject.scores["theory-django-urls"])+parseInt(userObject.scores["theory-django-adminmigration"])+parseInt(userObject.scores["theory-django-models"])+parseInt(userObject.scores["theory-django-deploy"])+parseInt(userObject.scores["theory-django-test"]))/6)+"%";
+
+                //HEROKU
+                skillsObject["dashboard-skill-heroku"]=parseInt(userObject.scores["theory-python-heroku"])+"%"; 
+
+            // DEVELOPER TOOLS
+                // FRONT END
+                skillsObject["dashboard-skill-project"]=parseInt((parseInt(userObject.scores["theory-ucfed-setup"])+parseInt(userObject.scores["theory-ucfed-header"])+parseInt(userObject.scores["theory-ucfed-signupform"])+parseInt(userObject.scores["theory-ucfed-heroimage"])+parseInt(userObject.scores["theory-ucfed-responsiveness"])+parseInt(userObject.scores["theory-ucfed-cvsetup"]))/6)+"%";
+
+                // GIT
+                skillsObject["dashboard-skill-git"]=parseInt((parseInt(userObject.scores["theory-ucfed-git"])+parseInt(userObject.scores["theory-python-gitpod"]))/2)+"%";
+                
+                //INSPECT
+                skillsObject["dashboard-skill-browser"]=parseInt(userObject.scores["theory-ucfed-inspect"])+"%";
+                
+                //API
+                skillsObject["dashboard-skill-api"]=parseInt((parseInt(userObject.scores["theory-ifed-datadom"])+parseInt(userObject.scores["theory-ifed-api"])+parseInt(userObject.scores["theory-ifed-apiemail"])+parseInt(userObject.scores["theory-ifed-apigithub"])+parseInt(userObject.scores["theory-ifed-apimaps"]))/5)+"%"; 
+                
+                //DATABASES
+                skillsObject["dashboard-skill-databases"]=parseInt((parseInt(userObject.scores["theory-databases-basics"])+parseInt(userObject.scores["theory-databases-reldesign"])+parseInt(userObject.scores["theory-dcd-addtask"])+parseInt(userObject.scores["theory-dcd-setup"])+parseInt(userObject.scores["theory-dcd-navigation"]))/5)+"%";
+                
+                //FULL STACK
+                skillsObject["dashboard-skill-fsdframeworks"]=parseInt((parseInt(userObject.scores["theory-fsd-setupproject"])+parseInt(userObject.scores["theory-fsd-authenticate"])+parseInt(userObject.scores["theory-fsd-basetemplate"])+parseInt(userObject.scores["theory-fsd-homepage"])+parseInt(userObject.scores["theory-fsd-productssetup"])+parseInt(userObject.scores["theory-fsd-checkout"])+parseInt(userObject.scores["theory-fsd-coderefactor"])+parseInt(userObject.scores["theory-fsd-profileapp"])+parseInt(userObject.scores["theory-fsd-deploy"])+parseInt(userObject.scores["theory-fsd-emails"]))/10)+"%";
+                
+                //USER DESIGN
+                skillsObject["dashboard-skill-udui"]=parseInt(userObject.scores["theory-ucfed-uxd"])+"%";
+
+        userObject.skills=skillsObject; // add skills object into userObject
+        userObject.dates=datesObject; // add dates object into userObject
+
+- **Collect ids from the page** - new array was created using map function.
+
+        // 4. GENERATE AN ARRAY WITH ALL THE IDS ON A PAGE    
+        //create an array with all the ids on a page
+        let dashboardIds = []; 
+            dashboardIds = $("*").map(function() { 
+                if (this.id) { 
+                    return this.id; 
+                } 
+            }).get();
+
+- **Turn multidimensional userObject into onedimensional array** - simple a step code.
+
+        //a. retrieve 6 objects from user object
+        userObjectDonutProgressBar=userObject.donutProgressBar;
+        userObjectDonutProgressNumbers=userObject.donutProgressNumbers;
+        userObjectProgress=userObject.progress;
+        userObjectProgressBar=userObject.progressBar;
+        userObjectScores=userObject.scores;
+        userObjectSkills=userObject.skills;
+        userObjectDates=userObject.dates
+        
+        // b. combine 7 objects inside dashboard Object, add name them appropriately 
+        let dashboardObject={...userObjectDonutProgressBar,...userObjectDonutProgressNumbers,...userObjectProgress,...userObjectProgressBar,...userObjectScores,...userObjectSkills,...userObjectDates};
+        
+        // c. add user name to onedimensional array
+        loginObject=JSON.parse(localStorage.getItem("loginObject"));
+        dashboardObject.name=loginObject.name;// add name variable from login into Dashboard object
+        dashboardObject.email=loginObject.email; // add email variable from login into Dashboard object
+
+- **Assign values from userObject to dashboard object** - this step is required to assign all the existing values to ids on a page duplicating scores and visual elements from local storage to the dashboard. This code was generated with the support of CodeInstitute tutor - Tim.
+        
+        // !! loop over Object key/value: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries 
+        for (const [key, value] of Object.entries(dashboardObject)) {
+            if (`${value}`!==0){ //check if the value is 0
+            $(`#${key}`).text(`${value}`);
+            }else{}
+        }
+
+- **Asisgn values from the object to visuals** - manual code, intitially it was planned to use loops but due to different nature of visuals it was decided to use manual method.
+
+        //7. ASSIGN VISUALS ATTRIBUTES ON A DASHBOARD PAGES
+        // a. DONUT CHART BARS. visuals for Donut charts
+            document.getElementById("progress-bar").setAttribute("stroke-dasharray", userObject.donutProgressBar["progress-bar"]+", 100" );//set up a progress bar on the project donut chart
+            document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", userObject.donutProgressBar["progress-bar-theory"]+", 100" );//set up a progress bar on the project donut chart
+        
+        // b. ROJECTS MEDALS. find project medals check the value, add class. I simply hard coded the style condition, it took me 20 min, before that I spent 3 hours tring to find the way to make 1) an array of ids and values, 2) create a switch condition inside the loop to addclass depending on 60,80 or 100. BUT It works.
+            
+            let ucfed=$("#projects-ucfed").text();
+            let ifed=$("#projects-ifed").text();
+            let dcd=$("#projects-dcd").text();
+            let fsd=$("#projects-fsd").text();
+
+            if(ucfed==60){
+            $("#projects-ucfed").parent().parent().addClass("bronze");
+            } else if (ucfed==80){$("#projects-ucfed").parent().parent().addClass("silver");} else if (ucfed==100){$("#projects-ucfed").parent().parent().addClass("gold");}else{}
+            
+            if(ifed==60){
+                $("#projects-ifed").parent().parent().addClass("bronze");
+            } else if (ifed==80){$("#projects-ifed").parent().parent().addClass("silver");} else if (ifed==100){$("#projects-ifed").parent().parent().addClass("gold");}else{}
+
+            if(dcd==60){
+                $("#projects-dcd").parent().parent().addClass("bronze");
+            } else if (dcd==80){$("#projects-dcd").parent().parent().addClass("silver");} else if (dcd==100){$("#projects-dcd").parent().parent().addClass("gold");}else{}
+
+            if(fsd==60){
+                $("#projects-fsd").parent().parent().addClass("bronze");
+            } else if (fsd==80){$("#projects-fsd").parent().parent().addClass("silver");} else if (fsd==100){$("#projects-fsd").parent().parent().addClass("gold");}else{}
+        
+        // c. MODULE BARS. 
+            $("#theory-html").css("width",userObject.scores["theory-html"]+"%");
+            $("#theory-css").css("width",userObject.scores["theory-css"]+"%");
+            $("#theory-ucfed").css("width",userObject.scores["theory-ucfed"]+"%");
+            $("#theory-js").css("width",userObject.scores["theory-js"]+"%");
+            $("#theory-ifed").css("width",userObject.scores["theory-ifed"]+"%");
+            $("#theory-pythonfu").css("width",userObject.scores["theory-pythonfu"]+"%");
+            $("#theory-pythonpr").css("width",userObject.scores["theory-pythonpr"]+"%");
+            $("#theory-dcd").css("width",userObject.scores["theory-dcd"]+"%");
+            $("#theory-fsd").css("width",userObject.scores["theory-fsd"]+"%");
+        
+        // d. MODULE BARS. 
+            $("#theory-html").css("width",dashboardObject["theory-html"]+"%");
+            $("#theory-css").css("width",dashboardObject["theory-css"]+"%");
+            $("#theory-ucfed").css("width",dashboardObject["theory-ucfed"]+"%");
+            $("#theory-js").css("width",dashboardObject["theory-js"]+"%");
+            $("#theory-ifed").css("width",dashboardObject["theory-ifed"]+"%");
+            $("#theory-pythonfu").css("width",dashboardObject["theory-pythonfu"]+"%");
+            $("#theory-pythonpr").css("width",dashboardObject["theory-pythonpr"]+"%");
+            $("#theory-dcd").css("width",dashboardObject["theory-dcd"]+"%");
+            $("#theory-fsd").css("width",dashboardObject["theory-fsd"]+"%");
+        
+        // e. SKILLS BARS. 
+            //languages
+            $("#dashboard-skill-html").css("width",dashboardObject["dashboard-skill-html"]);
+            $("#dashboard-skill-css").css("width",dashboardObject["dashboard-skill-css"]);
+            $("#dashboard-skill-js").css("width",dashboardObject["dashboard-skill-js"]);
+            $("#dashboard-skill-python").css("width",dashboardObject["dashboard-skill-python"]);
+            $("#dashboard-skill-sql").css("width",dashboardObject["dashboard-skill-sql"]);
+        
+            //frameworks
+            $("#dashboard-skill-bootstrap").css("width",dashboardObject["dashboard-skill-bootstrap"]);
+            $("#dashboard-skill-jasmine").css("width",dashboardObject["dashboard-skill-jasmine"]);
+            $("#dashboard-skill-jquery").css("width",dashboardObject["dashboard-skill-jquery"]);
+            $("#dashboard-skill-flask").css("width",dashboardObject["dashboard-skill-flask"]);
+            $("#dashboard-skill-heroku").css("width",dashboardObject["dashboard-skill-heroku"]);
+            $("#dashboard-skill-mongo").css("width",dashboardObject["dashboard-skill-mongo"]);
+            $("#dashboard-skill-django").css("width",dashboardObject["dashboard-skill-django"]);
+
+            // developer tools
+            $("#dashboard-skill-project").css("width",dashboardObject["dashboard-skill-project"]);
+            $("#dashboard-skill-git").css("width",dashboardObject["dashboard-skill-git"]);
+            $("#dashboard-skill-browser").css("width",dashboardObject["dashboard-skill-browser"]);
+            $("#dashboard-skill-api").css("width",dashboardObject["dashboard-skill-api"]);
+            $("#dashboard-skill-databases").css("width",dashboardObject["dashboard-skill-databases"]);
+            $("#dashboard-skill-fsdframeworks").css("width",dashboardObject["dashboard-skill-fsdframeworks"]);
+            $("#dashboard-skill-udui").css("width",dashboardObject["dashboard-skill-udui"]);
+-**Assign other ids on a page** - name on a page 2 was assigned using the value from local storage.
+        
+        //8. ASSIGN OTHER IDS THAT WERE MISSED IN THE STEP NUMBER 6
+            $("#name1").text(loginObject.name);//name to second page id
 
 ##### MODALS:
 - **Modal Interactivity** - warning to a user when s/he decides to leave scoring page navigating to dashboard and when s/he wants to navigate from dashboard to the login page:
@@ -561,18 +747,81 @@ Overall the code looks like this:
         $(".dashboard-modal-container").click(function(){
             $(".dashboard-modal-container").addClass("hidden");
         });
-#### 3.2 Challanges
-1. **Print out page preview**
-3. **Donut Charts** - canvas was used to develop an interactive charts
-4. **Summary report customisation** - it was decided to make it irresposnsive with fixed width and hight to alow the user see the output as it will look like when printed, in this way the pages can be easily taken from the screen by using accessible Windows (printScrieen), iOS (Capture) or taking a screen picture on any device. I used an A4 paper ratio (roughly 1:2).
-5. **Local Storage** to store the scoring result and copy the result into elements on the dashboard page I used JSON functionalyity of interacting with local storage.
 
+
+#### 3.2 Challenges
+1. **Javascript** is a big massive challenge for me. It is hard to master, hard to remember for me. Long story to tell for one readme file
+
+2. **Donut Charts** - canvas was used to develop an interactive charts with scg objects. example code was found here: https://codepen.io/erinesullivan/pen/dmdBpQ
+
+2. **Summary report customisation** - I decided that the easiest way to solve this was to make the pages irresposnsive with fixed width and hight to alow the user see the output as it will look like when printed, in this way the pages can be easily taken from the screen by using accessible Windows (printScrieen), iOS (Capture) or taking a screen picture on any device. I used an A4 paper ratio (roughly 1:2). It is easy to zoom and printscreen the dashboard once the page is open.
+
+3. **Local Storage** to store the scoring result and copy the result into elements on the dashboard page I used JSON functionalyity of interacting with local storage.
+
+4. **SVG objects positioning** - till now I don't know how to center the number in the middle of Donut chart. I managed to do that but the solution was not logical. I use 47% to position an average % number in the middle of donut chart. 47% percent was a guess. Here is a css code:
+
+        .projects-score{
+            position:relative;
+            top: 47%;
+            height: 5vh;
+        }
+
+
+5. **Safari compatibility** - Sometimes JS code that adjust donut charts progress bar does not work, I target progress bar with JQ code, but for some reason during testing safari reacts with significant delay or does not adjust the progress bar at all. I also had an issue with flexbox code - justify-content. On a theory scorecard page all my modules scorecards were jammed to fit the section which made it impossible to operate. it was resolved by adding 2 property line into css code (display: webkt-flex):
+
+        .score-theory-section{
+            display: -webkit-flex; /* NEW - Chrome */**
+            display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 85vh;
+            width: 72vh;    
+            position: relative;
+            overflow: auto;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, .15); 
+            backdrop-filter: blur(10px);
+            margin-bottom: 10px;
+            order: 1;
+        }
 ___
 
 ## 4. Development
 #### 4.1 Technologies
+- Major focus of development was on developing interactive features with calculation and local storage functionality. I used plain Java Script and JQuery in most of the cases.
+- For local storage interaction I used JSON.
+- Most of the html and css elements on the page were managed with FlexBox - simple and easy.
+
 #### 4.2 Sources
+
+- **Code Institute Schedule Generator** - all the components of the application were taken from this site: https://code-institute-org.github.io/schedule-generator-v2/ - fantastic tool and a source of information.
+
+- **Libraries:** 
+    - **JQUERY** - this library is much more intuitive to use. In some cases when I tried to set up attributes JQUERY did not work. JQUERY source - https://jquery.com/ 
+    - **FlexBox** - CSS library - very simple and effective way to operate with html box elements: https://www.w3schools.com/css/css3_flexbox.asp
+    - **Bootstrap** - used for vertical bar visuals and buttons. https://getbootstrap.com/
+
+- **Gradient Colors** - recommendation from Kseniya Denisova - https://mycolor.space/gradient?ori=to+right+bottom&hex=%23152C50&hex2=%236144B5&sub=1
+
+- **Background Frost Effect** -  2 ways to do it. One was relatively simple using backdrop-filter- https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535.  However it doesn't work for Safari and Firefox
+
+- **Dashboard prototype** - https://canvasjs.com/samples/dashboards/annual-sales-website-traffic/
+
+- **Donut charts** - I used the code with svg elements and then customised it. https://codepen.io/erinesullivan/pen/dmdBpQ
+
+- **Canvas JS** - I familiarised myself with canvas, even though I did not use it, still it was god to know about the resource
+
+- **Am I responsive** - for responsiveness Testing and project image on the README.
+
+- **StackOverflow**- - it is amazing source for every programmer, I found a lot of usefull tips and wasted a lot of time on this site.
+
+- **Chris Coyer** - he wrote many articles but this one is very usefull for background image, a week before submission I dropped an idea of using background image for the app. Even though it looked cool, I was not able to master it for Safari and Firefox.
+
 #### 4.3 Development Logic Steps
+I have developed  an application using following plan. I planned to spend 15 days on it, but spent 40 days. Difficulties came from lack of expertise in JavaScript. I also wasted time on interactive menu which I later eliminated. I also watsed time on Donut charts elements, I used various source however returned baack t the resource as in section above.
+
 1. 4 Planes of UX to develop Wireframes
 2. Set up repository and structure of README
 3. Develop and Test challenging and interactive features in the library
@@ -589,13 +838,15 @@ ___
     * Summary Page
     * Customisation (input fields and Emailjs)
 7. Organise JavaScript files for the pages
-8. Test all the pages and assessment functionality
-9. Peer code review feedback
-10. Fix bugs finalise README
-11. Deploy
+8. Deploy
+9. Test all the pages and assessment functionality
+10. Peer code review feedback
+11. Fix bugs, experiment with various style features. 
+12. finalise README
+13. Submit for assessment
 
-#### 4.4 Problems – Solutions
-#### 4.5 Features that were not installed
+#### 4.4 Features that were not installed
+
 ___
 
 ## 5. Testing
@@ -606,9 +857,16 @@ ___
 ___
 
 ## 6.	Version Control
-## 7.	Deployment
-## 8.	Credits
-## 9.	Disclaimers
+Gitpod was used for this project, about 75 commits were done through the course of application developemnt.
 
+## 7.	Deployment
+
+## 8.	Credits
+- **CodeInstitute** - for the materials of FUll Stack Development Course provided on code schedule generator. 
+- **CodeInstitute Tutors** - especially big thanks to Stephen, Tim, Haley, Cormac, Miklos. Without you I wouldn't be able to complete this project.
+- **** - special thanks to my mentor Ignatius first of all for his knowledge, second - for his patience, third for the inspiration. At some point of time the call with him helped me recover from the despair of frustration over this project. Because of him I carry on on this developer journey. 
+
+## 9.	Disclaimers
+- **Code Institute** - beacuse I used information that belongs to CodeInstitute it would be fair to ask permission before openly promoting the use of this site publically. 
 ___
 

@@ -23,7 +23,7 @@ $(document).ready(function(){
         // retrieve userObject from the localStoarge
         userObject=JSON.parse(localStorage.getItem("userObject")); // parse from LocalStorage        
 
-// 3.CALCULATE SKILLS VARIABLES FOR DASHBOARD PAGE to assign it later to all
+    // 3.CALCULATE SKILLS VARIABLES FOR DASHBOARD PAGE to assign it later to all
 
         // LANGUAGES
             // HTML
@@ -151,53 +151,42 @@ $(document).ready(function(){
         if(fsd==60){
             $("#projects-fsd").parent().parent().addClass("bronze");
         } else if (fsd==80){$("#projects-fsd").parent().parent().addClass("silver");} else if (fsd==100){$("#projects-fsd").parent().parent().addClass("gold");}else{}
-    // c. MODULE BARS. 
-    $("#theory-html").css("width",userObject.scores["theory-html"]+"%");
-    $("#theory-css").css("width",userObject.scores["theory-css"]+"%");
-    $("#theory-ucfed").css("width",userObject.scores["theory-ucfed"]+"%");
-    $("#theory-js").css("width",userObject.scores["theory-js"]+"%");
-    $("#theory-ifed").css("width",userObject.scores["theory-ifed"]+"%");
-    $("#theory-pythonfu").css("width",userObject.scores["theory-pythonfu"]+"%");
-    $("#theory-pythonpr").css("width",userObject.scores["theory-pythonpr"]+"%");
-    $("#theory-dcd").css("width",userObject.scores["theory-dcd"]+"%");
-    $("#theory-fsd").css("width",userObject.scores["theory-fsd"]+"%");
     
     // c. MODULE BARS. 
-    $("#theory-html").css("width",dashboardObject["theory-html"]+"%");
-    $("#theory-css").css("width",dashboardObject["theory-css"]+"%");
-    $("#theory-ucfed").css("width",dashboardObject["theory-ucfed"]+"%");
-    $("#theory-js").css("width",dashboardObject["theory-js"]+"%");
-    $("#theory-ifed").css("width",dashboardObject["theory-ifed"]+"%");
-    $("#theory-pythonfu").css("width",dashboardObject["theory-pythonfu"]+"%");
-    $("#theory-pythonpr").css("width",dashboardObject["theory-pythonpr"]+"%");
-    $("#theory-dcd").css("width",dashboardObject["theory-dcd"]+"%");
-    $("#theory-fsd").css("width",dashboardObject["theory-fsd"]+"%");
+        $("#theory-html").css("width",userObject.scores["theory-html"]+"%");
+        $("#theory-css").css("width",userObject.scores["theory-css"]+"%");
+        $("#theory-ucfed").css("width",userObject.scores["theory-ucfed"]+"%");
+        $("#theory-js").css("width",userObject.scores["theory-js"]+"%");
+        $("#theory-ifed").css("width",userObject.scores["theory-ifed"]+"%");
+        $("#theory-pythonfu").css("width",userObject.scores["theory-pythonfu"]+"%");
+        $("#theory-pythonpr").css("width",userObject.scores["theory-pythonpr"]+"%");
+        $("#theory-dcd").css("width",userObject.scores["theory-dcd"]+"%");
+        $("#theory-fsd").css("width",userObject.scores["theory-fsd"]+"%");
     
-    // d. SKILLS BARS. 
-    //languages
-    $("#dashboard-skill-html").css("width",dashboardObject["dashboard-skill-html"]);
-    $("#dashboard-skill-css").css("width",dashboardObject["dashboard-skill-css"]);
-    $("#dashboard-skill-js").css("width",dashboardObject["dashboard-skill-js"]);
-    $("#dashboard-skill-python").css("width",dashboardObject["dashboard-skill-python"]);
-    $("#dashboard-skill-sql").css("width",dashboardObject["dashboard-skill-sql"]);
+    // e. SKILLS BARS. 
+        //languages
+        $("#dashboard-skill-html").css("width",dashboardObject["dashboard-skill-html"]);
+        $("#dashboard-skill-css").css("width",dashboardObject["dashboard-skill-css"]);
+        $("#dashboard-skill-js").css("width",dashboardObject["dashboard-skill-js"]);
+        $("#dashboard-skill-python").css("width",dashboardObject["dashboard-skill-python"]);
+        $("#dashboard-skill-sql").css("width",dashboardObject["dashboard-skill-sql"]);
     
-    //frameworks
-    $("#dashboard-skill-bootstrap").css("width",dashboardObject["dashboard-skill-bootstrap"]);
-    $("#dashboard-skill-jasmine").css("width",dashboardObject["dashboard-skill-jasmine"]);
-    $("#dashboard-skill-jquery").css("width",dashboardObject["dashboard-skill-jquery"]);
-    $("#dashboard-skill-flask").css("width",dashboardObject["dashboard-skill-flask"]);
-    $("#dashboard-skill-heroku").css("width",dashboardObject["dashboard-skill-heroku"]);
-    $("#dashboard-skill-mongo").css("width",dashboardObject["dashboard-skill-mongo"]);
-    $("#dashboard-skill-django").css("width",dashboardObject["dashboard-skill-django"]);
+        //frameworks
+        $("#dashboard-skill-bootstrap").css("width",dashboardObject["dashboard-skill-bootstrap"]);
+        $("#dashboard-skill-jasmine").css("width",dashboardObject["dashboard-skill-jasmine"]);
+        $("#dashboard-skill-jquery").css("width",dashboardObject["dashboard-skill-jquery"]);
+        $("#dashboard-skill-flask").css("width",dashboardObject["dashboard-skill-flask"]);
+        $("#dashboard-skill-heroku").css("width",dashboardObject["dashboard-skill-heroku"]);
+        $("#dashboard-skill-mongo").css("width",dashboardObject["dashboard-skill-mongo"]);
+        $("#dashboard-skill-django").css("width",dashboardObject["dashboard-skill-django"]);
 
-    // developer tools
-    $("#dashboard-skill-project").css("width",dashboardObject["dashboard-skill-project"]);
-    $("#dashboard-skill-git").css("width",dashboardObject["dashboard-skill-git"]);
-    $("#dashboard-skill-browser").css("width",dashboardObject["dashboard-skill-browser"]);
-    $("#dashboard-skill-api").css("width",dashboardObject["dashboard-skill-api"]);
-    $("#dashboard-skill-databases").css("width",dashboardObject["dashboard-skill-databases"]);
-    $("#dashboard-skill-fsdframeworks").css("width",dashboardObject["dashboard-skill-fsdframeworks"]);
-    $("#dashboard-skill-udui").css("width",dashboardObject["dashboard-skill-udui"]);
+        // developer tools
+        $("#dashboard-skill-project").css("width",dashboardObject["dashboard-skill-project"]);
+        $("#dashboard-skill-browser").css("width",dashboardObject["dashboard-skill-browser"]);
+        $("#dashboard-skill-api").css("width",dashboardObject["dashboard-skill-api"]);
+        $("#dashboard-skill-databases").css("width",dashboardObject["dashboard-skill-databases"]);
+        $("#dashboard-skill-fsdframeworks").css("width",dashboardObject["dashboard-skill-fsdframeworks"]);
+        $("#dashboard-skill-udui").css("width",dashboardObject["dashboard-skill-udui"]);
 
 //8. ASSIGN OTHER IDS THAT WERE MISSED IN THE STEP NUMBER 6
     $("#name1").text(loginObject.name);//name to second page id
@@ -215,9 +204,4 @@ $(document).ready(function(){
     });
 });
 
-
-
-    //Parking lot
-    /*--
-            --*/ 
         
