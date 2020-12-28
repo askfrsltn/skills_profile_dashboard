@@ -9,14 +9,14 @@
        font-size: 12px;
    }
    .small-text{
-       font-size: 10px;
+       font-size: 12px;
    }
 
    .login-explanation{
-       font-size: 10px;
+       font-size: 12px;
    }
    .scorecard-title-element{
-       font-size: 10px;
+       font-size: 12px;
    }
 }
 
@@ -256,12 +256,16 @@ ul,h1,h2,h3,h4,h5,h6,p{
     text-align: center;
 }
 
-.login-inputs-wrapper{
+login-inputs-wrapper{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
+}
+
+.form-control{
+    display: inline;
 }
 
 .login-input{
@@ -1104,7 +1108,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 .dashboard-name{
     text-transform: uppercase;
-    color: red;
+    color: black;
     font-family:"Roboto Mono", sans-serif;
     margin: 0;
 }
