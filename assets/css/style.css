@@ -494,11 +494,22 @@ login-inputs-wrapper{
 }
 
 /*-- SCORE_PAGE_SUMMARY --*/
+.projects-height, 
 .scorepage-overall-summary{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     max-height: 100%;
+}
+
+.bottom{
+    height: 50px;
+    background-color: inherit;
+}
+
+html,
+body.scorepage-background{
+    background-color: inherit;
 }
 
 .scorepage-background{
@@ -514,8 +525,15 @@ login-inputs-wrapper{
     background-image: linear-gradient(to bottom, #454062, #524d70, #5f5a7f, #6c678e, #7a759d);
 }
 
+.projects-height{
+    max-height: 100%;
+}
 .theory-background{
-    background-color: rgba(38, 80, 119, .7);
+    background-color: rgba(38, 80, 119, .7);    
+}
+
+.projects-height{
+    min-height: 100%;
 }
 
 .theory-background1{
