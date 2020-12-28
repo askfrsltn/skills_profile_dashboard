@@ -5,7 +5,7 @@ ___
 
 ## SUMMARY
 
-This interactive application is developped based on Code Institute Full Sack Developer course. It is an interactive tool to collect scroing inputs for 4 projects and 87 theoretical elements to build an individual 2 pages skills profile dashboard consisting of 5 sections - Projects (4 projetcs), Theory (9 Theory modules), Languages (5 programing langusages), Frameworks (7 frameworks and libraries) and Other developers tools.
+This interactive application is developped based on Code Institute Full Sack Developer course. It is an interactive tool to collect scoring inputs for 4 projects and 87 theoretical elements to build an individual 2 pages skills profile dashboard consisting of 5 sections - Projects (4 projetcs), Theory (9 Theory modules), Languages (5 programing langusages), Frameworks (7 frameworks and libraries) and Other developers tools.
 
 Project lnk: [Full Stack Skills Profile Dashboard - https://askfrsltn.github.io/skills_profile_dashboard/](https://askfrsltn.github.io/skills_profile_dashboard/) 
 ___
