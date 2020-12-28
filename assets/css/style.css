@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Code:300,400,500,600,700|Roboto+Mono:300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 
 /*-- MEDIAQUERIES to fix responsiveness issues --*/
-
-
 @media only screen and (max-device-width: 450px) {
    .logic-description {
        font-size: 12px;
@@ -19,7 +17,6 @@
        font-size: 12px;
    }
 }
-
 
 /*-- KEEPING FOOTER AT THE BOTTOM --*/
 html, body {
@@ -221,7 +218,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     /*-- source for frost effect: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535 
     --*/
     background-color: rgba(255, 255, 255, .2); 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
     margin: 10px;
 }
 
@@ -235,7 +232,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
     overflow: auto;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, .2);  
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);/*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
     margin: 10px;
 }
 
@@ -391,7 +388,7 @@ login-inputs-wrapper{
     overflow: auto;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, .1);  
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
     margin: 5px;
 }
 
@@ -442,7 +439,7 @@ login-inputs-wrapper{
     border-radius: 10px;
     margin-top:5px;
     background-color: rgba(38, 80, 119, .05); 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
     box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
                 0 2px 4px rgba(0,0,0,0.07), 
                 0 4px 8px rgba(0,0,0,0.07), 
@@ -494,7 +491,7 @@ login-inputs-wrapper{
 }
 
 /*-- SCORE_PAGE_SUMMARY --*/
-.projects-height, 
+
 .scorepage-overall-summary{
     display: flex;
     flex-direction: column;
@@ -541,8 +538,8 @@ body.scorepage-background{
 }
 
 .score-theory-section{
-    display: -webkit-flex;     /* NEW - Chrome */
-    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    display: -webkit-flex;     /*-- NEW - Chrome CSS validator says it doesn't work hoewever it works for me so I deceided to leave it.--*/
+    display: flex;             /*-- NEW, Spec - Opera 12.1, Firefox 20+ --*/
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -553,7 +550,7 @@ body.scorepage-background{
     border-radius: 10px;
     margin: 10px;
     background-color: rgba(255, 255, 255, .15); 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
     margin-bottom: 10px;
     order: 1;
 }
@@ -571,7 +568,7 @@ body.scorepage-background{
     border-radius: 10px;
     margin: 10px;
     background-color: rgba(255, 255, 255, .15); 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
     margin-bottom: 10px;
     order: 2;
 }
@@ -588,7 +585,7 @@ body.scorepage-background{
     border-radius: 10px;
     margin: 10px;
     background-color: rgba(255, 255, 255, .15); 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
     margin-bottom: 10px;
     order: 1;
 }
@@ -970,7 +967,7 @@ body.scorepage-background{
     cursor: pointer;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, .5);  
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
 }
 
 .scorecard-face-back-element {
@@ -983,7 +980,7 @@ body.scorepage-background{
     display: none;
     cursor: pointer;
     background-color: rgba(0, 0, 0, .5);  
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /*-- CSS validator says it doesn't exist however it works for my Chrome page creating frost effect --*/
     
 }
 

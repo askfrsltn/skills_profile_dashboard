@@ -846,27 +846,59 @@ I have developed  an application using following plan. I planned to spend 15 day
 13. Submit for assessment
 
 #### 4.4 Features that were not installed
+1. Print option on a dashbaord page
+2. Dark/light mode on a dahsboard pages
+3. Pareto charts for all the skills was too much for this project that already grew out of proportion comparing to the requirements.
+
 
 ___
 
 ## 5. Testing
-#### 5.1. HTML validation
-#### 5.2. CSS validation
-#### 5.3. JS validation
-#### 5.4. Other Testing
+#### 5.1 Lighthouse Testing
+* Thanks to Anna - CodeInstitue tutor I learnt about lighthouse tool to test perfromance, accesibilit, best practice, seoo and progressiveweb appliaction testing. It is a great tool integrated into google chrome web-browser. If you want to use it - go to your webpage, press right click, then select inspect, in the right-top corner you will find a developer menu,search next to responsiveness and in line with other important feature section "Lighthouse". You will find a button generate report, before hitting it you will need to select the options you want to see.
+* **Picture 5: Lighthouse testing summary, start and finish** 
+![lighthouse report](assets/img/lighthousetesting.png "summary page from lighthouse report")
+
+#### 5.2. HTML validation
+2nd round of testing, 1st round had 700 errors only on score page, 2nd round had 46 errors, some of the errors were not fixed on purpose. E.g. webkit error was not fixed, because when fixed the theory scoring page was not responsive anymore and jammed all the scorecards, that is linked to flexbox functionallity.
+* **Picture 6: HTML validation at https://validator.w3.org/** 
+![lighthouse report](assets/img/htmlcssvalidation.png "summary page from lighthouse report")
+
+#### 5.4. User testing
+
 ___
 
 ## 6.	Version Control
 Gitpod was used for this project, about 75 commits were done through the course of application developemnt.
 
 ## 7.	Deployment
+I deployed the site through gitpod and github. I folowed the steps:
 
+1. Gitpod: git add .
+2. Gitpod: git commit -m "message"
+3. Gitpod: git push
+4. Github: selected repository: "FSD Skills Profile"
+5. Github: grey menu selected tab "Settings"
+6. Github: Scrolled down to "Github Pages", from dropdown menu section selected "branch: master"
+7. Github: Press Save button. 
+
+* The link to repository on a github: FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD reporistory (https://github.com/askfrsltn/skills_profile_dashboard)
+* Website link: [Full Stack Skills Profile Dashboard](https://askfrsltn.github.io/skills_profile_dashboard/)
+
+ 
 ## 8.	Credits
-- **CodeInstitute** - for the materials of FUll Stack Development Course provided on code schedule generator. 
+- **StackOverflow** with thousands of developers from the past and present who shared their knowledge. I simply can not mention all of them.
+- **CodeInstitute** - for the course materials and Full Stack Development Course structure provided on course schedule generator. 
 - **CodeInstitute Tutors** - especially big thanks to Stephen, Tim, Haley, Cormac, Miklos. Without you I wouldn't be able to complete this project.
-- **** - special thanks to my mentor Ignatius first of all for his knowledge, second - for his patience, third for the inspiration. At some point of time the call with him helped me recover from the despair of frustration over this project. Because of him I carry on on this developer journey. 
+- **CodeInstitute mentor** - special thanks to my mentor Ignatius. for his knowledge, for his patience, for the calm and quiete inspiration. At some point of time the call with him helped me recover from the despair and frustration over this project. Because of him I carry on on my developer journey. 
+- **CodeInstitute Community** - big "THANK YOU" to Anna Greaves - source of knowledge, energy and inspiration by her willing to help, share her knowledge, and beautifull projects that she developed. Secondly, to Slack community - even though I am not a very social person, don't contribute much, slack and CI people help me find answers, sources of coding experience and developers role-models. Thank you for peer-code-review. Great source of motivation.
+- **CodeInstitute Project Assessor** - for his patience to read my bizare codes and English writing and giving me fair mark.
+*  **And of course - To My Family** - to my wife for her patience of me being absent, when busy working on my project during this difficult times, my brave son Luka and his little sister Mia for always being happy to see me even though I don't often have time for them. 
+
+Thaks a lot!
+ 
 
 ## 9.	Disclaimers
-- **Code Institute** - beacuse I used information that belongs to CodeInstitute it would be fair to ask permission before openly promoting the use of this site publically. 
+- **Code Institute** - I used an information that belongs to CodeInstitute it would be fair to ask permission before openly promoting the use of this site publicly. 
 ___
 
