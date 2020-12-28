@@ -1,18 +1,20 @@
 # FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD
 
 ___
-![responsive](assets/img/responsive1.png "applications responsive screens")
+![responsive](assets/img/responsive2.png "applications responsive screens")
 
 ## SUMMARY
-Project lnk: [Full Stack Skills Profile Dashboard](https://askfrsltn.github.io/skills_profile_dashboard/) 
+
 This interactive application is developped based on Code Institute Full Sack Developer course. It is an interactive tool to collect scroing inputs for 4 projects and 87 theoretical elements to build an individual 2 pages skills profile dashboard consisting of 5 sections - Projects (4 projetcs), Theory (9 Theory modules), Languages (5 programing langusages), Frameworks (7 frameworks and libraries) and Other developers tools.
+
+Project lnk: [Full Stack Skills Profile Dashboard - https://askfrsltn.github.io/skills_profile_dashboard/](https://askfrsltn.github.io/skills_profile_dashboard/) 
 ___
 
 ## Content 
 
 Introduction
-1. User Experience Design
-2. User interface
+1. User Experience Design 
+2. User interface 
 3. Features
 4. Development
 5. Testing
@@ -21,14 +23,16 @@ Introduction
 8. Credits
 9. Disclaimers
 
-
+___
 ## Introduction
 - This application iwas developed for Interactive front end development module (MS2 IFED) of Code Institue Full Stack development course. 
 - It is a web based application for Full web stack developers and sudents. It helps to build and print visually appealing simple 2 pages of individual skills dashbaord using intercative scorecard interface for inputs and donut charts for output. 
 - Skills structure was developed based on CodeInstitute course program. Profile assessement includes 2 domains - theoretical and practical. 
 Scoring logic was partially developped by myself based on my previous consulting experience in carreer succession planning.
 
-## 1. UX
+___
+
+## 1. USER EXPERIENCE DESIGN & USER INERFACE
 #### 1.1	Goals
 * **Developer Goals**
 1. Clarify and build a logic of the skills that Full Stack Development course student will aquire after the course completion.
@@ -44,20 +48,20 @@ Scoring logic was partially developped by myself based on my previous consulting
 
 #### 1.2	User Stories
 This web-site is built for Full Stack Development **Students** and  **Developers** pursuing carreer in this field
-* As a **beginner student** I want to undesrtand what I will learn during the course and set up a baseline using an assessment
-* As a FSD **student** I want to undesrtand (a) What’s  is the full scope of skills I am dealing with and (b) which skills still need to be reinforced with practice 
+* As a **Potential FSD student** I want to undesrtand what I will learn during the course and set up a baseline using an assessment
+* As a **Active FSD Student** I want to undesrtand (a) What’s  is the full scope of skills I am dealing with and (b) which skills still need to be reinforced with practice 
 * As a **Junior developer** I want to have a simple electronic dashboard with realistic assessement of my practical and theoretical knowledge use it during a job application process
-* As a **qualified professional**  I want to understand quickly what assignments I can practically cope with as a developer, and which areas still need to be reinforced
+* As a **Qualified professional**  I want to understand quickly what assignments I can practically cope with as a developer, and which areas still need to be reinforced
 
 #### 1.3 Strategy Plain
-- **Goal** - develop application to help user develop skills profile document with simple and logical visual representation of acquired paractical and theoretical skills acquired during FSD course.
+- **Goal** - develop an application to help user develop skills profile document with simple and logical visual representation of acquired paractical and theoretical skills acquired during FSD course.
 
-A major purpose of the application to be able to revisit all the elements learnt during FSD course and assess individual ability to apply the knowledge in practice, at work. It gives confidence to an applicant and understanding where to focus next.
+Major purpose of the application to be able to revisit all the elements learnt during FSD course and assess individual ability to apply the knowledge in practice, at work. It gives confidence to an applicant and understanding where to focus next.
 
 #### 1.4 Scope Plain
 - **Content** 
-    - an app needs to have 3 pages - 1)landing/explanation and login, 2) Scoring Page with summary section 3) Final output preview - dashboard page
-    - In order to structure the content correctly Full scope of FUll Stack Developer 9 modules was analysed and broken down into smaller elements (see the table in [GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing)). The elements will be used to build a structure of scorecards for Projects and Theory elements (see attachment) assessment. In simle word - 1 scoring element on the table will be represented by 1 scorecard on a page.
+    - an app needs to have 3 pages - 1) Landing/explanation and login, 2) Scoring Page with summary section 3) Final output preview - dashboard page
+    - In order to structure the content correctly a scope of Full Stack Developer 9 modules was analysed and broken down into smaller elements (see the table in [GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing)). The elements will be used to build a structure of scorecards for Projects and Theory elements (see attachment) assessment. In simle word - 1 scoring element on the table will be represented by 1 scorecard on a page.
     - Standard Scoring Logic will be based on 3 choices both for projects and for theory. For Theory - this logic needs to be based on level of individual ability to aply certain study element in practice (60% - familiar, 80% - practially applied at least once during the projects,100% -  learnt and used on th eprojects up to the level when the assessor can teach others). For Projects - each project will have a score based on awarded mark (60% - pass, 80% - merit or 100%-disticntion)
     - A final output - dashboard pages should be visual with maximum 2 pages showing short visual summary of FullStack Developer skills by division on Projects, Theory, show % score for each project and 9 theoretiacl moules.
     - Thoeoretical elements on the final dashboard should also be alternatively grouped by 3 alternative criterea - "Developer Languages", "Frameworks/Liibraries" and "Developer tools"with appropriate grpahical representation.
@@ -157,7 +161,7 @@ Interface Structure, Interaction flow, Information Design are shown the pictures
     - **SCORES** - I used 3 colors for scoring, it folows a medal awards logic - gold, silver, bronze, the same colors were applied for theory elements score colors.
 Overall I used colors and fonts to enhance functionality, maintain reesponsiveness and make priority things (buttons, scores) visible and maintain resemblance to coding process.
 ___
-## 3.	Features
+## 3.	FEATURES
 #### 3.1 Interactive Features with JavaScript/JQUERY/JSON
 ##### LANDING PAGE:
 - **Hidden Page Sections**: 2 functions to flip between landing page and understand page using JQuery library
@@ -788,7 +792,7 @@ Overall the code looks like this:
         }
 ___
 
-## 4. Development
+## 4. DEVELOPMENT
 #### 4.1 Technologies
 - Major focus of development was on developing interactive features with calculation and local storage functionality. I used plain Java Script and JQuery in most of the cases.
 - For local storage interaction I used JSON.
@@ -853,7 +857,7 @@ I have developed  an application using following plan. I planned to spend 15 day
 
 ___
 
-## 5. Testing
+## 5. TESTTING
 #### 5.1 Lighthouse Testing
 * Thanks to Anna - CodeInstitue tutor I learnt about lighthouse tool to test perfromance, accesibilit, best practice, seoo and progressiveweb appliaction testing. It is a great tool integrated into google chrome web-browser. If you want to use it - go to your webpage, press right click, then select inspect, in the right-top corner you will find a developer menu,search next to responsiveness and in line with other important feature section "Lighthouse". You will find a button generate report, before hitting it you will need to select the options you want to see.
 * **Picture 5: Lighthouse testing summary, start and finish** 
@@ -865,13 +869,14 @@ ___
 ![lighthouse report](assets/img/htmlcssvalidation.png "summary page from lighthouse report")
 
 #### 5.4. User testing
-
+last section to be added after peer-code-reveiew. 1st round gave 0 feedback.
 ___
 
-## 6.	Version Control
+## 6.	VERSION CONTROL
 Gitpod was used for this project, about 75 commits were done through the course of application developemnt.
 
-## 7.	Deployment
+___
+## 7.	DEPLOYMENT
 I deployed the site through gitpod and github. I folowed the steps:
 
 1. Gitpod: git add .
@@ -885,8 +890,8 @@ I deployed the site through gitpod and github. I folowed the steps:
 * The link to repository on a github: FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD reporistory (https://github.com/askfrsltn/skills_profile_dashboard)
 * Website link: [Full Stack Skills Profile Dashboard](https://askfrsltn.github.io/skills_profile_dashboard/)
 
- 
-## 8.	Credits
+ ___
+## 8.	CREDITS
 - **StackOverflow** with thousands of developers from the past and present who shared their knowledge. I simply can not mention all of them.
 - **CodeInstitute** - for the course materials and Full Stack Development Course structure provided on course schedule generator. 
 - **CodeInstitute Tutors** - especially big thanks to Stephen, Tim, Haley, Cormac, Miklos. Without you I wouldn't be able to complete this project.
@@ -902,3 +907,4 @@ Thaks a lot!
 - **Code Institute** - I used an information that belongs to CodeInstitute it would be fair to ask permission before openly promoting the use of this site publicly. 
 ___
 
+end of README
