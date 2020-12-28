@@ -1,7 +1,7 @@
 # FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD
 
 ___
-![responsive](assets/img/responsive2.png "applications responsive screens")
+![responsive](assets/img/responsive4.png "applications responsive screens")
 
 ## SUMMARY
 
