@@ -4540,15 +4540,20 @@
     <!-- trigerred by DASHBOARD BUTTON--> 
     <div class="dashboard-modal-container hidden">
         <div class="score-modal">  
+            <div class="modal-close">
+                <i class="far fa-times-circle"></i>
+            </div>
             <div class="modal-header">
-                <h4>Warning!</h4>
+                <div>
+                    <h4>Warning!</h4>
+                </div>
             </div>
             <div class="modal-body">
                 <p class="modal-text">If you move to dashboard page now, you will not be able to modify your scorecards choices. Have you scored 4 projects and 87 theory elements?</p>
             </div>
             <a href="dashboard.html">
                 <button class="modal-button" id="dashboard-modal-button" type="button">
-                Yes, proceed
+                    <p>Yes, proceed</p>
                 </button>
             </a>
         </div>

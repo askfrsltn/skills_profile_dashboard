@@ -12,19 +12,22 @@ ___
 
 ## Content 
 
-Introduction
-1. User Experience Design 
-2. User interface 
-3. Features
-4. Development
-5. Testing
-6. Version Control
-7. Deployment
-8. Credits
-9. Disclaimers
+[Introduction](#introduction)
+1. [User Experience Design](#ued)
+2. [User interface](#ui)
+3. [Features](#features)
+4. [Development](#development)
+5. [Testing](#testing)
+6. [Version Control](#version_control)
+7. [Deployment](#deployment)
+8. [Credits](#credits)
+9. [Disclaimers](#disclaimer)
 
+...snip...
 ___
-## Introduction
+
+## <a name="introduction"> Introduction </a>
+
 - This application iwas developed for Interactive front end development module (MS2 IFED) of Code Institue Full Stack development course. 
 - It is a web based application for Full web stack developers and sudents. It helps to build and print visually appealing simple 2 pages of individual skills dashbaord using intercative scorecard interface for inputs and donut charts for output. 
 - Skills structure was developed based on CodeInstitute course program. Profile assessement includes 2 domains - theoretical and practical. 
@@ -32,7 +35,8 @@ Scoring logic was partially developped by myself based on my previous consulting
 
 ___
 
-## 1. USER EXPERIENCE DESIGN & USER INERFACE
+## 1. <a name="ued"/> USER EXPERIENCE DESIGN & USER Interface </a>
+
 #### 1.1	Goals
 * **Developer Goals**
 1. Clarify and build a logic of the skills that Full Stack Development course student will aquire after the course completion.
@@ -873,7 +877,7 @@ last section to be added after peer-code-reveiew. 1st round gave 0 feedback.
 ___
 
 ## 6.	VERSION CONTROL
-Gitpod was used for this project, about 75 commits were done through the course of application developemnt.
+Cloud based GitHub and Gitpod applications were used for this project. About 85 commits were done through the course of application developemnt.
 
 ___
 ## 7.	DEPLOYMENT

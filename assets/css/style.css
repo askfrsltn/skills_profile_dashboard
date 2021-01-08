@@ -11,7 +11,7 @@
    }
 
    .login-explanation{
-       font-size: 12px;
+       font-size: 20px;
    }
    .scorecard-title-element{
        font-size: 12px;
@@ -251,6 +251,7 @@ ul,h1,h2,h3,h4,h5,h6,p{
 
 .login-explanation{
     text-align: center;
+    font-size: 16px;
 }
 
 login-inputs-wrapper{
@@ -1040,6 +1041,14 @@ body.scorepage-background{
     margin-top: 10px;
 }
 
+.print-screen{
+    width: 100%;
+    font-size: 16px;
+    line-height: 1,5;
+    padding: 20px;
+    text-align: start;
+}
+
 .dashboard-title-section{
     display: flex;
     flex-direction: row;
@@ -1052,8 +1061,8 @@ body.scorepage-background{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 650px;
-    width: 560px;    
+    height: 690px;
+    width: 580px;    
     overflow: auto;
     border: 1px solid #ccc;
     margin: 0 5px 0 5px;
@@ -1256,7 +1265,7 @@ body.scorepage-background{
 }
 
 .dashboard-module-bar{
-    width: 35%;
+    width: 30%;
     height: 12px;
 }
 
@@ -1271,7 +1280,7 @@ body.scorepage-background{
 
 .dashboard-module-title{
     height: 28px;
-    width: 60%;
+    width: 65%;
     margin-right: 10px;
     display: flex;
     justify-content: flex-start;
@@ -1329,7 +1338,7 @@ body.scorepage-background{
     width: 90%;
     display: flex;
     justify-content: space-between;
-    margin-left: 10px;
+    margin-left: 5px;
     align-items: center;
     flex-direction: row;
 }
@@ -1341,7 +1350,7 @@ body.scorepage-background{
 
 .dashboard-skill-title{
     height: 28px;
-    width: 65%;
+    width: 70%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -1427,7 +1436,6 @@ body.scorepage-background{
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
     box-shadow:2px 2px 3px 0 rgba(0, 0, 0, 0.15),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
@@ -1435,39 +1443,49 @@ body.scorepage-background{
 .dashboard-modal{
     position: absolute;
     top:20%;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     background-color: white;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
     box-shadow:2px 2px 3px 0 rgba(0, 0, 0, 0.15),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
+
+.modal-close{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 5px;
+}
+
 
 .modal-text{
     text-align: center;
     font-family: "Roboto Mono", sans-serif;
     font-size: 16px;
-    font-weight: 500;    
+    font-weight: 500;
+    margin: 0;
 }
 
 .modal-header{
     text-align: center;
     color: red;
+    margin: 0;
+    padding: 5px;
 }
 
 .modal-button{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
     border-radius:5px;
     background-color:black;
     border:none;
     color: #fafafa;
     height: 40px;
-    padding: 10px 20px;
     box-shadow: inset 0 0 15px rgba(55, 84, 170,0),
     inset 0 0 20px rgba(255, 255, 255,0),
     7px 7px 15px rgba(55, 84, 170,.15),

@@ -213,7 +213,6 @@ $(document).ready(function(){
     loginObject=JSON.parse(localStorage.getItem("loginObject"));
     
     dashboardObject.name=loginObject.name;// add name variable from login into Dashboard object
-    dashboardObject.email=loginObject.email; // add email variable from login into Dashboard object
    
 // 6. USE LOOP TO ASSIGN ALL VALUES FROM ONE-DIMENSIONAL OBJECT TO ALL THE VALUE IDS ON A PAGE - DASHBOARDOBJECT
     // !! loop over Object key/value: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries - thanks to Tim from tutor support.

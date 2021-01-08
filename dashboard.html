@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=5">
-    <meta name="viewport" content="width= 700, initial-scale=5, maximum-scale=5"> <!-- https://stackoverflow.com/questions/15510172/how-would-i-make-a-site-non-responsive-->
+    <meta name="viewport" content="width=500, minimum-scale">
+     <!-- https://stackoverflow.com/questions/15510172/how-would-i-make-a-site-non-responsive-->
     <meta name="Description" content="Individual Full Stack Developer skills Dashboard based on CodeInstitute course to build your dashboard, proceed to login page to start">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -25,14 +25,19 @@
             <header class="top">
             </header>  
             <!-- DASHBOARd -->
-                
-
                 <article id="dashoboards-page-background">   
                     <div class="dashboard-title-section">
                         <div class="page-title">
-                            <h1>Skills Profile</h1>
+                            <h1>Skills Profile Dashboard</h1>
                         </div>
-                    </div>
+                    </div class="dashboard-page-content">
+                        <div class="print-screen">
+                            <p> Please, use print screen option to copy the dashboard pages from your device:</p>
+                            <p><i class="fab fa-windows"></i>   <strong>  PC Windows</strong>: </strong>press the Windows key + Shift + S</p>
+                            <p><i class="fab fa-safari"></i>    <strong>  PC Mac</strong>: press shift+cntrl+command+3, then select the page section</p>
+                            <p><i class="fab fa-android"></i>   <strong>  Mobile Android</strong>: press the Power and Volume down buttons at the same time. If that doesn't work, press and hold the Power button for a few seconds. Then tap Screenshot.</p>
+                            <p><i class="fab fa-apple"></i>   <strong>  Mobile iPhone</strong>: press volume+home buttons together, go to gallery to crop</p>
+                        </div>
                     <div class="dashboard-page-content">   
                         <!-- DASHBOARD PAGE 1 -->
                         <section class="dashboard-page-section">   
@@ -291,7 +296,7 @@
                                         </div>
                                         <div class="dashboard-skill-wrapper">
                                             <div class="dashboard-skill-title">
-                                                <p>3. Javascript:</p>
+                                                <p>3.Javascript:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
                                                 <div id="dashboard-skill-js" class="skill-identifier progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -311,7 +316,7 @@
                                         </div>
                                         <div class="dashboard-skill-wrapper">
                                             <div class="dashboard-skill-title">
-                                                <p>5. MySQL/SQL:</p>
+                                                <p>5.MySQL/SQL:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
                                                 <div id="dashboard-skill-sql" class="skill-identifier progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -327,7 +332,7 @@
                                         </div>
                                         <div class="dashboard-skill-wrapper">
                                             <div class="dashboard-skill-title">
-                                                <p>1. Bootstrap:</p>
+                                                <p>1.Bootstrap:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
                                                 <div id="dashboard-skill-bootstrap" class="skill-identifier progress-bar bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -442,7 +447,7 @@
                                         </div>
                                         <div class="dashboard-skill-wrapper">
                                             <div class="dashboard-skill-title">
-                                                <p>5. Databases:</p>
+                                                <p>5.Databases:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
                                                 <div id="dashboard-skill-databases" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -452,7 +457,7 @@
                                         </div>
                                         <div class="dashboard-skill-wrapper">
                                             <div class="dashboard-skill-title">
-                                                <p>6. Full stack:</p>
+                                                <p>6.Fullstack:</p>
                                             </div>
                                             <div class="progress dashboard-skill-bar">
                                                 <div id="dashboard-skill-fsdframeworks" class="skill-identifier progress-bar bg-secondary" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -533,6 +538,9 @@
     <!-- MODALS --> 
                 <div class="modal-container hidden">
                     <div class="dashboard-modal">
+                        <div class="modal-close">
+                            <i class="far fa-times-circle"></i>
+                        </div>
                         <div class=modal-header>
                             <h4>Warning!</h4>
                         </div>

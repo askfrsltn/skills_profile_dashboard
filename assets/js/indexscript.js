@@ -36,16 +36,10 @@
         });
     
         $("#btn-login").click(function(){
-            
-            let login=$("#login").val();
-            let loginName=$("#name").val();
-            let loginEmail=$("#email").val();          
+            let loginName=$("#name").val();          
             let loginObject = {
-                "login": login,
-                "name": loginName,
-                "email": loginEmail
+                "name": loginName
             }
-
                 localStorage.setItem('loginObject', JSON.stringify(loginObject));
         });
     // EXAMPLE. SCORE. THEORY. ELEMENT. slide down and up the card on click - works for each element card
