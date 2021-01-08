@@ -31,8 +31,11 @@ ___
 [TESTING](#testing)
 
 [VERSION CONTROL](#version_control)
+
 [DEPLOYMENT](#deployment)
+
 [CREDITS](#credits)
+
 [DISCLAIMER](#disclaimer)
 
 ___
