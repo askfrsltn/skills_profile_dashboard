@@ -1040,14 +1040,43 @@ body.scorepage-background{
     align-content: center;
     margin-top: 10px;
 }
-
-.print-screen{
+.print-screen-conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
     width: 100%;
     font-size: 16px;
     line-height: 1,5;
-    padding: 20px;
     text-align: start;
 }
+.pscreen-item-wrapper{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.pscreen-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 50%;
+    border: 1px solid #fd6470;   
+    height: 40px; 
+    min-width: 40px;
+    margin: 0px 20px 0px 10px;
+    font-size: 20px;
+    background-color: #fd6470;
+    color: #fafafa;
+    padding: 5px;
+}
+
+
 
 .dashboard-title-section{
     display: flex;
