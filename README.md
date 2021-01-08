@@ -5,37 +5,49 @@ ___
 
 ## SUMMARY
 
-This interactive application is developped based on Code Institute Full Sack Developer course. It is an interactive tool to collect scoring inputs for 4 projects and 87 theoretical elements to build an individual 2 pages skills profile dashboard consisting of 5 sections - Projects (4 projetcs), Theory (9 Theory modules), Languages (5 programing langusages), Frameworks (7 frameworks and libraries) and Other developers tools.
+This interactive application is developped based on Code Institute Full Sack Developer course as of December 2020. It is an interactive tool to collect scoring click-inputs for 4 projects and 87 theoretical elements to build an individual 2 pages skills profile dashboard consisting of 5 sections - Projects (4 projetcs), Theory (9 Theory modules), Languages (5 programing langusages), Frameworks (7 frameworks and libraries) and Other developers tools.
 
 Project lnk: [Full Stack Skills Profile Dashboard - https://askfrsltn.github.io/skills_profile_dashboard/](https://askfrsltn.github.io/skills_profile_dashboard/) 
 ___
 
-## Content 
+# TABLE OF CONTENT 
 
-[Introduction](#introduction)
-1. [User Experience Design](#ued)
-2. [User interface](#ui)
-3. [Features](#features)
-4. [Development](#development)
-5. [Testing](#testing)
-6. [Version Control](#version_control)
-7. [Deployment](#deployment)
-8. [Credits](#credits)
-9. [Disclaimers](#disclaimer)
+[INTRODUCTION](#introduction)
 
-...snip...
+[USER DESIGN](#user-design)
+        
+- 1.1. Goals 
+- 1.2 User Stories
+- 1.3 Strategy Plain
+- 1.4 Scope Plain
+- 1.5 Sctructure Plain
+- 1.6 Skeleton Plain
+- 1.7 Surface Plain 
+
+[FEATURES](#features)
+
+[DEVELOPMENT](#development)
+
+[TESTING](#testing)
+
+[VERSION CONTROL](#version_control)
+[DEPLOYMENT](#deployment)
+[CREDITS](#credits)
+[DISCLAIMER](#disclaimer)
+
 ___
 
-## <a name="introduction"> Introduction </a>
+## INTRODUCTION
 
-- This application iwas developed for Interactive front end development module (MS2 IFED) of Code Institue Full Stack development course. 
-- It is a web based application for Full web stack developers and sudents. It helps to build and print visually appealing simple 2 pages of individual skills dashbaord using intercative scorecard interface for inputs and donut charts for output. 
-- Skills structure was developed based on CodeInstitute course program. Profile assessement includes 2 domains - theoretical and practical. 
-Scoring logic was partially developped by myself based on my previous consulting experience in carreer succession planning.
+- This application was developed for educational purposes only a final deliverable of Interactive front end development module (MS2 IFED), Code Institue Full Stack development course (dec 2020). 
+- It is a web based application for Full web stack developers and sudents (futher on users). It helps to build a simple, visually appealing, 2 pages personalised developer skills dashbaord. The inputs will be provided by a user using intercative scorecard interface with pre-defined clickable inputs. 
+- Skills structure was developed based on CodeInstitute course program (as per dec 2020). Profile skills are devided into 2 domains - theoretical and practical. 
+Scoring percentage logic is developped based on my practical consulting experience in carreer development and succession planning.
 
+[back to TOC](#content)
 ___
 
-## 1. <a name="ued"/> USER EXPERIENCE DESIGN & USER Interface </a>
+## USER DESIGN
 
 #### 1.1	Goals
 * **Developer Goals**
@@ -109,7 +121,7 @@ Major purpose of the application to be able to revisit all the elements learnt d
 
 
 - **Interaction Design** - there are 3 ways that the user will interact interact with application: reading information, field inputs, mouse clicks
-    - **Reading**: First/Landing page will have 2 buttons - "learn more" and "login", learn more button helps the user to open a subpage that describes what s/he needs to do to builda a dashboard., Going through the scoring process, the user will constantly read throguh the comments that help hime to make a scoring choice, understand where  in the scoring process s/he is and how much more he needs to do to finish the process. 
+    - **Reading**: First - Landing page will have 2 buttons: "learn more" and "login", learn more button helps the user to open a subpage that describes what s/he needs to do to builda a dashboard., Going through the scoring process, the user will constantly read throguh the comments that help hime to make a scoring choice, understand where  in the scoring process s/he is and how much more he needs to do to finish the process. 
     - **Field Inputs**: The user needs to eneter a 3 field inputs to start the scoring process and go from landing page to the scoring page. One of the inputs - Full Name is critical because it will be used on the dashboard page.
     - **Mouse click**: The user needs to make a prdefined choice for each of the project or scoring element. That means that the user will not have a space for error. All the choices then automatically calculated by JavaScript codes. 
 
@@ -164,10 +176,12 @@ Interface Structure, Interaction flow, Information Design are shown the pictures
     - **BUTTONS** - red dot icons with small text in square brackets were used as button to navigate between the pages
     - **SCORES** - I used 3 colors for scoring, it folows a medal awards logic - gold, silver, bronze, the same colors were applied for theory elements score colors.
 Overall I used colors and fonts to enhance functionality, maintain reesponsiveness and make priority things (buttons, scores) visible and maintain resemblance to coding process.
+
+[back to TOC](#content)
 ___
-## 3.	FEATURES
+## FEATURES
 #### 3.1 Interactive Features with JavaScript/JQUERY/JSON
-##### LANDING PAGE:
+##### P1.LANDING PAGE:
 - **Hidden Page Sections**: 2 functions to flip between landing page and understand page using JQuery library
     
         $(function(){
@@ -230,7 +244,7 @@ ___
             });             
         });
 
-##### SCORING PAGE:
+##### P2: SCORING PAGE:
 - **Local Storage** - create local storage upon page load:
 
         let userObject={}
@@ -339,7 +353,7 @@ ___
         });           });      
 
 
-- **Calulcate project scores** - complex code to calculate projects score and scoring progress inputs based on scorecards choices triggered project scorecard click and insert those values into visual charts:
+- **Calculate project scores** - complex code to calculate projects score and scoring progress inputs based on scorecards choices triggered project scorecard click and insert those values into visual charts:
     - **Open a function on click** - open a separate function on click:
 
             $(".projects-score-circle").click(function (){
@@ -519,7 +533,7 @@ Overall the code looks like this:
                     
                     // b. userObject saved in localStorage
                     localStorage.setItem("userObject", JSON.stringify(userObject));    
-##### DASHBOARD PAGE:
+##### P3: DASHBOARD PAGE:
 - **Create new variables for new skills groups visuals on the skills profile** 
 
         // 1. DEFINE NEW SET OF VARIABLES -"SKILLS"- THAT EXIST ONLY ON THIS PAGE - SEE PAGE 2 OF THE DASHBOARD
@@ -794,9 +808,11 @@ Overall the code looks like this:
             margin-bottom: 10px;
             order: 1;
         }
+
+[back to TOC](#content)
 ___
 
-## 4. DEVELOPMENT
+## DEVELOPMENT
 #### 4.1 Technologies
 - Major focus of development was on developing interactive features with calculation and local storage functionality. I used plain Java Script and JQuery in most of the cases.
 - For local storage interaction I used JSON.
@@ -827,9 +843,9 @@ ___
 
 - **Chris Coyer** - he wrote many articles but this one is very usefull for background image, a week before submission I dropped an idea of using background image for the app. Even though it looked cool, I was not able to master it for Safari and Firefox.
 
-#### 4.3 Development Logic Steps
-I have developed  an application using following plan. I planned to spend 15 days on it, but spent 40 days. Difficulties came from lack of expertise in JavaScript. I also wasted time on interactive menu which I later eliminated. I also watsed time on Donut charts elements, I used various source however returned baack t the resource as in section above.
-
+#### 4.3 Development Process
+I planned to spend 15 days on it, but spent more than 45 days. Difficulties came from lack of expertise in JavaScript. I also wasted time on some feature that I later eliminated (e.g. interactive menu and dark/light mode). I also wasted time on Donut charts elements, I used various sources however returned back to the the one I started with.
+- Steps: 
 1. 4 Planes of UX to develop Wireframes
 2. Set up repository and structure of README
 3. Develop and Test challenging and interactive features in the library
@@ -854,14 +870,15 @@ I have developed  an application using following plan. I planned to spend 15 day
 13. Submit for assessment
 
 #### 4.4 Features that were not installed
-1. Print option on a dashbaord page
+1. Print option on a dashbaord page to convert the page into pdf.
 2. Dark/light mode on a dahsboard pages
 3. Pareto charts for all the skills was too much for this project that already grew out of proportion comparing to the requirements.
+4. I wanted to make html using javascript but did not manage to do that, however I do realise it would save me a lot of code on HTML. I siply did not find the way how to utilise Document.createElement(), Mode.append.Child(), ensert before etc. The gap I plan to fill later on.
 
-
+[back to TOC](#content)
 ___
 
-## 5. TESTTING
+## TESTTING
 #### 5.1 Lighthouse Testing
 * Thanks to Anna - CodeInstitue tutor I learnt about lighthouse tool to test perfromance, accesibilit, best practice, seoo and progressiveweb appliaction testing. It is a great tool integrated into google chrome web-browser. If you want to use it - go to your webpage, press right click, then select inspect, in the right-top corner you will find a developer menu,search next to responsiveness and in line with other important feature section "Lighthouse". You will find a button generate report, before hitting it you will need to select the options you want to see.
 * **Picture 5: Lighthouse testing summary, start and finish** 
@@ -876,11 +893,12 @@ ___
 last section to be added after peer-code-reveiew. 1st round gave 0 feedback.
 ___
 
-## 6.	VERSION CONTROL
+## VERSION CONTROL
 Cloud based GitHub and Gitpod applications were used for this project. About 85 commits were done through the course of application developemnt.
 
+[back to TOC](#content)
 ___
-## 7.	DEPLOYMENT
+## DEPLOYMENT
 I deployed the site through gitpod and github. I folowed the steps:
 
 1. Gitpod: git add .
@@ -894,8 +912,9 @@ I deployed the site through gitpod and github. I folowed the steps:
 * The link to repository on a github: FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD reporistory (https://github.com/askfrsltn/skills_profile_dashboard)
 * Website link: [Full Stack Skills Profile Dashboard](https://askfrsltn.github.io/skills_profile_dashboard/)
 
+[back to TOC](#content)
  ___
-## 8.	CREDITS
+## CREDITS
 - **StackOverflow** with thousands of developers from the past and present who shared their knowledge. I simply can not mention all of them.
 - **CodeInstitute** - for the course materials and Full Stack Development Course structure provided on course schedule generator. 
 - **CodeInstitute Tutors** - especially big thanks to Stephen, Tim, Haley, Cormac, Miklos. Without you I wouldn't be able to complete this project.
@@ -906,9 +925,12 @@ I deployed the site through gitpod and github. I folowed the steps:
 
 Thaks a lot!
  
+ [back to TOC](#content)
 
-## 9.	Disclaimers
-- **Code Institute** - I used an information that belongs to CodeInstitute it would be fair to ask permission before openly promoting the use of this site publicly. 
+## DISCLAIMERS
+- **Code Institute** - I used an information that fully belongs to CodeInstitute it would be fair to ask permission before openly promoting the use of this site publicly. 
+
+[back to TOC](#content)
 ___
 
 end of README
