@@ -123,14 +123,14 @@ $(document).ready(function() {
         
     $(".projects-score-circle").click(function (){
                      
-            const projectsNumber= 4; // number of cards in projects score calculation
+            const projectsNumber=4; // number of cards in projects score calculation
             
             let ucfed = parseInt($("#projects-ucfed").text()) || 0; // turn the string into number from the card score or 0
             let ifed = parseInt($("#projects-ifed").text()) || 0;
             let dcd = parseInt($("#projects-dcd").text()) || 0;
             let fsd = parseInt($("#projects-fsd").text()) || 0;
             
-            let projectsScore= (ucfed+ifed+dcd+fsd)/projectsNumber;       // calculate overal score    
+            let projectsScore= (ucfed+ifed+dcd+fsd)/projectsNumber;// calculate overal score    
             $("#projects-overall").text(projectsScore); // set the number to chart % on a summary section
             $("#projects-overall-summary").text(projectsScore);   // set the number to chart % on a summary section
             
@@ -163,7 +163,7 @@ $(document).ready(function() {
             else {
                 fsdProgress = 1;
             };
-            let projectsScoringProgress=ucfedProgress+ifedProgress+dcdProgress+fsdProgress;
+            let projectsScoringProgress = ucfedProgress+ifedProgress+dcdProgress+fsdProgress;
                 
         // PROGRESS. progress NUMBER for projects on 2 projects summary pages
             $("#project-scoring-progress").text(projectsScoringProgress);
@@ -207,24 +207,24 @@ $(document).ready(function() {
             let moduleKey="#"+moduleObjectKey;
         
         // 2. get the scores of the elements from all the module elements       
-        let values = $(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').text();// return all the values within the module
-        let value= $(this).text().trim().slice(0,-1);// get rid of spaces and % sign at the end
+            let values = $(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').text();// return all the values within the module
+            let value= $(this).text().trim().slice(0,-1);// get rid of spaces and % sign at the end
 
         //3. turn the string into numbers array - unbelieavable code from https://stackoverflow.com/questions/18712347/how-to-get-numeric-value-from-string - who can ever come up with this logic??? It actually  wokrs!      
-        let valuesArray = values.match(/\d+/g).map(Number); 
+            let valuesArray = values.match(/\d+/g).map(Number); 
         
         //4. Calculate average in the array
-        let moduleSum = 0 // create elements cum number variable
-        let scoredElements = valuesArray.length; // create variable to calculate number of elements scored
-        let totalNumberOfElements=$(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').length; // calculates total number of elements;
+            let moduleSum = 0 // create elements cum number variable
+            let scoredElements = valuesArray.length; // create variable to calculate number of elements scored
+            let totalNumberOfElements=$(this).parent().parent().parent().parent().parent().parent().find('.elements-section').find('.scorcard-score').length; // calculates total number of elements;
         
         // 5. calculate sum of scores in the array
-        for (let i = 0; i < valuesArray.length; i++){
-            moduleSum += parseInt(valuesArray[i]); 
-        }
+            for (let i = 0; i < valuesArray.length; i++){
+                moduleSum += parseInt(valuesArray[i]); 
+            }
         //6. Assign average to module score circle on the module scorecard
-        let moduleAverageScore = parseInt(moduleSum/totalNumberOfElements); // calculate average module score
-        $(moduleKey).text(moduleAverageScore+"%"); // assign calculated average to module scorecard score
+            let moduleAverageScore = parseInt(moduleSum/totalNumberOfElements); // calculate average module score
+            $(moduleKey).text(moduleAverageScore+"%"); // assign calculated average to module scorecard score
             
         // 7. CHANGE PROGRESS BAR
         // a.find this module key
@@ -264,10 +264,10 @@ $(document).ready(function() {
         //10. Assign numbers to 2 theory Donut Charts including red progress bar
             $('#theory-overall').text(theoryScore);// asign number to donut chart on theory scorring section
             $('#theory-overall-summary').text(theoryScore);// asign number to donut chart on theory scorring section
-            document.getElementById("progress-bar-theory1").setAttribute("stroke-dasharray", theoryScore+", 100" ); // // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
-            document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", theoryScore+", 100" ); // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
+            document.getElementById("progress-bar-theory1").setAttribute("stroke-dasharray", theoryScore+", 100" ); // asign number to donut chart progress bar on theory scorring section (for some reason JQ attr() doesnot work)
+            document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", theoryScore+", 100" ); // asign number to donut chart progress bar on theory scoring section (for some reason JQ attr() doesnot work)
 
-        //11. Calculate inputs for progress bar calculation
+        //11. Calculate inputs for theory progress bar calculation 
             // a. count all the elements scorecards without modules
             const numberOfTheoryElements = $.find(".scorecard-element").length; 
             // b. return all the scored elements values within the module

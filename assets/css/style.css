@@ -744,7 +744,7 @@ body.scorepage-background{
     width: 100%;
     position: absolute;
     border-radius: 10px;
-    background-color: rgba(38,80,119,0.5);
+    background-color: #554F73;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
@@ -758,10 +758,10 @@ body.scorepage-background{
 .scorecard-face-back{
     flex-direction:column;
     border-radius: 10px;
-    background-color: rgba(56, 90, 122, 0.5);
+    background-color: #554F73;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:hidden;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
                 0 2px 4px rgba(0,0,0,0.07), 
                 0 4px 8px rgba(0,0,0,0.07), 
@@ -911,7 +911,7 @@ body.scorepage-background{
     justify-content: space-around;
     align-items: center;
     border-radius: 5px;
-    background-color: rgba( 73,75,104, 0.5);
+    background-color: #76628d;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
                 0 2px 4px rgba(0,0,0,0.07), 
                 0 4px 8px rgba(0,0,0,0.07), 
@@ -920,8 +920,6 @@ body.scorepage-background{
                 0 32px 64px rgba(0,0,0,0.07);
     border: 1px solid #4d5052;
 }
-
-
 
 .scorecard-module-title{
     display: flex;
