@@ -289,6 +289,11 @@ login-inputs-wrapper{
     width:100vw;
     overflow: scroll;
 }
+.button-alignment{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
 
 #js-card-understand {
     background-color: lightslategray;
@@ -297,7 +302,7 @@ login-inputs-wrapper{
 
 .understand-page-logic{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: column;
     background-image: linear-gradient(to right bottom, #4d6180, #55658c, #606997, #6d6ca1, #7d6ea9);
 }
@@ -315,7 +320,7 @@ login-inputs-wrapper{
     height: 45vh;
     width: 36vh;
     order: 1;
-    margin: 20px;
+    margin: 5px;
     background-position: center center;
 	background-size: cover;
 }
@@ -457,7 +462,7 @@ login-inputs-wrapper{
 
 .back-to-login{
     margin-top: 5px;
-    margin-bottom: 45px;
+    margin-bottom: 60px;
 }
 
 /*-- SCORE_PAGE --*/
