@@ -1,149 +1,153 @@
-# FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD
+# [FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD]( https://askfrsltn.github.io/skills_profile_dashboard/)
 
-___
 ![responsive](assets/img/responsive4.png "applications responsive screens")
 
 ## SUMMARY
+This interactive application is developed based on Code Institute Full Sack Developer course as of December 2020. It is an interactive tool to collect scoring click-inputs for 4 projects and 87 theoretical elements to build an individual 2 pages skills profile dashboard consisting of 5 sections - Projects (4 projects), Theory (9 Theory modules), Languages (5 programing languages), Frameworks (7 frameworks and libraries) and Other developers tools.
 
-This interactive application is developped based on Code Institute Full Sack Developer course as of December 2020. It is an interactive tool to collect scoring click-inputs for 4 projects and 87 theoretical elements to build an individual 2 pages skills profile dashboard consisting of 5 sections - Projects (4 projetcs), Theory (9 Theory modules), Languages (5 programing langusages), Frameworks (7 frameworks and libraries) and Other developers tools.
-
-Project lnk: [Full Stack Skills Profile Dashboard - https://askfrsltn.github.io/skills_profile_dashboard/](https://askfrsltn.github.io/skills_profile_dashboard/) 
+**Project lnk**: [Full Stack Skills Profile Dashboard](https://askfrsltn.github.io/skills_profile_dashboard/) 
 ___
-
-# TABLE OF CONTENT 
+**Navigation comments**: 
+- Click on the content heading to navigate to the section you want to read.
+- Each section heading is a [link](#content) to return to the top of the README page.
+___
+## CONTENT
 
 [INTRODUCTION](#introduction)
 
-[USER DESIGN](#user-design)
+[1. USER DESIGN](#user-design)
         
-- 1.1. Goals 
-- 1.2 User Stories
-- 1.3 Strategy Plain
-- 1.4 Scope Plain
-- 1.5 Sctructure Plain
-- 1.6 Skeleton Plain
-- 1.7 Surface Plain 
+[1.1 Goals](#goals)
 
-[FEATURES](#features)
+[1.2 User Stories](#user-stories)
 
-[DEVELOPMENT](#development)
+[1.2 Structure plain](#structure-plain)
 
-[TESTING](#testing)
+[1.4 Scope Plain](#scope-plain)
 
-[VERSION CONTROL](#version_control)
+[1.5 Sctructure Plain](#structure-plain)
 
-[DEPLOYMENT](#deployment)
+[1.6 Skeleton Plain](#skeleton-plain)
 
-[CREDITS](#credits)
+[1.7 Surface Plain](#surface-plain)
 
-[DISCLAIMER](#disclaimer)
+[3. FEATURES](#features)
+
+[4. DEVELOPMENT](#development)
+
+[5. TESTING](#testing)
+
+[6. VERSION CONTROL](#version-control)
+
+[7. DEPLOYMENT](#deployment)
+
+[8. CREDITS](#credits)
+
+[9 DISCLAIMERS](#disclaimers)
 
 ___
 
-## INTRODUCTION
+## [INTRODUCTION](#content)
 
-- This application was developed for educational purposes only a final deliverable of Interactive front end development module (MS2 IFED), Code Institue Full Stack development course (dec 2020). 
-- It is a web based application for Full web stack developers and sudents (futher on users). It helps to build a simple, visually appealing, 2 pages personalised developer skills dashbaord. The inputs will be provided by a user using intercative scorecard interface with pre-defined clickable inputs. 
-- Skills structure was developed based on CodeInstitute course program (as per dec 2020). Profile skills are devided into 2 domains - theoretical and practical. 
-Scoring percentage logic is developped based on my practical consulting experience in carreer development and succession planning.
-
-[back to TOC](#content)
+- Full web stack developers and students (further on users). It helps to build a simple, visually appealing, 2 pages personalised developer skills dashboard. The inputs will be provided by a user using an interactive scorecard interface with pre-defined clickable inputs. 
+- Skills structure was developed based on CodeInstitute course program (as per Dec 2020). Profile skills are divided into 2 domains - theoretical and practical. 
+- Scoring percentage logic is developed based on my practical consulting experience in career development and succession planning.
 ___
 
-## USER DESIGN
+## [USER DESIGN](#content)
 
-#### 1.1	Goals
-* **Developer Goals**
-1. Clarify and build a logic of the skills that Full Stack Development course student will aquire after the course completion.
-2. Identify developer skills that still need to be improved, especially from practical usage point of view.
-3. Reinforce knowledge of Javascript, especially in the field of working with dashboards and connecting it to interactive visual design.
+### [Goals](#content)
+**Developer**
+1. Clarify and build a logic of the skill set that Full Stack Development course student will acquire after the course completion.
+2. Identify developer skills that still need to be improved, especially from a practical usage point of view.
+3. Reinforce knowledge of Javascript, especially in a field of working with dashboards and connecting it to interactive visual design.
 4. Learn new functionalities in Interactive Front-end such as canvas object and working with local storage.
-5. Promote my FSD skills and knowledge in 2 differnet domains - application development and consulting.
 
-* **User Goals**
+**User**
 1. Develop a nice looking personal Skills Profile document for a developer resume (send to email or print to a printer).
-2. Clarify full scope of the skills required for Full Stack Developer
-3. Identify the areas of expertise that require more attention to improve from practical point of view
+2. Clarify the full scope of the skills required for Full Stack Developer
+3. Identify the areas of expertise that requires more attention to improve from the practical point of view.
 
-#### 1.2	User Stories
-This web-site is built for Full Stack Development **Students** and  **Developers** pursuing carreer in this field
-* As a **Potential FSD student** I want to undesrtand what I will learn during the course and set up a baseline using an assessment
-* As a **Active FSD Student** I want to undesrtand (a) What’s  is the full scope of skills I am dealing with and (b) which skills still need to be reinforced with practice 
-* As a **Junior developer** I want to have a simple electronic dashboard with realistic assessement of my practical and theoretical knowledge use it during a job application process
-* As a **Qualified professional**  I want to understand quickly what assignments I can practically cope with as a developer, and which areas still need to be reinforced
+### [User Stories](#content)
+This web-site is built for Full Stack Development **Students** and  **Developers** pursuing a career in this field
+- As a **Potential FSD student** I want to understand what I will learn during the course and set up a baseline using an assessment
+- As a **Active FSD Student** I want to understand (a) What’s  is the full scope of skills I am dealing with and (b) which skills still need to be reinforced with practice 
+- As a **Junior developer** I want to have a simple electronic dashboard with realistic assessment of my practical and theoretical knowledge use it during a job application process
+- As a **Qualified professional**  I want to understand quickly what assignments I can practically cope with as a developer, and which areas still need to be reinforced.
 
-#### 1.3 Strategy Plain
-- **Goal** - develop an application to help user develop skills profile document with simple and logical visual representation of acquired paractical and theoretical skills acquired during FSD course.
+### [Strategy Plain](#content)
+**Goals Declaration:** 
+1. Help user develop skills profile document with the simple and logical visual representation of acquired practical and theoretical skills acquired during FSD course. 
+2. The application may be used during the job application process to answer the questions: "what exactly do you know?" and "what you can practically do?".
+3. Major purpose of the application - be able to revisit all the elements learnt during FSD course, assess individual ability to apply the knowledge in practice, at work. It gives confidence to an applicant and understanding where to focus next.
 
-Major purpose of the application to be able to revisit all the elements learnt during FSD course and assess individual ability to apply the knowledge in practice, at work. It gives confidence to an applicant and understanding where to focus next.
-
-#### 1.4 Scope Plain
-- **Content** 
-    - an app needs to have 3 pages - 1) Landing/explanation and login, 2) Scoring Page with summary section 3) Final output preview - dashboard page
-    - In order to structure the content correctly a scope of Full Stack Developer 9 modules was analysed and broken down into smaller elements (see the table in [GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing)). The elements will be used to build a structure of scorecards for Projects and Theory elements (see attachment) assessment. In simle word - 1 scoring element on the table will be represented by 1 scorecard on a page.
-    - Standard Scoring Logic will be based on 3 choices both for projects and for theory. For Theory - this logic needs to be based on level of individual ability to aply certain study element in practice (60% - familiar, 80% - practially applied at least once during the projects,100% -  learnt and used on th eprojects up to the level when the assessor can teach others). For Projects - each project will have a score based on awarded mark (60% - pass, 80% - merit or 100%-disticntion)
-    - A final output - dashboard pages should be visual with maximum 2 pages showing short visual summary of FullStack Developer skills by division on Projects, Theory, show % score for each project and 9 theoretiacl moules.
-    - Thoeoretical elements on the final dashboard should also be alternatively grouped by 3 alternative criterea - "Developer Languages", "Frameworks/Liibraries" and "Developer tools"with appropriate grpahical representation.
-
-- **Functionally**: 
-- Functionality of the apliaction has 4 goals - 1) Explain to a user the process and the scoring logic; 2) Suggest to a user the accurate scoring choices for Project and Theoretical elements 3) Visualise the scoring progress and scoring result during the scoring, and 4) Build 2 pages of individually customised dashboard.
-    - EXPLANATION: an app should have simple Explanation section about what the application is, what it does does, how it works. It should have a dashboard example and scoring choices description for Project and Theory elements
-    - INPUTS: an app needs to personalise dashbard therefore there should be a login page with 3 fields  - login, Full Name for dahsboard heading and an email. That will help to store the information into local storage
-    - INPUTS: an app needs to provide simple 3-choice scoring functionaliy that can be  learnt intuitively and correctly applied during scoring process. Interactive scorecards should be used for interactive input. 
-    - OUTPUT: Visual Representation of Theory and Projects overall score should be updated after each scoring choice. Donut chart will be the best choice for visualisation.
-    - OUTPUT: Visual Representation of Asessment/Scoring Progress needs to be updated after each scoring choice in a form of vertical bar for Projects, Overall Theory progress and each module within theory section
-    - OUTPUT: Each Scorecard needs to have interactive user functionality to demonstrate available scoring choices and indicate the status of scoring on each of the scorecards (Yes/No) after the choice has been made, so that user is able to immidiately see whether project or theory element is scored or not.
-
-
-#### 1.5 Structure Plain
-- The application is focused on functionality, therefore its interactivity has a single purpose of helping user to build Full Stack Developer Skills Dashboard without destractive decorations.
-
-- **Features Prioritisation** 
-    - List of features to prioritise and status:
-        - **Logical course structure** - to build calculation logic foundation - priority No1, planning started with it.
-        - **Visual Charts** - prirority feature - key focus of the site - scorepage and dashboard page
-        - **Scorecards** - prirority feature on the scorecard page
-        - **Local Storage** - priority feature for scorepage and dashboard page
-        - **Description** - prirority feature for landing page
-        - **Login** - prirority feature for landing page, it helps to store information into local storage
-        - **Calculation logic** - absolutely critical prirority feature
-        - **Description of the scoring logic** - prirority feature on the landing/understanding page. 
-        - **Buttons** - prirority feature to navigate between pages and scoring sections
-        - **Limited intuitive navigation between pages** - priority feature
-        - **Scoring Progress calculation** - priority feature on the scoring sections, immidiately shows to the user how far s/he is from the finish.
-        - Personalisation with Name - priority feature - dashboard page wokrs based on login page data inputs
-        - **Date stamp** - priority feature on dashboard page
-        - **Option to score data in the local storage** forever and linking it to login data so that it can be retrieved evry time the user returns to the website - partialy implemented on a scorpage and dashboard page, though is not built to store user data forever
-        - **Modals with warnings** - priority feature across the site to avoid confusing scenario and repetition of data inputs
-        - **Standardised scoring choices on each scorecard** to ensure correct calculations of inputs
-        - **Decoration with pictures and various fonts** - deprioritised, distracting from core purpose
-        - **Dark/Light mode for the dashboard** - deprioritised - nice but not practical.
-        - **Print out functionality** - deprioritised due to availability of priint screen function across various devices
-        - **Connection to google appplication by API** - deprioritised
-        - **Interactive menu** - built as per wireframe, deprioritised and scrapped
+### [Scope Plain](#content)
+**Content:** an app needs to have 3 pages - 1) Landing/explanation and login, 2) Scoring Page with a summary section 3) Final output preview - dashboard page to print.
+- To structure the content correctly a scope of Full Stack Developer 9 modules was analysed and broken down into smaller elements (see the table in [GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing)). The elements will be used to build a structure of scorecards for Projects and Theory elements (see attachment) assessment. In a simple word - 1 scoring element on the table will be represented by 1 scorecard on a page.
+- Standard Scoring Logic will be based on 3 choices both for projects and for theory. For Theory - this logic needs to be based on the level of individual ability to apply certain study element in practice (60% - familiar, 80% - practically applied at least once during the projects,100% -  learnt and used on the projects up to the level when the assessor can teach others). For Projects - each project will have a score based on the awarded mark (60% - pass, 80% - merit or 100%-distinction)
+- A final output - dashboard pages should be visual with maximum 2 pages showing a short visual summary of FullStack Developer skills by division on Projects, Theory, show % score for each project and 9 theoretical modules.
+- Theoretical elements on the final dashboard will also be grouped by 3 alternative criteria - "Developer Languages", "Frameworks/Libraries" and "Developer tools" with appropriate graphical representation.
+**Functionally**: 
+- Functionality of the application has 4 goals - 1) Explain to a user the process and the scoring logic; 2) Suggest to a user the accurate scoring choices for Project and Theoretical elements 3) Visualise the scoring progress and scoring result during the scoring, and 4) Build 2 pages of the individually customised dashboard.
+    - EXPLANATION: an app should have simple Explanation section about what the application is, what it does, how it works. It should have a dashboard example and scoring choices description for Project and Theory elements
+    - INPUTS: an app needs to personalise dashboard therefore there should be a login page with 3 fields  - login, Full Name for dashboard heading and an email. That will help to store the information into local storage
+    - INPUTS: an app needs to provide simple 3-choice scoring functionality that can be learnt intuitively and correctly applied during the scoring process. Interactive scorecards should be used for interactive input. 
+    - OUTPUT: Visual Representation of Theory and Projects overall score should be updated after each scoring choice. Doughnut chart will be the best choice for visualisation.
+    - OUTPUT: Visual Representation of Assessment/Scoring Progress needs to be updated after each scoring choice in a form of a vertical bar for Projects, Overall Theory progress and each module within the theory section
+    - OUTPUT: Each Scorecard needs to have interactive user functionality to demonstrate available scoring choices and indicate the status of scoring on each of the scorecards (Yes/No) after the choice has been made so that user can immediately see whether project or theory element is scored or not.
 
 
-- **Interaction Design** - there are 3 ways that the user will interact interact with application: reading information, field inputs, mouse clicks
-    - **Reading**: First - Landing page will have 2 buttons: "learn more" and "login", learn more button helps the user to open a subpage that describes what s/he needs to do to builda a dashboard., Going through the scoring process, the user will constantly read throguh the comments that help hime to make a scoring choice, understand where  in the scoring process s/he is and how much more he needs to do to finish the process. 
-    - **Field Inputs**: The user needs to eneter a 3 field inputs to start the scoring process and go from landing page to the scoring page. One of the inputs - Full Name is critical because it will be used on the dashboard page.
-    - **Mouse click**: The user needs to make a prdefined choice for each of the project or scoring element. That means that the user will not have a space for error. All the choices then automatically calculated by JavaScript codes. 
+### [Structure Plain](#content)
+- The application is focused on functionality, therefore its interactivity has a single purpose of helping a user to build a Full Stack Developer Skills Dashboard without destructive decorations.
+
+ **Features Prioritisation** 
+- List of features to prioritise and implementation status:
+    - **Logical course structure** - to build calculation logic foundation - priority No1, planning started with it. Implemented
+    - **Visual Charts** - priority feature - the key focus of the site - score page and dashboard page. Implemented.
+    - **Scorecards** - choice functionality. Implemented.
+    - **Local Storage** - priority feature for score page and dashboard page. Implemented.
+    - **Description** - Simple description to guide a user. Implemented.
+    - **Login** - a feature that helps to store information into local storage and ensure a user has its name on the dashboard. Implemented.
+    - **Calculation logic** - absolutely critical priority feature for percentage calculation and visualisation. Implemented.
+    - **Description of the scoring logic** - priority feature on the landing/understanding page to guide the user. Implemented
+    - **Buttons** - priority feature to navigate between pages and scoring sections. Implemented.
+    - **Limited intuitive navigation between pages** - priority feature to avoid confusions. Implemented.
+    - **Scoring Progress calculation** - priority feature on the scoring sections, immediately shows to the user how far s/he is from the finish.
+    - Personalisation with Name - priority feature - dashboard page works based on login page data inputs. Implemented.
+    - **Date stamp** - priority feature on the dashboard page. Implemented.
+    - **Option to store data in the local storage** forever and linking it to login data so that it can be retrieved every time the user returns to the website - partially implemented on a storage and dashboard page, though is not built to store user data forever. Implemented.
+    - **Modals with warnings** - priority User experience feature to avoid confusing scenario and repetition of data inputs. Implemented.
+    - **Standardised scoring choices on each scorecard** to ensure correct calculations of inputs and make user experience ridiculously simple. Implemented.
+    - **Decoration with pictures and various fonts** - deprioritised, distracting from core purpose. Not Implemented.
+    - **Dark/Light mode for the dashboard** - deprioritised - nice but not practical. Not implemented. 
+    - **Print out functionality** - deprioritised due to availability of print screen function across various devices. alternative logic implemented following a recommendation by mentor on the last call.
+    - **Connection to google sheets application by API** - deprioritised. Not implemented.
+    - **Interactive menu** - built as per wireframe in the earlier version, deprioritised and scrapped halfway through the project.
+    - **Ability to use the information after closing the browser** - I wanted to use this functionality and think it would be useful but I stopped developing because I was running late. So I decided that for the user if s/he wants to develop a nice dashboard he may be patient enough to spend 20 minutes on the web for the sake of successful application and do it in one scoring session.
+
+
+- **Interaction Design** - there are 3 ways that the user will interact with the application: reading the information, field input, mouse clicks
+    - **Reading**: First - The landing page will have 2 buttons: "learn more" and "login", learn more button helps the user to open a subpage that describes what s/he needs to do to build a dashboard., Going through the scoring process, the user will constantly read through the comments that help him to make a scoring choice, understand where in the scoring process s/he is and how much more he needs to do to finish the process. 
+    - **Field Inputs**: The user needs to enter 1 field input to start the scoring process and go from landing page to the scoring page. The input containing Full Name is critical because it will be used on the dashboard page.
+    - **Mouse click**: The user needs to make a predefined choice for each of the project or scoring element. That means that the user will not have a space for error. All the choices then automatically calculated by JavaScript codes. 
 
 - **Information Architecture**  - The app content will be grouped in 3 pages - **Explanation**, **Scoring Input** and **Dashboard** with several subpages. 
         
-    1. **Explanation** - the page where the user landed after s/he inputs an url. It will have 2 subsections, one of them is hidden while another is visible.
+    1. **Explanation** - the page where the user landed after s/he inputs an URL. It will have 2 subsections, one of them is hidden while another is visible.
 
-    2. **Scorepage** will be devided into **Summary**, **Project Scoring** and **Theory Scoring** sections, only one of them will be visible to a user:
-        - **Scoring Summary** will show projects and theory donut charts, scoring progress of each section scoring and 2 buttons directing the user to *Project Scoring* or *Theory scoring* subsection.
-        - **Project Scoring** and **Theory Scoring** will be idetnical, also visible one at a time. Each page will be devided into 2 sections: Visual showing scoring progress and Scoring Result and scorecards themselves. For example Project Scoring page will have 4 interactive projects scorecards on one side and on the other side it will have Title, Scoring progress e.g. "3 of 4") and a donut chart with circle showing average percantage score calculated based on scorecard choices. Theory scoring page will be more complex because it will have 87 elements grouped into 9 modules. Modules score and progress will be visible and calculated automatically based on elements scorecard choices. Modules scorecards will be intercative and will respond to click, when the clicked the module will slide down uncovering 8-17 elements scorecards for the module. Scorecards will resond to user click in the same manner as projects scorecards. All the scorecards will be double sided - on one side they wil have tile and a chosen score (or % sign if not scored yet), on reverse side (openned by click) the scorecard will have score choices and brief legend for each scorechoice (see [Wireframes]("assets/img/wireframes.pdf") in the section below - "Skeleton Plain").
+    2. **Score page** will be divided into **Summary**, **Project Scoring** and **Theory Scoring** sections, only one of them will be visible to a user:
+        - **Scoring Summary** will show projects and theory doughnut charts, scoring progress of each section scoring and 2 buttons directing the user to *Project Scoring* or *Theory scoring* subsection.
+        - **Project Scoring** and **Theory Scoring** will be identical, also visible one at a time. Each page will be divided into 2 sections: Visual showing scoring progress and Scoring Result and scorecards themselves. For example, Project Scoring page will have 4 interactive projects scorecards on one side and on the other side it will have Title, Scoring progress e.g. "3 of 4") and a doughnut chart with a circle showing average percentage score calculated based on scorecard choices. Theory scoring page will be more complex because it will have 87 elements grouped into 9 modules. Modules score and progress will be visible and calculated automatically based on elements of scorecard choices. Modules scorecards will be interactive and will respond to click when the clicked the module will slide down uncovering 8-17 elements scorecards for the module. Scorecards will respond to user click in the same manner as projects scorecards. All the scorecards will be double-sided - on one side they will have tile and a chosen score (or % sign if not scored yet), on the reverse side (opened by click) the scorecard will have score choices and brief legend for each score choice (see [Wireframes]("assets/img/wireframes.pdf") in the section below - "Skeleton Plain").
 
-        3. **Dashboard** - preview page of the scoring result a summary of projects and theory scoring grouped into projects, theory modules, Languages, Frameworks and Developer tools (see detailed table in the [GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing)
-    - It is important to mention certain features that will help to avoid confusion when facing some user interaction scenario:
-        - The user needs to clearly understand te transition from reading the logic to scoring page and from scoring page to final dashboard preview, therefore. Therefore the app will have modals to warn the user about the transition from login to scoring and from scoring to dashboard page. 
-        - There is a scenario when the user wants to go back to scoring after he visits the dashboard page, therefore, for this purpose there wll be a modal with warning that the user will lose dashboard info.
-        - The navigation between scoring sections (theory, projects and scoring summary) will not harm scoring process because it will happen within one page, at the same time - every time the choice will be made, the score will be stored in local storage to avoid loss of information while navigating between the sections.
+        3. **Dashboard** - preview page of the scoring result a summary of projects and theory scoring grouped into projects, theory modules, Languages, Frameworks and Developer tools (see the detailed table in the [GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing)
+        - It is important to mention certain features that will help to avoid confusion when facing some user interaction scenario:
+        - The user needs to clearly understand the transition from reading the logic to scoring page and from scoring page to final dashboard preview, therefore. Therefore the app will have modals to warn the user about the transition from login to scoring and from scoring to dashboard page. 
+        - There is a scenario when the user wants to go back to scoring after he visits the dashboard page, therefore, for this purpose, there will be a modal with warning that the user will lose dashboard info.
+        - The navigation between scoring sections (theory, projects and scoring summary) will not impact the scoring process because it will happen within one page. Every time the choice is  made, the score will be stored in local storage to avoid information loss while navigating between the sections.
 
-#### 1.6 Skeleton Plain
-Interface Structure, Interaction flow, Information Design are shown the pictures below:
+### [Skeleton Plain](#content)
+**Documents**
+Prior to coding I prepared 3 documents in using powerpoint/printed in pdf: (1) Interface Structure an User flow, (2) Detailed user flow, (3) Wireframes for mobile and Desktop:
 
 **Picture 1: User flow**
 ![user_flow_simple](assets/img/simple_user_flow.png "siimple user flow")
@@ -153,39 +157,40 @@ Interface Structure, Interaction flow, Information Design are shown the pictures
 
 **Picture 3: Wireframes (mobile and desktop)**
 ![Wireframes](assets/img/wireframes.png "mobile wireframes")
-### LINK: [see detailed wireframes in pdf](https://drive.google.com/file/d/1aWA3Vvm8ca3t3giy7lGN4xQeEzzdPC8s/view?usp=sharing)
+### Link: [see detailed wireframes document in pdf](https://drive.google.com/file/d/1aWA3Vvm8ca3t3giy7lGN4xQeEzzdPC8s/view?usp=sharing)
+
 
 **Information Design**
-- Information related to individual user will be stored in Local stoarge. Functionally it means that the moment the user enters 3 fields of input to transition from landing page to scoring page the JS code will generate a new user object and store it in local storage. This object (userObject) will be used to store all the information everytime when the choice is made on a scoring page. 
+- Information related to individual user will be stored in Local stoarge. Functionally it means that the moment the user enters inputs the name and surename to transition from landing page to scoring page the JS code will generate a new user object and store it in local storage. This object (userObject) will be used to store all the click-inputs everytime when the choice is made on a scoring page. 
 - In other words, every scorecard will have a key, and the score choice made by user will be stored in the local storage as a value of that key. The data in user object will be grouped in various objects scores, input for visuals, alculated values (e.g. cumulative average scores), and date. That means that userObject in Local stoarage will be multidimensional.
 - userObject will be used again at the moment when the user goes from the scoring page to the dahboard page. The infomation is copied into one dimensional array - dahsboardObject and than values are assigned to identical ids on a page and inserted into html elements to produce graphical dahsboard. the echanism is described in more detailed in the section 3 - Features.
 - If the user decides to leave dashboard and start the scoring process again, userObject will be overwritten. Modals will be developped to warn the user about this. 
 - That will reinforce the user to make a conscious choice when transitioning from login to scoring page, from scoring page to dashboard and from dashboard back to login page.
 - Return from dashboard to scoring page is not built into application to avoid unwanted user navigation.
 
-#### 1.7 Surface Plain
+### [Surface Plain](#content)
 - **Layout**
-    -  As can be seen on the wireframes (picture 3) to make it maximum functional and responsive each page is divided into 2 sections. Each section will have either information to read, scorecards to make a choice or a chart showing the result of scoring. Round buttons will be used to navigate from page to page. 
+    -  As can be seen on the wireframes (picture 3) to make it maximum functional and responsive to each page is divided into 2 sections. Each section will have either information to read, scorecards to make a choice or a chart showing the result of scoring. Round buttons will be used to navigate from page to page. 
 
 - **Typography**
     - I used only 2 types of fonts:
         - **Fira-Code** - because it is one of the recognised coding fonts, I wanted the application style reminded a coding experience 
-        - **Robotot-Mono** - used only on a dashboard page
+        - **Roboto-Mono** - used only on a dashboard page
 
 - **Colors**
     - **FONT** - grey on light pages, cream-white on dark-background
-    - **BACKGROUND** - 2 gradient, randomly selected, I used a website to generate gradient colors: https://mycolor.space/gradient 
-    - **SPECIAL BACKGROUND CHOICE** - for each pages sub-section I used a frost effect background using backdrop-filter (source: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/), however it works nice only in Chrome. Safari and Firefox requires canvas, therefore I did not build it in.
-    - **BUTTONS** - red dot icons with small text in square brackets were used as button to navigate between the pages
-    - **SCORES** - I used 3 colors for scoring, it folows a medal awards logic - gold, silver, bronze, the same colors were applied for theory elements score colors.
-Overall I used colors and fonts to enhance functionality, maintain reesponsiveness and make priority things (buttons, scores) visible and maintain resemblance to coding process.
+    - **BACKGROUND** - 2 gradient, randomly selected, I used a website to generate gradient colours: https://mycolor.space/gradient 
+    - **SPECIAL BACKGROUND CHOICE** - for each pages sub-section I used a frost effect background using backdrop-filter (source: https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535--*/), however, it works nicely only in Chrome. Safari and Firefox require canvas, therefore I did not build it in.
+    - **BUTTONS** - red dot icons with small text in square brackets were used as a button to navigate between the pages
+    - **SCORES** - I used 3 colours for scoring, it follows a medal awards logic - gold, silver, bronze, the same colours were applied for theory elements score colours.
+Overall I used colours and fonts to enhance functionality, maintain responsiveness and make priority things (buttons, scores) visible and maintain resemblance to the coding process.
 
 [back to TOC](#content)
 ___
-## FEATURES
-#### 3.1 Interactive Features with JavaScript/JQUERY/JSON
+## [FEATURES](#content)
+### 3.1 Interactive Features with JavaScript/JQUERY/JSON
 ##### P1.LANDING PAGE:
-- **Hidden Page Sections**: 2 functions to flip between landing page and understand page using JQuery library
+- **Hidden Page Sections**: 2 functions to flip between the landing page and understand page using JQuery library
     
         $(function(){
         $("#menu-button").click(function(){
@@ -203,14 +208,14 @@ ___
         });
     
 
-- **ScoreCards interactivity** - unfolding cards with rotating or swipedown/up functionality - showing a) hidden elements within each module and b) flipping face and back side of the scorecard:
+- **ScoreCards interactivity** - unfolding cards with rotating or swipe down/up functionality - showing a) hidden elements within each module and b) flipping face and backside of the scorecard:
         
         $(".scorecard-animation").click(function(){
             $(this).toggleClass("is-open");
         });
 
 
-- **Scoring Status** for each element once the choice is made the choice graphics is copied from back side to front side using JQUERY Traversing functionality:
+- **Scoring Status** for each element once the choice is made the choice graphics are copied from the backside to frontside using JQUERY Traversing functionality:
 
         $(".score-circle").click(function(){
             let scoreChoice= $(this).text();
@@ -220,7 +225,7 @@ ___
             $(score).css("background-color",color)
             
         });
-- **Create Local Storage object** - generate loginObject upon click of login button, login button can not be pressed if one of the fields is input incorrectly. The functionality is built with JS JSON and object generation script:
+- **Create Local Storage object** - generate login object upon a click of the login button, login button can not be pressed if one of the fields is input incorrectly. The functionality is built with JS JSON and object generation script:
 
         $("#btn-login").click(function(){
             let login=$("#login").val();
@@ -251,7 +256,7 @@ ___
 - **Local Storage** - create local storage upon page load:
 
         let userObject={}
-- **Local Storage** - Create userObject object upon login to add to individual object: scores, progress, progress-bars:
+        - **Local Storage** - Create userObject object upon login to add to individual object: scores, progress, progress-bars:
 
         $(document).ready(function(){
             let userObject={}
@@ -300,7 +305,7 @@ ___
             //7. Save onedimensinal objects inside userObject in local storage using JSON
             localStorage.setItem('userObject', JSON.stringify(userObject)); // store updated data in local storage test: console.log(userObject);  });
 
-- **Moing Between Subsections of the scoring page** - hide summary section, open  THEORY projects scoring page:
+- **Moving Between Subsections of the scoring page** - hide summary section, open  THEORY projects scoring page:
 
         $(function(){
             $("#theory-button").click(function(){ //click event
@@ -317,7 +322,7 @@ ___
         $(".scorecard-animation").click(function(){
             $(this).toggleClass("is-open");
         });
-- ***Copy the score choice and formatting into face score circle** - 2 functions to get a score from scorecircle and set it to scorecard face-front with proper color - TRAVERSING functionality for all the cards. works for the cards on theory sections: 
+- ***Copy the score choice and formatting into face score circle** - 2 functions to get a score from score circle and set it to scorecard face-front with proper colour - TRAVERSING functionality for all the cards. works for the cards on theory sections: 
 
         $(".score-circle").click(function(){
             let scoreChoice= $(this).text();
@@ -335,7 +340,7 @@ ___
             $(score).text(scoreChoice); // score
             $(score).css("background-color",color) // color                      
         });
-- **Open List of Module elements** - when the user clicks on a theory module, this helps to rol down the lsit of elements for each module - using JQUERY and this element of JS:: 
+- **Open List of Module elements** - when the user clicks on a theory module, this helps to roll down the list of elements for each module - using JQUERY and this element of JS: 
 
         $(".scorecard-animation-module").click(function(){
             $(this).siblings().children().slideToggle(200);
@@ -378,7 +383,7 @@ ___
             $("#projects-overall").text(projectsScore); // set the number to chart % on a projects section
             $("#projects-overall-summary").text(projectsScore);   // set the number to chart % on a summary section
 
-    - **Target Chart visuals** - insert calculation into donut chart progress bar
+    - **Target Chart visuals** - insert calculation into doughnut chart progress bar
             
             document.getElementById("progress-bar").setAttribute("stroke-dasharray", projectsScore+", 100" ); // set the score to the donut progress RED CIRCLE BAR on the chart section(SVG OBJECT). (JQuery attr() doesn't work)
             document.getElementById("progress-bar1").setAttribute("stroke-dasharray", projectsScore+", 100" );// set the score to the donut progress RED CIRCLE BAR on the SUMMARY page chart (svg object) (JQuery attr() doesn't work)
@@ -424,7 +429,7 @@ ___
             // store updated userObject into localStorage
             localStorage.setItem("userObject", JSON.stringify(userObject));
 
-- **Theory modules calculation** - a complex JS code that is trigereed by click on a score circle of the lement scorecard. It consists of 13 steps: (1) find a module key id, (2) get the scores of the elements from all current module elements, (3) turn the string into numbers array, (4) Calculate average in the array, (5) calculate sum of scores in the array, (6) Assign average to module score circle on the module scorecard, (7) CHANGE MODULE PROGRESS BAR using traversing, (8) replace key-value pairs with chosen score from scorecard inside userObject in Local Storage, (9) calculate theory averages based on module averages, (10) Assign numbers to theory Donut Charts visual elements, (11) Calculate inputs for progress bar calculation - substeps a,b,c,d, (12) Assign calculated value to progress bar visuals
+- **Theory modules calculation** - a bulky JS code that is triggered by a click on a scoring circle of the element scorecard. It consists of 13 steps: (1) find a module key id, (2) get the scores of the elements from all current module elements, (3) turn the string into numbers array, (4) Calculate average in the array, (5) calculate the sum of scores in the array, (6) Assign average to module score circle on the module scorecard, (7) CHANGE MODULE PROGRESS BAR using traversing, (8) replace key-value pairs with a chosen score from scorecard inside userObject in Local Storage, (9) calculate theory averages based on module averages, (10) Assign numbers to theory Donut Charts visual elements, (11) Calculate inputs for progress bar calculation - substeps a,b,c,d, (12) Assign calculated value to progress bar visuals
 Overall the code looks like this:
 
         $(".score-circle").click(function(){
@@ -517,7 +522,7 @@ Overall the code looks like this:
                 $('#theory-scoring-progress1').text(numberOfScoredElements); // 
                 $('#theory-scoring-progress').text(numberOfScoredElements);
                 $(".theory-progress-bar").css("width", theoryProgressBarWidth+"%");
-- **Store the values inside userObject into Local storage** - this JS code is executed within score circle click code, first the values are stored in user object, then saved in local storage:
+- **Store the values inside userObject into Local storage** - this JS code is executed within score circle click code, first the values are stored in the user object, then saved in local storage:
 
         //THEORY. LOCAL STORAGE. Store donut the inputs into local storage 
                 // a. visual elements assigned to unique ids in userObject
@@ -556,19 +561,19 @@ Overall the code looks like this:
                 let d=date.getDate()+"-"+months[date.getMonth()]+"-"+date.getFullYear();
                 datesObject[dates[i].id] = d;
 
-- ***Get Data form local storage userObject** - this step is needed to work with visuals on dashboard page:     
+- ***Get Data form local storage userObject** - this step is needed to work with visuals on the dashboard page:    
         
         // retrieve userObject from the localStoarge
         userObject=JSON.parse(localStorage.getItem("userObject")); // parse from LocalStorage       
 
-- **Create new group of visuals for 2nd page** - this step unfortunately required quite simple but long routine manual coding and calculation in JS. In order to prepare for this step I grouped the skills and theory elements in separate table in Google sheet (see picture 4 for fragment image). If interested you can see complete file following the link -  [complete GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing). 
+- **Create a new group of visuals for 2nd page** - this step unfortunately required quite simple but long routine manual coding and calculation in JS. To prepare for this step I grouped the skills and theory elements in a separate table in Google sheet (see picture 4 for fragment image). If interested you can see complete file following the link -  [complete GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing). 
 
-    **Picture 4: Fragment od skills analysis table:**
+    **Picture 4: Fragment of skills analysis table:**
     ![detailed user flow](assets/img/skillstable.png "fragment of table used to group skills")
 
     Java Script code:
 
-        // 3.CALCULATE SKILLS VARIABLES FOR DASHBOARD PAGE to assign it later to all
+        // 3.CALCULATE SKILLS VARIABLES FOR DASHBOARD PAGE to assign it later to all the html elements
 
         // LANGUAGES
             // HTML
@@ -672,7 +677,7 @@ Overall the code looks like this:
             }else{}
         }
 
-- **Asisgn values from the object to visuals** - manual code, intitially it was planned to use loops but due to different nature of visuals it was decided to use manual method.
+- **Assign values from the object to visuals** - manual code, initially it was planned to use loops but due to different nature of visuals, it was decided to use the manual method.
 
         //7. ASSIGN VISUALS ATTRIBUTES ON A DASHBOARD PAGES
         // a. DONUT CHART BARS. visuals for Donut charts
@@ -755,7 +760,7 @@ Overall the code looks like this:
             $("#name1").text(loginObject.name);//name to second page id
 
 ##### MODALS:
-- **Modal Interactivity** - warning to a user when s/he decides to leave scoring page navigating to dashboard and when s/he wants to navigate from dashboard to the login page:
+- **Modal Interactivity** - warning to a user when s/he decides to leave scoring page navigating to the dashboard and when s/he wants to navigate from dashboard to the login page:
 
         // a. back to login
         $("#login-button").click(function(){
@@ -777,7 +782,7 @@ Overall the code looks like this:
 #### 3.2 Challenges
 1. **Javascript** is a big massive challenge for me. It is hard to master, hard to remember for me. Long story to tell for one readme file
 
-2. **Donut Charts** - canvas was used to develop an interactive charts with scg objects. example code was found here: https://codepen.io/erinesullivan/pen/dmdBpQ
+2. **Doughnut Charts** - canvas was used to develop an interactive charts with scg objects. example code was found here: https://codepen.io/erinesullivan/pen/dmdBpQ
 
 2. **Summary report customisation** - I decided that the easiest way to solve this was to make the pages irresposnsive with fixed width and hight to alow the user see the output as it will look like when printed, in this way the pages can be easily taken from the screen by using accessible Windows (printScrieen), iOS (Capture) or taking a screen picture on any device. I used an A4 paper ratio (roughly 1:2). It is easy to zoom and printscreen the dashboard once the page is open.
 
@@ -792,7 +797,7 @@ Overall the code looks like this:
         }
 
 
-5. **Safari compatibility** - Sometimes JS code that adjust donut charts progress bar does not work, I target progress bar with JQ code, but for some reason during testing safari reacts with significant delay or does not adjust the progress bar at all. I also had an issue with flexbox code - justify-content. On a theory scorecard page all my modules scorecards were jammed to fit the section which made it impossible to operate. it was resolved by adding 2 property line into css code (display: webkt-flex):
+5. **Safari compatibility** - Sometimes JS code that adjusts doughnut charts progress bar does not work, I target progress bar with JQ code, but for some reason during testing safari reacts with significant delay or does not adjust the progress bar at all. I also had an issue with flexbox code - justify-content. On a theory scorecard page, all my modules scorecards were jammed to fit the section which made it impossible to operate. it was resolved by adding 2 property line into CSS code (display: WebKit-flex):
 
         .score-theory-section{
             display: -webkit-flex; /* NEW - Chrome */**
@@ -815,40 +820,44 @@ Overall the code looks like this:
 [back to TOC](#content)
 ___
 
-## DEVELOPMENT
-#### 4.1 Technologies
-- Major focus of development was on developing interactive features with calculation and local storage functionality. I used plain Java Script and JQuery in most of the cases.
-- For local storage interaction I used JSON.
-- Most of the html and css elements on the page were managed with FlexBox - simple and easy.
+## [DEVELOPMENT](#content)
 
-#### 4.2 Sources
+### [4.1 Technologies](#content)
+- Major focus of development was on developing interactive features with calculation and local storage functionality. I used plain JavaScript and JQuery in most of the cases.
+- For local storage interaction I used JSON.
+- Most of the HTML and CSS elements on the page were managed with FlexBox - simple and easy.
+
+### [4.2 Sources](#content)
 
 - **Code Institute Schedule Generator** - all the components of the application were taken from this site: https://code-institute-org.github.io/schedule-generator-v2/ - fantastic tool and a source of information.
 
 - **Libraries:** 
     - **JQUERY** - this library is much more intuitive to use. In some cases when I tried to set up attributes JQUERY did not work. JQUERY source - https://jquery.com/ 
-    - **FlexBox** - CSS library - very simple and effective way to operate with html box elements: https://www.w3schools.com/css/css3_flexbox.asp
+    - **FlexBox** - CSS library - very simple and effective way to operate with HTML box elements: https://www.w3schools.com/css/css3_flexbox.asp
     - **Bootstrap** - used for vertical bar visuals and buttons. https://getbootstrap.com/
 
 - **Gradient Colors** - recommendation from Kseniya Denisova - https://mycolor.space/gradient?ori=to+right+bottom&hex=%23152C50&hex2=%236144B5&sub=1
 
-- **Background Frost Effect** -  2 ways to do it. One was relatively simple using backdrop-filter- https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535.  However it doesn't work for Safari and Firefox
+- **Background Frost Effect** -  2 ways to do it. One was relatively simple using backdrop-filter- https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535.  However, it doesn't work for Safari and Firefox
 
 - **Dashboard prototype** - https://canvasjs.com/samples/dashboards/annual-sales-website-traffic/
 
 - **Donut charts** - I used the code with svg elements and then customised it. https://codepen.io/erinesullivan/pen/dmdBpQ
 
-- **Canvas JS** - I familiarised myself with canvas, even though I did not use it, still it was god to know about the resource
+- **Canvas JS** - I familiarised myself with canvas, even though I did not use it, still it was good to know about the resource
+
+- **Google Sheets** - my analysis of CodeInstitute course was done in GooogleSheets. It helped me create the structure of the scoring page - you can find details here [GoogleSheets file](https://docs.google.com/spreadsheets/d/1SpufglcNxwii_YfiRx_VtilaV6URxorlfLOkcrcpS8o/edit?usp=sharing)
 
 - **Am I responsive** - for responsiveness Testing and project image on the README.
 
-- **StackOverflow**- - it is amazing source for every programmer, I found a lot of usefull tips and wasted a lot of time on this site.
+- **StackOverflow**- - it is an amazing source for every programmer, I found a lot of useful tips and wasted a lot of time on this site.
 
-- **Chris Coyer** - he wrote many articles but this one is very usefull for background image, a week before submission I dropped an idea of using background image for the app. Even though it looked cool, I was not able to master it for Safari and Firefox.
+- **Chris Coyer** - he wrote many articles but [this one](https://css-tricks.com/almanac/properties/b/background-image/) is very useful for the background image, a week before submission I dropped an idea of using a background image for the app. Even though it looked cool, I was not able to master it for Safari and Firefox.
 
-#### 4.3 Development Process
-I planned to spend 15 days on it, but spent more than 45 days. Difficulties came from lack of expertise in JavaScript. I also wasted time on some feature that I later eliminated (e.g. interactive menu and dark/light mode). I also wasted time on Donut charts elements, I used various sources however returned back to the the one I started with.
-- Steps: 
+### [4.3 Development Process](#content)
+I planned to spend 15 days on it but spent more than 45 days. Difficulties came from a lack of expertise in JavaScript. I also wasted time on some feature that I later eliminated (e.g. interactive menu and dark/light mode). I also wasted time on Donut charts elements, I used various sources however returned to the one I started with.
+
+**Steps**: 
 1. 4 Planes of UX to develop Wireframes
 2. Set up repository and structure of README
 3. Develop and Test challenging and interactive features in the library
@@ -859,7 +868,7 @@ I planned to spend 15 days on it, but spent more than 45 days. Difficulties came
     * Individual customisation (dark and Light mode)
 4. Develop printout pages in HTML and set up modes functionality 
 5. Develop a calculation engine for percentages and arrays structure
-6. Develop html and css page
+6. Develop HTML and CSS page
     * Home page
     * Assessment page
     * Summary Page
@@ -872,37 +881,36 @@ I planned to spend 15 days on it, but spent more than 45 days. Difficulties came
 12. finalise README
 13. Submit for assessment
 
-#### 4.4 Features that were not installed
-1. Print option on a dashbaord page to convert the page into pdf.
-2. Dark/light mode on a dahsboard pages
-3. Pareto charts for all the skills was too much for this project that already grew out of proportion comparing to the requirements.
-4. I wanted to make html using javascript but did not manage to do that, however I do realise it would save me a lot of code on HTML. I siply did not find the way how to utilise Document.createElement(), Mode.append.Child(), ensert before etc. The gap I plan to fill later on.
+### [4.4 Features that were not installed](#content)
+1. Print option on a dashboard page to convert the page into pdf.
+2. dark/light mode on a dashboard pages
+3. Pareto charts for all the skills were too much for this project that already grew out of proportion comparing to the requirements.
+4. I wanted to make a code that generates HTML using javascript but did not manage to do that, however, I do realise it would save me a lot of code on HTML. I simply did not find the way how to utilise Document.createElement(), Mode.append.Child(), insert before etc. The gap I plan to fill later on.
 
 [back to TOC](#content)
 ___
 
-## TESTTING
-#### 5.1 Lighthouse Testing
-* Thanks to Anna - CodeInstitue tutor I learnt about lighthouse tool to test perfromance, accesibilit, best practice, seoo and progressiveweb appliaction testing. It is a great tool integrated into google chrome web-browser. If you want to use it - go to your webpage, press right click, then select inspect, in the right-top corner you will find a developer menu,search next to responsiveness and in line with other important feature section "Lighthouse". You will find a button generate report, before hitting it you will need to select the options you want to see.
+## [TESTING](#content)
+
+### [5.1 Lighthouse Testing](#content)
+* Thanks to Anna - CodeInstitue tutor and her webinar I learnt about lighthouse tool to test performance, accessibility, best practice, SEO and progressive web application testing. It is a great tool integrated into google chrome web-browser. If you want to use it - go to your webpage, press right-click, then select inspect, in the right-top corner you will find a developer menu, search next to responsiveness and in line with other important feature section "Lighthouse". You will find a button generating the report, before hitting it you will need to select the options you want to see.
 * **Picture 5: Lighthouse testing summary, start and finish** 
 ![lighthouse report](assets/img/lighthousetesting.png "summary page from lighthouse report")
 
-#### 5.2. HTML validation
-2nd round of testing, 1st round had 700 errors only on score page, 2nd round had 46 errors, some of the errors were not fixed on purpose. E.g. webkit error was not fixed, because when fixed the theory scoring page was not responsive anymore and jammed all the scorecards, that is linked to flexbox functionallity.
+### [5.2 HTML/CSS Validation](#content)
+2nd round of testing, 1st round had 700 errors only on the score page, 2nd round had 46 errors in total, some of the errors were not fixed on purpose. E.g. WebKit error was not fixed, because when fixed the theory scoring page was not responsive anymore and jammed all the scorecards, that is linked to flexbox functionality.
 * **Picture 6: HTML validation at https://validator.w3.org/** 
 ![lighthouse report](assets/img/htmlcssvalidation.png "summary page from lighthouse report")
 
-#### 5.4. User testing
-last section to be added after peer-code-reveiew. 1st round gave 0 feedback.
+### [5.3 User testing](#content)
+I submitted the project to the slack - no response, that means the app is not exciting however nobody provided meaningful feedback. So, I tested it myself.
 ___
 
-## VERSION CONTROL
-Cloud based GitHub and Gitpod applications were used for this project. About 85 commits were done through the course of application developemnt.
-
-[back to TOC](#content)
+## [VERSION CONTROL](#content)
+Cloud-based GitHub and Gitpod applications were used for this project. About 90 commits were done through the course of application development.
 ___
-## DEPLOYMENT
-I deployed the site through gitpod and github. I folowed the steps:
+## [DEPLOYMENT](#content)
+I deployed the site through gitpod and Github. I followed the steps:
 
 1. Gitpod: git add .
 2. Gitpod: git commit -m "message"
@@ -912,28 +920,23 @@ I deployed the site through gitpod and github. I folowed the steps:
 6. Github: Scrolled down to "Github Pages", from dropdown menu section selected "branch: master"
 7. Github: Press Save button. 
 
-* The link to repository on a github: FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD reporistory (https://github.com/askfrsltn/skills_profile_dashboard)
+* The link to the repository on a GitHub: FULL STACK DEVELOPER SKILLS PROFILE DASHBOARD repository (https://github.com/askfrsltn/skills_profile_dashboard)
 * Website link: [Full Stack Skills Profile Dashboard](https://askfrsltn.github.io/skills_profile_dashboard/)
 
-[back to TOC](#content)
  ___
-## CREDITS
+## [CREDITS](#content)
 - **StackOverflow** with thousands of developers from the past and present who shared their knowledge. I simply can not mention all of them.
 - **CodeInstitute** - for the course materials and Full Stack Development Course structure provided on course schedule generator. 
-- **CodeInstitute Tutors** - especially big thanks to Stephen, Tim, Haley, Cormac, Miklos. Without you I wouldn't be able to complete this project.
-- **CodeInstitute mentor** - special thanks to my mentor Ignatius. for his knowledge, for his patience, for the calm and quiete inspiration. At some point of time the call with him helped me recover from the despair and frustration over this project. Because of him I carry on on my developer journey. 
-- **CodeInstitute Community** - big "THANK YOU" to Anna Greaves - source of knowledge, energy and inspiration by her willing to help, share her knowledge, and beautifull projects that she developed. Secondly, to Slack community - even though I am not a very social person, don't contribute much, slack and CI people help me find answers, sources of coding experience and developers role-models. Thank you for peer-code-review. Great source of motivation.
-- **CodeInstitute Project Assessor** - for his patience to read my bizare codes and English writing and giving me fair mark.
-*  **And of course - To My Family** - to my wife for her patience of me being absent, when busy working on my project during this difficult times, my brave son Luka and his little sister Mia for always being happy to see me even though I don't often have time for them. 
+- **CodeInstitute Tutors** - especially big thanks to Stephen, Tim, Haley, Cormac, Miklos. Without you, I wouldn't be able to complete this project.
+- **CodeInstitute mentor** - special thanks to my mentor Ignatius. For his knowledge, for his patience, for the calm and quiet inspiration. At some point, the call with him helped me recover from the despair and frustration over this project. So, I carry on on my developer journey. 
+- **CodeInstitute Community** - big "THANK YOU" to Anna Greaves - a source of knowledge, energy and inspiration by her willingness to help, share her knowledge, and beautiful projects that she developed. Secondly, to Slack community - even though I am not a very social person, don't contribute much, slack and CI people help me find answers, sources of coding experience and developers role-models. Thank you for peer-code-review. Great source of motivation.
+- **CodeInstitute Project Assessor** - for his patience to read my bizarre codes, English writing "structures" and still giving me fair mark and feedback.
+-  **And of course - To My Family** - to my wife for her patience of me being absent, when busy working on my project during this difficult times, my brave son Luka and his little sister Mia for always being happy to see me even though I don't often have time for them. 
 
-Thaks a lot!
- 
- [back to TOC](#content)
+Thanks a lot!
 
-## DISCLAIMERS
-- **Code Institute** - I used an information that fully belongs to CodeInstitute it would be fair to ask permission before openly promoting the use of this site publicly. 
+## [DISCLAIMERS](#content)
+- **Code Institute** - I used information that fully belongs to CodeInstitute it would be fair to ask permission before openly promoting the use of this site publicly. 
 
 [back to TOC](#content)
 ___
-
-end of README
