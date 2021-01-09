@@ -21,7 +21,7 @@
 
     // the function flips around the scorecard on logic page
         $(".scorecard-animation").click(function(){
-        $(this).toggleClass("is-open");
+            $(this).toggleClass("is-open");
         });
         
     // the function to get a score from scorecircle and set it to scorecard face-front with proper color

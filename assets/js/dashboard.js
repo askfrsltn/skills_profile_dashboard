@@ -5,10 +5,10 @@ $(document).ready(function(){
         
         let skillsObject = {}        // push them to sperate object
         for (let i = 0; i < skills.length; i++) {
-        skillsObject[skills[i].id] = 0;
+            skillsObject[skills[i].id] = 0;
         }    
 
-    //b.   manage date stamp and place it into the dashboard
+    //b. manage date stamp and place it into the dashboard
         let dates = document.querySelectorAll('.date');//specific ids        
         let datesObject = {}
         // ids update and Adutomatic date stamp for dashboard pages with the help of  https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_month
@@ -19,12 +19,11 @@ $(document).ready(function(){
             datesObject[dates[i].id] = d;
         }  
 
-        //2. RETRIEVE THE DATA SAVED FROM PREVIOUS PAGE IN LOCAL STORAGE USEROBJECT        
-        // retrieve userObject from the localStoarge
+    //2. RETRIEVE THE DATA SAVED FROM PREVIOUS PAGE IN LOCAL STORAGE USEROBJECT        
+    // retrieve userObject from the localStoarge
         userObject=JSON.parse(localStorage.getItem("userObject")); // parse from LocalStorage        
 
     // 3.CALCULATE SKILLS VARIABLES FOR DASHBOARD PAGE to assign it later to all
-
     // LANGUAGES
         // HTML
         skillsObject["dashboard-skill-html"]=
@@ -208,7 +207,9 @@ $(document).ready(function(){
     userObjectDates=userObject.dates
         
     // combine 7 objects inside dashboard Object, add name them appropriately 
-    let dashboardObject={...userObjectDonutProgressBar,...userObjectDonutProgressNumbers,...userObjectProgress,...userObjectProgressBar,...userObjectScores,...userObjectSkills,...userObjectDates};
+    let dashboardObject={
+        ...userObjectDonutProgressBar,...userObjectDonutProgressNumbers,...userObjectProgress,...userObjectProgressBar,...userObjectScores,...userObjectSkills,...userObjectDates
+    };
         
     loginObject=JSON.parse(localStorage.getItem("loginObject"));
     
@@ -220,7 +221,9 @@ $(document).ready(function(){
         if (`${value}`!==0){ //check if the value is 0
             $(`#${key}`).text(`${value}`);
         }
-        else{}
+        else{
+            $(`#${key}`).text(`${""}`)
+        }
     }
 
 //7. ASSIGN VISUALS ATTRIBUTES
@@ -237,43 +240,45 @@ $(document).ready(function(){
 
     if(ucfed==60){
         $("#projects-ucfed").parent().parent().addClass("bronze");
-        } 
+    } 
     else if (ucfed==80){
         $("#projects-ucfed").parent().parent().addClass("silver");
-        } 
+    } 
     else if (ucfed==100){
         $("#projects-ucfed").parent().parent().addClass("gold");
-        }
+    }
     
     if(ifed==60){
         $("#projects-ifed").parent().parent().addClass("bronze");
-        } 
+    } 
     else if (ifed==80){
         $("#projects-ifed").parent().parent().addClass("silver");
-        } 
+    } 
     else if (ifed==100){
         $("#projects-ifed").parent().parent().addClass("gold");
-        }
+    }
 
     if(dcd==60){
         $("#projects-dcd").parent().parent().addClass("bronze");
-        } 
+    } 
     else if (dcd==80){
-        $("#projects-dcd").parent().parent().addClass("silver");} 
+        $("#projects-dcd").parent().parent().addClass("silver");
+    } 
     else if (dcd==100){
         $("#projects-dcd").parent().parent().addClass("gold");
-        }
+    }
 
     if(fsd==60){
         $("#projects-fsd").parent().parent().addClass("bronze");
-        } 
+    } 
     else if (fsd==80){
-        $("#projects-fsd").parent().parent().addClass("silver");} 
+        $("#projects-fsd").parent().parent().addClass("silver");
+    } 
     else if (fsd==100){
         $("#projects-fsd").parent().parent().addClass("gold");
-        }
+    }
     
-    // c. MODULE BARS. 
+    // c. MODULE PROGRESS BARS. 
     $("#theory-html").css("width",userObject.scores["theory-html"]+"%");
     $("#theory-css").css("width",userObject.scores["theory-css"]+"%");
     $("#theory-ucfed").css("width",userObject.scores["theory-ucfed"]+"%");
@@ -310,7 +315,7 @@ $(document).ready(function(){
     $("#dashboard-skill-udui").css("width",dashboardObject["dashboard-skill-udui"]);
 
 //8. ASSIGN OTHER IDS THAT WERE MISSED IN THE STEP NUMBER 6
-    $("#name1").text(loginObject.name);//name to second page id
+    $("#name1").text(loginObject.name);//name to the second page id
 
 //9.  SAVE ALL THE DATA TO LOCAL STORAGE   
     localStorage.setItem('userObject', JSON.stringify(userObject)); // save user Object
@@ -323,6 +328,7 @@ $(document).ready(function(){
     $(".modal-container").click(function(){
         $(".modal-container").addClass("hidden");
     });
+// END OF DOCUMENT OPEN FUNCTION
 });
 
         
