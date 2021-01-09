@@ -288,7 +288,6 @@ login-inputs-wrapper{
     height:100vh;
     width:100vw;
     overflow: scroll;
-    
 }
 
 #js-card-understand {
@@ -298,7 +297,7 @@ login-inputs-wrapper{
 
 .understand-page-logic{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     background-image: linear-gradient(to right bottom, #4d6180, #55658c, #606997, #6d6ca1, #7d6ea9);
 }
