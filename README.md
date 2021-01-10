@@ -797,7 +797,7 @@ Overall the code looks like this:
         }
 
 
-5. **Safari compatibility** - Sometimes JS code that adjusts doughnut charts progress bar does not work, I target progress bar with JQ code, but for some reason during testing safari reacts with significant delay or does not adjust the progress bar at all. I also had an issue with flexbox code - justify-content. On a theory scorecard page, all my modules scorecards were jammed to fit the section which made it impossible to operate. it was resolved by adding 2 property line into CSS code (display: WebKit-flex):
+5. **Firefox compatibility** - Sometimes JS code that adjusts doughnut charts progress bar does not work, I target progress bar with JQ code, but for some reason during testing safari reacts with significant delay or does not adjust the progress bar at all. I also had an issue with flexbox code - justify-content. On a theory scorecard page, all my modules scorecards were jammed to fit the section which made it impossible to operate. it was resolved by adding 2 property line into CSS code (display: WebKit-flex):
 
         .score-theory-section{
             display: -webkit-flex; /* NEW - Chrome */**
@@ -816,6 +816,41 @@ Overall the code looks like this:
             margin-bottom: 10px;
             order: 1;
         }
+    
+6. **Safari compatibility** - there were 3 issues with Safari 2 of them remain unresolved. The code I built in JS was taking the value from local storage once the user landed on the dashhboard page, and passed it to svg object to change the red doughnut bar according to calculated scoring percentage. The code works for Chrome and Firefox, howver it never works for Safari. The most interesting thing was that the value is passed to "stroke-dasharray" attribute of the element, however it is not rendered. Below you will see the detailed explanation of the problem, the testing I did and suggested solution I used following the advice of Bim - the Alumni over the slack:
+![safari_issue](assets/img/safari_issue.png "safari challenge")
+
+- **testing**: I checked the console of the svg visual that was supposed to change and I saw that the code passed the value to "stroke-dasharray"property that is responsible for proper rendering-it has a value of 20, but on the page it shows a value of 0:
+![stroke-dasharray](assets/img/stroke-dasharray.png "safari challenge")
+
+I went back to HTML file and changed the same property manually to 50:
+    <path id="progress-bar" class="dashboard-circle-incomplete"        stroke-dasharray="50, 100"
+    d="M18 2.0845
+    a 15.9155 15.9155 0 0 1 0 31.831
+    a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+
+It worked well and the doughnut chart rendered the chart the way it was expected. I checked the value from local object received as a result of scoring exeercise and also its type:
+    
+        console.log(document.getElementById("progress-bar"))
+        console.log(typeof(userObject.donutProgressBar["progress-bar"]))
+and received:
+    
+        20
+        number
+
+That means that the code worked and the problem was in rendering. 
+
+- **potential soluton**: I contacted Slack community with th erequest. Bim was very kind to spend some time with me and help me develop some solutions, that also did not work. For example he suggested to use a dummy class that does not make any impact and use JS addclass method to trigger object rendering again. so I did:
+
+        /*-- SAFARI SOLUTION CLASS - I use it to make safari read updated stroke-dasharray--*/
+        .dummy{
+            border:none;
+        }
+
+        $(".dashboard-donut-chart").addClass("dummy")// dummy class to update svg objects in Safari
+
+
+
 
 [back to TOC](#content)
 ___

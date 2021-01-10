@@ -1534,3 +1534,8 @@ body.scorepage-background{
     align-items: center;
     flex-direction: column;
 }
+
+/*-- SAFARI SOLUTION CLASS - I use it to make safari read updated stroke-dasharray--*/
+.dummy{
+    border:none;
+}

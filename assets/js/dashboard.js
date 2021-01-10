@@ -228,10 +228,12 @@ $(document).ready(function(){
 
 //7. ASSIGN VISUALS ATTRIBUTES
     // a. DONUT CHART BARS. visuals for Donut charts
-        document.getElementById("progress-bar").setAttribute("stroke-dasharray",userObject.donutProgressBar["progress-bar"]+", 100" );//set up a progress bar on the project donut chart
+        document.getElementById("progress-bar").setAttribute("stroke-dasharray",userObject.donutProgressBar["progress-bar"] + ", 100" );//set up a progress bar on the project donut chart
         
-        document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray",userObject.donutProgressBar["progress-bar-theory"]+", 100" );//set up a progress bar on the project donut chart
-    
+        document.getElementById("progress-bar-theory").setAttribute("stroke-dasharray", userObject.donutProgressBar["progress-bar-theory"]+", 100" );//set up a progress bar on the project donut chart
+        
+        $(".dashboard-donut-chart").addClass("dummy")// dummy class to update svg objects in Safari
+
     // b. ROJECTS MEDALS. find project medals check the value, add class. I simply hard coded the style condition.
         
     let ucfed=$("#projects-ucfed").text();
